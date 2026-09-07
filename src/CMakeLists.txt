@@ -7,7 +7,7 @@ add_subdirectory(scene)
 add_subdirectory(filter)
 add_subdirectory(geometry)
 add_subdirectory(visualization)
-
+add_subdirectory(session)
 add_library(fccvis_core OBJECT
     $<TARGET_OBJECTS:fccvis_api>
     $<TARGET_OBJECTS:fccvis_core_impl>
@@ -15,6 +15,7 @@ add_library(fccvis_core OBJECT
     $<TARGET_OBJECTS:fccvis_filter>
     $<TARGET_OBJECTS:fccvis_geometry>
     $<TARGET_OBJECTS:fccvis_visualization>
+    $<TARGET_OBJECTS:fccvis_session>
 )
 
 target_include_directories(fccvis_core PUBLIC
@@ -27,7 +28,7 @@ target_link_libraries(fccvis_core PUBLIC
 )
 
 set_target_properties(fccvis_core PROPERTIES
-    CXX_STANDARD 17
+    CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
     POSITION_INDEPENDENT_CODE ON
 )

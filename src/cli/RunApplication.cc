@@ -1,11 +1,20 @@
+#include "Session.h"
 #include "include/CliOptions.h"
 #include <iostream>
+#include "GuiApplication.h"
 
+using namespace fccvis::session;
 namespace fccvis::cli {
-int RunApplication(const CliOptions &options) {
+int RunApplication(const CliOptions &options, int& argc, char** argv) {
+  auto runSession = new Session(
+    "default-visualziation-session",
+    options.dataFile,
+    options.optionsFile
+  );
   if (options.guiRequested) {
-#ifdef FCC_ENABLE_GUI
-    fccvis::gui::GuiApplication app(argc, argv);)
+#ifdef FCCVIS_ENABLE_GUI
+    fccvis::gui::GuiApplication app(argc, argv);
+    // Session should manage gui itself.
     app.Run();
     return 0;
 #else

@@ -1,12 +1,12 @@
-#include <memory>
 #include <TApplication.h>
+#include <memory>
 
 namespace fccvis::gui {
 
 class GuiApplication {
   public:
-  TApplication GetApplication(int& argc, char** argv);
-  ~GetApplication();
+  GuiApplication(int& argc, char** argv);
+  ~GuiApplication();
 
   void Run();
   private:

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 project(FCCVisualization VERSION 0.1.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -12,7 +12,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 # ---------------------------------------------------------------------------
 option(FCCVIS_BUILD_SHARED   "Build shared library"        ON)
 option(FCCVIS_BUILD_STATIC   "Build static library"        OFF)
-option(FCCVIS_ENABLE_GUI     "Enable ROOT/TEve GUI backend" OFF)
+option(FCCVIS_ENABLE_GUI     "Enable ROOT/TEve GUI backend" ON)
 option(FCCVIS_BUILD_TESTS    "Build unit tests"             ON)
 option(FCCVIS_BUILD_EXAMPLES "Build examples"               ON)
 

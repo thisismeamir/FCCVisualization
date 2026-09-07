@@ -3,7 +3,7 @@ add_library(fccvis_core_impl OBJECT
 )
 
 target_include_directories(fccvis_core_impl PUBLIC
-    ${CMAKE_SOURCE_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_link_libraries(fccvis_core_impl PRIVATE

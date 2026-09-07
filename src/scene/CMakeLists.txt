@@ -3,7 +3,7 @@ add_library(fccvis_scene OBJECT
 )
 
 target_include_directories(fccvis_scene PUBLIC
-    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 target_link_libraries(fccvis_scene PRIVATE
