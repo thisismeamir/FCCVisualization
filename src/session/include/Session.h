@@ -4,8 +4,8 @@
 #include <optional>
 #include <string>
 #include <vector>
-#include "meta/MetaObjects.h"
-#include "objects/SceneObjects.h"
+#include "MetaObjects.h"
+#include "SceneObjects.h"
 #include "Scene.h"
 
 
@@ -52,7 +52,8 @@ public:
     Session& operator=(Session&&) noexcept = default;
     void initData();
     void initOptions();
-    const std::string& Name() const { return m_name; }
+    std::optional<std::filesystem::path> GetOptionsFile();
+  const std::string& Name() const { return m_name; }
     const SessionData& Data() const { return m_data; }
     const SessionOptions& Options() const { return m_options; }
 

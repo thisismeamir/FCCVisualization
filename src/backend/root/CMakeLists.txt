@@ -1,5 +1,5 @@
 add_library(fccvis_backend_root OBJECT
-  placeholder.cc
+  RootScene.cc
 )
 
 target_include_directories(fccvis_backend_root PUBLIC
@@ -8,6 +8,8 @@ target_include_directories(fccvis_backend_root PUBLIC
 
 target_link_libraries(fccvis_backend_root PRIVATE
   FCCVisualization::CompilerWarnings
+  fccvis_session
+  fccvis_scene
 )
 
 set_target_properties(fccvis_backend_root PROPERTIES

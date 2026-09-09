@@ -2,6 +2,7 @@ add_executable(fccvis
     main.cpp
     CliOptions.cc
     RunApplication.cc
+    InteractiveShell.cc
 )
 
 target_include_directories(fccvis PRIVATE
@@ -23,6 +24,8 @@ set_target_properties(fccvis PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
+
+target_include_directories(fccvis PRIVATE ${FCCVIS_UNIFIED_INCLUDE_DIR})
 
 include(GNUInstallDirs)
 install(TARGETS fccvis RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime)

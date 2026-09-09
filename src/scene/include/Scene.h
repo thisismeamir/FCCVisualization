@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseSessionObject.h"
-#include "meta/MetaObjects.h"
+#include "MetaObjects.h"
 #include <utility>
 namespace fccvis::scene {
 class Scene : public BaseSessionObject {

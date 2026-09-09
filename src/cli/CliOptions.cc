@@ -11,10 +11,15 @@ CliOptions ParseArgs(int argc, char** argv)
   for (int i = 1; i < argc; ++i)
   {
     const std::string arg = argv[i];
-    if (arg == "--gui")
+    if (arg == "--gui") {
       opts.guiRequested = true;
-    else
+    }
+    if (arg == "--nointeractive") {
+      opts.interactive = true;
+    }
+    else {
       positional.emplace_back(arg);
+    }
   }
 
   for (const auto& p : positional)
@@ -34,11 +39,10 @@ CliOptions ParseArgs(int argc, char** argv)
 
 void ValidateArgs(const CliOptions& opts)
 {
-  if (!opts.guiRequested && !opts.optionsFile)
-    throw std::runtime_error(
-      "Headless mode requires an options file specifying renderings (no --gui, no options.cpp given)");
-
+  // We had a --gui / <optionsFile> comparidon here that if gui wasn't flagged and optionsFile weren't
+  // given as well what should we do with the data, not a blank interactive session is valid therefore I'm not setting that
   if (opts.dataFile && opts.dataFile->extension() == ".pndr")
     throw std::runtime_error(".pndr format is not yet supported (Pandora native format)");
+  
 }
 }

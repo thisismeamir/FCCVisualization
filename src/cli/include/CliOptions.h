@@ -4,6 +4,7 @@
 namespace fccvis::cli {
 struct CliOptions {
   bool guiRequested = false;
+  bool interactive = true;
   std::optional<std::filesystem::path> dataFile;
   std::optional<std::filesystem::path> optionsFile;
 };
