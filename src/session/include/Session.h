@@ -1,6 +1,7 @@
 #pragma once
 
 #include <filesystem>
+#include <memory>
 #include <optional>
 #include <string>
 #include <vector>
@@ -17,8 +18,8 @@ class SessionOptions
 public:
   std::vector<std::shared_ptr<fccvis::scene::meta::Camera>> cameras;
   std::vector<std::shared_ptr<fccvis::scene::meta::Filter>> filters;
-  std::vector<fccvis::scene::Scene> scenes;
-  std::vector<std::vector<std::string>> sceneLayout;  // scene names shown together
+  std::vector<std::shared_ptr<fccvis::scene::Scene>> scenes;
+  std::shared_ptr<fccvis::scene::meta::LayoutNode> sceneLayout;  // scene names shown together
   std::optional<std::filesystem::path> geometryFilePath;
   std::shared_ptr<scene::objects::DetectorGeometry> detectorGeometry;
 };
@@ -53,6 +54,7 @@ public:
     void initData();
     void initOptions();
     std::optional<std::filesystem::path> GetOptionsFile();
+    SessionOptions GetOptions();
   const std::string& Name() const { return m_name; }
     const SessionData& Data() const { return m_data; }
     const SessionOptions& Options() const { return m_options; }

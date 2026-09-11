@@ -1,6 +1,10 @@
 #include "Scene.h"
 #include <TEveManager.h>
+#include <TEveScene.h>
+#include <TEveViewer.h>
 #include <memory>
+#include <string>
+#include <vector>
 namespace fccvis::backend::root {
 
 class RootScene
@@ -16,7 +20,6 @@ public:
     TEveScene* EveScene() const { return m_pEveScene; }
 
     void SyncCamera();  // pushes Scene::camera's position/direction into the TGLViewer
-
 private:
     std::shared_ptr<fccvis::scene::Scene> m_scene;
     TEveViewer* m_pViewer;

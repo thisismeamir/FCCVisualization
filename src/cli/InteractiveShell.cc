@@ -73,7 +73,7 @@ bool InteractiveShell::HandleBuiltin(const std::string &line) {
 
 // TODO: See functionality to address opening a scene or layout
 void InteractiveShell::See(const std::string& sceneOrLayoutName) {
-  std::cout << "See Option for: " << sceneOrLayoutName;
+  std::cout << "See Option for: " << sceneOrLayoutName << std::endl;
 };
 
 void InteractiveShell::Quit() {

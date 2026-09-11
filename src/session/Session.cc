@@ -68,8 +68,15 @@ void Session::initData() {
   }
 };
 
-void Session::initOptions() {};
+void Session::initOptions() {
+   m_options = SessionOptions{};
+};
 std::optional<std::filesystem::path> Session::GetOptionsFile() {
   return m_optionsFilePath;
 }
+
+SessionOptions Session::GetOptions() {
+  return m_options;
+}
+
 } // namespace fccvis::session

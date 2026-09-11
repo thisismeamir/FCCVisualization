@@ -14,6 +14,13 @@ CliOptions ParseArgs(int argc, char** argv)
     if (arg == "--gui") {
       opts.guiRequested = true;
     }
+    else {
+      positional.emplace_back(arg);
+    }
+  }
+
+  for (int i = 1; i < argc; ++i) {
+    const std::string arg = argv[i];
     if (arg == "--nointeractive") {
       opts.interactive = true;
     }
@@ -43,6 +50,6 @@ void ValidateArgs(const CliOptions& opts)
   // given as well what should we do with the data, not a blank interactive session is valid therefore I'm not setting that
   if (opts.dataFile && opts.dataFile->extension() == ".pndr")
     throw std::runtime_error(".pndr format is not yet supported (Pandora native format)");
-  
+
 }
 }

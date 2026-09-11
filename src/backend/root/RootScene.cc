@@ -16,14 +16,18 @@ RootScene::RootScene(std::shared_ptr<fccvis::scene::Scene> scene)
 
     SyncCamera();
 }
-
 RootScene::~RootScene()
 {
-  // TODO: gEve->GetViewers()->DestroyElement(m_pViewer) / scene cleanup —
-  // needs care around TEve's own ownership of these elements.
-  // Not sure if this is right...
-    gEve->GetViewers()->Destroy();
-    gEve->GetScenes()->DestroyScenes();
+    // Detach the scene from this viewer first, so the viewer doesn't hold
+    // a dangling child reference once the scene below is deleted.
+    if (m_pViewer && m_pEveScene) {
+        m_pViewer->RemoveElement(m_pEveScene);
+    }
+
+    // Single-parent elements: TEveElement's own destructor detaches from
+    // gEve's viewer/scene lists automatically — no global Destroy() needed.
+    delete m_pViewer;
+    delete m_pEveScene;
 }
 void RootScene::SyncCamera()
 {
@@ -78,4 +82,6 @@ void RootScene::SyncCamera()
     );
     glViewer->RequestDraw();
 }
+
+
 }

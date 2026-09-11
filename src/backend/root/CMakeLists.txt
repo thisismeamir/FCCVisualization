@@ -1,5 +1,6 @@
 add_library(fccvis_backend_root OBJECT
   RootScene.cc
+  RootSceneManager.cc
 )
 
 target_include_directories(fccvis_backend_root PUBLIC
