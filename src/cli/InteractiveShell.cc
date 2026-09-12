@@ -1,25 +1,46 @@
 #include "InteractiveShell.h"
+#include <TEveManager.h>
 #include <TInterpreter.h>
+#include <TSystem.h>
+#include <TROOT.h>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include "fccvis/FccvisConfig.h"
+#include <TApplication.h>
+
+
 
 namespace fccvis::cli {
-InteractiveShell::InteractiveShell(fccvis::session::Session &session)
-    : m_session(session) {
+
+InteractiveShell::InteractiveShell(fccvis::session::Session& session)
+    : m_session(session), m_sceneManager(session) {
+  EnsureEveManager();
   BindSessionIntoCling();
+}
+
+void InteractiveShell::EnsureEveManager() {
+  if (!gApplication) {
+    int argc = 0;
+    char** argv = nullptr;
+    new TApplication("fccvis_headless", &argc, argv);
+  }
+  if (!gEve) {
+    TEveManager::Create(kFALSE); // map_window=false — no visible browser chrome, but a real display exists
+  }
 }
 
 void InteractiveShell::BindSessionIntoCling() {
   gInterpreter->AddIncludePath(FCCVIS_UNIFIED_INCLUDE_DIR);
   gInterpreter->AddIncludePath(FCCVIS_UNIFIED_INCLUDE_DIR "/fccvis");
   gInterpreter->Declare("#include <fccvis/Session.h>");
-  // Classic ROOT pointer-injection trick: expose the live Session& as a
-  // named symbol inside the interpreter, so raw ConfigureSession-style
-  // snippets typed at the prompt operate on the SAME object main.cpp holds.
-  gInterpreter->ProcessLine(Form("fccvis::session::Session* session = "
-                                 "(fccvis::session::Session*)%p;",
-                                 (void *)&m_session));
+
+  gSystem->Load(FCCVIS_BUILD_LIB_DIR "/libFCCVisualization.so");
+
+  gInterpreter->ProcessLine(
+      Form("fccvis::session::Session* session = "
+           "(fccvis::session::Session*)%p;",
+           (void*)&m_session));
 }
 
 void InteractiveShell::Run() {
@@ -32,8 +53,6 @@ void InteractiveShell::Run() {
     }
     if (!HandleBuiltin(line)) {
       m_commandHistory.push_back(line);
-      // Fall through to Cling for arbitrary C++: e.g.
-      // session->GetOptions().cameras["cam1"]->positionVector = {0,0,10};
       gInterpreter->ProcessLine(line.c_str());
     }
     if (!m_quitRequested) {
@@ -41,40 +60,41 @@ void InteractiveShell::Run() {
     }
   }
 }
-bool InteractiveShell::HandleBuiltin(const std::string &line) {
+
+bool InteractiveShell::HandleBuiltin(const std::string& line) {
   if (line.empty() || line[0] != '.') {
-    return false; // not a builtin — hand off to Cling untouched
+    return false;
   }
 
-  std::istringstream iss(line.substr(1)); // strip the leading '.'
+  std::istringstream iss(line.substr(1));
   std::string cmd;
   iss >> cmd;
 
   if (cmd == "quit" || cmd == "q") {
     Quit();
-    return true;
-  }
-  if (cmd == "save") {
+  } else if (cmd == "save") {
     std::string path;
     iss >> path;
     Save(path);
-    return true;
-  }
-  if (cmd == "see") {
+  } else if (cmd == "see") {
     std::string name;
     iss >> name;
     See(name);
-    return true;
+  } else if (cmd == "close") {
+    std::string name;
+    iss >> name;
+    Close(name);
+  } else if (cmd == "scenes") {
+    ListScenes();
+  } else if (cmd == "open") {
+    ListOpen();
+  } else if (cmd == "help") {
+    Help();
+  } else {
+    std::cerr << "fccvis: unknown shell command '." << cmd << "'\n";
   }
-
-  std::cerr << "fccvis: unknown shell command '." << cmd << "'\n";
-  return true; // consumed — don't let an unknown '.' fall through to Cling
+  return true;
 }
-
-// TODO: See functionality to address opening a scene or layout
-void InteractiveShell::See(const std::string& sceneOrLayoutName) {
-  std::cout << "See Option for: " << sceneOrLayoutName << std::endl;
-};
 
 void InteractiveShell::Quit() {
   m_quitRequested = true;
@@ -85,29 +105,69 @@ void InteractiveShell::Save(const std::string& path) {
     std::cerr << "fccvis: .save requires a path\n";
     return;
   }
-
   std::ofstream out(path);
   if (!out) {
     std::cerr << "fccvis: could not open '" << path << "' for writing\n";
     return;
   }
-
-  // Original options.cpp content, verbatim, if the session was loaded from one.
   const auto& optionsFile = m_session.GetOptionsFile();
   if (optionsFile) {
     std::ifstream in(*optionsFile);
     if (in) {
-      out << in.rdbuf();
-      out << "\n";
+      out << in.rdbuf() << "\n";
     } else {
       std::cerr << "fccvis: warning — could not reopen original options file '"
                  << *optionsFile << "', continuing with commands only\n";
     }
   }
-
   out << "// --- commands appended by interactive session ---\n";
-  for (const auto& cmd : m_commandHistory) {
-    out << cmd << "\n";
+  for (const auto& c : m_commandHistory) {
+    out << c << "\n";
   }
 }
+
+void InteractiveShell::See(const std::string& name) {
+  if (name.empty()) {
+    std::cerr << "fccvis: .see requires a scene name\n";
+    return;
+  }
+  if (m_sceneManager.IsOpen(name)) {
+    m_sceneManager.Update(name);
+    return;
+  }
+  if (!m_sceneManager.Open(name)) {
+    std::cerr << "fccvis: could not open scene '" << name << "'\n";
+  }
+}
+
+void InteractiveShell::Close(const std::string& name) {
+  if (name.empty()) {
+    std::cerr << "fccvis: .close requires a scene name\n";
+    return;
+  }
+  m_sceneManager.Close(name);
+}
+
+void InteractiveShell::ListScenes() {
+  for (const auto& name : m_sceneManager.SceneNames()) { // your new accessor
+    std::cout << (m_sceneManager.IsOpen(*name) ? "* " : "  ") << name << "\n";
+  }
+}
+
+void InteractiveShell::ListOpen() {
+  for (const auto& scene : m_sceneManager.OpenScenes()) { // your new accessor
+    std::cout << scene->name << "\n"; // adjust to whatever RootScene actually exposes
+  }
+}
+
+void InteractiveShell::Help() {
+  std::cout <<
+    ".see <name>    open or refresh a scene\n" <<
+    ".close <name>  close an open scene\n" <<
+    ".scenes        list all known scenes ('*' = open)\n" <<
+    ".open          list currently open scenes\n" <<
+    ".save <path>   write session to a new options.cpp\n" <<
+    ".quit / .q     exit\n";
+}
+
 } // namespace fccvis::cli
