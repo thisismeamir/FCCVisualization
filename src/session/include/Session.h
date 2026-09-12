@@ -6,9 +6,9 @@
 #include <string>
 #include <vector>
 #include "MetaObjects.h"
-#include "SceneObjects.h"
 #include "Scene.h"
-
+#include "Event.h"
+#include "DetectorGeometry.h"
 
 namespace fccvis::session {
 
@@ -21,21 +21,16 @@ public:
   std::vector<std::shared_ptr<fccvis::scene::Scene>> scenes;
   std::shared_ptr<fccvis::scene::meta::LayoutNode> sceneLayout;  // scene names shown together
   std::optional<std::filesystem::path> geometryFilePath;
-  std::shared_ptr<scene::objects::DetectorGeometry> detectorGeometry;
+  std::shared_ptr<fccvis::data::events::DetectorGeometry> detectorGeometry;
 };
 
-struct Event
-{
-    std::vector<std::shared_ptr<scene::objects::Hit>> hits;
-    std::vector<std::shared_ptr<scene::objects::Marker>> markers;
-    std::vector<std::shared_ptr<scene::objects::Line>> lines;
-    std::vector<std::shared_ptr<scene::objects::Track>> tracks;
-};
 
 class SessionData
 {
 public:
-    std::vector<Event> events;
+    std::vector<fccvis::data::event::Event> events;
+
+    SessionData(std::filesystem::path& dataFilePath);
 };
 
 
@@ -66,5 +61,17 @@ private:
 
     SessionData m_data;
     SessionOptions m_options;
+};
+
+
+Session* makeDefaultSession() {
+  Session *defaultSession = new Session(
+    "Default Session",
+    "",
+    ""
+  );
+
+
+  return defaultSession;
 };
 }

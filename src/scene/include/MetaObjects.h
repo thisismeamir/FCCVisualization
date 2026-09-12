@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 #include "BaseSessionObject.h"
+#include "Event.h"
 namespace fccvis::scene::meta {
 
 enum class LayoutKind { Pack, Tab, Leaf };
@@ -35,7 +36,7 @@ class Filter : public BaseSessionObject
 {
 public:
   using BaseSessionObject::BaseSessionObject;
-  // TODO: filter payload — geometric region, detector-component constraint, etc.
+  bool Passes(fccvis::data::event::Event);
 };
 
 class SceneOptions : public fccvis::scene::BaseSessionObject {

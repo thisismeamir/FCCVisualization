@@ -11,7 +11,6 @@ class BaseSessionObject
 public:
     explicit BaseSessionObject(std::string objectName) : name(std::move(objectName)) {}
     virtual ~BaseSessionObject() = default;
-
     std::string name;
 };
 }
