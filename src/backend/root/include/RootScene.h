@@ -20,6 +20,7 @@ public:
     TEveScene* EveScene() const { return m_pEveScene; }
 
     void SyncCamera();  // pushes Scene::camera's position/direction into the TGLViewer
+    std::shared_ptr<fccvis::scene::Scene> GetSceneAbstract();
 private:
     std::shared_ptr<fccvis::scene::Scene> m_scene;
     TEveViewer* m_pViewer;

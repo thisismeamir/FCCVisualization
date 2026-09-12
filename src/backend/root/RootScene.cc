@@ -1,4 +1,5 @@
 #include "RootScene.h"
+#include "Scene.h"
 #include <TEveManager.h>
 #include <TEveScene.h>
 #include <TEveViewer.h>
@@ -83,5 +84,8 @@ void RootScene::SyncCamera()
     glViewer->RequestDraw();
 }
 
+std::shared_ptr<fccvis::scene::Scene> RootScene::GetSceneAbstract() {
+  return m_scene;
+}
 
 }

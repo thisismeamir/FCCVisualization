@@ -65,12 +65,15 @@ void RootSceneManager::CloseAll() {
                         // map-iteration order
 }
 
-std::vector<std::shared_ptr<fccvis::scene::Scene>>
-RootSceneManager::GetAllScenes() {
-  return m_session.GetOptions().scenes;
+std::vector<std::shared_ptr<fccvis::scene::Scene>> RootSceneManager::OpenScenes() {
+  std::vector<std::shared_ptr<fccvis::scene::Scene>> abstractScenes;
+  for (const auto& rootScene: m_openScenes) {
+    abstractScenes.push_back(rootScene.second->GetSceneAbstract());
+  }
+  return abstractScenes;
 }
 
-std::vector<std::shared_ptr<std::string>> RootSceneManager::NameAllScenes() {
+std::vector<std::shared_ptr<std::string>> RootSceneManager::SceneNames() {
   std::vector<std::shared_ptr<std::string>> names{};
 
   for (const auto &scene : m_session.GetOptions().scenes) {

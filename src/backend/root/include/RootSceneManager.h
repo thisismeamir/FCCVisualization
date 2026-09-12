@@ -30,8 +30,8 @@ public:
     RootScene* Get(const std::string& sceneName) const;
     bool IsOpen(const std::string& sceneName) const;
     void CloseAll();
-    std::vector<std::shared_ptr<fccvis::scene::Scene>> GetAllScenes();
-    std::vector<std::shared_ptr<std::string>> NameAllScenes();
+    std::vector<std::shared_ptr<fccvis::scene::Scene>> OpenScenes();
+    std::vector<std::shared_ptr<std::string>> SceneNames();
 private:
     fccvis::session::Session& m_session;
     std::map<std::string, std::unique_ptr<RootScene>> m_openScenes;
