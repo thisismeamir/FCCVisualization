@@ -3,6 +3,7 @@
 # ---------------------------------------------------------------------------
 add_subdirectory(api)
 add_subdirectory(core)
+add_subdirectory(data)
 add_subdirectory(scene)
 add_subdirectory(filter)
 add_subdirectory(geometry)
