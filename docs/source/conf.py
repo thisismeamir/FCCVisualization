@@ -30,7 +30,7 @@ myst_enable_extensions = [
 ]
 
 breathe_projects = {
-    "fccvis" : "../docs/doxygen/xml"
+    "fccvis" : "../doxygen/xml"
 }
 
 breathe_default_project = "fccvis"
