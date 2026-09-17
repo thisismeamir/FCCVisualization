@@ -1,19 +1,19 @@
 <map id="src/scene/include/Scene.h" name="src/scene/include/Scene.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="151,5,340,33"/>
+<area shape="rect" id="Node000001" title="Scene definition and visualization configuration." alt="" coords="151,5,340,33"/>
 <area shape="rect" id="Node000002" href="$RootScene_8cc.html" title=" " alt="" coords="24,182,243,210"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,42,168,59,147,82,136,108,132,135,134,182,129,181,126,135,131,106,142,80,164,55,195,38"/>
 <area shape="rect" id="Node000003" href="$RootSceneManager_8cc.html" title=" " alt="" coords="26,266,228,311"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,41,142,61,92,90,48,128,29,150,15,175,8,196,15,217,38,244,69,265,65,267,34,248,10,220,3,196,10,173,25,147,44,124,89,86,139,57,189,37"/>
-<area shape="rect" id="Node000004" href="$RootScene_8h.html" title=" " alt="" coords="156,81,335,126"/>
+<area shape="rect" id="Node000004" href="$RootScene_8h.html" title="ROOT/TEve materialization of an FCCVisualization scene." alt="" coords="156,81,335,126"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="247,46,248,81,243,80,245,51"/>
-<area shape="rect" id="Node000005" href="$RootSceneManager_8h.html" title=" " alt="" coords="268,174,447,218"/>
+<area shape="rect" id="Node000005" href="$RootSceneManager_8h.html" title="Management of materialized ROOT/TEve visualization scenes." alt="" coords="268,174,447,218"/>
 <area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="298,37,327,55,349,80,360,103,364,128,364,174,359,172,359,129,354,105,345,82,324,59,298,43"/>
-<area shape="rect" id="Node000009" href="$Session_8h.html" title=" " alt="" coords="532,81,676,126"/>
+<area shape="rect" id="Node000009" href="$Session_8h.html" title="Session state, input data, and visualization configuration." alt="" coords="532,81,676,126"/>
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="318,34,534,84,530,87,318,40"/>
 <area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="206,137,152,183,148,180,209,133"/>
 <area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="284,133,334,173,328,173,284,138"/>
 <area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="286,226,183,268,181,263,290,223"/>
-<area shape="rect" id="Node000006" href="$InteractiveShell_8h.html" title=" " alt="" coords="392,266,576,311"/>
+<area shape="rect" id="Node000006" href="$InteractiveShell_8h.html" title="Interactive command&#45;line shell for FCCVisualization." alt="" coords="392,266,576,311"/>
 <area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="401,225,457,266,451,266,399,230"/>
 <area shape="rect" id="Node000007" href="$InteractiveShell_8cc.html" title=" " alt="" coords="393,359,576,387"/>
 <area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="486,325,486,360,482,357,482,329"/>
@@ -24,7 +24,7 @@
 <area shape="poly" id="edge13_Node000009_Node000008" title=" " alt="" coords="661,132,684,150,701,172,713,197,722,223,730,276,731,324,728,360,724,357,726,324,725,277,716,224,708,199,697,175,680,154,660,137"/>
 <area shape="rect" id="Node000010" href="$GuiApplication_8cc.html" title=" " alt="" coords="762,275,943,302"/>
 <area shape="poly" id="edge15_Node000009_Node000010" title=" " alt="" coords="672,130,709,149,745,172,775,197,804,225,845,275,840,274,800,229,772,201,741,176,707,154,671,135"/>
-<area shape="rect" id="Node000011" href="$GuiApplication_8h.html" title=" " alt="" coords="812,182,1039,210"/>
+<area shape="rect" id="Node000011" href="$GuiApplication_8h.html" title="ROOT GUI application lifecycle management." alt="" coords="812,182,1039,210"/>
 <area shape="poly" id="edge16_Node000009_Node000011" title=" " alt="" coords="692,126,881,181,876,182,691,132"/>
 <area shape="rect" id="Node000012" href="$Session_8cc.html" title=" " alt="" coords="522,182,687,210"/>
 <area shape="poly" id="edge19_Node000009_Node000012" title=" " alt="" coords="606,139,607,183,602,180,603,143"/>

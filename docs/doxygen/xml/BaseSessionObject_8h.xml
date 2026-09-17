@@ -2,8 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="BaseSessionObject_8h" kind="file" language="C++">
     <compoundname>BaseSessionObject.h</compoundname>
-    <includes local="no">algorithm</includes>
     <includes local="no">string</includes>
+    <includes local="no">utility</includes>
     <includedby refid="MetaObjects_8h" local="yes">src/scene/include/MetaObjects.h</includedby>
     <includedby refid="Scene_8h" local="yes">src/scene/include/Scene.h</includedby>
     <incdepgraph>
@@ -16,10 +16,10 @@
         </childnode>
       </node>
       <node id="2">
-        <label>algorithm</label>
+        <label>string</label>
       </node>
       <node id="3">
-        <label>string</label>
+        <label>utility</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -130,26 +130,39 @@
     <innernamespace refid="namespacefccvis">fccvis</innernamespace>
     <innernamespace refid="namespacefccvis_1_1scene">fccvis::scene</innernamespace>
     <briefdescription>
+<para>Base class for named objects belonging to a visualization session. </para>
     </briefdescription>
     <detaileddescription>
+<para>Provides a common identity mechanism for objects that are part of an FCCVisualization scene or session. Every derived object has a human-readable name that can be used to identify and reference it within the visualization configuration.</para>
+<para><simplesect kind="author"><para>Amir H. Ebrahimnezhad <ulink url="mailto:amir.ebh@cern.ch">amir.ebh@cern.ch</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright 2026 FCC Project at CERN</para>
+</simplesect>
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <verbatim>https://www.apache.org/licenses/LICENSE-2.0
+</verbatim></para>
+<para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6" refid="namespacefccvis_1_1scene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1scene" kindref="compound">fccvis::scene</ref><sp/>{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>A<sp/>base<sp/>for<sp/>all<sp/>the<sp/>object<sp/>in<sp/>a<sp/>scene<sp/>to<sp/>identify<sp/>them<sp/>using<sp/>the<sp/>name.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9" refid="classfccvis_1_1scene_1_1BaseSessionObject" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref></highlight></codeline>
-<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="12" refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref>(std::string<sp/>objectName)<sp/>:<sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kindref="member">name</ref>(std::move(objectName))<sp/>{}</highlight></codeline>
-<codeline lineno="13" refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" kindref="member">~BaseSessionObject</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="14" refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kindref="member">name</ref>;</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="namespacefccvis_1_1scene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1scene" kindref="compound">fccvis::scene</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classfccvis_1_1scene_1_1BaseSessionObject" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67" refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref>(std::string<sp/>objectName)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kindref="member">name</ref>(std::move(objectName))<sp/>{}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" kindref="member">~BaseSessionObject</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::scene</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/scene/include/BaseSessionObject.h"/>
   </compounddef>

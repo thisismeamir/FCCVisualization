@@ -113,16 +113,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>Manages the ROOT GUI application for FCCVisualization.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="GuiApplication_8h_source.html">GuiApplication.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a402348fc86f726c18cac134241250135" id="r_a402348fc86f726c18cac134241250135"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a402348fc86f726c18cac134241250135">GuiApplication</a> (int &amp;argc, char **argv, <a class="el" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a> &amp;session)</td></tr>
+<tr class="memdesc:a402348fc86f726c18cac134241250135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a GUI application.  <br /></td></tr>
 <tr class="memitem:ae3646b04d083c560a778e91fd198ba47" id="r_ae3646b04d083c560a778e91fd198ba47"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae3646b04d083c560a778e91fd198ba47">~GuiApplication</a> ()</td></tr>
+<tr class="memdesc:ae3646b04d083c560a778e91fd198ba47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the GUI application.  <br /></td></tr>
 <tr class="memitem:a03dc968acfcbc83815709953d36d0973" id="r_a03dc968acfcbc83815709953d36d0973"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a03dc968acfcbc83815709953d36d0973">Run</a> ()</td></tr>
+<tr class="memdesc:a03dc968acfcbc83815709953d36d0973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the GUI event loop.  <br /></td></tr>
 <tr class="memitem:a236c303ead999265807969165a57b01f" id="r_a236c303ead999265807969165a57b01f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a236c303ead999265807969165a57b01f">Terminate</a> ()</td></tr>
+<tr class="memdesc:a236c303ead999265807969165a57b01f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request termination of the GUI application.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the ROOT GUI application for FCCVisualization. </p>
+<p><a class="el" href="classfccvis_1_1gui_1_1GuiApplication.html" title="Manages the ROOT GUI application for FCCVisualization.">GuiApplication</a> owns the ROOT <code>TApplication</code> instance responsible for managing the graphical application's event loop.</p>
+<p>The application operates on an existing <a class="el" href="classfccvis_1_1session_1_1Session.html" title="fccvis::session::Session">fccvis::session::Session</a>, which is referenced rather than owned by the GUI application. The lifetime of the Session must therefore extend beyond the lifetime of the <a class="el" href="classfccvis_1_1gui_1_1GuiApplication.html" title="Manages the ROOT GUI application for FCCVisualization.">GuiApplication</a>.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">fccvis::session::Session</a> </dd>
+<dd>
+TApplication </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a402348fc86f726c18cac134241250135" name="a402348fc86f726c18cac134241250135"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a402348fc86f726c18cac134241250135">&#9670;&#160;</a></span>GuiApplication()</h2>
 
@@ -147,6 +161,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construct a GUI application. </p>
+<p>Creates the underlying ROOT <code>TApplication</code> using the supplied command-line arguments and associates the application with an existing visualization session.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Reference to the application's command-line argument count. </td></tr>
+    <tr><td class="paramname">argv</td><td>Command-line arguments passed to the ROOT application. </td></tr>
+    <tr><td class="paramname">session</td><td>Session whose data and configuration are visualized.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The session is not owned by <a class="el" href="classfccvis_1_1gui_1_1GuiApplication.html" title="Manages the ROOT GUI application for FCCVisualization.">GuiApplication</a>. </dd></dl>
+
 </div>
 </div>
 <a id="ae3646b04d083c560a778e91fd198ba47" name="ae3646b04d083c560a778e91fd198ba47"></a>
@@ -163,6 +189,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroy the GUI application. </p>
+<p>Releases the owned ROOT <code>TApplication</code> instance. The associated Session is not destroyed because <a class="el" href="classfccvis_1_1gui_1_1GuiApplication.html" title="Manages the ROOT GUI application for FCCVisualization.">GuiApplication</a> does not own it. </p>
 
 </div>
 </div>
@@ -181,13 +210,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Start the GUI event loop. </p>
+<p>Runs the underlying ROOT application and processes graphical events until the application is terminated. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1gui_1_1GuiApplication_a03dc968acfcbc83815709953d36d0973_icgraph.png" border="0" usemap="#aclassfccvis_1_1gui_1_1GuiApplication_a03dc968acfcbc83815709953d36d0973_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1gui_1_1GuiApplication_a03dc968acfcbc83815709953d36d0973_icgraph" id="aclassfccvis_1_1gui_1_1GuiApplication_a03dc968acfcbc83815709953d36d0973_icgraph">
-<area shape="rect" title=" " alt="" coords="349,29,572,57"/>
-<area shape="rect" href="namespacefccvis_1_1cli.html#a633227c3a37438a118039eb88649b120" title=" " alt="" coords="112,29,301,57"/>
+<area shape="rect" title="Start the GUI event loop." alt="" coords="349,29,572,57"/>
+<area shape="rect" href="namespacefccvis_1_1cli.html#a633227c3a37438a118039eb88649b120" title="Run the FCCVisualization application." alt="" coords="112,29,301,57"/>
 <area shape="poly" title=" " alt="" coords="330,43,301,46,301,41,336,43"/>
 <area shape="poly" title=" " alt="" coords="234,14,225,10,207,8,189,10,180,15,178,20,182,30,177,28,172,20,176,11,188,5,207,3,227,5,239,14"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="10,29,64,57"/>
@@ -212,6 +244,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Request termination of the GUI application. </p>
+<p>Stops the graphical application's event loop. </p>
 
 </div>
 </div>

@@ -2,21 +2,46 @@
 \hypertarget{classfccvis_1_1session_1_1SessionOptions}{}\label{classfccvis_1_1session_1_1SessionOptions}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}}
 
 
+Visualization and runtime configuration for a session.  
+
+
+
+
 {\ttfamily \+\#include $<$Session.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera}} $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a0f5da7b2a7b8e607707df594ffcdfb50}{cameras}}
-\item 
+\begin{DoxyCompactList}\small\item\em Cameras available to the session. \end{DoxyCompactList}\item 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter}} $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a27509f8d779705054af5423aebf71724}{filters}}
-\item 
+\begin{DoxyCompactList}\small\item\em Filters available to the session. \end{DoxyCompactList}\item 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a38476377e71e24b0cedb87b74a0981c2}{scenes}}
-\item 
+\begin{DoxyCompactList}\small\item\em Scenes available to the session. \end{DoxyCompactList}\item 
 std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{fccvis::\+scene::\+meta::\+\+Layout\+Node}} $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a9c55f994ba2b738b7ec957de56a9000f}{scene\+Layout}}
-\item 
+\begin{DoxyCompactList}\small\item\em Layout describing how scenes are presented together. \end{DoxyCompactList}\item 
 std::\+optional$<$ std::\+filesystem::\+path $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a70fb72404f388ebe66b86c4233e7d0d4}{geometry\+File\+Path}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Optional path to the detector geometry file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Visualization and runtime configuration for a session. 
+
+\doxylink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options} describes the objects that configure how a session is visualized. It contains the available cameras, filters, scenes, and scene layout, together with the optional path to a detector geometry description.
+
+The objects referenced by this class are shared through {\ttfamily std::\+shared\+\_\+ptr} because the same visualization object may be referenced by multiple parts of the visualization system.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session} 
+
+\doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera} 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter} 
+
+\doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{fccvis::\+scene::\+meta::\+\+Layout\+Node} 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1session_1_1SessionOptions_doc-variable-members}
@@ -28,31 +53,57 @@ std::\+optional$<$ std::\+filesystem::\+path $>$ \doxymbox{\hyperlink{classfccvi
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1SessionOptions_a0f5da7b2a7b8e607707df594ffcdfb50} 
 std::\+vector$<$std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera}}$>$ $>$ fccvis::\+session::\+\+Session\+Options::\+cameras}
 
-\Hypertarget{classfccvis_1_1session_1_1SessionOptions_a27509f8d779705054af5423aebf71724}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!filters@{filters}}
+
+
+Cameras available to the session. 
+
+Each camera is represented by a shared pointer to a \doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera} object.
+
+A camera describes a viewpoint and related camera configuration that can be used when displaying a scene. \Hypertarget{classfccvis_1_1session_1_1SessionOptions_a27509f8d779705054af5423aebf71724}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!filters@{filters}}
 \index{filters@{filters}!fccvis::session::SessionOptions@{fccvis::session::SessionOptions}}
 \doxysubsubsection{\texorpdfstring{filters}{filters}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1SessionOptions_a27509f8d779705054af5423aebf71724} 
 std::\+vector$<$std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter}}$>$ $>$ fccvis::\+session::\+\+Session\+Options::\+filters}
 
-\Hypertarget{classfccvis_1_1session_1_1SessionOptions_a70fb72404f388ebe66b86c4233e7d0d4}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!geometryFilePath@{geometryFilePath}}
+
+
+Filters available to the session. 
+
+Each filter is represented by a shared pointer to a \doxylink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter} object.
+
+Filters control which visualization objects or event data are included in a rendered view. \Hypertarget{classfccvis_1_1session_1_1SessionOptions_a70fb72404f388ebe66b86c4233e7d0d4}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!geometryFilePath@{geometryFilePath}}
 \index{geometryFilePath@{geometryFilePath}!fccvis::session::SessionOptions@{fccvis::session::SessionOptions}}
 \doxysubsubsection{\texorpdfstring{geometryFilePath}{geometryFilePath}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1SessionOptions_a70fb72404f388ebe66b86c4233e7d0d4} 
 std::\+optional$<$std::\+filesystem::\+path$>$ fccvis::\+session::\+\+Session\+Options::\+geometry\+File\+Path}
 
-\Hypertarget{classfccvis_1_1session_1_1SessionOptions_a9c55f994ba2b738b7ec957de56a9000f}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!sceneLayout@{sceneLayout}}
+
+
+Optional path to the detector geometry file. 
+
+If present, this path identifies the geometry resource associated with the session. \Hypertarget{classfccvis_1_1session_1_1SessionOptions_a9c55f994ba2b738b7ec957de56a9000f}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!sceneLayout@{sceneLayout}}
 \index{sceneLayout@{sceneLayout}!fccvis::session::SessionOptions@{fccvis::session::SessionOptions}}
 \doxysubsubsection{\texorpdfstring{sceneLayout}{sceneLayout}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1SessionOptions_a9c55f994ba2b738b7ec957de56a9000f} 
 std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{fccvis::\+scene::\+meta::\+\+Layout\+Node}}$>$ fccvis::\+session::\+\+Session\+Options::\+scene\+Layout}
 
-\Hypertarget{classfccvis_1_1session_1_1SessionOptions_a38476377e71e24b0cedb87b74a0981c2}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!scenes@{scenes}}
+
+
+Layout describing how scenes are presented together. 
+
+The layout is represented by a tree of \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{fccvis::\+scene::\+meta::\+\+Layout\+Node} objects. It determines how scene views are arranged and which scene names are shown together. \Hypertarget{classfccvis_1_1session_1_1SessionOptions_a38476377e71e24b0cedb87b74a0981c2}\index{fccvis::session::SessionOptions@{fccvis::session::SessionOptions}!scenes@{scenes}}
 \index{scenes@{scenes}!fccvis::session::SessionOptions@{fccvis::session::SessionOptions}}
 \doxysubsubsection{\texorpdfstring{scenes}{scenes}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1SessionOptions_a38476377e71e24b0cedb87b74a0981c2} 
 std::\+vector$<$std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}}$>$ $>$ fccvis::\+session::\+\+Session\+Options::\+scenes}
 
 
+
+Scenes available to the session. 
+
+Each scene is represented by a shared pointer to a \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} object.
+
+A scene defines a reusable visualization configuration that can be applied to event data. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

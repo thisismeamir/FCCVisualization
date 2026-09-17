@@ -2,6 +2,11 @@
 \hypertarget{classfccvis_1_1scene_1_1Scene}{}\label{classfccvis_1_1scene_1_1Scene}\index{fccvis::scene::Scene@{fccvis::scene::Scene}}
 
 
+A reusable visualization scene.  
+
+
+
+
 {\ttfamily \+\#include $<$Scene.\+h$>$}
 
 
@@ -28,28 +33,54 @@ Collaboration diagram for fccvis::scene::Scene:
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_ad673226e62b7c89b1dbdd0ee589a3c52}{Scene}} (std::\+string scene\+Name, std::\+string options\+Name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Construct a scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::\+scene::\+\+Base\+Session\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{Base\+Session\+Object}} (std::\+string object\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a named session object. \end{DoxyCompactList}\item 
 virtual \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_aad5f8ee5d8196db921752e9157cdbe42}{\texorpdfstring{$\sim$}{\string~}\+Base\+Session\+Object}} ()=default
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destroy the session object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera}} $>$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a65a3d5f541efe6c8238945e377edf558}{camera}}
-\item 
+\begin{DoxyCompactList}\small\item\em Camera associated with the scene. \end{DoxyCompactList}\item 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter}} $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_af0c6dd7d9700550a8b81d75a880433ad}{filters}}
-\item 
+\begin{DoxyCompactList}\small\item\em Filters applied to the scene. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::\+scene::\+meta::\+\+Scene\+Options}} \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a939d9f1437dded2002ec08717080c355}{options}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Scene-\/specific visualization options. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::\+scene::\+\+Base\+Session\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Name identifying the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A reusable visualization scene. 
+
+A \doxylink{classfccvis_1_1scene_1_1Scene}{Scene} represents a named visualization configuration within an FCCVisualization session. It combines:
+
+
+\begin{DoxyItemize}
+\item a scene name inherited from \doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{Base\+Session\+Object};
+\item an optional camera configuration;
+\item a collection of visualization filters;
+\item scene-\/specific rendering and display options.
+\end{DoxyItemize}
+
+A scene can therefore describe how a particular view of event data should be presented without being tied to a specific event.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{Base\+Session\+Object} 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera} 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter} 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::\+scene::\+meta::\+\+Scene\+Options} 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1scene_1_1Scene_doc-constructors}
@@ -61,6 +92,19 @@ std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a69
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1Scene_ad673226e62b7c89b1dbdd0ee589a3c52} 
 fccvis::\+scene::\+\+Scene::\+\+Scene (\begin{DoxyParamCaption}\item[{std::\+string}]{scene\+Name}{, }\item[{std::\+string}]{options\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct a scene. 
+
+The supplied scene name is passed to \doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{Base\+Session\+Object} and the options name is used to initialize the scene\textquotesingle{}s \doxylink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::\+scene::\+meta::\+\+Scene\+Options} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & Name identifying the scene. \\
+\hline
+{\em options\+Name} & Name identifying the scene options. \\
+\hline
+\end{DoxyParams}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -80,18 +124,49 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1Scene_a65a3d5f541efe6c8238945e377edf558} 
 std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera}}$>$ fccvis::\+scene::\+\+Scene::\+camera}
 
+
+
+Camera associated with the scene. 
+
+The camera defines the viewpoint from which the scene is displayed.
+
+A shared pointer is used because camera objects may be shared between multiple parts of a session configuration.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera} 
+\end{DoxySeeAlso}
 \Hypertarget{classfccvis_1_1scene_1_1Scene_af0c6dd7d9700550a8b81d75a880433ad}\index{fccvis::scene::Scene@{fccvis::scene::Scene}!filters@{filters}}
 \index{filters@{filters}!fccvis::scene::Scene@{fccvis::scene::Scene}}
 \doxysubsubsection{\texorpdfstring{filters}{filters}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1Scene_af0c6dd7d9700550a8b81d75a880433ad} 
 std::\+vector$<$std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter}}$>$ $>$ fccvis::\+scene::\+\+Scene::\+filters}
 
+
+
+Filters applied to the scene. 
+
+Filters determine which visualization content is included in or excluded from the scene.
+
+Each filter is shared through a {\ttfamily std::\+shared\+\_\+ptr} so that filter definitions can be reused across scenes.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter} 
+\end{DoxySeeAlso}
 \Hypertarget{classfccvis_1_1scene_1_1Scene_a939d9f1437dded2002ec08717080c355}\index{fccvis::scene::Scene@{fccvis::scene::Scene}!options@{options}}
 \index{options@{options}!fccvis::scene::Scene@{fccvis::scene::Scene}}
 \doxysubsubsection{\texorpdfstring{options}{options}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1Scene_a939d9f1437dded2002ec08717080c355} 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::\+scene::\+meta::\+\+Scene\+Options}} fccvis::\+scene::\+\+Scene::\+options}
 
+
+
+Scene-\/specific visualization options. 
+
+Contains the configuration identified by the options name supplied when constructing the scene.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::\+scene::\+meta::\+\+Scene\+Options} 
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}

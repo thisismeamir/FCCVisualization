@@ -12,12 +12,14 @@
         <qualifiedname>fccvis::cli::CliOptions::guiRequested</qualifiedname>
         <initializer>= false</initializer>
         <briefdescription>
+<para>Whether the graphical user interface was requested. </para>
         </briefdescription>
         <detaileddescription>
+<para>If <computeroutput>true</computeroutput>, the application starts its graphical interface. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/cli/include/CliOptions.h" line="6" column="8" bodyfile="src/cli/include/CliOptions.h" bodystart="6" bodyend="-1"/>
+        <location file="src/cli/include/CliOptions.h" line="54" column="8" bodyfile="src/cli/include/CliOptions.h" bodystart="54" bodyend="-1"/>
         <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
         <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
       </memberdef>
@@ -29,12 +31,14 @@
         <qualifiedname>fccvis::cli::CliOptions::interactive</qualifiedname>
         <initializer>= true</initializer>
         <briefdescription>
+<para>Whether interactive mode is enabled. </para>
         </briefdescription>
         <detaileddescription>
+<para>Interactive mode controls whether the application provides an interactive command interface after initialization. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/cli/include/CliOptions.h" line="7" column="8" bodyfile="src/cli/include/CliOptions.h" bodystart="7" bodyend="-1"/>
+        <location file="src/cli/include/CliOptions.h" line="62" column="8" bodyfile="src/cli/include/CliOptions.h" bodystart="62" bodyend="-1"/>
         <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
         <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
       </memberdef>
@@ -45,12 +49,14 @@
         <name>dataFile</name>
         <qualifiedname>fccvis::cli::CliOptions::dataFile</qualifiedname>
         <briefdescription>
+<para>Optional path to the event-data file. </para>
         </briefdescription>
         <detaileddescription>
+<para>If present, the path identifies the input file containing the event data to be loaded into the visualization session. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/cli/include/CliOptions.h" line="8" column="17" bodyfile="src/cli/include/CliOptions.h" bodystart="8" bodyend="-1"/>
+        <location file="src/cli/include/CliOptions.h" line="70" column="17" bodyfile="src/cli/include/CliOptions.h" bodystart="70" bodyend="-1"/>
         <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
         <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
         <referencedby refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" compoundref="CliOptions_8cc" startline="47" endline="54">fccvis::cli::ValidateArgs</referencedby>
@@ -62,21 +68,26 @@
         <name>optionsFile</name>
         <qualifiedname>fccvis::cli::CliOptions::optionsFile</qualifiedname>
         <briefdescription>
+<para>Optional path to the visualization options file. </para>
         </briefdescription>
         <detaileddescription>
+<para>If present, the path identifies the configuration file used to initialize the session&apos;s visualization options. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/cli/include/CliOptions.h" line="9" column="17" bodyfile="src/cli/include/CliOptions.h" bodystart="9" bodyend="-1"/>
+        <location file="src/cli/include/CliOptions.h" line="78" column="17" bodyfile="src/cli/include/CliOptions.h" bodystart="78" bodyend="-1"/>
         <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
         <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Command-line options for the FCCVisualization application. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref> represents the configuration produced by parsing the application&apos;s command-line arguments.</para>
+<para>The options determine which application interface is started and which optional input files are supplied to the session. </para>
     </detaileddescription>
-    <location file="src/cli/include/CliOptions.h" line="5" column="1" bodyfile="src/cli/include/CliOptions.h" bodystart="5" bodyend="10"/>
+    <location file="src/cli/include/CliOptions.h" line="48" column="1" bodyfile="src/cli/include/CliOptions.h" bodystart="48" bodyend="79"/>
     <listofallmembers>
       <member refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" prot="public" virt="non-virtual"><scope>fccvis::cli::CliOptions</scope><name>dataFile</name></member>
       <member refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" prot="public" virt="non-virtual"><scope>fccvis::cli::CliOptions</scope><name>guiRequested</name></member>

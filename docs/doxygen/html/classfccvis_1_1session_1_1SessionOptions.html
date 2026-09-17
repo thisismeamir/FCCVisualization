@@ -113,17 +113,38 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>Visualization and runtime configuration for a session.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Session_8h_source.html">Session.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0f5da7b2a7b8e607707df594ffcdfb50" id="r_a0f5da7b2a7b8e607707df594ffcdfb50"><td class="memItemLeft">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classfccvis_1_1scene_1_1meta_1_1Camera.html">fccvis::scene::meta::Camera</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0f5da7b2a7b8e607707df594ffcdfb50">cameras</a></td></tr>
+<tr class="memdesc:a0f5da7b2a7b8e607707df594ffcdfb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cameras available to the session.  <br /></td></tr>
 <tr class="memitem:a27509f8d779705054af5423aebf71724" id="r_a27509f8d779705054af5423aebf71724"><td class="memItemLeft">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classfccvis_1_1scene_1_1meta_1_1Filter.html">fccvis::scene::meta::Filter</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a27509f8d779705054af5423aebf71724">filters</a></td></tr>
+<tr class="memdesc:a27509f8d779705054af5423aebf71724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters available to the session.  <br /></td></tr>
 <tr class="memitem:a38476377e71e24b0cedb87b74a0981c2" id="r_a38476377e71e24b0cedb87b74a0981c2"><td class="memItemLeft">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classfccvis_1_1scene_1_1Scene.html">fccvis::scene::Scene</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a38476377e71e24b0cedb87b74a0981c2">scenes</a></td></tr>
+<tr class="memdesc:a38476377e71e24b0cedb87b74a0981c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scenes available to the session.  <br /></td></tr>
 <tr class="memitem:a9c55f994ba2b738b7ec957de56a9000f" id="r_a9c55f994ba2b738b7ec957de56a9000f"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html">fccvis::scene::meta::LayoutNode</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a9c55f994ba2b738b7ec957de56a9000f">sceneLayout</a></td></tr>
+<tr class="memdesc:a9c55f994ba2b738b7ec957de56a9000f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layout describing how scenes are presented together.  <br /></td></tr>
 <tr class="memitem:a70fb72404f388ebe66b86c4233e7d0d4" id="r_a70fb72404f388ebe66b86c4233e7d0d4"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a70fb72404f388ebe66b86c4233e7d0d4">geometryFilePath</a></td></tr>
+<tr class="memdesc:a70fb72404f388ebe66b86c4233e7d0d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional path to the detector geometry file.  <br /></td></tr>
 </table>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Visualization and runtime configuration for a session. </p>
+<p><a class="el" href="classfccvis_1_1session_1_1SessionOptions.html" title="Visualization and runtime configuration for a session.">SessionOptions</a> describes the objects that configure how a session is visualized. It contains the available cameras, filters, scenes, and scene layout, together with the optional path to a detector geometry description.</p>
+<p>The objects referenced by this class are shared through <code>std::shared_ptr</code> because the same visualization object may be referenced by multiple parts of the visualization system.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">fccvis::session::Session</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="A reusable visualization scene.">fccvis::scene::Scene</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1scene_1_1meta_1_1Camera.html" title="Camera configuration for a visualization scene.">fccvis::scene::meta::Camera</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1scene_1_1meta_1_1Filter.html" title="Filter configuration for a visualization scene.">fccvis::scene::meta::Filter</a> </dd>
+<dd>
+<a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html" title="Node in the hierarchical layout of visualization scenes.">fccvis::scene::meta::LayoutNode</a> </dd></dl>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a0f5da7b2a7b8e607707df594ffcdfb50" name="a0f5da7b2a7b8e607707df594ffcdfb50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f5da7b2a7b8e607707df594ffcdfb50">&#9670;&#160;</a></span>cameras</h2>
 
@@ -135,6 +156,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Cameras available to the session. </p>
+<p>Each camera is represented by a shared pointer to a <a class="el" href="classfccvis_1_1scene_1_1meta_1_1Camera.html" title="fccvis::scene::meta::Camera">fccvis::scene::meta::Camera</a> object.</p>
+<p>A camera describes a viewpoint and related camera configuration that can be used when displaying a scene. </p>
 
 </div>
 </div>
@@ -150,6 +175,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Filters available to the session. </p>
+<p>Each filter is represented by a shared pointer to a <a class="el" href="classfccvis_1_1scene_1_1meta_1_1Filter.html" title="fccvis::scene::meta::Filter">fccvis::scene::meta::Filter</a> object.</p>
+<p>Filters control which visualization objects or event data are included in a rendered view. </p>
+
 </div>
 </div>
 <a id="a70fb72404f388ebe66b86c4233e7d0d4" name="a70fb72404f388ebe66b86c4233e7d0d4"></a>
@@ -163,6 +192,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Optional path to the detector geometry file. </p>
+<p>If present, this path identifies the geometry resource associated with the session. </p>
 
 </div>
 </div>
@@ -178,6 +210,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Layout describing how scenes are presented together. </p>
+<p>The layout is represented by a tree of <a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html" title="fccvis::scene::meta::LayoutNode">fccvis::scene::meta::LayoutNode</a> objects. It determines how scene views are arranged and which scene names are shown together. </p>
+
 </div>
 </div>
 <a id="a38476377e71e24b0cedb87b74a0981c2" name="a38476377e71e24b0cedb87b74a0981c2"></a>
@@ -191,6 +226,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Scenes available to the session. </p>
+<p>Each scene is represented by a shared pointer to a <a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="fccvis::scene::Scene">fccvis::scene::Scene</a> object.</p>
+<p>A scene defines a reusable visualization configuration that can be applied to event data. </p>
 
 </div>
 </div>

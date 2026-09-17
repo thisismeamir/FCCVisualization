@@ -60,24 +60,43 @@
     <innernamespace refid="namespacefccvis">fccvis</innernamespace>
     <innernamespace refid="namespacefccvis_1_1cli">fccvis::cli</innernamespace>
     <briefdescription>
+<para>Command-line options and argument handling for FCCVisualization. </para>
     </briefdescription>
     <detaileddescription>
+<para>Defines the command-line configuration used to control application startup, including GUI mode, interactive mode, and optional input files.</para>
+<para><simplesect kind="author"><para>Amir H. Ebrahimnezhad <ulink url="mailto:amir.ebh@cern.ch">amir.ebh@cern.ch</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright 2026 FCC Project at CERN</para>
+</simplesect>
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <verbatim>https://www.apache.org/licenses/LICENSE-2.0
+</verbatim></para>
+<para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1cli" kindref="compound">fccvis::cli</ref><sp/>{</highlight></codeline>
-<codeline lineno="5" refid="structfccvis_1_1cli_1_1CliOptions" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref><sp/>{</highlight></codeline>
-<codeline lineno="6" refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" kindref="member">guiRequested</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="7" refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" kindref="member">interactive</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="8" refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" refkind="member"><highlight class="normal"><sp/><sp/>std::optional&lt;std::filesystem::path&gt;<sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" kindref="member">dataFile</ref>;</highlight></codeline>
-<codeline lineno="9" refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" refkind="member"><highlight class="normal"><sp/><sp/>std::optional&lt;std::filesystem::path&gt;<sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" kindref="member">optionsFile</ref>;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref><sp/><ref refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" kindref="member">ParseArgs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv);</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" kindref="member">ValidateArgs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref>&amp;<sp/>opts);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::cli</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1cli" kindref="compound">fccvis::cli</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structfccvis_1_1cli_1_1CliOptions" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref><sp/>{</highlight></codeline>
+<codeline lineno="54" refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" kindref="member">guiRequested</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" kindref="member">interactive</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" refkind="member"><highlight class="normal"><sp/><sp/>std::optional&lt;std::filesystem::path&gt;<sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" kindref="member">dataFile</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" refkind="member"><highlight class="normal"><sp/><sp/>std::optional&lt;std::filesystem::path&gt;<sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" kindref="member">optionsFile</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref><sp/><ref refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" kindref="member">ParseArgs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" kindref="member">ValidateArgs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref>&amp;<sp/>opts);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::cli</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/cli/include/CliOptions.h"/>
   </compounddef>

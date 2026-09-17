@@ -13,17 +13,17 @@
         <link refid="GuiApplication_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="8">
         <label>BaseSessionObject.h</label>
         <link refid="BaseSessionObject_8h"/>
-        <childnode refid="7" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -35,15 +35,19 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
       </node>
       <node id="9">
         <label>Scene.h</label>
         <link refid="Scene_8h"/>
-        <childnode refid="6" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -53,54 +57,51 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
         <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="16">
+      <node id="15">
         <label>TApplication.h</label>
       </node>
-      <node id="7">
-        <label>algorithm</label>
-      </node>
-      <node id="11">
+      <node id="10">
         <label>filesystem</label>
       </node>
       <node id="4">
         <label>memory</label>
       </node>
-      <node id="12">
+      <node id="11">
         <label>optional</label>
       </node>
-      <node id="13">
+      <node id="12">
         <label>podio/Frame.h</label>
       </node>
-      <node id="8">
+      <node id="5">
         <label>string</label>
       </node>
-      <node id="14">
+      <node id="13">
         <label>string_view</label>
       </node>
-      <node id="15">
+      <node id="14">
         <label>unordered_map</label>
       </node>
-      <node id="10">
+      <node id="6">
         <label>utility</label>
       </node>
-      <node id="5">
+      <node id="7">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -126,28 +127,51 @@
     <innernamespace refid="namespacefccvis">fccvis</innernamespace>
     <innernamespace refid="namespacefccvis_1_1gui">fccvis::gui</innernamespace>
     <briefdescription>
+<para>ROOT GUI application lifecycle management. </para>
     </briefdescription>
     <detaileddescription>
+<para>Defines the <ref refid="classfccvis_1_1gui_1_1GuiApplication" kindref="compound">fccvis::gui::GuiApplication</ref> class, which owns and manages the ROOT <computeroutput>TApplication</computeroutput> instance used by the FCCVisualization graphical interface.</para>
+<para>The GUI application is associated with an existing <ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> and provides the main event loop and termination interface for the graphical application.</para>
+<para><simplesect kind="author"><para>Amir H. Ebrahimnezhad <ulink url="mailto:amir.ebh@cern.ch">amir.ebh@cern.ch</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright 2026 FCC Project at CERN</para>
+</simplesect>
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <verbatim>https://www.apache.org/licenses/LICENSE-2.0
+</verbatim></para>
+<para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Session_8h" kindref="compound">Session.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TApplication.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1gui" kindref="compound">fccvis::gui</ref><sp/>{</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7" refid="classfccvis_1_1gui_1_1GuiApplication" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">GuiApplication</ref><sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">GuiApplication</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv,<sp/><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>&amp;<sp/><ref refid="namespacefccvis_1_1session" kindref="compound">session</ref>);</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">~GuiApplication</ref>();</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" kindref="member">Run</ref>();</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a236c303ead999265807969165a57b01f" kindref="member">Terminate</ref>();</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/>std::unique_ptr&lt;TApplication&gt;<sp/>m_application;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>&amp;<sp/>m_session;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Session_8h" kindref="compound">Session.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TApplication.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1gui" kindref="compound">fccvis::gui</ref><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classfccvis_1_1gui_1_1GuiApplication" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">GuiApplication</ref><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">GuiApplication</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>argc,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>&amp;<sp/><ref refid="namespacefccvis_1_1session" kindref="compound">session</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">~GuiApplication</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" kindref="member">Run</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a236c303ead999265807969165a57b01f" kindref="member">Terminate</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>std::unique_ptr&lt;TApplication&gt;<sp/>m_application;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>&amp;<sp/>m_session;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::gui</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/gui/include/GuiApplication.h"/>
   </compounddef>

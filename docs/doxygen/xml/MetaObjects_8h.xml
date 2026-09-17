@@ -3,17 +3,19 @@
   <compounddef id="MetaObjects_8h" kind="file" language="C++">
     <compoundname>MetaObjects.h</compoundname>
     <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">utility</includes>
     <includes local="no">vector</includes>
     <includes refid="BaseSessionObject_8h" local="yes">BaseSessionObject.h</includes>
     <includedby refid="Scene_8h" local="yes">src/scene/include/Scene.h</includedby>
     <includedby refid="Session_8h" local="yes">src/session/include/Session.h</includedby>
     <incdepgraph>
-      <node id="4">
+      <node id="6">
         <label>BaseSessionObject.h</label>
         <link refid="BaseSessionObject_8h"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -25,17 +27,21 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>algorithm</label>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>memory</label>
       </node>
-      <node id="6">
+      <node id="3">
         <label>string</label>
       </node>
-      <node id="3">
+      <node id="4">
+        <label>utility</label>
+      </node>
+      <node id="5">
         <label>vector</label>
       </node>
     </incdepgraph>
@@ -143,58 +149,79 @@
     <innernamespace refid="namespacefccvis_1_1scene">fccvis::scene</innernamespace>
     <innernamespace refid="namespacefccvis_1_1scene_1_1meta">fccvis::scene::meta</innernamespace>
     <briefdescription>
+<para>Metadata objects used to configure FCCVisualization scenes. </para>
     </briefdescription>
     <detaileddescription>
+<para>Defines the metadata and configuration objects used by the scene system, including cameras, filters, scene options, and hierarchical scene layouts.</para>
+<para><simplesect kind="author"><para>Amir H. Ebrahimnezhad <ulink url="mailto:amir.ebh@cern.ch">amir.ebh@cern.ch</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright 2026 FCC Project at CERN</para>
+</simplesect>
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <verbatim>https://www.apache.org/licenses/LICENSE-2.0
+</verbatim></para>
+<para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="BaseSessionObject_8h" kindref="compound">BaseSessionObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1scene_1_1meta" kindref="compound">fccvis::scene::meta</ref><sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9" refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" kindref="member">LayoutKind</ref><sp/>{<sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" kindref="member">Pack</ref>,<sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" kindref="member">Tab</ref>,<sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" kindref="member">Leaf</ref><sp/>};</highlight></codeline>
-<codeline lineno="10" refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kindref="member">PackOrientation</ref><sp/>{<sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">Horizontal</ref>,<sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012" kindref="member">Vertical</ref><sp/>};</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">LayoutNode</ref><sp/>{</highlight></codeline>
-<codeline lineno="13" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" kindref="member">LayoutKind</ref><sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" kindref="member">kind</ref>;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pack-only</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kindref="member">PackOrientation</ref><sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" kindref="member">orientation</ref><sp/>=<sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">PackOrientation::Horizontal</ref>;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Leaf-only:<sp/>name<sp/>of<sp/>the<sp/>Scene<sp/>this<sp/>slot<sp/>materializes</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" kindref="member">sceneName</ref>;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pack/Tab-only:<sp/>children,<sp/>each<sp/>optionally<sp/>weighted<sp/>(Pack)<sp/>or<sp/>unweighted<sp/>(Tab)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;std::shared_ptr&lt;LayoutNode&gt;,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*weight,<sp/>Pack<sp/>only*/</highlight><highlight class="normal">&gt;&gt;<sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" kindref="member">children</ref>;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="classfccvis_1_1scene_1_1meta_1_1Camera" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">Camera</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref></highlight></codeline>
-<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject::BaseSessionObject</ref>;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="classfccvis_1_1scene_1_1meta_1_1Camera_1ab2468abaa4d03a6aca891ac7defde84e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera_1ab2468abaa4d03a6aca891ac7defde84e" kindref="member">positionVector</ref>;</highlight></codeline>
-<codeline lineno="32" refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a19defb3ee986339f458c989538597ba1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a19defb3ee986339f458c989538597ba1" kindref="member">directionVector</ref>;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="BaseSessionObject_8h" kindref="compound">BaseSessionObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="classfccvis_1_1scene_1_1meta_1_1Filter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">Filter</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref></highlight></codeline>
-<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject::BaseSessionObject</ref>;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41" refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kindref="compound">SceneOptions</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref><sp/>{</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject::BaseSessionObject</ref>;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>scene<sp/>options,<sp/>coloring,<sp/>and<sp/>other<sp/>possible<sp/>things.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1scene_1_1meta" kindref="compound">fccvis::scene::meta</ref><sp/>{</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60" refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" kindref="member">LayoutKind</ref><sp/>{</highlight></codeline>
+<codeline lineno="67" refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" kindref="member">Pack</ref>,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" kindref="member">Tab</ref>,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" kindref="member">Leaf</ref></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kindref="member">PackOrientation</ref><sp/>{</highlight></codeline>
+<codeline lineno="90" refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">Horizontal</ref>,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012" kindref="member">Vertical</ref></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">LayoutNode</ref><sp/>{</highlight></codeline>
+<codeline lineno="128" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" kindref="member">LayoutKind</ref><sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" kindref="member">kind</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kindref="member">PackOrientation</ref><sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" kindref="member">orientation</ref><sp/>=<sp/><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">PackOrientation::Horizontal</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" kindref="member">sceneName</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>std::vector&lt;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::pair&lt;std::shared_ptr&lt;LayoutNode&gt;,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>weight,<sp/>Pack<sp/>only<sp/>*/</highlight><highlight class="normal">&gt;&gt;</highlight></codeline>
+<codeline lineno="164" refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a5938a74025c87c462fe1872595c2a915" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a5938a74025c87c462fe1872595c2a915" kindref="member">children</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="classfccvis_1_1scene_1_1meta_1_1Camera" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">Camera</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject::BaseSessionObject</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="classfccvis_1_1scene_1_1meta_1_1Camera_1ab2468abaa4d03a6aca891ac7defde84e" refkind="member"><highlight class="normal"><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera_1ab2468abaa4d03a6aca891ac7defde84e" kindref="member">positionVector</ref>;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a19defb3ee986339f458c989538597ba1" refkind="member"><highlight class="normal"><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a19defb3ee986339f458c989538597ba1" kindref="member">directionVector</ref>;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="classfccvis_1_1scene_1_1meta_1_1Filter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">Filter</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject::BaseSessionObject</ref>;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250" refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kindref="compound">SceneOptions</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref><sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject::BaseSessionObject</ref>;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::scene::meta</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/scene/include/MetaObjects.h"/>
   </compounddef>

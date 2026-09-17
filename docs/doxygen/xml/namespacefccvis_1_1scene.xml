@@ -6,9 +6,13 @@
     <innerclass refid="classfccvis_1_1scene_1_1Scene" prot="public">fccvis::scene::Scene</innerclass>
     <innernamespace refid="namespacefccvis_1_1scene_1_1meta">fccvis::scene::meta</innernamespace>
     <briefdescription>
+<para>Visualization scene objects. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">Scene</ref> and visualization objects.</para>
+<para>Contains the base and concrete objects used to describe the structure and configuration of FCCVisualization scenes.</para>
+<para>The <computeroutput><ref refid="namespacefccvis_1_1scene" kindref="compound">fccvis::scene</ref></computeroutput> namespace contains the objects that define reusable visualization configurations. </para>
     </detaileddescription>
-    <location file="src/scene/include/BaseSessionObject.h" line="6" column="1"/>
+    <location file="src/scene/include/BaseSessionObject.h" line="38" column="1"/>
   </compounddef>
 </doxygen>

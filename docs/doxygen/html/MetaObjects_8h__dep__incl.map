@@ -1,22 +1,22 @@
 <map id="src/scene/include/MetaObjects.h" name="src/scene/include/MetaObjects.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="262,5,493,33"/>
-<area shape="rect" id="Node000002" href="$Scene_8h.html" title=" " alt="" coords="218,81,407,109"/>
+<area shape="rect" id="Node000001" title="Metadata objects used to configure FCCVisualization scenes." alt="" coords="262,5,493,33"/>
+<area shape="rect" id="Node000002" href="$Scene_8h.html" title="Scene definition and visualization configuration." alt="" coords="218,81,407,109"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="354,47,326,82,322,79,358,43"/>
-<area shape="rect" id="Node000010" href="$Session_8h.html" title=" " alt="" coords="478,157,622,201"/>
+<area shape="rect" id="Node000010" href="$Session_8h.html" title="Session state, input data, and visualization configuration." alt="" coords="478,157,622,201"/>
 <area shape="poly" id="edge21_Node000001_Node000010" title=" " alt="" coords="403,41,529,156,524,157,402,46"/>
 <area shape="rect" id="Node000003" href="$RootScene_8cc.html" title=" " alt="" coords="24,258,243,286"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,116,191,133,161,158,147,183,139,210,136,258,130,257,134,209,142,180,157,155,188,129,227,112"/>
 <area shape="rect" id="Node000004" href="$RootSceneManager_8cc.html" title=" " alt="" coords="26,342,228,387"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="218,115,163,134,105,161,77,179,53,200,32,223,15,250,8,272,15,293,38,320,69,340,65,343,35,324,10,295,3,272,10,248,27,220,49,196,74,175,102,157,161,129,222,111"/>
-<area shape="rect" id="Node000005" href="$RootScene_8h.html" title=" " alt="" coords="171,157,350,201"/>
+<area shape="rect" id="Node000005" href="$RootScene_8h.html" title="ROOT/TEve materialization of an FCCVisualization scene." alt="" coords="171,157,350,201"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="298,120,276,158,272,154,294,124"/>
-<area shape="rect" id="Node000006" href="$RootSceneManager_8h.html" title=" " alt="" coords="268,249,447,294"/>
+<area shape="rect" id="Node000006" href="$RootSceneManager_8h.html" title="Management of materialized ROOT/TEve visualization scenes." alt="" coords="268,249,447,294"/>
 <area shape="poly" id="edge11_Node000002_Node000006" title=" " alt="" coords="339,117,354,136,364,156,370,180,371,206,365,250,361,248,366,206,365,181,359,158,349,139,338,123"/>
 <area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="365,111,489,155,484,157,365,117"/>
 <area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="217,212,154,259,150,255,220,208"/>
 <area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="295,209,337,249,332,249,294,215"/>
 <area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="286,302,183,344,181,339,291,299"/>
-<area shape="rect" id="Node000007" href="$InteractiveShell_8h.html" title=" " alt="" coords="392,342,577,387"/>
+<area shape="rect" id="Node000007" href="$InteractiveShell_8h.html" title="Interactive command&#45;line shell for FCCVisualization." alt="" coords="392,342,577,387"/>
 <area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="401,301,457,342,452,341,400,306"/>
 <area shape="rect" id="Node000008" href="$InteractiveShell_8cc.html" title=" " alt="" coords="393,435,576,462"/>
 <area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="486,401,486,436,482,432,483,404"/>
@@ -27,7 +27,7 @@
 <area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="637,200,672,220,701,248,715,271,725,297,733,350,733,399,729,436,725,432,728,399,728,351,719,298,710,274,697,251,669,224,636,206"/>
 <area shape="rect" id="Node000011" href="$GuiApplication_8cc.html" title=" " alt="" coords="762,350,943,378"/>
 <area shape="poly" id="edge16_Node000010_Node000011" title=" " alt="" coords="637,199,692,220,745,247,776,272,805,300,846,351,841,349,801,303,773,276,742,252,690,224,637,205"/>
-<area shape="rect" id="Node000012" href="$GuiApplication_8h.html" title=" " alt="" coords="813,258,1039,286"/>
+<area shape="rect" id="Node000012" href="$GuiApplication_8h.html" title="ROOT GUI application lifecycle management." alt="" coords="813,258,1039,286"/>
 <area shape="poly" id="edge17_Node000010_Node000012" title=" " alt="" coords="637,198,874,257,869,258,637,204"/>
 <area shape="rect" id="Node000013" href="$Session_8cc.html" title=" " alt="" coords="522,258,687,286"/>
 <area shape="poly" id="edge20_Node000010_Node000013" title=" " alt="" coords="572,212,599,258,594,257,570,217"/>

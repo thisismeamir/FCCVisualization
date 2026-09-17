@@ -5,9 +5,12 @@
     <innerclass refid="classfccvis_1_1backend_1_1root_1_1RootScene" prot="public">fccvis::backend::root::RootScene</innerclass>
     <innerclass refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" prot="public">fccvis::backend::root::RootSceneManager</innerclass>
     <briefdescription>
+<para>ROOT rendering backend. </para>
     </briefdescription>
     <detaileddescription>
+<para>Contains the objects responsible for materializing and managing FCCVisualization scenes using the ROOT TEve framework.</para>
+<para>Contains the objects responsible for materializing and managing FCCVisualization scenes using ROOT/TEve. </para>
     </detaileddescription>
-    <location file="src/backend/root/include/RootScene.h" line="8" column="1"/>
+    <location file="src/backend/root/include/RootScene.h" line="46" column="1"/>
   </compounddef>
 </doxygen>

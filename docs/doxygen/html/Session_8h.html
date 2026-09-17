@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Session_8h.htm
   <div class="headertitle"><div class="title">Session.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Session state, input data, and visualization configuration.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="MetaObjects_8h_source.html">MetaObjects.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Scene_8h_source.html">Scene.h</a>&quot;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
@@ -120,45 +123,46 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Session_8h.htm
 <code>#include &lt;podio/Frame.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Session.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Session_8h__incl.png" border="0" usemap="#asrc_2session_2include_2Session_8h" loading="lazy" alt=""/></div>
 <map name="asrc_2session_2include_2Session_8h" id="asrc_2session_2include_2Session_8h">
-<area shape="rect" title=" " alt="" coords="366,5,510,50"/>
-<area shape="rect" href="MetaObjects_8h.html" title=" " alt="" coords="127,174,242,201"/>
-<area shape="poly" title=" " alt="" coords="363,45,306,67,275,82,248,100,220,130,199,162,195,158,216,126,244,96,273,77,304,62,368,42"/>
-<area shape="rect" title=" " alt="" coords="5,249,82,277"/>
-<area shape="poly" title=" " alt="" coords="363,33,316,41,260,53,205,72,154,100,121,131,93,167,71,204,56,236,52,234,67,202,88,164,117,127,151,96,203,67,259,48,315,36,368,31"/>
-<area shape="rect" title=" " alt="" coords="112,249,175,277"/>
-<area shape="poly" title=" " alt="" coords="363,46,292,69,215,100,157,129,136,146,118,175,114,190,115,205,128,236,122,236,110,206,109,189,113,173,132,143,154,125,213,96,290,64,368,43"/>
-<area shape="rect" title=" " alt="" coords="365,325,423,353"/>
-<area shape="poly" title=" " alt="" coords="435,49,426,98,410,216,399,311,395,308,404,215,421,98,431,53"/>
-<area shape="rect" href="Scene_8h.html" title=" " alt="" coords="258,98,330,126"/>
-<area shape="poly" title=" " alt="" coords="398,52,332,92,329,88,402,49"/>
-<area shape="rect" title=" " alt="" coords="435,98,524,126"/>
-<area shape="poly" title=" " alt="" coords="450,48,469,84,463,83,448,53"/>
-<area shape="rect" title=" " alt="" coords="548,98,622,126"/>
-<area shape="poly" title=" " alt="" coords="477,48,551,90,545,90,477,53"/>
-<area shape="rect" title=" " alt="" coords="646,98,761,126"/>
-<area shape="poly" title=" " alt="" coords="509,48,649,92,644,94,509,53"/>
-<area shape="rect" title=" " alt="" coords="785,98,881,126"/>
-<area shape="poly" title=" " alt="" coords="511,41,772,96,767,98,511,47"/>
-<area shape="rect" title=" " alt="" coords="904,98,1028,126"/>
-<area shape="poly" title=" " alt="" coords="511,37,891,96,887,99,511,42"/>
-<area shape="poly" title=" " alt="" coords="158,204,84,244,81,240,161,200"/>
-<area shape="poly" title=" " alt="" coords="179,200,160,237,156,234,176,204"/>
-<area shape="rect" href="BaseSessionObject_8h.html" title=" " alt="" coords="201,249,358,277"/>
-<area shape="poly" title=" " alt="" coords="202,199,253,239,248,240,201,204"/>
-<area shape="rect" title=" " alt="" coords="237,325,322,353"/>
-<area shape="poly" title=" " alt="" coords="281,276,282,311,277,308,278,279"/>
-<area shape="poly" title=" " alt="" coords="301,275,364,317,358,316,299,280"/>
-<area shape="poly" title=" " alt="" coords="273,128,218,167,215,163,277,125"/>
-<area shape="poly" title=" " alt="" coords="295,124,285,235,280,233,291,128"/>
-<area shape="rect" title=" " alt="" coords="316,174,376,201"/>
-<area shape="poly" title=" " alt="" coords="304,124,331,161,326,161,303,129"/>
+<area shape="rect" title="Session state, input data, and visualization configuration." alt="" coords="431,5,576,50"/>
+<area shape="rect" href="MetaObjects_8h.html" title="Metadata objects used to configure FCCVisualization scenes." alt="" coords="216,174,332,201"/>
+<area shape="poly" title=" " alt="" coords="429,47,379,69,353,83,329,100,304,129,287,161,282,158,300,126,326,96,350,79,376,64,433,44"/>
+<area shape="rect" title=" " alt="" coords="23,249,99,277"/>
+<area shape="poly" title=" " alt="" coords="428,49,366,72,299,100,238,135,179,173,89,242,86,237,176,169,235,130,297,96,364,67,433,47"/>
+<area shape="rect" title=" " alt="" coords="108,325,166,353"/>
+<area shape="poly" title=" " alt="" coords="428,37,328,56,269,71,209,93,150,120,96,155,49,199,12,251,8,264,10,275,17,286,28,296,59,312,95,326,90,328,57,317,25,300,13,289,5,277,3,263,8,248,45,195,93,151,148,116,207,88,268,66,327,51,433,34"/>
+<area shape="rect" title=" " alt="" coords="456,249,519,277"/>
+<area shape="poly" title=" " alt="" coords="499,48,491,98,487,171,488,235,484,232,482,171,486,98,496,53"/>
+<area shape="rect" href="Scene_8h.html" title="Scene definition and visualization configuration." alt="" coords="339,98,412,126"/>
+<area shape="poly" title=" " alt="" coords="467,52,410,92,407,87,472,49"/>
+<area shape="rect" title=" " alt="" coords="500,98,589,126"/>
+<area shape="poly" title=" " alt="" coords="515,48,534,85,529,83,513,53"/>
+<area shape="rect" title=" " alt="" coords="613,98,687,126"/>
+<area shape="poly" title=" " alt="" coords="543,48,616,90,611,90,542,53"/>
+<area shape="rect" title=" " alt="" coords="712,98,826,126"/>
+<area shape="poly" title=" " alt="" coords="574,48,715,93,709,94,574,53"/>
+<area shape="rect" title=" " alt="" coords="850,98,946,126"/>
+<area shape="poly" title=" " alt="" coords="576,41,837,96,832,98,576,47"/>
+<area shape="rect" title=" " alt="" coords="970,98,1093,126"/>
+<area shape="poly" title=" " alt="" coords="576,37,957,96,952,99,576,42"/>
+<area shape="poly" title=" " alt="" coords="235,204,114,246,112,241,237,200"/>
+<area shape="poly" title=" " alt="" coords="259,200,205,251,155,314,152,310,201,248,255,203"/>
+<area shape="rect" title=" " alt="" coords="274,325,333,353"/>
+<area shape="poly" title=" " alt="" coords="256,200,237,219,221,237,212,256,212,266,215,276,235,300,263,320,257,320,232,304,210,278,207,267,207,255,217,234,233,215,251,203"/>
+<area shape="poly" title=" " alt="" coords="312,199,444,245,439,247,312,205"/>
+<area shape="rect" href="BaseSessionObject_8h.html" title="Base class for named objects belonging to a visualization session." alt="" coords="225,249,382,277"/>
+<area shape="poly" title=" " alt="" coords="280,199,295,236,290,234,278,204"/>
+<area shape="poly" title=" " alt="" coords="276,277,181,321,179,316,271,278"/>
+<area shape="poly" title=" " alt="" coords="305,276,306,311,301,308,301,279"/>
+<area shape="poly" title=" " alt="" coords="359,125,306,167,303,162,355,128"/>
+<area shape="poly" title=" " alt="" coords="383,124,395,154,405,193,408,236,404,258,396,278,375,304,348,322,346,317,372,300,392,276,399,256,403,236,400,194,390,156,380,128"/>
+<area shape="poly" title=" " alt="" coords="373,124,363,162,346,203,324,238,320,235,341,200,358,160,370,128"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -166,16 +170,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Session_8h__dep__incl.png" border="0" usemap="#asrc_2session_2include_2Session_8hdep" loading="lazy" alt=""/></div>
 <map name="asrc_2session_2include_2Session_8hdep" id="asrc_2session_2include_2Session_8hdep">
-<area shape="rect" title=" " alt="" coords="406,5,550,50"/>
-<area shape="rect" href="RootSceneManager_8h.html" title=" " alt="" coords="186,98,365,143"/>
+<area shape="rect" title="Session state, input data, and visualization configuration." alt="" coords="406,5,550,50"/>
+<area shape="rect" href="RootSceneManager_8h.html" title="Management of materialized ROOT/TEve visualization scenes." alt="" coords="186,98,365,143"/>
 <area shape="poly" title=" " alt="" coords="413,58,325,100,323,95,418,55"/>
-<area shape="rect" href="InteractiveShell_8h.html" title=" " alt="" coords="231,191,416,235"/>
+<area shape="rect" href="InteractiveShell_8h.html" title="Interactive command&#45;line shell for FCCVisualization." alt="" coords="231,191,416,235"/>
 <area shape="poly" title=" " alt="" coords="453,60,343,192,339,189,448,63"/>
 <area shape="rect" href="RunApplication_8cc.html" title=" " alt="" coords="400,283,580,311"/>
 <area shape="poly" title=" " alt="" coords="478,63,477,143,481,235,489,284,484,282,475,236,471,143,474,67"/>
 <area shape="rect" href="GuiApplication_8cc.html" title=" " alt="" coords="490,199,671,227"/>
 <area shape="poly" title=" " alt="" coords="493,62,531,141,572,199,567,198,526,144,490,67"/>
-<area shape="rect" href="GuiApplication_8h.html" title=" " alt="" coords="541,106,767,134"/>
+<area shape="rect" href="GuiApplication_8h.html" title="ROOT GUI application lifecycle management." alt="" coords="541,106,767,134"/>
 <area shape="poly" title=" " alt="" coords="534,55,631,106,626,106,533,60"/>
 <area shape="rect" href="Session_8cc.html" title=" " alt="" coords="791,106,957,134"/>
 <area shape="poly" title=" " alt="" coords="566,46,819,105,814,107,565,52"/>
@@ -195,15 +199,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:fccvis_3A_3Asession_3A_3ASessionOptions" id="r_fccvis_3A_3Asession_3A_3ASessionOptions"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1session_1_1SessionOptions.html">fccvis::session::SessionOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualization and runtime configuration for a session.  <a href="classfccvis_1_1session_1_1SessionOptions.html#details">More...</a><br /></td></tr>
 <tr class="memitem:fccvis_3A_3Asession_3A_3ASessionData" id="r_fccvis_3A_3Asession_3A_3ASessionData"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1session_1_1SessionData.html">fccvis::session::SessionData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event data loaded into a session.  <a href="classfccvis_1_1session_1_1SessionData.html#details">More...</a><br /></td></tr>
 <tr class="memitem:fccvis_3A_3Asession_3A_3ASession" id="r_fccvis_3A_3Asession_3A_3ASession"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an FCCVisualization session.  <a href="classfccvis_1_1session_1_1Session.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:fccvis" id="r_fccvis"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis.html">fccvis</a></td></tr>
 <tr class="memitem:fccvis_3A_3Asession" id="r_fccvis_3A_3Asession"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1session.html">fccvis::session</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1session"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> management and session state. <br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Session state, input data, and visualization configuration. </p>
+<p>Defines the classes used to represent an FCCVisualization session:</p><ul>
+<li><a class="el" href="classfccvis_1_1session_1_1SessionOptions.html" title="fccvis::session::SessionOptions">fccvis::session::SessionOptions</a> stores visualization configuration.</li>
+<li><a class="el" href="classfccvis_1_1session_1_1SessionData.html" title="fccvis::session::SessionData">fccvis::session::SessionData</a> stores loaded event data.</li>
+<li><a class="el" href="classfccvis_1_1session_1_1Session.html" title="fccvis::session::Session">fccvis::session::Session</a> coordinates the session name, data, options, and access to event information.</li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Amir H. Ebrahimnezhad <a href="mai'+'lto:+'ami'+'r.'+'ebh'+'@c'+'ern'+'.c'+'h'">amir.<span class="obfuscator">.nosp@m.</span>ebh@<span class="obfuscator">.nosp@m.</span>cern.<span class="obfuscator">.nosp@m.</span>ch</a></dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2026 FCC Project at CERN</dd></dl>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">https://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

@@ -2,47 +2,78 @@
 \hypertarget{classfccvis_1_1session_1_1Session}{}\label{classfccvis_1_1session_1_1Session}\index{fccvis::session::Session@{fccvis::session::Session}}
 
 
+Represents an FCCVisualization session.  
+
+
+
+
 {\ttfamily \+\#include $<$Session.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} (std::\+string name, std::\+optional$<$ std::\+filesystem::\+path $>$ data\+File\+Path, std::\+optional$<$ std::\+filesystem::\+path $>$ options\+File\+Path)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a visualization session. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aac0ae08cfbf9ccc4fa7324bb0fcd20de}{\texorpdfstring{$\sim$}{\string~}\+Session}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destroy the session. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d}{Session}} (const Session \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfccvis_1_1session_1_1Session}{Session} by copying another session. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848}{operator=}} (const \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Copy-\/assign a \doxylink{classfccvis_1_1session_1_1Session}{Session}. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5}{Session}} (Session \&\&) noexcept=default
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a \doxylink{classfccvis_1_1session_1_1Session}{Session} by moving another session. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3}{operator=}} (\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&\&) noexcept=default
-\item 
+\begin{DoxyCompactList}\small\item\em Move-\/assign a \doxylink{classfccvis_1_1session_1_1Session}{Session}. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322}{init\+Data}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize event data. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e}{init\+Options}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize session options. \end{DoxyCompactList}\item 
 std::\+optional$<$ std::\+filesystem::\+path $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba}{Get\+Options\+File}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the session options-\/file path. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57}{Get\+Options}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the session visualization options. \end{DoxyCompactList}\item 
 const std::\+string \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43}{Name}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the session name. \end{DoxyCompactList}\item 
 const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{Session\+Data}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_abc3af1740e27ef5b6b7dae88e5518349}{Data}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the session event data. \end{DoxyCompactList}\item 
 const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a4ed06b9a05f53d830377e579a94b2abe}{Options}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the session visualization options. \end{DoxyCompactList}\item 
 std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a0215b2b549da22eaff76490193916dbe}{Categories}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the names of all available data categories. \end{DoxyCompactList}\item 
 size\+\_\+t \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a13d642f9984714f5d6a9bee855239cd8}{Entry\+Count}} (const std::\+string \&category) const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the number of entries in a data category. \end{DoxyCompactList}\item 
 std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf}{Collection\+Names}} (const std::\+string \&category, size\+\_\+t entry\+Index) const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the collection names for a category entry. \end{DoxyCompactList}\item 
 std::\+string \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713}{Collection\+Type}} (const std::\+string \&category, size\+\_\+t entry\+Index, const std::\+string \&coll\+Name) const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the type of a collection in a category entry. \end{DoxyCompactList}\item 
 const podio::\+\+Frame \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51}{Get\+Frame}} (const std::\+string \&category, size\+\_\+t entry\+Index) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get a podio frame from the session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an FCCVisualization session. 
+
+A \doxylink{classfccvis_1_1session_1_1Session}{Session} is the central object that connects session configuration with loaded event data.
+
+A session consists of:
+\begin{DoxyItemize}
+\item a name identifying the session;
+\item an optional event-\/data file;
+\item an optional options/\+configuration file;
+\item \doxylink{classfccvis_1_1session_1_1SessionData}{fccvis::\+session::\+\+Session\+Data} containing loaded podio frames;
+\item \doxylink{classfccvis_1_1session_1_1SessionOptions}{fccvis::\+session::\+\+Session\+Options} containing visualization configuration.
+\end{DoxyItemize}
+
+The session provides the main programmatic interface for discovering available data categories, entries, collections, and collection types.
+
+\begin{DoxyNote}{Note}
+Copy construction and copy assignment are disabled. Sessions are movable.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1SessionData}{fccvis::\+session::\+\+Session\+Data} 
+
+\doxylink{classfccvis_1_1session_1_1SessionOptions}{fccvis::\+session::\+\+Session\+Options} 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1session_1_1Session_doc-constructors}
@@ -54,6 +85,21 @@ const podio::\+\+Frame \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623} 
 fccvis::\+session::\+\+Session::\+\+Session (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{, }\item[{std::\+optional$<$ std::\+filesystem::\+path $>$}]{data\+File\+Path}{, }\item[{std::\+optional$<$ std::\+filesystem::\+path $>$}]{options\+File\+Path}{}\end{DoxyParamCaption})}
 
+
+
+Construct a visualization session. 
+
+The constructor stores the session identity and optional input paths. Data and options are initialized separately through \doxylink{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322}{init\+Data} and \doxylink{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e}{init\+Options}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name identifying the session. \\
+\hline
+{\em data\+File\+Path} & Optional path to the event-\/data file. \\
+\hline
+{\em options\+File\+Path} & Optional path to the session options file. \\
+\hline
+\end{DoxyParams}
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -68,13 +114,21 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_aac0ae08cfbf9ccc4fa7324bb0fcd20de} 
 fccvis::\+session::\+\+Session::\+\texorpdfstring{$\sim$}{\string~}\+Session (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\Hypertarget{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d}\index{fccvis::session::Session@{fccvis::session::Session}!Session@{Session}}
+
+
+Destroy the session. 
+
+Releases the session\textquotesingle{}s data and visualization configuration. \Hypertarget{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d}\index{fccvis::session::Session@{fccvis::session::Session}!Session@{Session}}
 \index{Session@{Session}!fccvis::session::Session@{fccvis::session::Session}}
 \doxysubsubsection{\texorpdfstring{Session()}{Session()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d} 
 fccvis::\+session::\+\+Session::\+\+Session (\begin{DoxyParamCaption}\item[{const Session \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-Here is the call graph for this function:
+
+
+Construct a \doxylink{classfccvis_1_1session_1_1Session}{Session} by copying another session. 
+
+Copying sessions is intentionally disabled because a \doxylink{classfccvis_1_1session_1_1Session}{Session} owns mutable session state and loaded event data. Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -88,6 +142,18 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5} 
 fccvis::\+session::\+\+Session::\+\+Session (\begin{DoxyParamCaption}\item[{Session \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
 
+
+
+Construct a \doxylink{classfccvis_1_1session_1_1Session}{Session} by moving another session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classfccvis_1_1session_1_1Session}{Session} whose state is transferred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The moved-\/from session remains valid but its previous state should not be relied upon. 
+\end{DoxyNote}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -107,12 +173,36 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a0215b2b549da22eaff76490193916dbe} 
 std::\+vector$<$ std::\+string $>$ fccvis::\+session::\+\+Session::\+\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+
+
+Get the names of all available data categories. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing the names of the categories currently available in the session.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1SessionData_aa64d148059aa9830c11aef0d420e413a}{Session\+Data::\+categories} 
+\end{DoxySeeAlso}
 \Hypertarget{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf}\index{fccvis::session::Session@{fccvis::session::Session}!CollectionNames@{CollectionNames}}
 \index{CollectionNames@{CollectionNames}!fccvis::session::Session@{fccvis::session::Session}}
 \doxysubsubsection{\texorpdfstring{CollectionNames()}{CollectionNames()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf} 
 std::\+vector$<$ std::\+string $>$ fccvis::\+session::\+\+Session::\+\+Collection\+Names (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{, }\item[{size\+\_\+t}]{entry\+Index}{}\end{DoxyParamCaption}) const}
 
+
+
+Get the collection names for a category entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & Name of the data category. \\
+\hline
+{\em entry\+Index} & Zero-\/based index of the entry within the category.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Names of the collections contained in the requested frame. 
+\end{DoxyReturn}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -127,6 +217,22 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713} 
 std::\+string fccvis::\+session::\+\+Session::\+\+Collection\+Type (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{, }\item[{size\+\_\+t}]{entry\+Index}{, }\item[{const std::\+string \&}]{coll\+Name}{}\end{DoxyParamCaption}) const}
 
+
+
+Get the type of a collection in a category entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & Name of the data category. \\
+\hline
+{\em entry\+Index} & Zero-\/based index of the entry within the category. \\
+\hline
+{\em coll\+Name} & Name of the collection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Type name of the requested collection. 
+\end{DoxyReturn}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -141,18 +247,57 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_abc3af1740e27ef5b6b7dae88e5518349} 
 const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{Session\+Data}} \& fccvis::\+session::\+\+Session::\+\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get the session event data. 
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the session\textquotesingle{}s \doxylink{classfccvis_1_1session_1_1SessionData}{Session\+Data}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The returned reference remains valid for the lifetime of the session unless the session\textquotesingle{}s internal state is moved from. 
+\end{DoxyNote}
 \Hypertarget{classfccvis_1_1session_1_1Session_a13d642f9984714f5d6a9bee855239cd8}\index{fccvis::session::Session@{fccvis::session::Session}!EntryCount@{EntryCount}}
 \index{EntryCount@{EntryCount}!fccvis::session::Session@{fccvis::session::Session}}
 \doxysubsubsection{\texorpdfstring{EntryCount()}{EntryCount()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a13d642f9984714f5d6a9bee855239cd8} 
 size\+\_\+t fccvis::\+session::\+\+Session::\+\+Entry\+Count (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{}\end{DoxyParamCaption}) const}
 
+
+
+Get the number of entries in a data category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & Name of the category.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of podio frames stored in the specified category. 
+\end{DoxyReturn}
 \Hypertarget{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51}\index{fccvis::session::Session@{fccvis::session::Session}!GetFrame@{GetFrame}}
 \index{GetFrame@{GetFrame}!fccvis::session::Session@{fccvis::session::Session}}
 \doxysubsubsection{\texorpdfstring{GetFrame()}{GetFrame()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51} 
 const podio::\+\+Frame \& fccvis::\+session::\+\+Session::\+\+Get\+Frame (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{, }\item[{size\+\_\+t}]{entry\+Index}{}\end{DoxyParamCaption}) const}
 
+
+
+Get a podio frame from the session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & Name of the data category. \\
+\hline
+{\em entry\+Index} & Zero-\/based index of the entry within the category.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Constant reference to the requested {\ttfamily podio::\+\+Frame}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1SessionData_aa64d148059aa9830c11aef0d420e413a}{Session\+Data::\+categories} 
+\end{DoxySeeAlso}
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -167,6 +312,16 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57} 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} fccvis::\+session::\+\+Session::\+\+Get\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Get the session visualization options. 
+
+\begin{DoxyReturn}{Returns}
+A copy of the session\textquotesingle{}s \doxylink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1Session_a4ed06b9a05f53d830377e579a94b2abe}{Options} 
+\end{DoxySeeAlso}
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -181,6 +336,13 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba} 
 std::\+optional$<$ std::\+filesystem::\+path $>$ fccvis::\+session::\+\+Session::\+\+Get\+Options\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Get the session options-\/file path. 
+
+\begin{DoxyReturn}{Returns}
+The configured options-\/file path, or an empty {\ttfamily std::\+optional} if no options file was configured. 
+\end{DoxyReturn}
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -195,6 +357,15 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322} 
 void fccvis::\+session::\+\+Session::\+init\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Initialize event data. 
+
+Loads and prepares the event data associated with the session\textquotesingle{}s configured data-\/file path.
+
+\begin{DoxyNote}{Note}
+The exact loading behavior is determined by the corresponding implementation. 
+\end{DoxyNote}
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -209,6 +380,15 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e} 
 void fccvis::\+session::\+\+Session::\+init\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Initialize session options. 
+
+Loads and prepares the visualization configuration associated with the session\textquotesingle{}s configured options-\/file path.
+
+\begin{DoxyNote}{Note}
+The exact configuration format and loading behavior are determined by the corresponding implementation. 
+\end{DoxyNote}
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -223,6 +403,13 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43} 
 const std::\+string \& fccvis::\+session::\+\+Session::\+\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get the session name. 
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the session name. 
+\end{DoxyReturn}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -245,6 +432,15 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848} 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& fccvis::\+session::\+\+Session::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
+
+
+Copy-\/assign a \doxylink{classfccvis_1_1session_1_1Session}{Session}. 
+
+Copy assignment is intentionally disabled.
+
+\begin{DoxyReturn}{Returns}
+This operation is deleted and cannot be called. 
+\end{DoxyReturn}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -259,6 +455,18 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3} 
 \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& fccvis::\+session::\+\+Session::\+operator= (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
 
+
+
+Move-\/assign a \doxylink{classfccvis_1_1session_1_1Session}{Session}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{classfccvis_1_1session_1_1Session}{Session} whose state is transferred.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this session. 
+\end{DoxyReturn}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -273,6 +481,16 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a4ed06b9a05f53d830377e579a94b2abe} 
 const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} \& fccvis::\+session::\+\+Session::\+\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get the session visualization options. 
+
+\begin{DoxyReturn}{Returns}
+Constant reference to the session\textquotesingle{}s \doxylink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Unlike \doxylink{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57}{Get\+Options}, this method does not create a copy. 
+\end{DoxyNote}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

@@ -1,29 +1,28 @@
 <map id="src/backend/root/include/RootScene.h" name="src/backend/root/include/RootScene.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="312,5,492,50"/>
-<area shape="rect" id="Node000002" href="$Scene_8h.html" title=" " alt="" coords="165,98,237,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,52,248,94,246,89,351,49"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="320,325,378,353"/>
-<area shape="poly" id="edge14_Node000001_Node000005" title=" " alt="" coords="404,48,401,150,393,214,379,278,365,313,362,309,374,276,388,213,395,149,401,52"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="5,249,82,277"/>
-<area shape="poly" id="edge13_Node000001_Node000007" title=" " alt="" coords="310,41,232,63,192,79,154,100,120,130,92,167,71,204,56,236,51,234,66,202,88,164,116,127,151,96,190,74,231,58,314,38"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="303,249,365,277"/>
-<area shape="poly" id="edge15_Node000001_Node000008" title=" " alt="" coords="398,49,344,236,340,233,394,52"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="440,98,562,126"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="428,48,476,88,471,88,428,53"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="586,98,690,126"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="465,48,589,92,584,93,465,53"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="714,98,824,126"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="492,46,702,94,697,96,492,52"/>
-<area shape="rect" id="Node000003" href="$BaseSessionObject_8h.html" title=" " alt="" coords="122,249,280,277"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="163,127,132,147,117,159,106,175,102,185,102,194,112,211,130,227,155,242,149,243,127,231,108,215,97,195,97,184,101,172,113,156,129,142,166,123"/>
-<area shape="rect" id="Node000006" href="$MetaObjects_8h.html" title=" " alt="" coords="199,174,314,201"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="211,124,241,161,235,161,210,129"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="115,174,174,201"/>
-<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="192,124,166,163,162,160,189,128"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="159,325,243,353"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,276,203,311,199,308,199,279"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="228,275,312,318,306,318,227,280"/>
-<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="249,200,222,239,218,235,245,204"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="218,204,97,246,95,241,220,199"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="271,199,312,239,307,238,270,204"/>
+<area shape="rect" id="Node000001" title="ROOT/TEve materialization of an FCCVisualization scene." alt="" coords="458,5,638,50"/>
+<area shape="rect" id="Node000002" href="$Scene_8h.html" title="Scene definition and visualization configuration." alt="" coords="292,98,364,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="487,52,378,95,376,90,492,49"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="424,249,501,277"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="519,49,496,73,478,99,467,134,461,170,461,235,457,232,456,169,462,132,474,97,492,70,514,52"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="487,98,609,126"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="549,48,550,84,546,81,547,53"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="633,98,738,126"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="585,48,653,90,648,90,584,53"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="761,98,871,126"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="619,48,761,93,756,94,619,53"/>
+<area shape="rect" id="Node000003" href="$BaseSessionObject_8h.html" title="Base class for named objects belonging to a visualization session." alt="" coords="5,249,163,277"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,128,212,176,115,242,112,238,209,171,303,124"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="306,325,366,353"/>
+<area shape="poly" id="edge11_Node000002_Node000005" title=" " alt="" coords="335,124,352,173,355,210,354,248,345,311,340,308,349,247,350,210,347,174,333,129"/>
+<area shape="rect" id="Node000006" href="$MetaObjects_8h.html" title="Metadata objects used to configure FCCVisualization scenes." alt="" coords="222,174,338,201"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="321,124,299,162,295,159,317,128"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="114,325,172,353"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="96,275,125,313,120,313,93,280"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="129,275,293,323,290,327,129,280"/>
+<area shape="poly" id="edge10_Node000006_Node000003" title=" " alt="" coords="243,204,134,246,132,241,247,200"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="271,202,167,315,163,311,266,201"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="289,200,313,248,332,311,327,309,308,250,286,204"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="313,199,419,243,414,244,312,205"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="237,249,299,277"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="280,200,275,235,270,233,276,204"/>
 </map>

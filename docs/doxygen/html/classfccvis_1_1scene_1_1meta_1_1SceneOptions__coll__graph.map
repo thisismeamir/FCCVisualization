@@ -1,5 +1,5 @@
 <map id="fccvis::scene::meta::SceneOptions" name="fccvis::scene::meta::SceneOptions">
-<area shape="rect" id="Node000001" title=" " alt="" coords="29,98,177,143"/>
-<area shape="rect" id="Node000002" href="$classfccvis_1_1scene_1_1BaseSessionObject.html" title=" " alt="" coords="5,5,201,50"/>
+<area shape="rect" id="Node000001" title="Configuration options associated with a visualization scene." alt="" coords="29,98,177,143"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1scene_1_1BaseSessionObject.html" title="Base class for named objects in an FCCVisualization session." alt="" coords="5,5,201,50"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,64,105,99,101,97,101,68"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="fccvis::session::Session::CollectionNames" name="fccvis::session::Session::CollectionNames">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,180,50"/>
-<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#a623742faa2ae121e6417da9b14282c51" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" id="Node000001" title="Get the collection names for a category entry." alt="" coords="5,5,180,50"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#a623742faa2ae121e6417da9b14282c51" title="Get a podio frame from the session." alt="" coords="228,5,402,50"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,25,215,27,209,28,180,30"/>
 </map>

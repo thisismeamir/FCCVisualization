@@ -113,14 +113,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>Interactive command-line shell for a visualization session.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="InteractiveShell_8h_source.html">InteractiveShell.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5da44aabf83e24cc47c9030bc7b5af2" id="r_ab5da44aabf83e24cc47c9030bc7b5af2"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab5da44aabf83e24cc47c9030bc7b5af2">InteractiveShell</a> (<a class="el" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a> &amp;session)</td></tr>
+<tr class="memdesc:ab5da44aabf83e24cc47c9030bc7b5af2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an interactive shell for a session.  <br /></td></tr>
 <tr class="memitem:abd04c304d28b259f30db574dc67ab15e" id="r_abd04c304d28b259f30db574dc67ab15e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abd04c304d28b259f30db574dc67ab15e">Run</a> ()</td></tr>
+<tr class="memdesc:abd04c304d28b259f30db574dc67ab15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the interactive shell.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interactive command-line shell for a visualization session. </p>
+<p><a class="el" href="classfccvis_1_1cli_1_1InteractiveShell.html" title="Interactive command-line shell for a visualization session.">InteractiveShell</a> provides a command interface for inspecting and controlling an active <a class="el" href="classfccvis_1_1session_1_1Session.html" title="fccvis::session::Session">fccvis::session::Session</a>.</p>
+<p>The shell maintains command history, provides built-in commands for scene management, and exposes the active session to the ROOT Cling interpreter.</p>
+<p>The shell uses a <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html" title="fccvis::backend::root::RootSceneManager">fccvis::backend::root::RootSceneManager</a> to manage the ROOT-based visualization of scenes.</p>
+<dl class="section note"><dt>Note</dt><dd>The Session is referenced but not owned by the shell. The referenced session must remain valid for the lifetime of the <a class="el" href="classfccvis_1_1cli_1_1InteractiveShell.html" title="Interactive command-line shell for a visualization session.">InteractiveShell</a>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">fccvis::session::Session</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html" title="Manages the live ROOT/TEve representations of session scenes.">fccvis::backend::root::RootSceneManager</a> </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab5da44aabf83e24cc47c9030bc7b5af2" name="ab5da44aabf83e24cc47c9030bc7b5af2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5da44aabf83e24cc47c9030bc7b5af2">&#9670;&#160;</a></span>InteractiveShell()</h2>
 
@@ -144,6 +158,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct an interactive shell for a session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>Session controlled by the interactive shell.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The session is not owned by <a class="el" href="classfccvis_1_1cli_1_1InteractiveShell.html" title="Interactive command-line shell for a visualization session.">InteractiveShell</a>. </dd></dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -161,13 +184,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Run the interactive shell. </p>
+<p>Starts processing interactive input until the user requests termination. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1cli_1_1InteractiveShell_abd04c304d28b259f30db574dc67ab15e_icgraph.png" border="0" usemap="#aclassfccvis_1_1cli_1_1InteractiveShell_abd04c304d28b259f30db574dc67ab15e_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1cli_1_1InteractiveShell_abd04c304d28b259f30db574dc67ab15e_icgraph" id="aclassfccvis_1_1cli_1_1InteractiveShell_abd04c304d28b259f30db574dc67ab15e_icgraph">
-<area shape="rect" title=" " alt="" coords="349,21,509,66"/>
-<area shape="rect" href="namespacefccvis_1_1cli.html#a633227c3a37438a118039eb88649b120" title=" " alt="" coords="112,29,301,57"/>
+<area shape="rect" title="Run the interactive shell." alt="" coords="349,21,509,66"/>
+<area shape="rect" href="namespacefccvis_1_1cli.html#a633227c3a37438a118039eb88649b120" title="Run the FCCVisualization application." alt="" coords="112,29,301,57"/>
 <area shape="poly" title=" " alt="" coords="330,43,301,46,301,41,336,43"/>
 <area shape="poly" title=" " alt="" coords="234,14,225,10,207,8,189,10,180,15,178,20,182,30,177,28,172,20,176,11,188,5,207,3,227,5,239,14"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="10,29,64,57"/>

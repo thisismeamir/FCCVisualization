@@ -112,33 +112,46 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('GuiApplication
   <div class="headertitle"><div class="title">GuiApplication.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="GuiApplication_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Session_8h.html">Session.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;TApplication.h&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefccvis_1_1gui.html">fccvis::gui</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classfccvis_1_1gui_1_1GuiApplication.html">    7</a></span><span class="keyword">class </span><a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">GuiApplication</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">GuiApplication</a>(<span class="keywordtype">int</span>&amp; argc, <span class="keywordtype">char</span>** argv, <a class="code hl_class" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a>&amp; <a class="code hl_namespace" href="namespacefccvis_1_1session.html">session</a>);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">~GuiApplication</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a03dc968acfcbc83815709953d36d0973">Run</a>();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a236c303ead999265807969165a57b01f">Terminate</a>();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  std::unique_ptr&lt;TApplication&gt; m_application;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_class" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a>&amp; m_session;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<a href="GuiApplication_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="Session_8h.html">Session.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;TApplication.h&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefccvis_1_1gui.html">fccvis::gui</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classfccvis_1_1gui_1_1GuiApplication.html">   61</a></span><span class="keyword">class </span><a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">GuiApplication</a> {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">GuiApplication</a>(<span class="keywordtype">int</span>&amp; argc,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                 <span class="keywordtype">char</span>** argv,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                 <a class="code hl_class" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a>&amp; <a class="code hl_namespace" href="namespacefccvis_1_1session.html">session</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">~GuiApplication</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a03dc968acfcbc83815709953d36d0973">Run</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classfccvis_1_1gui_1_1GuiApplication.html#a236c303ead999265807969165a57b01f">Terminate</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  std::unique_ptr&lt;TApplication&gt; m_application;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <a class="code hl_class" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a>&amp; m_session;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="ttc" id="aSession_8h_html"><div class="ttname"><a href="Session_8h.html">Session.h</a></div></div>
-<div class="ttc" id="aclassfccvis_1_1gui_1_1GuiApplication_html_a03dc968acfcbc83815709953d36d0973"><div class="ttname"><a href="classfccvis_1_1gui_1_1GuiApplication.html#a03dc968acfcbc83815709953d36d0973">fccvis::gui::GuiApplication::Run</a></div><div class="ttdeci">void Run()</div><div class="ttdef"><b>Definition</b> GuiApplication.cc:23</div></div>
-<div class="ttc" id="aclassfccvis_1_1gui_1_1GuiApplication_html_a236c303ead999265807969165a57b01f"><div class="ttname"><a href="classfccvis_1_1gui_1_1GuiApplication.html#a236c303ead999265807969165a57b01f">fccvis::gui::GuiApplication::Terminate</a></div><div class="ttdeci">void Terminate()</div><div class="ttdef"><b>Definition</b> GuiApplication.cc:27</div></div>
-<div class="ttc" id="aclassfccvis_1_1gui_1_1GuiApplication_html_a402348fc86f726c18cac134241250135"><div class="ttname"><a href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">fccvis::gui::GuiApplication::GuiApplication</a></div><div class="ttdeci">GuiApplication(int &amp;argc, char **argv, fccvis::session::Session &amp;session)</div><div class="ttdef"><b>Definition</b> GuiApplication.cc:9</div></div>
-<div class="ttc" id="aclassfccvis_1_1session_1_1Session_html"><div class="ttname"><a href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a></div><div class="ttdef"><b>Definition</b> Session.h:30</div></div>
-<div class="ttc" id="anamespacefccvis_1_1gui_html"><div class="ttname"><a href="namespacefccvis_1_1gui.html">fccvis::gui</a></div><div class="ttdef"><b>Definition</b> GuiApplication.cc:7</div></div>
-<div class="ttc" id="anamespacefccvis_1_1session_html"><div class="ttname"><a href="namespacefccvis_1_1session.html">fccvis::session</a></div><div class="ttdef"><b>Definition</b> Session.h:12</div></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>} <span class="comment">// namespace fccvis::gui</span></div>
+<div class="ttc" id="aSession_8h_html"><div class="ttname"><a href="Session_8h.html">Session.h</a></div><div class="ttdoc">Session state, input data, and visualization configuration.</div></div>
+<div class="ttc" id="aclassfccvis_1_1gui_1_1GuiApplication_html_a03dc968acfcbc83815709953d36d0973"><div class="ttname"><a href="classfccvis_1_1gui_1_1GuiApplication.html#a03dc968acfcbc83815709953d36d0973">fccvis::gui::GuiApplication::Run</a></div><div class="ttdeci">void Run()</div><div class="ttdoc">Start the GUI event loop.</div><div class="ttdef"><b>Definition</b> GuiApplication.cc:23</div></div>
+<div class="ttc" id="aclassfccvis_1_1gui_1_1GuiApplication_html_a236c303ead999265807969165a57b01f"><div class="ttname"><a href="classfccvis_1_1gui_1_1GuiApplication.html#a236c303ead999265807969165a57b01f">fccvis::gui::GuiApplication::Terminate</a></div><div class="ttdeci">void Terminate()</div><div class="ttdoc">Request termination of the GUI application.</div><div class="ttdef"><b>Definition</b> GuiApplication.cc:27</div></div>
+<div class="ttc" id="aclassfccvis_1_1gui_1_1GuiApplication_html_a402348fc86f726c18cac134241250135"><div class="ttname"><a href="classfccvis_1_1gui_1_1GuiApplication.html#a402348fc86f726c18cac134241250135">fccvis::gui::GuiApplication::GuiApplication</a></div><div class="ttdeci">GuiApplication(int &amp;argc, char **argv, fccvis::session::Session &amp;session)</div><div class="ttdoc">Construct a GUI application.</div><div class="ttdef"><b>Definition</b> GuiApplication.cc:9</div></div>
+<div class="ttc" id="aclassfccvis_1_1session_1_1Session_html"><div class="ttname"><a href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a></div><div class="ttdoc">Represents an FCCVisualization session.</div><div class="ttdef"><b>Definition</b> Session.h:171</div></div>
+<div class="ttc" id="anamespacefccvis_1_1gui_html"><div class="ttname"><a href="namespacefccvis_1_1gui.html">fccvis::gui</a></div><div class="ttdoc">Graphical user interface components.</div><div class="ttdef"><b>Definition</b> GuiApplication.cc:7</div></div>
+<div class="ttc" id="anamespacefccvis_1_1session_html"><div class="ttname"><a href="namespacefccvis_1_1session.html">fccvis::session</a></div><div class="ttdoc">Session management and session state.</div><div class="ttdef"><b>Definition</b> Session.h:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

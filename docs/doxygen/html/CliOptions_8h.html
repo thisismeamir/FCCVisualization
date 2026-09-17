@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('CliOptions_8h.
   <div class="headertitle"><div class="title">CliOptions.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Command-line options and argument handling for FCCVisualization.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -119,7 +122,7 @@ Include dependency graph for CliOptions.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="CliOptions_8h__incl.png" border="0" usemap="#asrc_2cli_2include_2CliOptions_8h" loading="lazy" alt=""/></div>
 <map name="asrc_2cli_2include_2CliOptions_8h" id="asrc_2cli_2include_2CliOptions_8h">
-<area shape="rect" title=" " alt="" coords="5,5,199,33"/>
+<area shape="rect" title="Command&#45;line options and argument handling for FCCVisualization." alt="" coords="5,5,199,33"/>
 <area shape="rect" title=" " alt="" coords="5,81,95,109"/>
 <area shape="poly" title=" " alt="" coords="95,32,70,70,66,67,90,35"/>
 <area shape="rect" title=" " alt="" coords="118,81,192,109"/>
@@ -131,12 +134,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="CliOptions_8h__dep__incl.png" border="0" usemap="#asrc_2cli_2include_2CliOptions_8hdep" loading="lazy" alt=""/></div>
 <map name="asrc_2cli_2include_2CliOptions_8hdep" id="asrc_2cli_2include_2CliOptions_8hdep">
-<area shape="rect" title=" " alt="" coords="283,5,476,33"/>
+<area shape="rect" title="Command&#45;line options and argument handling for FCCVisualization." alt="" coords="283,5,476,33"/>
 <area shape="rect" href="CliOptions_8cc.html" title=" " alt="" coords="5,81,154,109"/>
 <area shape="poly" title=" " alt="" coords="310,40,134,83,133,78,312,35"/>
 <area shape="rect" href="RunApplication_8cc.html" title=" " alt="" coords="178,81,357,109"/>
 <area shape="poly" title=" " alt="" coords="349,41,289,83,286,78,345,43"/>
-<area shape="rect" href="RunApplication_8h.html" title=" " alt="" coords="381,81,605,109"/>
+<area shape="rect" href="RunApplication_8h.html" title="Application&#45;level entry point for FCCVisualization." alt="" coords="381,81,605,109"/>
 <area shape="poly" title=" " alt="" coords="413,39,475,81,470,80,412,44"/>
 <area shape="rect" href="main_8cpp.html" title=" " alt="" coords="506,157,629,184"/>
 <area shape="poly" title=" " alt="" coords="492,33,569,52,599,64,619,79,624,90,625,101,618,122,603,142,585,159,583,154,599,139,613,120,620,100,619,91,615,83,597,69,567,57,492,38"/>
@@ -149,18 +152,29 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:fccvis_3A_3Acli_3A_3ACliOptions" id="r_fccvis_3A_3Acli_3A_3ACliOptions"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structfccvis_1_1cli_1_1CliOptions.html">fccvis::cli::CliOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command-line options for the FCCVisualization application.  <a href="structfccvis_1_1cli_1_1CliOptions.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:fccvis" id="r_fccvis"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis.html">fccvis</a></td></tr>
 <tr class="memitem:fccvis_3A_3Acli" id="r_fccvis_3A_3Acli"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1cli.html">fccvis::cli</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command-line interface functionality. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9df900401f86ac0342fb05ee8148ed3a" id="r_a9df900401f86ac0342fb05ee8148ed3a"><td class="memItemLeft"><a class="el" href="structfccvis_1_1cli_1_1CliOptions.html">CliOptions</a>&#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1cli.html#a9df900401f86ac0342fb05ee8148ed3a">fccvis::cli::ParseArgs</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a9df900401f86ac0342fb05ee8148ed3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse application command-line arguments.  <br /></td></tr>
 <tr class="memitem:a9c48da64fb25e8151b2a7b530cfc999e" id="r_a9c48da64fb25e8151b2a7b530cfc999e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1cli.html#a9c48da64fb25e8151b2a7b530cfc999e">fccvis::cli::ValidateArgs</a> (const <a class="el" href="structfccvis_1_1cli_1_1CliOptions.html">CliOptions</a> &amp;opts)</td></tr>
+<tr class="memdesc:a9c48da64fb25e8151b2a7b530cfc999e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate parsed command-line options.  <br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Command-line options and argument handling for FCCVisualization. </p>
+<p>Defines the command-line configuration used to control application startup, including GUI mode, interactive mode, and optional input files.</p>
+<dl class="section author"><dt>Author</dt><dd>Amir H. Ebrahimnezhad <a href="mai'+'lto:+'ami'+'r.'+'ebh'+'@c'+'ern'+'.c'+'h'">amir.<span class="obfuscator">.nosp@m.</span>ebh@<span class="obfuscator">.nosp@m.</span>cern.<span class="obfuscator">.nosp@m.</span>ch</a></dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2026 FCC Project at CERN</dd></dl>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">https://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

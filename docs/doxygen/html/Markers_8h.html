@@ -112,18 +112,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('Markers_8h.htm
   <div class="headertitle"><div class="title">Markers.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Basic graphical primitives and color configuration.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Markers.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Markers_8h__incl.png" border="0" usemap="#asrc_2scene_2include_2Markers_8h" loading="lazy" alt=""/></div>
 <map name="asrc_2scene_2include_2Markers_8h" id="asrc_2scene_2include_2Markers_8h">
-<area shape="rect" title=" " alt="" coords="5,5,207,33"/>
-<area shape="rect" title=" " alt="" coords="38,81,94,109"/>
-<area shape="poly" title=" " alt="" coords="101,32,83,69,78,66,97,35"/>
-<area shape="rect" title=" " alt="" coords="118,81,176,109"/>
-<area shape="poly" title=" " alt="" coords="115,31,135,67,130,67,112,36"/>
+<area shape="rect" title="Basic graphical primitives and color configuration." alt="" coords="14,5,215,33"/>
+<area shape="rect" title=" " alt="" coords="5,81,61,109"/>
+<area shape="poly" title=" " alt="" coords="102,32,60,73,57,69,97,35"/>
+<area shape="rect" title=" " alt="" coords="85,81,144,109"/>
+<area shape="poly" title=" " alt="" coords="116,32,117,66,112,64,113,36"/>
+<area shape="rect" title=" " alt="" coords="167,81,227,109"/>
+<area shape="poly" title=" " alt="" coords="130,31,174,70,168,71,128,36"/>
 </map>
 </div>
 </div>
@@ -132,13 +138,17 @@ Include dependency graph for Markers.h:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta_3A_3AMarker" id="r_fccvis_3A_3Ascene_3A_3Ameta_3A_3AMarker"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Marker.html">fccvis::scene::meta::Marker</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A point-like graphical primitive.  <a href="classfccvis_1_1scene_1_1meta_1_1Marker.html#details">More...</a><br /></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta_3A_3ALine" id="r_fccvis_3A_3Ascene_3A_3Ameta_3A_3ALine"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Line.html">fccvis::scene::meta::Line</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A line-segment graphical primitive.  <a href="classfccvis_1_1scene_1_1meta_1_1Line.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:fccvis" id="r_fccvis"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis.html">fccvis</a></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene" id="r_fccvis_3A_3Ascene"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1scene.html">fccvis::scene</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualization scene objects. <br /></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta" id="r_fccvis_3A_3Ascene_3A_3Ameta"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1scene_1_1meta.html">fccvis::scene::meta</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1scene_1_1meta"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metadata and graphical primitives for visualization scenes. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -191,8 +201,16 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea8644f96ff7e3ae5af2cbe1c4a051724a">fccvis::scene::meta::AutoEnergy</a>
 <br />
  }</td></tr>
+<tr class="memdesc:aff2f8169b31242b22ee2e21eb2ee106e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106e" title="Color specification for visualization primitives.">Color</a> specification for visualization primitives.  <a href="namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106e">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Basic graphical primitives and color configuration. </p>
+<p>Defines the lightweight scene primitives used by FCCVisualization to represent points and line segments, together with their color and rendering properties.</p>
+<dl class="section author"><dt>Author</dt><dd>Amir H. Ebrahimnezhad <a href="mai'+'lto:+'ami'+'r.'+'ebh'+'@c'+'ern'+'.c'+'h'">amir.<span class="obfuscator">.nosp@m.</span>ebh@<span class="obfuscator">.nosp@m.</span>cern.<span class="obfuscator">.nosp@m.</span>ch</a></dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2026 FCC Project at CERN</dd></dl>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">https://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

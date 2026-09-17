@@ -41,14 +41,30 @@
     <innernamespace refid="namespacefccvis">fccvis</innernamespace>
     <innernamespace refid="namespacefccvis_1_1cli">fccvis::cli</innernamespace>
     <briefdescription>
+<para>Application-level entry point for FCCVisualization. </para>
     </briefdescription>
     <detaileddescription>
+<para>Declares the function responsible for starting FCCVisualization from an already parsed command-line configuration.</para>
+<para><simplesect kind="author"><para>Amir H. Ebrahimnezhad <ulink url="mailto:amir.ebh@cern.ch">amir.ebh@cern.ch</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright 2026 FCC Project at CERN</para>
+</simplesect>
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <verbatim>https://www.apache.org/licenses/LICENSE-2.0
+</verbatim></para>
+<para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CliOptions_8h" kindref="compound">CliOptions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1cli" kindref="compound">fccvis::cli</ref><sp/>{</highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" kindref="member">RunApplication</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref><sp/>&amp;options,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**argv);</highlight></codeline>
-<codeline lineno="4"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="CliOptions_8h" kindref="compound">CliOptions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1cli" kindref="compound">fccvis::cli</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" kindref="member">RunApplication</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref>&amp;<sp/>options,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::cli</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/cli/include/RunApplication.h"/>
   </compounddef>

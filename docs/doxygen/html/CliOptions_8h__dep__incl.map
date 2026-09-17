@@ -1,10 +1,10 @@
 <map id="src/cli/include/CliOptions.h" name="src/cli/include/CliOptions.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="283,5,476,33"/>
+<area shape="rect" id="Node000001" title="Command&#45;line options and argument handling for FCCVisualization." alt="" coords="283,5,476,33"/>
 <area shape="rect" id="Node000002" href="$CliOptions_8cc.html" title=" " alt="" coords="5,81,154,109"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="310,40,134,83,133,78,312,35"/>
 <area shape="rect" id="Node000003" href="$RunApplication_8cc.html" title=" " alt="" coords="178,81,357,109"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="349,41,289,83,286,78,345,43"/>
-<area shape="rect" id="Node000004" href="$RunApplication_8h.html" title=" " alt="" coords="381,81,605,109"/>
+<area shape="rect" id="Node000004" href="$RunApplication_8h.html" title="Application&#45;level entry point for FCCVisualization." alt="" coords="381,81,605,109"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="413,39,475,81,470,80,412,44"/>
 <area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="506,157,629,184"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="492,33,569,52,599,64,619,79,624,90,625,101,618,122,603,142,585,159,583,154,599,139,613,120,620,100,619,91,615,83,597,69,567,57,492,38"/>

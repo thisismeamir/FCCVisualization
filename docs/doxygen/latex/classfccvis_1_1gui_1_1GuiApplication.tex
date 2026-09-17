@@ -2,19 +2,38 @@
 \hypertarget{classfccvis_1_1gui_1_1GuiApplication}{}\label{classfccvis_1_1gui_1_1GuiApplication}\index{fccvis::gui::GuiApplication@{fccvis::gui::GuiApplication}}
 
 
+Manages the ROOT GUI application for FCCVisualization.  
+
+
+
+
 {\ttfamily \+\#include $<$Gui\+Application.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1gui_1_1GuiApplication_a402348fc86f726c18cac134241250135}{Gui\+Application}} (int \&argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv, \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}} \&session)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a GUI application. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1gui_1_1GuiApplication_ae3646b04d083c560a778e91fd198ba47}{\texorpdfstring{$\sim$}{\string~}\+Gui\+Application}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destroy the GUI application. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1gui_1_1GuiApplication_a03dc968acfcbc83815709953d36d0973}{Run}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Start the GUI event loop. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1gui_1_1GuiApplication_a236c303ead999265807969165a57b01f}{Terminate}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Request termination of the GUI application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the ROOT GUI application for FCCVisualization. 
+
+\doxylink{classfccvis_1_1gui_1_1GuiApplication}{Gui\+Application} owns the ROOT {\ttfamily TApplication} instance responsible for managing the graphical application\textquotesingle{}s event loop.
+
+The application operates on an existing \doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}, which is referenced rather than owned by the GUI application. The lifetime of the Session must therefore extend beyond the lifetime of the \doxylink{classfccvis_1_1gui_1_1GuiApplication}{Gui\+Application}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session} 
+
+TApplication 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1gui_1_1GuiApplication_doc-constructors}
@@ -26,6 +45,24 @@ void \doxymbox{\hyperlink{classfccvis_1_1gui_1_1GuiApplication_a236c303ead999265
 {\footnotesize\ttfamily \label{classfccvis_1_1gui_1_1GuiApplication_a402348fc86f726c18cac134241250135} 
 fccvis::\+gui::\+\+Gui\+Application::\+\+Gui\+Application (\begin{DoxyParamCaption}\item[{int \&}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{, }\item[{\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}} \&}]{session}{}\end{DoxyParamCaption})}
 
+
+
+Construct a GUI application. 
+
+Creates the underlying ROOT {\ttfamily TApplication} using the supplied command-\/line arguments and associates the application with an existing visualization session.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Reference to the application\textquotesingle{}s command-\/line argument count. \\
+\hline
+{\em argv} & Command-\/line arguments passed to the ROOT application. \\
+\hline
+{\em session} & Session whose data and configuration are visualized.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The session is not owned by \doxylink{classfccvis_1_1gui_1_1GuiApplication}{Gui\+Application}. 
+\end{DoxyNote}
 \Hypertarget{classfccvis_1_1gui_1_1GuiApplication_ae3646b04d083c560a778e91fd198ba47}\index{fccvis::gui::GuiApplication@{fccvis::gui::GuiApplication}!````~GuiApplication@{\texorpdfstring{$\sim$}{\string~}GuiApplication}}
 \index{````~GuiApplication@{\texorpdfstring{$\sim$}{\string~}GuiApplication}!fccvis::gui::GuiApplication@{fccvis::gui::GuiApplication}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GuiApplication()}{\string~GuiApplication()}}
@@ -33,6 +70,10 @@ fccvis::\+gui::\+\+Gui\+Application::\+\+Gui\+Application (\begin{DoxyParamCapti
 fccvis::\+gui::\+\+Gui\+Application::\+\texorpdfstring{$\sim$}{\string~}\+Gui\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
+
+Destroy the GUI application. 
+
+Releases the owned ROOT {\ttfamily TApplication} instance. The associated Session is not destroyed because \doxylink{classfccvis_1_1gui_1_1GuiApplication}{Gui\+Application} does not own it. 
 
 \label{classfccvis_1_1gui_1_1GuiApplication_doc-func-members}
 \Hypertarget{classfccvis_1_1gui_1_1GuiApplication_doc-func-members}
@@ -43,7 +84,11 @@ fccvis::\+gui::\+\+Gui\+Application::\+\texorpdfstring{$\sim$}{\string~}\+Gui\+A
 {\footnotesize\ttfamily \label{classfccvis_1_1gui_1_1GuiApplication_a03dc968acfcbc83815709953d36d0973} 
 void fccvis::\+gui::\+\+Gui\+Application::\+\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function:
+
+
+Start the GUI event loop. 
+
+Runs the underlying ROOT application and processes graphical events until the application is terminated. Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -58,6 +103,10 @@ Here is the caller graph for this function:
 void fccvis::\+gui::\+\+Gui\+Application::\+\+Terminate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
+
+Request termination of the GUI application. 
+
+Stops the graphical application\textquotesingle{}s event loop. 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
 \item 

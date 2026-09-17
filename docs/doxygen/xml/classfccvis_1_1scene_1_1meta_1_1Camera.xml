@@ -12,12 +12,15 @@
         <name>positionVector</name>
         <qualifiedname>fccvis::scene::meta::Camera::positionVector</qualifiedname>
         <briefdescription>
+<para>Position of the camera. </para>
         </briefdescription>
         <detaileddescription>
+<para>Stores the camera position as a sequence of numerical coordinates.</para>
+<para>The interpretation of the vector components is determined by the visualization backend. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="31" column="17" bodyfile="src/scene/include/MetaObjects.h" bodystart="31" bodyend="-1"/>
+        <location file="src/scene/include/MetaObjects.h" line="200" column="15" bodyfile="src/scene/include/MetaObjects.h" bodystart="200" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Camera_1a19defb3ee986339f458c989538597ba1" prot="public" static="no" mutable="no">
         <type>std::vector&lt; double &gt;</type>
@@ -26,12 +29,14 @@
         <name>directionVector</name>
         <qualifiedname>fccvis::scene::meta::Camera::directionVector</qualifiedname>
         <briefdescription>
+<para>Viewing direction of the camera. </para>
         </briefdescription>
         <detaileddescription>
+<para>Stores the direction in which the camera is oriented as a sequence of numerical components. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="32" column="17" bodyfile="src/scene/include/MetaObjects.h" bodystart="32" bodyend="-1"/>
+        <location file="src/scene/include/MetaObjects.h" line="208" column="15" bodyfile="src/scene/include/MetaObjects.h" bodystart="208" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -46,17 +51,27 @@
           <declname>objectName</declname>
         </param>
         <briefdescription>
+<para>Inherit constructors from <ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">BaseSessionObject</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">Camera</ref> construction is delegated to the base class. In particular, the inherited constructor can be used to assign the camera&apos;s session-level name. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="29" column="5" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="12" bodyend="12"/>
+        <location file="src/scene/include/MetaObjects.h" line="189" column="3" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="67" bodyend="68"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">Camera</ref> configuration for a visualization scene. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">Camera</ref> stores the geometric parameters required to describe a scene&apos;s viewpoint.</para>
+<para>The object inherits its identifying name from <ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref> and can therefore be referenced as a named session object.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -82,7 +97,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/scene/include/MetaObjects.h" line="26" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="27" bodyend="33"/>
+    <location file="src/scene/include/MetaObjects.h" line="180" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="180" bodyend="209"/>
     <listofallmembers>
       <member refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Camera</scope><name>BaseSessionObject</name></member>
       <member refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a19defb3ee986339f458c989538597ba1" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Camera</scope><name>directionVector</name></member>

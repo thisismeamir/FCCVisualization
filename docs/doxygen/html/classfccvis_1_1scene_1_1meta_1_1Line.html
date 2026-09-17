@@ -113,22 +113,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>A line-segment graphical primitive.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Markers_8h_source.html">Markers.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0483ec33a881f069c0b44ba6f1b046cf" id="r_a0483ec33a881f069c0b44ba6f1b046cf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0483ec33a881f069c0b44ba6f1b046cf">Line</a> (std::string name)</td></tr>
+<tr class="memdesc:a0483ec33a881f069c0b44ba6f1b046cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a line with a name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a475f7eeba381a3dd2103ea9ae08ff4dc" id="r_a475f7eeba381a3dd2103ea9ae08ff4dc"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a475f7eeba381a3dd2103ea9ae08ff4dc">name</a></td></tr>
+<tr class="memdesc:a475f7eeba381a3dd2103ea9ae08ff4dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name identifying the line.  <br /></td></tr>
 <tr class="memitem:a259f03223c96dd38d57b101784df55f7" id="r_a259f03223c96dd38d57b101784df55f7"><td class="memItemLeft">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a259f03223c96dd38d57b101784df55f7">start</a> {}</td></tr>
+<tr class="memdesc:a259f03223c96dd38d57b101784df55f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Three-dimensional starting position of the line.  <br /></td></tr>
 <tr class="memitem:adf93d67b25273bff91b11ae575cd341e" id="r_adf93d67b25273bff91b11ae575cd341e"><td class="memItemLeft">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight"><a class="el" href="#adf93d67b25273bff91b11ae575cd341e">end</a> {}</td></tr>
+<tr class="memdesc:adf93d67b25273bff91b11ae575cd341e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Three-dimensional ending position of the line.  <br /></td></tr>
 <tr class="memitem:af540c03803697a195229a47e5837e417" id="r_af540c03803697a195229a47e5837e417"><td class="memItemLeft"><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106e">Color</a>&#160;</td><td class="memItemRight"><a class="el" href="#af540c03803697a195229a47e5837e417">color</a> = <a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006">Color::White</a></td></tr>
+<tr class="memdesc:af540c03803697a195229a47e5837e417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display color of the line.  <br /></td></tr>
 <tr class="memitem:a1e58ae4e8537a6a40153c369a4d1f861" id="r_a1e58ae4e8537a6a40153c369a4d1f861"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#a1e58ae4e8537a6a40153c369a4d1f861">width</a> = 1</td></tr>
+<tr class="memdesc:a1e58ae4e8537a6a40153c369a4d1f861"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Line.html" title="A line-segment graphical primitive.">Line</a> width.  <br /></td></tr>
 <tr class="memitem:a180f4cb53a84da862b6206a470188053" id="r_a180f4cb53a84da862b6206a470188053"><td class="memItemLeft">unsigned int&#160;</td><td class="memItemRight"><a class="el" href="#a180f4cb53a84da862b6206a470188053">style</a> = 1</td></tr>
+<tr class="memdesc:a180f4cb53a84da862b6206a470188053"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Line.html" title="A line-segment graphical primitive.">Line</a> rendering style.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A line-segment graphical primitive. </p>
+<p><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Line.html" title="A line-segment graphical primitive.">Line</a> represents a straight segment between two three-dimensional positions.</p>
+<p>A line has independently configurable color, width, and rendering style. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0483ec33a881f069c0b44ba6f1b046cf" name="a0483ec33a881f069c0b44ba6f1b046cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0483ec33a881f069c0b44ba6f1b046cf">&#9670;&#160;</a></span>Line()</h2>
 
@@ -152,6 +166,14 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a line with a name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name identifying the line. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -167,6 +189,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Display color of the line. </p>
+<p>Defaults to <a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006" title="Color::White">Color::White</a>. </p>
+
 </div>
 </div>
 <a id="adf93d67b25273bff91b11ae575cd341e" name="adf93d67b25273bff91b11ae575cd341e"></a>
@@ -180,6 +205,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Three-dimensional ending position of the line. </p>
 
 </div>
 </div>
@@ -195,6 +222,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Name identifying the line. </p>
+
 </div>
 </div>
 <a id="a259f03223c96dd38d57b101784df55f7" name="a259f03223c96dd38d57b101784df55f7"></a>
@@ -208,6 +237,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Three-dimensional starting position of the line. </p>
 
 </div>
 </div>
@@ -223,6 +254,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Line.html" title="A line-segment graphical primitive.">Line</a> rendering style. </p>
+<p>The numerical value is interpreted by the visualization backend. The default value is one. </p>
+
 </div>
 </div>
 <a id="a1e58ae4e8537a6a40153c369a4d1f861" name="a1e58ae4e8537a6a40153c369a4d1f861"></a>
@@ -236,6 +270,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Line.html" title="A line-segment graphical primitive.">Line</a> width. </p>
+<p>Defaults to one backend-defined width unit. </p>
 
 </div>
 </div>

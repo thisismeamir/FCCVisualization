@@ -2,13 +2,32 @@
 \hypertarget{classfccvis_1_1session_1_1SessionData}{}\label{classfccvis_1_1session_1_1SessionData}\index{fccvis::session::SessionData@{fccvis::session::SessionData}}
 
 
+Event data loaded into a session.  
+
+
+
+
 {\ttfamily \+\#include $<$Session.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std::\+unordered\+\_\+map$<$ std::\+string, std::\+vector$<$ podio::\+\+Frame $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData_aa64d148059aa9830c11aef0d420e413a}{categories}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Event frames grouped by category. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Event data loaded into a session. 
+
+\doxylink{classfccvis_1_1session_1_1SessionData}{Session\+Data} organizes podio event frames into named categories.
+
+A category contains an ordered sequence of {\ttfamily podio::\+\+Frame} objects. The category name is used to distinguish different data sources or logical groups of events within a session.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session} 
+
+podio::\+\+Frame 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1session_1_1SessionData_doc-variable-members}
@@ -21,6 +40,12 @@ std::\+unordered\+\_\+map$<$ std::\+string, std::\+vector$<$ podio::\+\+Frame $>
 std::\+unordered\+\_\+map$<$std::\+string, std::\+vector$<$podio::\+\+Frame$>$ $>$ fccvis::\+session::\+\+Session\+Data::\+categories}
 
 
+
+Event frames grouped by category. 
+
+The map key identifies the category, while the associated vector contains the podio frames belonging to that category.
+
+The position of a frame in the vector is its entry index within that category. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

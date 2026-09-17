@@ -1,7 +1,7 @@
 <map id="src/scene/include/BaseSessionObject.h" name="src/scene/include/BaseSessionObject.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,225,50"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="25,98,109,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,49,85,86,80,83,100,52"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="134,98,192,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,48,150,85,145,84,126,53"/>
+<area shape="rect" id="Node000001" title="Base class for named objects belonging to a visualization session." alt="" coords="5,5,225,50"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="44,98,103,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,49,89,85,85,82,102,52"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="127,98,186,126"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,48,145,84,140,83,125,53"/>
 </map>

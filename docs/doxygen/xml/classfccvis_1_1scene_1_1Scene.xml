@@ -12,12 +12,18 @@
         <name>camera</name>
         <qualifiedname>fccvis::scene::Scene::camera</qualifiedname>
         <briefdescription>
+<para>Camera associated with the scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>The camera defines the viewpoint from which the scene is displayed.</para>
+<para>A shared pointer is used because camera objects may be shared between multiple parts of a session configuration.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">fccvis::scene::meta::Camera</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Scene.h" line="11" column="19" bodyfile="src/scene/include/Scene.h" bodystart="11" bodyend="-1"/>
+        <location file="src/scene/include/Scene.h" line="87" column="19" bodyfile="src/scene/include/Scene.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1Scene_1af0c6dd7d9700550a8b81d75a880433ad" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref> &gt; &gt;</type>
@@ -26,12 +32,18 @@
         <name>filters</name>
         <qualifiedname>fccvis::scene::Scene::filters</qualifiedname>
         <briefdescription>
+<para>Filters applied to the scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>Filters determine which visualization content is included in or excluded from the scene.</para>
+<para>Each filter is shared through a <computeroutput>std::shared_ptr</computeroutput> so that filter definitions can be reused across scenes.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Scene.h" line="12" column="15" bodyfile="src/scene/include/Scene.h" bodystart="12" bodyend="-1"/>
+        <location file="src/scene/include/Scene.h" line="100" column="15" bodyfile="src/scene/include/Scene.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1Scene_1a939d9f1437dded2002ec08717080c355" prot="public" static="no" mutable="no">
         <type><ref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kindref="compound">fccvis::scene::meta::SceneOptions</ref></type>
@@ -40,13 +52,18 @@
         <name>options</name>
         <qualifiedname>fccvis::scene::Scene::options</qualifiedname>
         <briefdescription>
+<para>Scene-specific visualization options. </para>
         </briefdescription>
         <detaileddescription>
+<para>Contains the configuration identified by the options name supplied when constructing the scene.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kindref="compound">fccvis::scene::meta::SceneOptions</ref> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Scene.h" line="13" column="37" bodyfile="src/scene/include/Scene.h" bodystart="13" bodyend="-1"/>
-        <referencedby refid="classfccvis_1_1scene_1_1Scene_1ad673226e62b7c89b1dbdd0ee589a3c52" compoundref="Scene_8h" startline="8" endline="9">Scene</referencedby>
+        <location file="src/scene/include/Scene.h" line="110" column="37" bodyfile="src/scene/include/Scene.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="classfccvis_1_1scene_1_1Scene_1ad673226e62b7c89b1dbdd0ee589a3c52" compoundref="Scene_8h" startline="72" endline="74">Scene</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -65,19 +82,58 @@
           <declname>optionsName</declname>
         </param>
         <briefdescription>
+<para>Construct a scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>The supplied scene name is passed to <ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">BaseSessionObject</ref> and the options name is used to initialize the scene&apos;s <ref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kindref="compound">fccvis::scene::meta::SceneOptions</ref> object.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name identifying the scene. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>optionsName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name identifying the scene options. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Scene.h" line="8" column="3" bodyfile="src/scene/include/Scene.h" bodystart="8" bodyend="9"/>
-        <references refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" compoundref="BaseSessionObject_8h" startline="12" endline="12">fccvis::scene::BaseSessionObject::BaseSessionObject</references>
-        <references refid="classfccvis_1_1scene_1_1Scene_1a939d9f1437dded2002ec08717080c355" compoundref="Scene_8h" startline="13">options</references>
+        <location file="src/scene/include/Scene.h" line="72" column="3" bodyfile="src/scene/include/Scene.h" bodystart="72" bodyend="74"/>
+        <references refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" compoundref="BaseSessionObject_8h" startline="67" endline="68">fccvis::scene::BaseSessionObject::BaseSessionObject</references>
+        <references refid="classfccvis_1_1scene_1_1Scene_1a939d9f1437dded2002ec08717080c355" compoundref="Scene_8h" startline="110">options</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A reusable visualization scene. </para>
     </briefdescription>
     <detaileddescription>
+<para>A <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">Scene</ref> represents a named visualization configuration within an FCCVisualization session. It combines:</para>
+<para><itemizedlist>
+<listitem><para>a scene name inherited from <ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">BaseSessionObject</ref>;</para>
+</listitem><listitem><para>an optional camera configuration;</para>
+</listitem><listitem><para>a collection of visualization filters;</para>
+</listitem><listitem><para>scene-specific rendering and display options.</para>
+</listitem></itemizedlist>
+</para>
+<para>A scene can therefore describe how a particular view of event data should be presented without being tied to a specific event.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">BaseSessionObject</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">fccvis::scene::meta::Camera</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kindref="compound">fccvis::scene::meta::SceneOptions</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -112,7 +168,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/scene/include/Scene.h" line="6" column="1" bodyfile="src/scene/include/Scene.h" bodystart="6" bodyend="14"/>
+    <location file="src/scene/include/Scene.h" line="60" column="1" bodyfile="src/scene/include/Scene.h" bodystart="60" bodyend="111"/>
     <listofallmembers>
       <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" virt="non-virtual"><scope>fccvis::scene::Scene</scope><name>BaseSessionObject</name></member>
       <member refid="classfccvis_1_1scene_1_1Scene_1a65a3d5f541efe6c8238945e377edf558" prot="public" virt="non-virtual"><scope>fccvis::scene::Scene</scope><name>camera</name></member>

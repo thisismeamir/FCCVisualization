@@ -1,5 +1,10 @@
 \doxysection{src/\+session/\+include/\+\+Session.h File Reference}
 \hypertarget{Session_8h}{}\label{Session_8h}\index{src/session/include/Session.h@{src/session/include/Session.h}}
+
+
+Session state, input data, and visualization configuration.  
+
+
 {\ttfamily \+\#include "{}Meta\+Objects.\+h"{}}\newline
 {\ttfamily \+\#include "{}Scene.\+h"{}}\newline
 {\ttfamily \+\#include $<$filesystem$>$}\newline
@@ -8,8 +13,8 @@
 {\ttfamily \+\#include $<$podio/\+\+Frame.\+h$>$}\newline
 {\ttfamily \+\#include $<$string$>$}\newline
 {\ttfamily \+\#include $<$string\+\_\+view$>$}\newline
-{\ttfamily \+\#include $<$vector$>$}\newline
 {\ttfamily \+\#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
 Include dependency graph for Session.\+h:
 \nopagebreak
 \begin{figure}[H]
@@ -30,15 +35,38 @@ This graph shows which files directly or indirectly include this file:
 \begin{DoxyCompactItemize}
 \item 
 class \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{fccvis::\+session::\+\+Session\+Options}}
-\item 
+\begin{DoxyCompactList}\small\item\em Visualization and runtime configuration for a session. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{fccvis::\+session::\+\+Session\+Data}}
-\item 
+\begin{DoxyCompactList}\small\item\em Event data loaded into a session. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Represents an FCCVisualization session. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis}{fccvis}}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis_1_1session}{fccvis::\+session}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfccvis_1_1session_1_1Session}{Session} management and session state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Session state, input data, and visualization configuration. 
+
+Defines the classes used to represent an FCCVisualization session:
+\begin{DoxyItemize}
+\item \doxylink{classfccvis_1_1session_1_1SessionOptions}{fccvis::\+session::\+\+Session\+Options} stores visualization configuration.
+\item \doxylink{classfccvis_1_1session_1_1SessionData}{fccvis::\+session::\+\+Session\+Data} stores loaded event data.
+\item \doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session} coordinates the session name, data, options, and access to event information.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Amir H. Ebrahimnezhad \href{mailto:amir.ebh@cern.ch}{\texttt{amir.\+ebh@cern.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2026 FCC Project at CERN
+\end{DoxyCopyright}
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}https://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 

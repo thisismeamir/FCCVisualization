@@ -2,22 +2,30 @@
 \hypertarget{Scene_8h_source}{}\label{Scene_8h_source}\index{src/scene/include/Scene.h@{src/scene/include/Scene.h}}
 \doxymbox{\hyperlink{Scene_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{BaseSessionObject_8h}{BaseSessionObject.h}}"{}}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{MetaObjects_8h}{MetaObjects.h}}"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <utility>}}
-\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1scene}{fccvis::scene}}\ \{}
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_ad673226e62b7c89b1dbdd0ee589a3c52}{Scene}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}\ \{}
-\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00008\ \ \ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_ad673226e62b7c89b1dbdd0ee589a3c52}{Scene}}(std::string\ sceneName,\ std::string\ optionsName)}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}(std::move(sceneName)),\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a939d9f1437dded2002ec08717080c355}{options}}(std::move(optionsName))\ \{\}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \ \ std::shared\_ptr<fccvis::scene::meta::Camera>\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a65a3d5f541efe6c8238945e377edf558}{camera}};}
-\DoxyCodeLine{00012\ \ \ std::vector<std::shared\_ptr<fccvis::scene::meta::Filter>>\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_af0c6dd7d9700550a8b81d75a880433ad}{filters}};}
-\DoxyCodeLine{00013\ \ \ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::scene::meta::SceneOptions}}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a939d9f1437dded2002ec08717080c355}{options}};}
-\DoxyCodeLine{00014\ \};}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \}\ \textcolor{comment}{//\ namespace\ fccvis::scene}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{BaseSessionObject_8h}{BaseSessionObject.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{MetaObjects_8h}{MetaObjects.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1scene}{fccvis::scene}}\ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_ad673226e62b7c89b1dbdd0ee589a3c52}{Scene}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_ad673226e62b7c89b1dbdd0ee589a3c52}{Scene}}(std::string\ sceneName,\ std::string\ optionsName)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}(std::move(sceneName)),}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a939d9f1437dded2002ec08717080c355}{options}}(std::move(optionsName))\ \{\}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00087\ \ \ std::shared\_ptr<fccvis::scene::meta::Camera>\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a65a3d5f541efe6c8238945e377edf558}{camera}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00100\ \ \ std::vector<std::shared\_ptr<fccvis::scene::meta::Filter>>\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_af0c6dd7d9700550a8b81d75a880433ad}{filters}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \ \ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::scene::meta::SceneOptions}}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene_a939d9f1437dded2002ec08717080c355}{options}};}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \}\ \textcolor{comment}{//\ namespace\ fccvis::scene}}
 
 \end{DoxyCode}

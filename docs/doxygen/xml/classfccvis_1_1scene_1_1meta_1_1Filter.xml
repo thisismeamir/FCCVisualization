@@ -16,17 +16,27 @@
           <declname>objectName</declname>
         </param>
         <briefdescription>
+<para>Inherit constructors from <ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">BaseSessionObject</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para>Allows a <ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">Filter</ref> to be constructed using the same naming interface as other session objects. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="38" column="3" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="12" bodyend="12"/>
+        <location file="src/scene/include/MetaObjects.h" line="232" column="3" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="67" bodyend="68"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">Filter</ref> configuration for a visualization scene. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">Filter</ref> is a named session object representing a visualization filtering configuration.</para>
+<para>The class currently inherits its construction and identity directly from <ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref> and does not define additional filter parameters.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">fccvis::scene::BaseSessionObject</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -52,7 +62,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/scene/include/MetaObjects.h" line="35" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="36" bodyend="39"/>
+    <location file="src/scene/include/MetaObjects.h" line="224" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="224" bodyend="233"/>
     <listofallmembers>
       <member refid="classfccvis_1_1scene_1_1meta_1_1Filter_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Filter</scope><name>BaseSessionObject</name></member>
       <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Filter</scope><name>name</name></member>

@@ -1,5 +1,10 @@
 \doxysection{src/\+cli/\+include/\+\+Cli\+Options.h File Reference}
 \hypertarget{CliOptions_8h}{}\label{CliOptions_8h}\index{src/cli/include/CliOptions.h@{src/cli/include/CliOptions.h}}
+
+
+Command-\/line options and argument handling for FCCVisualization.  
+
+
 {\ttfamily \+\#include $<$filesystem$>$}\newline
 {\ttfamily \+\#include $<$optional$>$}\newline
 Include dependency graph for Cli\+Options.\+h:
@@ -22,18 +27,36 @@ This graph shows which files directly or indirectly include this file:
 \begin{DoxyCompactItemize}
 \item 
 struct \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions}{fccvis::\+cli::\+\+Cli\+Options}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Command-\/line options for the FCCVisualization application. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis}{fccvis}}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis_1_1cli}{fccvis::\+cli}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Command-\/line interface functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions}{Cli\+Options}} \doxymbox{\hyperlink{namespacefccvis_1_1cli_a9df900401f86ac0342fb05ee8148ed3a}{fccvis::\+cli::\+\+Parse\+Args}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
-\item 
+\begin{DoxyCompactList}\small\item\em Parse application command-\/line arguments. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{namespacefccvis_1_1cli_a9c48da64fb25e8151b2a7b530cfc999e}{fccvis::\+cli::\+\+Validate\+Args}} (const \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions}{Cli\+Options}} \&opts)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Validate parsed command-\/line options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command-\/line options and argument handling for FCCVisualization. 
+
+Defines the command-\/line configuration used to control application startup, including GUI mode, interactive mode, and optional input files.
+
+\begin{DoxyAuthor}{Author}
+Amir H. Ebrahimnezhad \href{mailto:amir.ebh@cern.ch}{\texttt{amir.\+ebh@cern.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2026 FCC Project at CERN
+\end{DoxyCopyright}
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}https://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 

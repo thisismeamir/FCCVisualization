@@ -2,21 +2,25 @@
 \hypertarget{BaseSessionObject_8h_source}{}\label{BaseSessionObject_8h_source}\index{src/scene/include/BaseSessionObject.h@{src/scene/include/BaseSessionObject.h}}
 \doxymbox{\hyperlink{BaseSessionObject_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <algorithm>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1scene}{fccvis::scene}}\ \{}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{comment}{//\ A\ base\ for\ all\ the\ object\ in\ a\ scene\ to\ identify\ them\ using\ the\ name.}}
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}}
-\DoxyCodeLine{00010\ \{}
-\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}(std::string\ objectName)\ :\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name}}(std::move(objectName))\ \{\}}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_aad5f8ee5d8196db921752e9157cdbe42}{\string~BaseSessionObject}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00014\ \ \ \ \ std::string\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name}};}
-\DoxyCodeLine{00015\ \};}
-\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1scene}{fccvis::scene}}\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}(std::string\ objectName)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ :\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name}}(std::move(objectName))\ \{\}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_aad5f8ee5d8196db921752e9157cdbe42}{\string~BaseSessionObject}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00085\ \ \ \ \ std::string\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name}};}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \}\ \textcolor{comment}{//\ namespace\ fccvis::scene}}
 
 \end{DoxyCode}

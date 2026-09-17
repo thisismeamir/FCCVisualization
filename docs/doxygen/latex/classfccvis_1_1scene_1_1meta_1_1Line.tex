@@ -2,29 +2,41 @@
 \hypertarget{classfccvis_1_1scene_1_1meta_1_1Line}{}\label{classfccvis_1_1scene_1_1meta_1_1Line}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}}
 
 
+A line-\/segment graphical primitive.  
+
+
+
+
 {\ttfamily \+\#include $<$Markers.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line_a0483ec33a881f069c0b44ba6f1b046cf}{Line}} (std::\+string name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Construct a line with a name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line_a475f7eeba381a3dd2103ea9ae08ff4dc}{name}}
-\item 
+\begin{DoxyCompactList}\small\item\em Name identifying the line. \end{DoxyCompactList}\item 
 std::\+array$<$ double, 3 $>$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line_a259f03223c96dd38d57b101784df55f7}{start}} \{\}
-\item 
+\begin{DoxyCompactList}\small\item\em Three-\/dimensional starting position of the line. \end{DoxyCompactList}\item 
 std::\+array$<$ double, 3 $>$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line_adf93d67b25273bff91b11ae575cd341e}{end}} \{\}
-\item 
+\begin{DoxyCompactList}\small\item\em Three-\/dimensional ending position of the line. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{Color}} \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line_af540c03803697a195229a47e5837e417}{color}} = \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006}{Color::\+\+White}}
-\item 
+\begin{DoxyCompactList}\small\item\em Display color of the line. \end{DoxyCompactList}\item 
 unsigned int \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line_a1e58ae4e8537a6a40153c369a4d1f861}{width}} = 1
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{classfccvis_1_1scene_1_1meta_1_1Line}{Line} width. \end{DoxyCompactList}\item 
 unsigned int \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line_a180f4cb53a84da862b6206a470188053}{style}} = 1
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{classfccvis_1_1scene_1_1meta_1_1Line}{Line} rendering style. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A line-\/segment graphical primitive. 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Line}{Line} represents a straight segment between two three-\/dimensional positions.
+
+A line has independently configurable color, width, and rendering style. 
 
 \label{classfccvis_1_1scene_1_1meta_1_1Line_doc-constructors}
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_doc-constructors}
@@ -37,6 +49,15 @@ fccvis::\+scene::\+meta::\+\+Line::\+\+Line (\begin{DoxyParamCaption}\item[{std:
 
 
 
+Construct a line with a name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name identifying the line. \\
+\hline
+\end{DoxyParams}
+
+
 \label{classfccvis_1_1scene_1_1meta_1_1Line_doc-variable-members}
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_doc-variable-members}
 \doxysubsection{Member Data Documentation}
@@ -46,11 +67,19 @@ fccvis::\+scene::\+meta::\+\+Line::\+\+Line (\begin{DoxyParamCaption}\item[{std:
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Line_af540c03803697a195229a47e5837e417} 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{Color}} fccvis::\+scene::\+meta::\+\+Line::\+color = \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006}{Color::\+\+White}}}
 
-\Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_adf93d67b25273bff91b11ae575cd341e}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}!end@{end}}
+
+
+Display color of the line. 
+
+Defaults to \doxylink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006}{Color::\+\+White}. \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_adf93d67b25273bff91b11ae575cd341e}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}!end@{end}}
 \index{end@{end}!fccvis::scene::meta::Line@{fccvis::scene::meta::Line}}
 \doxysubsubsection{\texorpdfstring{end}{end}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Line_adf93d67b25273bff91b11ae575cd341e} 
 std::\+array$<$double, 3$>$ fccvis::\+scene::\+meta::\+\+Line::\+end \{\}}
+
+
+
+Three-\/dimensional ending position of the line. 
 
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_a475f7eeba381a3dd2103ea9ae08ff4dc}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}!name@{name}}
 \index{name@{name}!fccvis::scene::meta::Line@{fccvis::scene::meta::Line}}
@@ -58,11 +87,19 @@ std::\+array$<$double, 3$>$ fccvis::\+scene::\+meta::\+\+Line::\+end \{\}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Line_a475f7eeba381a3dd2103ea9ae08ff4dc} 
 std::\+string fccvis::\+scene::\+meta::\+\+Line::\+name}
 
+
+
+Name identifying the line. 
+
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_a259f03223c96dd38d57b101784df55f7}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}!start@{start}}
 \index{start@{start}!fccvis::scene::meta::Line@{fccvis::scene::meta::Line}}
 \doxysubsubsection{\texorpdfstring{start}{start}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Line_a259f03223c96dd38d57b101784df55f7} 
 std::\+array$<$double, 3$>$ fccvis::\+scene::\+meta::\+\+Line::\+start \{\}}
+
+
+
+Three-\/dimensional starting position of the line. 
 
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_a180f4cb53a84da862b6206a470188053}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}!style@{style}}
 \index{style@{style}!fccvis::scene::meta::Line@{fccvis::scene::meta::Line}}
@@ -70,13 +107,21 @@ std::\+array$<$double, 3$>$ fccvis::\+scene::\+meta::\+\+Line::\+start \{\}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Line_a180f4cb53a84da862b6206a470188053} 
 unsigned int fccvis::\+scene::\+meta::\+\+Line::\+style = 1}
 
-\Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_a1e58ae4e8537a6a40153c369a4d1f861}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}!width@{width}}
+
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Line}{Line} rendering style. 
+
+The numerical value is interpreted by the visualization backend. The default value is one. \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Line_a1e58ae4e8537a6a40153c369a4d1f861}\index{fccvis::scene::meta::Line@{fccvis::scene::meta::Line}!width@{width}}
 \index{width@{width}!fccvis::scene::meta::Line@{fccvis::scene::meta::Line}}
 \doxysubsubsection{\texorpdfstring{width}{width}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Line_a1e58ae4e8537a6a40153c369a4d1f861} 
 unsigned int fccvis::\+scene::\+meta::\+\+Line::\+width = 1}
 
 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Line}{Line} width. 
+
+Defaults to one backend-\/defined width unit. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

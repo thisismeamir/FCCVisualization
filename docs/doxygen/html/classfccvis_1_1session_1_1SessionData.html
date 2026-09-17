@@ -113,13 +113,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>Event data loaded into a session.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Session_8h_source.html">Session.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa64d148059aa9830c11aef0d420e413a" id="r_aa64d148059aa9830c11aef0d420e413a"><td class="memItemLeft">std::unordered_map&lt; std::string, std::vector&lt; podio::Frame &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa64d148059aa9830c11aef0d420e413a">categories</a></td></tr>
+<tr class="memdesc:aa64d148059aa9830c11aef0d420e413a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event frames grouped by category.  <br /></td></tr>
 </table>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Event data loaded into a session. </p>
+<p><a class="el" href="classfccvis_1_1session_1_1SessionData.html" title="Event data loaded into a session.">SessionData</a> organizes podio event frames into named categories.</p>
+<p>A category contains an ordered sequence of <code>podio::Frame</code> objects. The category name is used to distinguish different data sources or logical groups of events within a session.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">fccvis::session::Session</a> </dd>
+<dd>
+podio::Frame </dd></dl>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="aa64d148059aa9830c11aef0d420e413a" name="aa64d148059aa9830c11aef0d420e413a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa64d148059aa9830c11aef0d420e413a">&#9670;&#160;</a></span>categories</h2>
 
@@ -131,6 +142,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Event frames grouped by category. </p>
+<p>The map key identifies the category, while the associated vector contains the podio frames belonging to that category.</p>
+<p>The position of a frame in the vector is its entry index within that category. </p>
 
 </div>
 </div>

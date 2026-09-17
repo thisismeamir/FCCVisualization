@@ -2,35 +2,46 @@
 \hypertarget{RootScene_8h_source}{}\label{RootScene_8h_source}\index{src/backend/root/include/RootScene.h@{src/backend/root/include/RootScene.h}}
 \doxymbox{\hyperlink{RootScene_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Scene_8h}{Scene.h}}"{}}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <TEveManager.h>}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <TEveScene.h>}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <TEveViewer.h>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1backend_1_1root}{fccvis::backend::root}}\ \{}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}}
-\DoxyCodeLine{00011\ \{}
-\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}(std::shared\_ptr<fccvis::scene::Scene>\ \doxymbox{\hyperlink{namespacefccvis_1_1scene}{scene}});}
-\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{\string~RootScene}}();}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44}{RootScene}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}\&\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ TEveViewer*\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a895fda029418d2fedddc535a2b67385f}{Viewer}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_pViewer;\ \}}
-\DoxyCodeLine{00020\ \ \ \ \ TEveScene*\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_ac1d63d9dde356fb858167980c3888ca8}{EveScene}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_pEveScene;\ \}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81}{SyncCamera}}();\ \ \textcolor{comment}{//\ pushes\ Scene::camera's\ position/direction\ into\ the\ TGLViewer}}
-\DoxyCodeLine{00023\ \ \ \ \ std::shared\_ptr<fccvis::scene::Scene>\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a49ac8ccf1948e04f02dbc5fb5e271a75}{GetSceneAbstract}}();}
-\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00025\ \ \ \ \ std::shared\_ptr<fccvis::scene::Scene>\ m\_scene;}
-\DoxyCodeLine{00026\ \ \ \ \ TEveViewer*\ m\_pViewer;}
-\DoxyCodeLine{00027\ \ \ \ \ TEveScene*\ m\_pEveScene;}
-\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00001\ }
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <TEveManager.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <TEveScene.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <TEveViewer.h>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1backend_1_1root}{fccvis::backend::root}}\ \{}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}\ \{}
+\DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}(std::shared\_ptr<fccvis::scene::Scene>\ \doxymbox{\hyperlink{namespacefccvis_1_1scene}{scene}});}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00087\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{\string~RootScene}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00095\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44}{RootScene}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}\&\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{RootScene}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00113\ \ \ \ \ TEveViewer*\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a895fda029418d2fedddc535a2b67385f}{Viewer}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_pViewer;\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00123\ \ \ \ \ TEveScene*\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_ac1d63d9dde356fb858167980c3888ca8}{EveScene}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_pEveScene;\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81}{SyncCamera}}();}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00142\ \ \ \ \ std::shared\_ptr<fccvis::scene::Scene>\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a49ac8ccf1948e04f02dbc5fb5e271a75}{GetSceneAbstract}}();}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00151\ \ \ \ \ std::shared\_ptr<fccvis::scene::Scene>\ m\_scene;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00159\ \ \ \ \ TEveViewer*\ m\_pViewer;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00167\ \ \ \ \ TEveScene*\ m\_pEveScene;}
+\DoxyCodeLine{00168\ \};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \}\ \textcolor{comment}{//\ namespace\ fccvis::backend::root}}
 
 \end{DoxyCode}

@@ -1,5 +1,5 @@
 <map id="fccvis::backend::root::RootSceneManager::Update" name="fccvis::backend::root::RootSceneManager::Update">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,216,50"/>
-<area shape="rect" id="Node000002" href="$classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title=" " alt="" coords="264,5,452,50"/>
+<area shape="rect" id="Node000001" title="Update an open ROOT scene." alt="" coords="5,5,216,50"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title="Synchronize the ROOT camera with the abstract scene." alt="" coords="264,5,452,50"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,25,251,28,245,28,216,30"/>
 </map>

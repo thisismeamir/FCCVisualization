@@ -11,13 +11,14 @@
         <name>name</name>
         <qualifiedname>fccvis::scene::meta::Marker::name</qualifiedname>
         <briefdescription>
+<para>Name identifying the marker. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="52" column="15" bodyfile="src/scene/include/Markers.h" bodystart="52" bodyend="-1"/>
-        <referencedby refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ad0eded8e2b74d32e5499ac654ad4560a" compoundref="Markers_8h" startline="50" endline="50">Marker</referencedby>
+        <location file="src/scene/include/Markers.h" line="199" column="15" bodyfile="src/scene/include/Markers.h" bodystart="199" bodyend="-1"/>
+        <referencedby refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ad0eded8e2b74d32e5499ac654ad4560a" compoundref="Markers_8h" startline="194" endline="194">Marker</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Marker_1acfac11443ac158e86482f24b8e7153a0" prot="public" static="no" mutable="no">
         <type>std::array&lt; double, 3 &gt;</type>
@@ -27,12 +28,14 @@
         <qualifiedname>fccvis::scene::meta::Marker::position</qualifiedname>
         <initializer>{}</initializer>
         <briefdescription>
+<para>Three-dimensional position of the marker. </para>
         </briefdescription>
         <detaileddescription>
+<para>The array contains the three spatial coordinates in the coordinate system used by the visualization. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="54" column="14" bodyfile="src/scene/include/Markers.h" bodystart="54" bodyend="54"/>
+        <location file="src/scene/include/Markers.h" line="207" column="14" bodyfile="src/scene/include/Markers.h" bodystart="207" bodyend="207"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Marker_1a257a23670774845427de9379542d3870" prot="public" static="no" mutable="no">
         <type><ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106e" kindref="member">Color</ref></type>
@@ -42,12 +45,14 @@
         <qualifiedname>fccvis::scene::meta::Marker::color</qualifiedname>
         <initializer>= <ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006" kindref="member">Color::White</ref></initializer>
         <briefdescription>
+<para>Display color of the marker. </para>
         </briefdescription>
         <detaileddescription>
+<para>Defaults to <ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006" kindref="member">Color::White</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="56" column="9" bodyfile="src/scene/include/Markers.h" bodystart="56" bodyend="-1"/>
+        <location file="src/scene/include/Markers.h" line="214" column="9" bodyfile="src/scene/include/Markers.h" bodystart="214" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Marker_1ae8d2bec2d68b5d385ffe941ce608a8b1" prot="public" static="no" mutable="no">
         <type>unsigned int</type>
@@ -57,12 +62,14 @@
         <qualifiedname>fccvis::scene::meta::Marker::size</qualifiedname>
         <initializer>= 1</initializer>
         <briefdescription>
+<para>Display size of the marker. </para>
         </briefdescription>
         <detaileddescription>
+<para>Defaults to one backend-defined size unit. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="58" column="16" bodyfile="src/scene/include/Markers.h" bodystart="58" bodyend="-1"/>
+        <location file="src/scene/include/Markers.h" line="221" column="16" bodyfile="src/scene/include/Markers.h" bodystart="221" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -77,20 +84,34 @@
           <declname>name</declname>
         </param>
         <briefdescription>
+<para>Construct a marker with a name. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name identifying the marker. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="50" column="3" bodyfile="src/scene/include/Markers.h" bodystart="50" bodyend="50"/>
-        <references refid="classfccvis_1_1scene_1_1meta_1_1Marker_1add30902c67b2724f7923c6143e24531e" compoundref="Markers_8h" startline="52">name</references>
+        <location file="src/scene/include/Markers.h" line="194" column="3" bodyfile="src/scene/include/Markers.h" bodystart="194" bodyend="194"/>
+        <references refid="classfccvis_1_1scene_1_1meta_1_1Marker_1add30902c67b2724f7923c6143e24531e" compoundref="Markers_8h" startline="199">name</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A point-like graphical primitive. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Marker" kindref="compound">Marker</ref> represents a single position in three-dimensional space together with its display color and size.</para>
+<para>Markers can be used for annotations, reference points, detector features, or other point-like visualization elements. </para>
     </detaileddescription>
-    <location file="src/scene/include/Markers.h" line="48" column="1" bodyfile="src/scene/include/Markers.h" bodystart="48" bodyend="59"/>
+    <location file="src/scene/include/Markers.h" line="187" column="1" bodyfile="src/scene/include/Markers.h" bodystart="187" bodyend="222"/>
     <listofallmembers>
       <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1a257a23670774845427de9379542d3870" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Marker</scope><name>color</name></member>
       <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ad0eded8e2b74d32e5499ac654ad4560a" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Marker</scope><name>Marker</name></member>

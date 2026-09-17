@@ -1,12 +1,15 @@
 \doxysection{src/\+backend/\+root/\+include/\+\+Root\+Scene.h File Reference}
 \hypertarget{RootScene_8h}{}\label{RootScene_8h}\index{src/backend/root/include/RootScene.h@{src/backend/root/include/RootScene.h}}
+
+
+ROOT/\+\+TEve materialization of an FCCVisualization scene.  
+
+
 {\ttfamily \+\#include "{}Scene.\+h"{}}\newline
 {\ttfamily \+\#include $<$TEve\+Manager.\+h$>$}\newline
 {\ttfamily \+\#include $<$TEve\+Scene.\+h$>$}\newline
 {\ttfamily \+\#include $<$TEve\+Viewer.\+h$>$}\newline
 {\ttfamily \+\#include $<$memory$>$}\newline
-{\ttfamily \+\#include $<$string$>$}\newline
-{\ttfamily \+\#include $<$vector$>$}\newline
 Include dependency graph for Root\+Scene.\+h:
 \nopagebreak
 \begin{figure}[H]
@@ -27,7 +30,7 @@ This graph shows which files directly or indirectly include this file:
 \begin{DoxyCompactItemize}
 \item 
 class \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{fccvis::\+backend::\+root::\+\+Root\+Scene}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ROOT/\+\+TEve representation of an abstract visualization scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,4 +39,24 @@ namespace \doxymbox{\hyperlink{namespacefccvis}{fccvis}}
 namespace \doxymbox{\hyperlink{namespacefccvis_1_1backend}{fccvis::\+backend}}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis_1_1backend_1_1root}{fccvis::\+backend::\+root}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ROOT rendering backend. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ROOT/\+\+TEve materialization of an FCCVisualization scene. 
+
+Defines \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{fccvis::\+backend::\+root::\+\+Root\+Scene}, which connects an abstract FCCVisualization scene to its ROOT/\+\+TEve representation.
+
+An abstract \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} describes the visualization independently of the rendering backend. Root\+Scene materializes that description into the corresponding ROOT TEve objects, including a {\ttfamily TEve\+Scene} and {\ttfamily TEve\+Viewer}.
+
+\begin{DoxyAuthor}{Author}
+Amir H. Ebrahimnezhad \href{mailto:amir.ebh@cern.ch}{\texttt{amir.\+ebh@cern.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2026 FCC Project at CERN
+\end{DoxyCopyright}
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}https://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 

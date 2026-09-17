@@ -2,27 +2,52 @@
 \hypertarget{classfccvis_1_1backend_1_1root_1_1RootScene}{}\label{classfccvis_1_1backend_1_1root_1_1RootScene}\index{fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}}
 
 
+ROOT/\+\+TEve representation of an abstract visualization scene.  
+
+
+
+
 {\ttfamily \+\#include $<$Root\+Scene.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{Root\+Scene}} (std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ scene)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a ROOT representation of a scene. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_ac43cfc1320b5032e1497c5710669ba99}{\texorpdfstring{$\sim$}{\string~}\+Root\+Scene}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destroy the ROOT representation of the scene. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44}{Root\+Scene}} (const Root\+Scene \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Copy construction is disabled. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{Root\+Scene}} \& \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac}{operator=}} (const \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{Root\+Scene}} \&)=delete
-\item 
+\begin{DoxyCompactList}\small\item\em Copy assignment is disabled. \end{DoxyCompactList}\item 
 TEve\+Viewer \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a895fda029418d2fedddc535a2b67385f}{Viewer}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the ROOT TEve viewer associated with the scene. \end{DoxyCompactList}\item 
 TEve\+Scene \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_ac1d63d9dde356fb858167980c3888ca8}{Eve\+Scene}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Get the ROOT TEve scene. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81}{Sync\+Camera}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Synchronize the ROOT camera with the abstract scene. \end{DoxyCompactList}\item 
 std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a49ac8ccf1948e04f02dbc5fb5e271a75}{Get\+Scene\+Abstract}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the underlying abstract scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ROOT/\+\+TEve representation of an abstract visualization scene. 
+
+\doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene} bridges the backend-\/independent \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} representation and the corresponding ROOT/\+\+TEve graphical objects.
+
+The class maintains a shared reference to the abstract Scene while owning or managing its associated TEve-\/side representation.
+
+The abstract scene remains independent of ROOT and can therefore continue to exist separately from its materialized ROOT scene.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} 
+
+\doxylink{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager} 
+
+TEve\+Scene 
+
+TEve\+Viewer 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1backend_1_1root_1_1RootScene_doc-constructors}
@@ -34,6 +59,20 @@ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fc
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616} 
 fccvis::\+backend::\+root::\+\+Root\+Scene::\+\+Root\+Scene (\begin{DoxyParamCaption}\item[{std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$}]{scene}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
+
+
+Construct a ROOT representation of a scene. 
+
+Materializes the supplied abstract scene into the ROOT/\+\+TEve representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & Abstract scene to materialize.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The abstract scene is retained through a {\ttfamily std::\+shared\+\_\+ptr} and therefore remains alive as long as the \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene} retains its reference. 
+\end{DoxyNote}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -56,13 +95,21 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_ac43cfc1320b5032e1497c5710669ba99} 
 fccvis::\+backend::\+root::\+\+Root\+Scene::\+\texorpdfstring{$\sim$}{\string~}\+Root\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44}\index{fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}!RootScene@{RootScene}}
+
+
+Destroy the ROOT representation of the scene. 
+
+Releases the ROOT/\+\+TEve resources associated with this scene. \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44}\index{fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}!RootScene@{RootScene}}
 \index{RootScene@{RootScene}!fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}}
 \doxysubsubsection{\texorpdfstring{RootScene()}{RootScene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44} 
 fccvis::\+backend::\+root::\+\+Root\+Scene::\+\+Root\+Scene (\begin{DoxyParamCaption}\item[{const Root\+Scene \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-Here is the call graph for this function:
+
+
+Copy construction is disabled. 
+
+A \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene} represents live ROOT/\+\+TEve state and is therefore intentionally non-\/copyable. Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -81,19 +128,40 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_ac1d63d9dde356fb858167980c3888ca8} 
 TEve\+Scene \texorpdfstring{$\ast$}{*} fccvis::\+backend::\+root::\+\+Root\+Scene::\+\+Eve\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get the ROOT TEve scene. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the associated {\ttfamily TEve\+Scene}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The returned pointer is non-\/owning and is managed by the ROOT/\+\+TEve infrastructure. 
+\end{DoxyNote}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootScene_a49ac8ccf1948e04f02dbc5fb5e271a75}\index{fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}!GetSceneAbstract@{GetSceneAbstract}}
 \index{GetSceneAbstract@{GetSceneAbstract}!fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}}
 \doxysubsubsection{\texorpdfstring{GetSceneAbstract()}{GetSceneAbstract()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_a49ac8ccf1948e04f02dbc5fb5e271a75} 
 std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ fccvis::\+backend::\+root::\+\+Root\+Scene::\+\+Get\+Scene\+Abstract (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Get the underlying abstract scene. 
+
+\begin{DoxyReturn}{Returns}
+Shared pointer to the abstract \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} represented by this object. 
+\end{DoxyReturn}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac}\index{fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}!operator=@{operator=}}
 \index{operator=@{operator=}!fccvis::backend::root::RootScene@{fccvis::backend::root::RootScene}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac} 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{Root\+Scene}} \& fccvis::\+backend::\+root::\+\+Root\+Scene::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616}{Root\+Scene}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-Here is the call graph for this function:
+
+
+Copy assignment is disabled. 
+
+A \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene} represents live ROOT/\+\+TEve state and is therefore intentionally non-\/copyable. Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -107,7 +175,13 @@ Here is the call graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81} 
 void fccvis::\+backend::\+root::\+\+Root\+Scene::\+\+Sync\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function:
+
+
+Synchronize the ROOT camera with the abstract scene. 
+
+Pushes the camera position and viewing direction stored in \doxylink{classfccvis_1_1scene_1_1Scene_a65a3d5f541efe6c8238945e377edf558}{fccvis::\+scene::\+\+Scene::\+camera} into the ROOT/\+\+TEve viewer.
+
+This method synchronizes camera state from the abstract FCCVisualization representation to the ROOT rendering backend. Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -121,6 +195,16 @@ Here is the caller graph for this function:
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootScene_a895fda029418d2fedddc535a2b67385f} 
 TEve\+Viewer \texorpdfstring{$\ast$}{*} fccvis::\+backend::\+root::\+\+Root\+Scene::\+\+Viewer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Get the ROOT TEve viewer associated with the scene. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the associated {\ttfamily TEve\+Viewer}.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The returned pointer is non-\/owning and is managed by the ROOT/\+\+TEve infrastructure. 
+\end{DoxyNote}
 
 
 The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}

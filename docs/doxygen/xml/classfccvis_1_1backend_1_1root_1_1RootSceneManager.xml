@@ -11,12 +11,14 @@
         <name>m_session</name>
         <qualifiedname>fccvis::backend::root::RootSceneManager::m_session</qualifiedname>
         <briefdescription>
+<para>Session containing the abstract scene definitions. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is a non-owning reference. The session must outlive the <ref refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kindref="compound">RootSceneManager</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="36" column="30" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="36" bodyend="-1"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="189" column="30" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="189" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ab72b73713eab05590f7ecbc541afb3e9" prot="private" static="no" mutable="no">
         <type>std::map&lt; std::string, std::unique_ptr&lt; <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> &gt; &gt;</type>
@@ -25,12 +27,15 @@
         <name>m_openScenes</name>
         <qualifiedname>fccvis::backend::root::RootSceneManager::m_openScenes</qualifiedname>
         <briefdescription>
+<para>Currently materialized ROOT scenes. </para>
         </briefdescription>
         <detaileddescription>
+<para>Maps scene names to their live <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> representations.</para>
+<para>The manager owns the <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> objects through <computeroutput>std::unique_ptr</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="37" column="14" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="37" bodyend="-1"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="199" column="14" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="199" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -45,12 +50,25 @@
           <declname>session</declname>
         </param>
         <briefdescription>
+<para>Construct a ROOT scene manager for a session. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Session containing the abstract scenes managed by this object.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The session is referenced but not owned. It must remain valid for the lifetime of the <ref refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kindref="compound">RootSceneManager</ref>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="15" column="14" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="10" bodyend="11"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="87" column="14" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="10" bodyend="11"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a494634f1895f1d44cf7c7bab95bac15c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> *</type>
@@ -63,12 +81,27 @@
           <declname>sceneName</declname>
         </param>
         <briefdescription>
+<para>Open and materialize a scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>Finds the abstract scene identified by <computeroutput>sceneName</computeroutput> and materializes it as a live <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref>.</para>
+<para>If the scene is already open, the existing <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> is returned instead of creating a new materialization.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the abstract scene to open.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the open ROOT representation, or <computeroutput>nullptr</computeroutput> if the requested scene cannot be materialized. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="19" column="15" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="23" bodyend="38"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="103" column="15" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="23" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a77cdf08c8eab81c3a96c39b2cfa72f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -81,12 +114,25 @@
           <declname>sceneName</declname>
         </param>
         <briefdescription>
+<para>Close a materialized scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>Tears down the ROOT/TEve representation identified by <computeroutput>sceneName</computeroutput>.</para>
+<para>Closing a scene does not modify the corresponding abstract <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> or the session&apos;s event data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the scene to close. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="22" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="40" bodyend="43"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="116" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a81cdc76f0fe4ffb80a0147adf555ce0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -99,12 +145,27 @@
           <declname>sceneName</declname>
         </param>
         <briefdescription>
+<para>Update an open ROOT scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>Re-synchronizes the ROOT representation with the corresponding abstract scene.</para>
+<para>In particular, camera state is pushed through <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" kindref="member">RootScene::SyncCamera</ref>. Shared scene configuration such as filters remains associated with the same abstract objects.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the scene to update.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the scene was found and updated; <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="28" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="45" bodyend="52"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="133" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="45" bodyend="52"/>
         <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" compoundref="RootScene_8cc" startline="33" endline="85">fccvis::backend::root::RootScene::SyncCamera</references>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ade5c6465ef8672c54d373e6921da8d28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
@@ -118,12 +179,27 @@
           <declname>sceneName</declname>
         </param>
         <briefdescription>
+<para>Get an open ROOT scene by name. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the scene.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the corresponding open <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref>, or <computeroutput>nullptr</computeroutput> if the scene is not currently open.</para>
+</simplesect>
+<simplesect kind="note"><para>The returned pointer is non-owning. Lifetime is managed by the <ref refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kindref="compound">RootSceneManager</ref>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="30" column="15" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="54" bodyend="57"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="146" column="15" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="54" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a3e94a44331718088a84f9759bd5c64a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -136,12 +212,25 @@
           <declname>sceneName</declname>
         </param>
         <briefdescription>
+<para>Check whether a scene is currently open. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the scene to query.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the scene has a live ROOT representation; otherwise <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="31" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="59" bodyend="61"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="156" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="59" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a2b014bd850b64301af0ef67f8cae8870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -150,12 +239,14 @@
         <name>CloseAll</name>
         <qualifiedname>fccvis::backend::root::RootSceneManager::CloseAll</qualifiedname>
         <briefdescription>
+<para>Close all currently open scenes. </para>
         </briefdescription>
         <detaileddescription>
+<para>Tears down every ROOT/TEve scene managed by this object while leaving the abstract session scenes and event data unchanged. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="32" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="63" bodyend="66"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="164" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="63" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a124a5c5cce68d10d6842bceac47a6fe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt; &gt;</type>
@@ -164,12 +255,16 @@
         <name>OpenScenes</name>
         <qualifiedname>fccvis::backend::root::RootSceneManager::OpenScenes</qualifiedname>
         <briefdescription>
+<para>Get the abstract scenes currently open in ROOT. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Shared pointers to the abstract scenes corresponding to the currently materialized ROOT scenes. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="33" column="17" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="68" bodyend="74"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="172" column="17" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="68" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1af9ab8883d43662e696dbefad676b396d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; std::shared_ptr&lt; std::string &gt; &gt;</type>
@@ -178,12 +273,16 @@
         <name>SceneNames</name>
         <qualifiedname>fccvis::backend::root::RootSceneManager::SceneNames</qualifiedname>
         <briefdescription>
+<para>Get the names of currently open scenes. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Shared pointers containing the names of all currently open scenes. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="34" column="17" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="76" bodyend="84"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="180" column="17" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="76" bodyend="84"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -198,19 +297,43 @@
           <declname>sceneName</declname>
         </param>
         <briefdescription>
+<para>Find an abstract scene in the associated session. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sceneName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the scene to find.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to the matching abstract scene, or an empty shared pointer if no matching scene exists. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootSceneManager.h" line="39" column="21" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="14" bodyend="21"/>
+        <location file="src/backend/root/include/RootSceneManager.h" line="210" column="5" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="14" bodyend="21"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Manages the live ROOT/TEve representations of session scenes. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kindref="compound">RootSceneManager</ref> provides the main interface for opening, updating, querying, and closing ROOT representations of abstract <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> objects.</para>
+<para>The manager holds a non-owning reference to an existing <ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>. Abstract scenes are discovered from that session and materialized into <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> objects when requested.</para>
+<para>Multiple open scenes are tracked by their names. Opening an already open scene returns the existing materialization rather than creating a second ROOT representation.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="src/backend/root/include/RootSceneManager.h" line="12" column="1" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="13" bodyend="40"/>
+    <location file="src/backend/root/include/RootSceneManager.h" line="76" column="1" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="76" bodyend="211"/>
     <listofallmembers>
       <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a77cdf08c8eab81c3a96c39b2cfa72f68" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>Close</name></member>
       <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a2b014bd850b64301af0ef67f8cae8870" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>CloseAll</name></member>

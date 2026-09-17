@@ -2,49 +2,107 @@
 \hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{}\label{structfccvis_1_1scene_1_1meta_1_1LayoutNode}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}}
 
 
+Node in the hierarchical layout of visualization scenes.  
+
+
+
+
 {\ttfamily \+\#include $<$Meta\+Objects.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44}{Layout\+Kind}} \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aa857439454d802ec5f175ac95c36fe72}{kind}}
-\item 
+\begin{DoxyCompactList}\small\item\em Structural kind of this layout node. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{Pack\+Orientation}} \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a1c51ffbd38dcd79619a36368506c58ac}{orientation}} = \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f}{Pack\+Orientation::\+\+Horizontal}}
-\item 
+\begin{DoxyCompactList}\small\item\em Orientation of children in a packed node. \end{DoxyCompactList}\item 
 std::\+string \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aab75d819120f1784e99c3623b917a4a6}{scene\+Name}}
-\item 
-std::\+vector$<$ std::\+pair$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node}} $>$, int $>$ $>$ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a38f7cc1bcf0653491cda8b413f360336}{children}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Name of the scene represented by a leaf node. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+pair$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node}} $>$, int $>$ $>$ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a5938a74025c87c462fe1872595c2a915}{children}}
+\begin{DoxyCompactList}\small\item\em Child nodes of this layout node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Node in the hierarchical layout of visualization scenes. 
+
+A \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node} forms one element of a tree describing how multiple scenes are presented together.
+
+The meaning of the node\textquotesingle{}s other members depends on its kind:
+
+
+\begin{DoxyItemize}
+\item For {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292}{Layout\+Kind::\+\+Pack}}, \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a1c51ffbd38dcd79619a36368506c58ac}{orientation} and \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a5938a74025c87c462fe1872595c2a915}{children} are used. Child weights determine the relative allocation of space.
+\item For {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413}{Layout\+Kind::\+\+Tab}}, \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a5938a74025c87c462fe1872595c2a915}{children} is used and child weights are ignored.
+\item For {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5}{Layout\+Kind::\+\+Leaf}}, \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aab75d819120f1784e99c3623b917a4a6}{scene\+Name} identifies the scene materialized by the node.
+\end{DoxyItemize}
+
+This structure allows a session to represent nested arrangements, such as horizontal and vertical groups containing tabbed scenes.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44}{Layout\+Kind} 
+
+\doxylink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{Pack\+Orientation} 
+
+\doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} 
+
+\doxylink{classfccvis_1_1session_1_1SessionOptions}{fccvis::\+session::\+\+Session\+Options} 
+\end{DoxySeeAlso}
 
 
 \label{structfccvis_1_1scene_1_1meta_1_1LayoutNode_doc-variable-members}
 \Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_doc-variable-members}
 \doxysubsection{Member Data Documentation}
-\Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a38f7cc1bcf0653491cda8b413f360336}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!children@{children}}
+\Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a5938a74025c87c462fe1872595c2a915}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!children@{children}}
 \index{children@{children}!fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}}
 \doxysubsubsection{\texorpdfstring{children}{children}}
-{\footnotesize\ttfamily \label{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a38f7cc1bcf0653491cda8b413f360336} 
-std::\+vector$<$std::\+pair$<$std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node}}$>$, int $>$ $>$ fccvis::\+scene::\+meta::\+\+Layout\+Node::\+children}
+{\footnotesize\ttfamily \label{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a5938a74025c87c462fe1872595c2a915} 
+std::\+vector$<$ std::\+pair$<$std::\+shared\+\_\+ptr$<$\doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node}}$>$, int $>$ $>$ fccvis::\+scene::\+meta::\+\+Layout\+Node::\+children}
 
-\Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aa857439454d802ec5f175ac95c36fe72}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!kind@{kind}}
+
+
+Child nodes of this layout node. 
+
+Each child is represented by a shared pointer to another \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node} together with an integer weight.
+
+For {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292}{Layout\+Kind::\+\+Pack}} nodes, the weight determines the child\textquotesingle{}s relative share of the available layout space.
+
+For {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413}{Layout\+Kind::\+\+Tab}} nodes, the weight is ignored.
+
+Leaf nodes normally have no children. \Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aa857439454d802ec5f175ac95c36fe72}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!kind@{kind}}
 \index{kind@{kind}!fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}}
 \doxysubsubsection{\texorpdfstring{kind}{kind}}
 {\footnotesize\ttfamily \label{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aa857439454d802ec5f175ac95c36fe72} 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44}{Layout\+Kind}} fccvis::\+scene::\+meta::\+\+Layout\+Node::\+kind}
 
-\Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a1c51ffbd38dcd79619a36368506c58ac}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!orientation@{orientation}}
+
+
+Structural kind of this layout node. 
+
+Determines which of the other members are applicable. \Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a1c51ffbd38dcd79619a36368506c58ac}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!orientation@{orientation}}
 \index{orientation@{orientation}!fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}}
 \doxysubsubsection{\texorpdfstring{orientation}{orientation}}
 {\footnotesize\ttfamily \label{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a1c51ffbd38dcd79619a36368506c58ac} 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{Pack\+Orientation}} fccvis::\+scene::\+meta::\+\+Layout\+Node::\+orientation = \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f}{Pack\+Orientation::\+\+Horizontal}}}
 
-\Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aab75d819120f1784e99c3623b917a4a6}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!sceneName@{sceneName}}
+
+
+Orientation of children in a packed node. 
+
+This member is used when \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aa857439454d802ec5f175ac95c36fe72}{kind} is {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292}{Layout\+Kind::\+\+Pack}}.
+
+The default orientation is horizontal. \Hypertarget{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aab75d819120f1784e99c3623b917a4a6}\index{fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}!sceneName@{sceneName}}
 \index{sceneName@{sceneName}!fccvis::scene::meta::LayoutNode@{fccvis::scene::meta::LayoutNode}}
 \doxysubsubsection{\texorpdfstring{sceneName}{sceneName}}
 {\footnotesize\ttfamily \label{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aab75d819120f1784e99c3623b917a4a6} 
 std::\+string fccvis::\+scene::\+meta::\+\+Layout\+Node::\+scene\+Name}
 
 
+
+Name of the scene represented by a leaf node. 
+
+This member is used when \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aa857439454d802ec5f175ac95c36fe72}{kind} is {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5}{Layout\+Kind::\+\+Leaf}}.
+
+The name identifies the \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} that is materialized in this layout slot. 
 
 The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
 \item 

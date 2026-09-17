@@ -11,12 +11,15 @@
         <name>cameras</name>
         <qualifiedname>fccvis::session::SessionOptions::cameras</qualifiedname>
         <briefdescription>
+<para>Cameras available to the session. </para>
         </briefdescription>
         <detaileddescription>
+<para>Each camera is represented by a shared pointer to a <ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">fccvis::scene::meta::Camera</ref> object.</para>
+<para>A camera describes a viewpoint and related camera configuration that can be used when displaying a scene. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/session/include/Session.h" line="17" column="15" bodyfile="src/session/include/Session.h" bodystart="17" bodyend="-1"/>
+        <location file="src/session/include/Session.h" line="80" column="15" bodyfile="src/session/include/Session.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a27509f8d779705054af5423aebf71724" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref> &gt; &gt;</type>
@@ -25,12 +28,15 @@
         <name>filters</name>
         <qualifiedname>fccvis::session::SessionOptions::filters</qualifiedname>
         <briefdescription>
+<para>Filters available to the session. </para>
         </briefdescription>
         <detaileddescription>
+<para>Each filter is represented by a shared pointer to a <ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref> object.</para>
+<para>Filters control which visualization objects or event data are included in a rendered view. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/session/include/Session.h" line="18" column="15" bodyfile="src/session/include/Session.h" bodystart="18" bodyend="-1"/>
+        <location file="src/session/include/Session.h" line="91" column="15" bodyfile="src/session/include/Session.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a38476377e71e24b0cedb87b74a0981c2" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt; &gt;</type>
@@ -39,12 +45,15 @@
         <name>scenes</name>
         <qualifiedname>fccvis::session::SessionOptions::scenes</qualifiedname>
         <briefdescription>
+<para>Scenes available to the session. </para>
         </briefdescription>
         <detaileddescription>
+<para>Each scene is represented by a shared pointer to a <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> object.</para>
+<para>A scene defines a reusable visualization configuration that can be applied to event data. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/session/include/Session.h" line="19" column="15" bodyfile="src/session/include/Session.h" bodystart="19" bodyend="-1"/>
+        <location file="src/session/include/Session.h" line="102" column="15" bodyfile="src/session/include/Session.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a9c55f994ba2b738b7ec957de56a9000f" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">fccvis::scene::meta::LayoutNode</ref> &gt;</type>
@@ -53,12 +62,14 @@
         <name>sceneLayout</name>
         <qualifiedname>fccvis::session::SessionOptions::sceneLayout</qualifiedname>
         <briefdescription>
+<para>Layout describing how scenes are presented together. </para>
         </briefdescription>
         <detaileddescription>
+<para>The layout is represented by a tree of <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">fccvis::scene::meta::LayoutNode</ref> objects. It determines how scene views are arranged and which scene names are shown together. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/session/include/Session.h" line="21" column="7" bodyfile="src/session/include/Session.h" bodystart="21" bodyend="-1"/>
+        <location file="src/session/include/Session.h" line="111" column="19" bodyfile="src/session/include/Session.h" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a70fb72404f388ebe66b86c4233e7d0d4" prot="public" static="no" mutable="no">
         <type>std::optional&lt; std::filesystem::path &gt;</type>
@@ -67,19 +78,35 @@
         <name>geometryFilePath</name>
         <qualifiedname>fccvis::session::SessionOptions::geometryFilePath</qualifiedname>
         <briefdescription>
+<para>Optional path to the detector geometry file. </para>
         </briefdescription>
         <detaileddescription>
+<para>If present, this path identifies the geometry resource associated with the session. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/session/include/Session.h" line="22" column="17" bodyfile="src/session/include/Session.h" bodystart="22" bodyend="-1"/>
+        <location file="src/session/include/Session.h" line="119" column="17" bodyfile="src/session/include/Session.h" bodystart="119" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Visualization and runtime configuration for a session. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1session_1_1SessionOptions" kindref="compound">SessionOptions</ref> describes the objects that configure how a session is visualized. It contains the available cameras, filters, scenes, and scene layout, together with the optional path to a detector geometry description.</para>
+<para>The objects referenced by this class are shared through <computeroutput>std::shared_ptr</computeroutput> because the same visualization object may be referenced by multiple parts of the visualization system.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">fccvis::scene::meta::Camera</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">fccvis::scene::meta::LayoutNode</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="src/session/include/Session.h" line="14" column="1" bodyfile="src/session/include/Session.h" bodystart="14" bodyend="23"/>
+    <location file="src/session/include/Session.h" line="69" column="1" bodyfile="src/session/include/Session.h" bodystart="69" bodyend="120"/>
     <listofallmembers>
       <member refid="classfccvis_1_1session_1_1SessionOptions_1a0f5da7b2a7b8e607707df594ffcdfb50" prot="public" virt="non-virtual"><scope>fccvis::session::SessionOptions</scope><name>cameras</name></member>
       <member refid="classfccvis_1_1session_1_1SessionOptions_1a27509f8d779705054af5423aebf71724" prot="public" virt="non-virtual"><scope>fccvis::session::SessionOptions</scope><name>filters</name></member>

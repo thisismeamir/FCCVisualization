@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('GuiApplication
   <div class="headertitle"><div class="title">GuiApplication.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ROOT GUI application lifecycle management.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Session_8h_source.html">Session.h</a>&quot;</code><br />
 <code>#include &lt;TApplication.h&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -120,43 +123,44 @@ Include dependency graph for GuiApplication.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="GuiApplication_8h__incl.png" border="0" usemap="#asrc_2gui_2include_2GuiApplication_8h" loading="lazy" alt=""/></div>
 <map name="asrc_2gui_2include_2GuiApplication_8h" id="asrc_2gui_2include_2GuiApplication_8h">
-<area shape="rect" title=" " alt="" coords="210,5,437,33"/>
-<area shape="rect" href="Session_8h.html" title=" " alt="" coords="282,81,365,109"/>
-<area shape="poly" title=" " alt="" coords="325,31,326,66,321,64,322,36"/>
-<area shape="rect" title=" " alt="" coords="5,308,82,336"/>
-<area shape="poly" title=" " alt="" coords="289,35,249,55,199,83,146,117,99,158,73,192,58,233,51,264,47,293,42,292,46,263,53,232,68,190,95,155,143,113,196,78,247,51,293,32"/>
-<area shape="rect" title=" " alt="" coords="390,81,503,109"/>
-<area shape="poly" title=" " alt="" coords="345,31,414,72,409,73,345,36"/>
-<area shape="rect" href="MetaObjects_8h.html" title=" " alt="" coords="131,232,246,260"/>
-<area shape="poly" title=" " alt="" coords="279,101,253,109,223,119,195,135,172,158,167,172,166,187,176,219,171,218,161,188,162,171,168,155,191,131,220,114,251,104,284,99"/>
-<area shape="poly" title=" " alt="" coords="279,101,245,108,205,119,164,135,128,159,100,190,78,226,63,262,53,294,48,292,58,261,73,224,95,187,124,155,162,130,203,114,244,103,283,98"/>
-<area shape="rect" title=" " alt="" coords="132,308,195,336"/>
-<area shape="poly" title=" " alt="" coords="279,104,220,123,188,139,160,159,137,182,122,204,117,229,122,259,131,278,143,296,138,296,126,281,117,261,111,229,117,202,132,178,156,155,186,134,218,118,283,101"/>
-<area shape="rect" title=" " alt="" coords="657,384,715,411"/>
-<area shape="poly" title=" " alt="" coords="365,104,378,106,475,111,638,118,797,130,854,140,873,147,885,155,897,170,903,186,904,202,902,219,887,251,861,282,829,311,793,337,726,378,724,373,790,333,825,307,857,278,882,248,897,217,899,202,898,187,892,173,882,159,871,152,853,146,796,135,637,123,475,117,378,111,366,109"/>
-<area shape="rect" href="Scene_8h.html" title=" " alt="" coords="182,157,254,184"/>
-<area shape="poly" title=" " alt="" coords="303,111,251,150,247,146,307,107"/>
-<area shape="rect" title=" " alt="" coords="279,157,368,184"/>
-<area shape="poly" title=" " alt="" coords="325,107,326,142,321,140,322,112"/>
-<area shape="rect" title=" " alt="" coords="392,157,466,184"/>
-<area shape="poly" title=" " alt="" coords="343,107,401,147,395,148,342,112"/>
-<area shape="rect" title=" " alt="" coords="490,157,605,184"/>
-<area shape="poly" title=" " alt="" coords="364,107,496,151,491,152,364,112"/>
-<area shape="rect" title=" " alt="" coords="629,157,725,184"/>
-<area shape="poly" title=" " alt="" coords="365,103,379,106,616,155,611,157,378,111,366,108"/>
-<area shape="rect" title=" " alt="" coords="748,157,872,184"/>
-<area shape="poly" title=" " alt="" coords="365,104,379,106,477,122,554,131,736,155,730,157,554,137,476,127,378,111,366,109"/>
-<area shape="poly" title=" " alt="" coords="161,263,84,303,81,298,164,258"/>
-<area shape="poly" title=" " alt="" coords="186,259,175,295,171,292,183,263"/>
-<area shape="rect" href="BaseSessionObject_8h.html" title=" " alt="" coords="289,308,446,336"/>
-<area shape="poly" title=" " alt="" coords="221,258,324,301,319,303,220,263"/>
-<area shape="rect" title=" " alt="" coords="325,384,410,411"/>
-<area shape="poly" title=" " alt="" coords="369,334,370,370,365,366,366,338"/>
-<area shape="poly" title=" " alt="" coords="425,334,644,386,639,386,425,339"/>
-<area shape="poly" title=" " alt="" coords="214,183,202,219,197,216,211,187"/>
-<area shape="poly" title=" " alt="" coords="255,178,302,197,325,212,344,231,361,261,368,294,363,292,356,263,340,234,321,216,299,202,255,184"/>
-<area shape="rect" title=" " alt="" coords="271,232,330,260"/>
-<area shape="poly" title=" " alt="" coords="233,182,278,222,272,222,233,188"/>
+<area shape="rect" title="ROOT GUI application lifecycle management." alt="" coords="816,5,1043,33"/>
+<area shape="rect" href="Session_8h.html" title="Session state, input data, and visualization configuration." alt="" coords="357,81,441,109"/>
+<area shape="poly" title=" " alt="" coords="832,35,456,88,455,83,836,32"/>
+<area shape="rect" title=" " alt="" coords="841,308,917,336"/>
+<area shape="poly" title=" " alt="" coords="931,31,928,129,920,194,907,261,894,296,890,292,902,259,915,194,922,128,928,35"/>
+<area shape="rect" title=" " alt="" coords="968,81,1081,109"/>
+<area shape="poly" title=" " alt="" coords="947,31,998,72,993,71,946,36"/>
+<area shape="rect" href="MetaObjects_8h.html" title="Metadata objects used to configure FCCVisualization scenes." alt="" coords="125,232,241,260"/>
+<area shape="poly" title=" " alt="" coords="355,101,299,109,234,121,177,137,156,147,142,158,137,173,139,188,161,221,155,222,134,190,131,172,138,155,153,143,175,132,233,116,298,104,359,98"/>
+<area shape="poly" title=" " alt="" coords="441,93,540,94,664,102,725,110,780,121,825,135,855,155,877,187,886,224,889,261,886,294,882,291,883,261,881,224,872,189,852,159,822,140,778,126,724,115,663,107,540,100,442,98"/>
+<area shape="rect" title=" " alt="" coords="103,384,161,411"/>
+<area shape="poly" title=" " alt="" coords="355,102,217,123,148,139,121,148,102,159,54,198,35,218,21,239,11,261,8,283,12,308,24,334,37,350,53,363,91,383,86,385,50,368,33,354,19,337,7,309,3,284,6,259,16,236,31,215,51,194,99,154,119,143,146,134,216,117,359,98"/>
+<area shape="rect" title=" " alt="" coords="33,308,95,336"/>
+<area shape="poly" title=" " alt="" coords="355,102,231,123,170,139,146,149,130,159,104,189,87,225,76,262,70,294,65,292,71,260,82,223,100,186,126,155,144,144,168,134,230,118,359,99"/>
+<area shape="rect" href="Scene_8h.html" title="Scene definition and visualization configuration." alt="" coords="152,157,224,184"/>
+<area shape="poly" title=" " alt="" coords="359,111,240,154,238,149,363,107"/>
+<area shape="rect" title=" " alt="" coords="249,157,338,184"/>
+<area shape="poly" title=" " alt="" coords="378,111,326,150,323,146,382,108"/>
+<area shape="rect" title=" " alt="" coords="362,157,436,184"/>
+<area shape="poly" title=" " alt="" coords="400,107,401,142,396,140,398,112"/>
+<area shape="rect" title=" " alt="" coords="460,157,575,184"/>
+<area shape="poly" title=" " alt="" coords="420,107,487,148,481,149,420,112"/>
+<area shape="rect" title=" " alt="" coords="599,157,695,184"/>
+<area shape="poly" title=" " alt="" coords="441,106,590,151,585,153,441,111"/>
+<area shape="rect" title=" " alt="" coords="719,157,842,184"/>
+<area shape="poly" title=" " alt="" coords="441,102,706,153,701,156,441,107"/>
+<area shape="poly" title=" " alt="" coords="241,251,826,312,824,317,241,256"/>
+<area shape="poly" title=" " alt="" coords="181,259,144,370,139,367,176,261"/>
+<area shape="rect" title=" " alt="" coords="269,384,329,411"/>
+<area shape="poly" title=" " alt="" coords="185,258,193,295,200,316,210,334,232,356,259,376,253,376,229,360,206,337,195,318,188,297,183,262"/>
+<area shape="poly" title=" " alt="" coords="160,263,99,302,96,298,163,259"/>
+<area shape="rect" href="BaseSessionObject_8h.html" title="Base class for named objects belonging to a visualization session." alt="" coords="220,308,378,336"/>
+<area shape="poly" title=" " alt="" coords="204,258,268,299,263,300,203,263"/>
+<area shape="poly" title=" " alt="" coords="272,336,177,380,175,375,266,337"/>
+<area shape="poly" title=" " alt="" coords="301,334,301,370,297,366,297,338"/>
+<area shape="poly" title=" " alt="" coords="188,182,187,218,182,216,186,187"/>
+<area shape="poly" title=" " alt="" coords="225,181,267,200,314,226,358,262,377,283,392,307,395,329,385,349,366,366,344,380,342,375,363,362,381,346,390,328,387,309,372,286,354,265,311,231,265,204,225,187"/>
+<area shape="poly" title=" " alt="" coords="205,182,230,204,254,231,275,262,290,295,285,293,270,265,250,234,227,208,205,188"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -164,7 +168,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="GuiApplication_8h__dep__incl.png" border="0" usemap="#asrc_2gui_2include_2GuiApplication_8hdep" loading="lazy" alt=""/></div>
 <map name="asrc_2gui_2include_2GuiApplication_8hdep" id="asrc_2gui_2include_2GuiApplication_8hdep">
-<area shape="rect" title=" " alt="" coords="83,5,310,33"/>
+<area shape="rect" title="ROOT GUI application lifecycle management." alt="" coords="83,5,310,33"/>
 <area shape="rect" href="RunApplication_8cc.html" title=" " alt="" coords="5,81,185,109"/>
 <area shape="poly" title=" " alt="" coords="169,42,114,83,112,78,163,43"/>
 <area shape="rect" href="GuiApplication_8cc.html" title=" " alt="" coords="208,81,390,109"/>
@@ -177,13 +181,23 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:fccvis_3A_3Agui_3A_3AGuiApplication" id="r_fccvis_3A_3Agui_3A_3AGuiApplication"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1gui_1_1GuiApplication.html">fccvis::gui::GuiApplication</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages the ROOT GUI application for FCCVisualization.  <a href="classfccvis_1_1gui_1_1GuiApplication.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:fccvis" id="r_fccvis"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis.html">fccvis</a></td></tr>
 <tr class="memitem:fccvis_3A_3Agui" id="r_fccvis_3A_3Agui"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1gui.html">fccvis::gui</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1gui"><td class="mdescLeft">&#160;</td><td class="mdescRight">Graphical user interface components. <br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ROOT GUI application lifecycle management. </p>
+<p>Defines the <a class="el" href="classfccvis_1_1gui_1_1GuiApplication.html" title="fccvis::gui::GuiApplication">fccvis::gui::GuiApplication</a> class, which owns and manages the ROOT <code>TApplication</code> instance used by the FCCVisualization graphical interface.</p>
+<p>The GUI application is associated with an existing <a class="el" href="classfccvis_1_1session_1_1Session.html" title="fccvis::session::Session">fccvis::session::Session</a> and provides the main event loop and termination interface for the graphical application.</p>
+<dl class="section author"><dt>Author</dt><dd>Amir H. Ebrahimnezhad <a href="mai'+'lto:+'ami'+'r.'+'ebh'+'@c'+'ern'+'.c'+'h'">amir.<span class="obfuscator">.nosp@m.</span>ebh@<span class="obfuscator">.nosp@m.</span>cern.<span class="obfuscator">.nosp@m.</span>ch</a></dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2026 FCC Project at CERN</dd></dl>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">https://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

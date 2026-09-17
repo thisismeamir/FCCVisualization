@@ -2,29 +2,52 @@
 \hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{}\label{classfccvis_1_1backend_1_1root_1_1RootSceneManager}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 
 
+Manages the live ROOT/\+\+TEve representations of session scenes.  
+
+
+
+
 {\ttfamily \+\#include $<$Root\+Scene\+Manager.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a8d2892d1b81fa9961de8fcf57c7be543}{Root\+Scene\+Manager}} (\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}} \&session)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a ROOT scene manager for a session. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a494634f1895f1d44cf7c7bab95bac15c}{Open}} (const std::\+string \&scene\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Open and materialize a scene. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a77cdf08c8eab81c3a96c39b2cfa72f68}{Close}} (const std::\+string \&scene\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Close a materialized scene. \end{DoxyCompactList}\item 
 bool \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b}{Update}} (const std::\+string \&scene\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Update an open ROOT scene. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28}{Get}} (const std::\+string \&scene\+Name) const
-\item 
+\begin{DoxyCompactList}\small\item\em Get an open ROOT scene by name. \end{DoxyCompactList}\item 
 bool \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a3e94a44331718088a84f9759bd5c64a1}{Is\+Open}} (const std::\+string \&scene\+Name) const
-\item 
+\begin{DoxyCompactList}\small\item\em Check whether a scene is currently open. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a2b014bd850b64301af0ef67f8cae8870}{Close\+All}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Close all currently open scenes. \end{DoxyCompactList}\item 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a124a5c5cce68d10d6842bceac47a6fe6}{Open\+Scenes}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the abstract scenes currently open in ROOT. \end{DoxyCompactList}\item 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ std::\+string $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_af9ab8883d43662e696dbefad676b396d}{Scene\+Names}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the names of currently open scenes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the live ROOT/\+\+TEve representations of session scenes. 
+
+\doxylink{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{Root\+Scene\+Manager} provides the main interface for opening, updating, querying, and closing ROOT representations of abstract \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} objects.
+
+The manager holds a non-\/owning reference to an existing \doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}. Abstract scenes are discovered from that session and materialized into \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene} objects when requested.
+
+Multiple open scenes are tracked by their names. Opening an already open scene returns the existing materialization rather than creating a second ROOT representation.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene} 
+
+\doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session} 
+
+\doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_doc-constructors}
@@ -38,6 +61,18 @@ fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Root\+Scene\+Manager (\
 
 
 
+Construct a ROOT scene manager for a session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Session containing the abstract scenes managed by this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The session is referenced but not owned. It must remain valid for the lifetime of the \doxylink{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{Root\+Scene\+Manager}. 
+\end{DoxyNote}
+
+
 \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_doc-func-members}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -47,48 +82,138 @@ fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Root\+Scene\+Manager (\
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a77cdf08c8eab81c3a96c39b2cfa72f68} 
 void fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Close (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption})}
 
+
+
+Close a materialized scene. 
+
+Tears down the ROOT/\+\+TEve representation identified by {\ttfamily scene\+Name}.
+
+Closing a scene does not modify the corresponding abstract \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} or the session\textquotesingle{}s event data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & Name of the scene to close. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a2b014bd850b64301af0ef67f8cae8870}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!CloseAll@{CloseAll}}
 \index{CloseAll@{CloseAll}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 \doxysubsubsection{\texorpdfstring{CloseAll()}{CloseAll()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a2b014bd850b64301af0ef67f8cae8870} 
 void fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Close\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Get@{Get}}
+
+
+Close all currently open scenes. 
+
+Tears down every ROOT/\+\+TEve scene managed by this object while leaving the abstract session scenes and event data unchanged. \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Get@{Get}}
 \index{Get@{Get}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 \doxysubsubsection{\texorpdfstring{Get()}{Get()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28} 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Get (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption}) const}
 
+
+
+Get an open ROOT scene by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & Name of the scene.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the corresponding open \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}, or {\ttfamily nullptr} if the scene is not currently open.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The returned pointer is non-\/owning. Lifetime is managed by the \doxylink{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{Root\+Scene\+Manager}. 
+\end{DoxyNote}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a3e94a44331718088a84f9759bd5c64a1}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!IsOpen@{IsOpen}}
 \index{IsOpen@{IsOpen}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 \doxysubsubsection{\texorpdfstring{IsOpen()}{IsOpen()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a3e94a44331718088a84f9759bd5c64a1} 
 bool fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Is\+Open (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption}) const}
 
+
+
+Check whether a scene is currently open. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & Name of the scene to query.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the scene has a live ROOT representation; otherwise {\ttfamily false}. 
+\end{DoxyReturn}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a494634f1895f1d44cf7c7bab95bac15c}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Open@{Open}}
 \index{Open@{Open}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 \doxysubsubsection{\texorpdfstring{Open()}{Open()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a494634f1895f1d44cf7c7bab95bac15c} 
 \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Open (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption})}
 
+
+
+Open and materialize a scene. 
+
+Finds the abstract scene identified by {\ttfamily scene\+Name} and materializes it as a live \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}.
+
+If the scene is already open, the existing \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene} is returned instead of creating a new materialization.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & Name of the abstract scene to open.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the open ROOT representation, or {\ttfamily nullptr} if the requested scene cannot be materialized. 
+\end{DoxyReturn}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a124a5c5cce68d10d6842bceac47a6fe6}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!OpenScenes@{OpenScenes}}
 \index{OpenScenes@{OpenScenes}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 \doxysubsubsection{\texorpdfstring{OpenScenes()}{OpenScenes()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a124a5c5cce68d10d6842bceac47a6fe6} 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ $>$ fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Open\+Scenes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Get the abstract scenes currently open in ROOT. 
+
+\begin{DoxyReturn}{Returns}
+Shared pointers to the abstract scenes corresponding to the currently materialized ROOT scenes. 
+\end{DoxyReturn}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_af9ab8883d43662e696dbefad676b396d}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!SceneNames@{SceneNames}}
 \index{SceneNames@{SceneNames}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 \doxysubsubsection{\texorpdfstring{SceneNames()}{SceneNames()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_af9ab8883d43662e696dbefad676b396d} 
 std::\+vector$<$ std::\+shared\+\_\+ptr$<$ std::\+string $>$ $>$ fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Scene\+Names (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Get the names of currently open scenes. 
+
+\begin{DoxyReturn}{Returns}
+Shared pointers containing the names of all currently open scenes. 
+\end{DoxyReturn}
 \Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Update@{Update}}
 \index{Update@{Update}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b} 
 bool fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Update (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption})}
 
+
+
+Update an open ROOT scene. 
+
+Re-\/synchronizes the ROOT representation with the corresponding abstract scene.
+
+In particular, camera state is pushed through \doxylink{classfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81}{Root\+Scene::\+\+Sync\+Camera}. Shared scene configuration such as filters remains associated with the same abstract objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & Name of the scene to update.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the scene was found and updated; {\ttfamily false} otherwise. 
+\end{DoxyReturn}
 Here is the call graph for this function:
 \nopagebreak
 \begin{figure}[H]

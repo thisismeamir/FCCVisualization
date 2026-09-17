@@ -2,25 +2,37 @@
 \hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker}{}\label{classfccvis_1_1scene_1_1meta_1_1Marker}\index{fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}}
 
 
+A point-\/like graphical primitive.  
+
+
+
+
 {\ttfamily \+\#include $<$Markers.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Marker_ad0eded8e2b74d32e5499ac654ad4560a}{Marker}} (std::\+string name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Construct a marker with a name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Marker_add30902c67b2724f7923c6143e24531e}{name}}
-\item 
+\begin{DoxyCompactList}\small\item\em Name identifying the marker. \end{DoxyCompactList}\item 
 std::\+array$<$ double, 3 $>$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Marker_acfac11443ac158e86482f24b8e7153a0}{position}} \{\}
-\item 
+\begin{DoxyCompactList}\small\item\em Three-\/dimensional position of the marker. \end{DoxyCompactList}\item 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{Color}} \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Marker_a257a23670774845427de9379542d3870}{color}} = \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006}{Color::\+\+White}}
-\item 
+\begin{DoxyCompactList}\small\item\em Display color of the marker. \end{DoxyCompactList}\item 
 unsigned int \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Marker_ae8d2bec2d68b5d385ffe941ce608a8b1}{size}} = 1
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Display size of the marker. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A point-\/like graphical primitive. 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Marker}{Marker} represents a single position in three-\/dimensional space together with its display color and size.
+
+Markers can be used for annotations, reference points, detector features, or other point-\/like visualization elements. 
 
 \label{classfccvis_1_1scene_1_1meta_1_1Marker_doc-constructors}
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker_doc-constructors}
@@ -33,6 +45,15 @@ fccvis::\+scene::\+meta::\+\+Marker::\+\+Marker (\begin{DoxyParamCaption}\item[{
 
 
 
+Construct a marker with a name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name identifying the marker. \\
+\hline
+\end{DoxyParams}
+
+
 \label{classfccvis_1_1scene_1_1meta_1_1Marker_doc-variable-members}
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker_doc-variable-members}
 \doxysubsection{Member Data Documentation}
@@ -42,11 +63,19 @@ fccvis::\+scene::\+meta::\+\+Marker::\+\+Marker (\begin{DoxyParamCaption}\item[{
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Marker_a257a23670774845427de9379542d3870} 
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{Color}} fccvis::\+scene::\+meta::\+\+Marker::\+color = \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006}{Color::\+\+White}}}
 
-\Hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker_add30902c67b2724f7923c6143e24531e}\index{fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}!name@{name}}
+
+
+Display color of the marker. 
+
+Defaults to \doxylink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006}{Color::\+\+White}. \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker_add30902c67b2724f7923c6143e24531e}\index{fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}!name@{name}}
 \index{name@{name}!fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}}
 \doxysubsubsection{\texorpdfstring{name}{name}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Marker_add30902c67b2724f7923c6143e24531e} 
 std::\+string fccvis::\+scene::\+meta::\+\+Marker::\+name}
+
+
+
+Name identifying the marker. 
 
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker_acfac11443ac158e86482f24b8e7153a0}\index{fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}!position@{position}}
 \index{position@{position}!fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}}
@@ -54,13 +83,21 @@ std::\+string fccvis::\+scene::\+meta::\+\+Marker::\+name}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Marker_acfac11443ac158e86482f24b8e7153a0} 
 std::\+array$<$double, 3$>$ fccvis::\+scene::\+meta::\+\+Marker::\+position \{\}}
 
-\Hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker_ae8d2bec2d68b5d385ffe941ce608a8b1}\index{fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}!size@{size}}
+
+
+Three-\/dimensional position of the marker. 
+
+The array contains the three spatial coordinates in the coordinate system used by the visualization. \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Marker_ae8d2bec2d68b5d385ffe941ce608a8b1}\index{fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}!size@{size}}
 \index{size@{size}!fccvis::scene::meta::Marker@{fccvis::scene::meta::Marker}}
 \doxysubsubsection{\texorpdfstring{size}{size}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Marker_ae8d2bec2d68b5d385ffe941ce608a8b1} 
 unsigned int fccvis::\+scene::\+meta::\+\+Marker::\+size = 1}
 
 
+
+Display size of the marker. 
+
+Defaults to one backend-\/defined size unit. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

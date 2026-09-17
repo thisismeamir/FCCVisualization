@@ -2,6 +2,11 @@
 \hypertarget{classfccvis_1_1scene_1_1meta_1_1Camera}{}\label{classfccvis_1_1scene_1_1meta_1_1Camera}\index{fccvis::scene::meta::Camera@{fccvis::scene::meta::Camera}}
 
 
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera} configuration for a visualization scene.  
+
+
+
+
 {\ttfamily \+\#include $<$Meta\+Objects.\+h$>$}
 
 
@@ -28,26 +33,40 @@ Collaboration diagram for fccvis::scene::meta::Camera:
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera_a38f75a9df9292d82101a5ce829ef87c7}{Base\+Session\+Object}} (std::\+string object\+Name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Inherit constructors from \doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{Base\+Session\+Object}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::\+scene::\+\+Base\+Session\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{Base\+Session\+Object}} (std::\+string object\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a named session object. \end{DoxyCompactList}\item 
 virtual \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_aad5f8ee5d8196db921752e9157cdbe42}{\texorpdfstring{$\sim$}{\string~}\+Base\+Session\+Object}} ()=default
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destroy the session object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std::\+vector$<$ double $>$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera_ab2468abaa4d03a6aca891ac7defde84e}{position\+Vector}}
-\item 
+\begin{DoxyCompactList}\small\item\em Position of the camera. \end{DoxyCompactList}\item 
 std::\+vector$<$ double $>$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera_a19defb3ee986339f458c989538597ba1}{direction\+Vector}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Viewing direction of the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::\+scene::\+\+Base\+Session\+Object}}}
 \begin{DoxyCompactItemize}
 \item 
 std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Name identifying the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera} configuration for a visualization scene. 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera} stores the geometric parameters required to describe a scene\textquotesingle{}s viewpoint.
+
+The object inherits its identifying name from \doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::\+scene::\+\+Base\+Session\+Object} and can therefore be referenced as a named session object.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} 
+
+\doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::\+scene::\+\+Base\+Session\+Object} 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1scene_1_1meta_1_1Camera_doc-func-members}
@@ -61,6 +80,10 @@ std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a69
 
 
 
+Inherit constructors from \doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{Base\+Session\+Object}. 
+
+\doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera} construction is delegated to the base class. In particular, the inherited constructor can be used to assign the camera\textquotesingle{}s session-\/level name. 
+
 \label{classfccvis_1_1scene_1_1meta_1_1Camera_doc-variable-members}
 \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Camera_doc-variable-members}
 \doxysubsection{Member Data Documentation}
@@ -70,13 +93,23 @@ std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a69
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Camera_a19defb3ee986339f458c989538597ba1} 
 std::\+vector$<$double$>$ fccvis::\+scene::\+meta::\+\+Camera::\+direction\+Vector}
 
-\Hypertarget{classfccvis_1_1scene_1_1meta_1_1Camera_ab2468abaa4d03a6aca891ac7defde84e}\index{fccvis::scene::meta::Camera@{fccvis::scene::meta::Camera}!positionVector@{positionVector}}
+
+
+Viewing direction of the camera. 
+
+Stores the direction in which the camera is oriented as a sequence of numerical components. \Hypertarget{classfccvis_1_1scene_1_1meta_1_1Camera_ab2468abaa4d03a6aca891ac7defde84e}\index{fccvis::scene::meta::Camera@{fccvis::scene::meta::Camera}!positionVector@{positionVector}}
 \index{positionVector@{positionVector}!fccvis::scene::meta::Camera@{fccvis::scene::meta::Camera}}
 \doxysubsubsection{\texorpdfstring{positionVector}{positionVector}}
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1meta_1_1Camera_ab2468abaa4d03a6aca891ac7defde84e} 
 std::\+vector$<$double$>$ fccvis::\+scene::\+meta::\+\+Camera::\+position\+Vector}
 
 
+
+Position of the camera. 
+
+Stores the camera position as a sequence of numerical coordinates.
+
+The interpretation of the vector components is determined by the visualization backend. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

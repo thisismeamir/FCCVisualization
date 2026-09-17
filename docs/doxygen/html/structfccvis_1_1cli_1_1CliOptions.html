@@ -113,16 +113,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfccvis_1
 </div><!--header-->
 <div class="contents">
 
+<p>Command-line options for the FCCVisualization application.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="CliOptions_8h_source.html">CliOptions.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0dd3e9c3e13de997d669ae6dbb727bf3" id="r_a0dd3e9c3e13de997d669ae6dbb727bf3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0dd3e9c3e13de997d669ae6dbb727bf3">guiRequested</a> = false</td></tr>
+<tr class="memdesc:a0dd3e9c3e13de997d669ae6dbb727bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the graphical user interface was requested.  <br /></td></tr>
 <tr class="memitem:a6df682ea2e1f4d2dec01214225664ef0" id="r_a6df682ea2e1f4d2dec01214225664ef0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a6df682ea2e1f4d2dec01214225664ef0">interactive</a> = true</td></tr>
+<tr class="memdesc:a6df682ea2e1f4d2dec01214225664ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether interactive mode is enabled.  <br /></td></tr>
 <tr class="memitem:a5dfe016ca8685a8e972e9ee92119b80e" id="r_a5dfe016ca8685a8e972e9ee92119b80e"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5dfe016ca8685a8e972e9ee92119b80e">dataFile</a></td></tr>
+<tr class="memdesc:a5dfe016ca8685a8e972e9ee92119b80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional path to the event-data file.  <br /></td></tr>
 <tr class="memitem:a4b33ea1479d62ce86acf1e5bf1ee91f5" id="r_a4b33ea1479d62ce86acf1e5bf1ee91f5"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4b33ea1479d62ce86acf1e5bf1ee91f5">optionsFile</a></td></tr>
+<tr class="memdesc:a4b33ea1479d62ce86acf1e5bf1ee91f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional path to the visualization options file.  <br /></td></tr>
 </table>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Command-line options for the FCCVisualization application. </p>
+<p><a class="el" href="structfccvis_1_1cli_1_1CliOptions.html" title="Command-line options for the FCCVisualization application.">CliOptions</a> represents the configuration produced by parsing the application's command-line arguments.</p>
+<p>The options determine which application interface is started and which optional input files are supplied to the session. </p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a5dfe016ca8685a8e972e9ee92119b80e" name="a5dfe016ca8685a8e972e9ee92119b80e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5dfe016ca8685a8e972e9ee92119b80e">&#9670;&#160;</a></span>dataFile</h2>
 
@@ -134,6 +145,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Optional path to the event-data file. </p>
+<p>If present, the path identifies the input file containing the event data to be loaded into the visualization session. </p>
 
 </div>
 </div>
@@ -149,6 +163,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Whether the graphical user interface was requested. </p>
+<p>If <code>true</code>, the application starts its graphical interface. </p>
+
 </div>
 </div>
 <a id="a6df682ea2e1f4d2dec01214225664ef0" name="a6df682ea2e1f4d2dec01214225664ef0"></a>
@@ -163,6 +180,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Whether interactive mode is enabled. </p>
+<p>Interactive mode controls whether the application provides an interactive command interface after initialization. </p>
+
 </div>
 </div>
 <a id="a4b33ea1479d62ce86acf1e5bf1ee91f5" name="a4b33ea1479d62ce86acf1e5bf1ee91f5"></a>
@@ -176,6 +196,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Optional path to the visualization options file. </p>
+<p>If present, the path identifies the configuration file used to initialize the session's visualization options. </p>
 
 </div>
 </div>

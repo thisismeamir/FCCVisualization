@@ -11,12 +11,14 @@
         <name>m_scene</name>
         <qualifiedname>fccvis::backend::root::RootScene::m_scene</qualifiedname>
         <briefdescription>
+<para>Abstract FCCVisualization scene represented by this object. </para>
         </briefdescription>
         <detaileddescription>
+<para>The shared pointer keeps the backend-independent scene alive while its ROOT representation exists. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="25" column="21" bodyfile="src/backend/root/include/RootScene.h" bodystart="25" bodyend="-1"/>
+        <location file="src/backend/root/include/RootScene.h" line="151" column="21" bodyfile="src/backend/root/include/RootScene.h" bodystart="151" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a73c71fe3e0d89fb45c5a2af8acbf8a52" prot="private" static="no" mutable="no">
         <type>TEveViewer *</type>
@@ -25,12 +27,14 @@
         <name>m_pViewer</name>
         <qualifiedname>fccvis::backend::root::RootScene::m_pViewer</qualifiedname>
         <briefdescription>
+<para>ROOT TEve viewer associated with the scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>This pointer refers to the viewer used to display the materialized scene. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="26" column="16" bodyfile="src/backend/root/include/RootScene.h" bodystart="26" bodyend="-1"/>
+        <location file="src/backend/root/include/RootScene.h" line="159" column="16" bodyfile="src/backend/root/include/RootScene.h" bodystart="159" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootScene_1aff89d4c02d5e2bb13c548c13c7012b38" prot="private" static="no" mutable="no">
         <type>TEveScene *</type>
@@ -39,12 +43,14 @@
         <name>m_pEveScene</name>
         <qualifiedname>fccvis::backend::root::RootScene::m_pEveScene</qualifiedname>
         <briefdescription>
+<para>ROOT TEve scene containing the scene&apos;s graphical objects. </para>
         </briefdescription>
         <detaileddescription>
+<para>This pointer refers to the TEve scene materialized from the abstract FCCVisualization scene. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="27" column="15" bodyfile="src/backend/root/include/RootScene.h" bodystart="27" bodyend="-1"/>
+        <location file="src/backend/root/include/RootScene.h" line="167" column="15" bodyfile="src/backend/root/include/RootScene.h" bodystart="167" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -59,12 +65,26 @@
           <declname>scene</declname>
         </param>
         <briefdescription>
+<para>Construct a ROOT representation of a scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>Materializes the supplied abstract scene into the ROOT/TEve representation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scene</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Abstract scene to materialize.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The abstract scene is retained through a <computeroutput>std::shared_ptr</computeroutput> and therefore remains alive as long as the <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> retains its reference. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="13" column="14" bodyfile="src/backend/root/RootScene.cc" bodystart="11" bodyend="19"/>
+        <location file="src/backend/root/include/RootScene.h" line="80" column="14" bodyfile="src/backend/root/RootScene.cc" bodystart="11" bodyend="19"/>
         <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" compoundref="RootScene_8cc" startline="33" endline="85">SyncCamera</references>
         <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac">operator=</referencedby>
         <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44">RootScene</referencedby>
@@ -76,12 +96,14 @@
         <name>~RootScene</name>
         <qualifiedname>fccvis::backend::root::RootScene::~RootScene</qualifiedname>
         <briefdescription>
+<para>Destroy the ROOT representation of the scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>Releases the ROOT/TEve resources associated with this scene. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="14" column="5" bodyfile="src/backend/root/RootScene.cc" bodystart="20" bodyend="32"/>
+        <location file="src/backend/root/include/RootScene.h" line="87" column="5" bodyfile="src/backend/root/RootScene.cc" bodystart="20" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -93,12 +115,14 @@
           <type>const RootScene &amp;</type>
         </param>
         <briefdescription>
+<para>Copy construction is disabled. </para>
         </briefdescription>
         <detaileddescription>
+<para>A <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> represents live ROOT/TEve state and is therefore intentionally non-copyable. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="16" column="5"/>
+        <location file="src/backend/root/include/RootScene.h" line="95" column="5"/>
         <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" compoundref="RootScene_8cc" startline="11" endline="19">RootScene</references>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -111,12 +135,14 @@
           <type>const <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref> &amp;</type>
         </param>
         <briefdescription>
+<para>Copy assignment is disabled. </para>
         </briefdescription>
         <detaileddescription>
+<para>A <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> represents live ROOT/TEve state and is therefore intentionally non-copyable. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="17" column="15"/>
+        <location file="src/backend/root/include/RootScene.h" line="103" column="15"/>
         <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" compoundref="RootScene_8cc" startline="11" endline="19">RootScene</references>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
@@ -126,12 +152,18 @@
         <name>Viewer</name>
         <qualifiedname>fccvis::backend::root::RootScene::Viewer</qualifiedname>
         <briefdescription>
+<para>Get the ROOT TEve viewer associated with the scene. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the associated <computeroutput>TEveViewer</computeroutput>.</para>
+</simplesect>
+<simplesect kind="note"><para>The returned pointer is non-owning and is managed by the ROOT/TEve infrastructure. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="19" column="16" bodyfile="src/backend/root/include/RootScene.h" bodystart="19" bodyend="19"/>
+        <location file="src/backend/root/include/RootScene.h" line="113" column="16" bodyfile="src/backend/root/include/RootScene.h" bodystart="113" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>TEveScene *</type>
@@ -140,12 +172,18 @@
         <name>EveScene</name>
         <qualifiedname>fccvis::backend::root::RootScene::EveScene</qualifiedname>
         <briefdescription>
+<para>Get the ROOT TEve scene. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the associated <computeroutput>TEveScene</computeroutput>.</para>
+</simplesect>
+<simplesect kind="note"><para>The returned pointer is non-owning and is managed by the ROOT/TEve infrastructure. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="20" column="15" bodyfile="src/backend/root/include/RootScene.h" bodystart="20" bodyend="20"/>
+        <location file="src/backend/root/include/RootScene.h" line="123" column="15" bodyfile="src/backend/root/include/RootScene.h" bodystart="123" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -154,12 +192,15 @@
         <name>SyncCamera</name>
         <qualifiedname>fccvis::backend::root::RootScene::SyncCamera</qualifiedname>
         <briefdescription>
+<para>Synchronize the ROOT camera with the abstract scene. </para>
         </briefdescription>
         <detaileddescription>
+<para>Pushes the camera position and viewing direction stored in <ref refid="classfccvis_1_1scene_1_1Scene_1a65a3d5f541efe6c8238945e377edf558" kindref="member">fccvis::scene::Scene::camera</ref> into the ROOT/TEve viewer.</para>
+<para>This method synchronizes camera state from the abstract FCCVisualization representation to the ROOT rendering backend. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="22" column="10" bodyfile="src/backend/root/RootScene.cc" bodystart="33" bodyend="85"/>
+        <location file="src/backend/root/include/RootScene.h" line="134" column="10" bodyfile="src/backend/root/RootScene.cc" bodystart="33" bodyend="85"/>
         <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" compoundref="RootScene_8cc" startline="11" endline="19">RootScene</referencedby>
         <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a81cdc76f0fe4ffb80a0147adf555ce0b" compoundref="RootSceneManager_8cc" startline="45" endline="52">fccvis::backend::root::RootSceneManager::Update</referencedby>
       </memberdef>
@@ -170,19 +211,36 @@
         <name>GetSceneAbstract</name>
         <qualifiedname>fccvis::backend::root::RootScene::GetSceneAbstract</qualifiedname>
         <briefdescription>
+<para>Get the underlying abstract scene. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Shared pointer to the abstract <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> represented by this object. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/backend/root/include/RootScene.h" line="23" column="21" bodyfile="src/backend/root/RootScene.cc" bodystart="87" bodyend="89"/>
+        <location file="src/backend/root/include/RootScene.h" line="142" column="21" bodyfile="src/backend/root/RootScene.cc" bodystart="87" bodyend="89"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>ROOT/TEve representation of an abstract visualization scene. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> bridges the backend-independent <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> representation and the corresponding ROOT/TEve graphical objects.</para>
+<para>The class maintains a shared reference to the abstract Scene while owning or managing its associated TEve-side representation.</para>
+<para>The abstract scene remains independent of ROOT and can therefore continue to exist separately from its materialized ROOT scene.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kindref="compound">fccvis::backend::root::RootSceneManager</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>TEveScene </para>
+</simplesect>
+<simplesect kind="see"><para>TEveViewer </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="src/backend/root/include/RootScene.h" line="10" column="1" bodyfile="src/backend/root/include/RootScene.h" bodystart="11" bodyend="28"/>
+    <location file="src/backend/root/include/RootScene.h" line="66" column="1" bodyfile="src/backend/root/include/RootScene.h" bodystart="66" bodyend="168"/>
     <listofallmembers>
       <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>EveScene</name></member>
       <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>GetSceneAbstract</name></member>

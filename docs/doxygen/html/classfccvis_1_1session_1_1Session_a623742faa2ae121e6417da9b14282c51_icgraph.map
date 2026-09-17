@@ -1,7 +1,7 @@
 <map id="fccvis::session::Session::GetFrame" name="fccvis::session::Session::GetFrame">
-<area shape="rect" id="Node000001" title=" " alt="" coords="228,40,402,85"/>
-<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#abfeb70dc45d2b18889c591657524ebdf" title=" " alt="" coords="5,5,180,50"/>
+<area shape="rect" id="Node000001" title="Get a podio frame from the session." alt="" coords="228,40,402,85"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#abfeb70dc45d2b18889c591657524ebdf" title="Get the collection names for a category entry." alt="" coords="5,5,180,50"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,47,180,44,180,39,215,46"/>
-<area shape="rect" id="Node000003" href="$classfccvis_1_1session_1_1Session.html#a883adf902b23ba4272607f06d4900713" title=" " alt="" coords="5,75,180,119"/>
+<area shape="rect" id="Node000003" href="$classfccvis_1_1session_1_1Session.html#a883adf902b23ba4272607f06d4900713" title="Get the type of a collection in a category entry." alt="" coords="5,75,180,119"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,79,181,86,180,81,215,78"/>
 </map>

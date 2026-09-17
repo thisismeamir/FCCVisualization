@@ -11,12 +11,14 @@
         <name>kind</name>
         <qualifiedname>fccvis::scene::meta::LayoutNode::kind</qualifiedname>
         <briefdescription>
+<para>Structural kind of this layout node. </para>
         </briefdescription>
         <detaileddescription>
+<para>Determines which of the other members are applicable. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="13" column="16" bodyfile="src/scene/include/MetaObjects.h" bodystart="13" bodyend="-1"/>
+        <location file="src/scene/include/MetaObjects.h" line="128" column="14" bodyfile="src/scene/include/MetaObjects.h" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" prot="public" static="no" mutable="no">
         <type><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kindref="member">PackOrientation</ref></type>
@@ -26,12 +28,15 @@
         <qualifiedname>fccvis::scene::meta::LayoutNode::orientation</qualifiedname>
         <initializer>= <ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">PackOrientation::Horizontal</ref></initializer>
         <briefdescription>
+<para>Orientation of children in a packed node. </para>
         </briefdescription>
         <detaileddescription>
+<para>This member is used when <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" kindref="member">kind</ref> is <computeroutput><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" kindref="member">LayoutKind::Pack</ref></computeroutput>.</para>
+<para>The default orientation is horizontal. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="16" column="21" bodyfile="src/scene/include/MetaObjects.h" bodystart="16" bodyend="-1"/>
+        <location file="src/scene/include/MetaObjects.h" line="137" column="19" bodyfile="src/scene/include/MetaObjects.h" bodystart="137" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -40,35 +45,62 @@
         <name>sceneName</name>
         <qualifiedname>fccvis::scene::meta::LayoutNode::sceneName</qualifiedname>
         <briefdescription>
+<para>Name of the scene represented by a leaf node. </para>
         </briefdescription>
         <detaileddescription>
+<para>This member is used when <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" kindref="member">kind</ref> is <computeroutput><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" kindref="member">LayoutKind::Leaf</ref></computeroutput>.</para>
+<para>The name identifies the <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> that is materialized in this layout slot. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="19" column="17" bodyfile="src/scene/include/MetaObjects.h" bodystart="19" bodyend="-1"/>
+        <location file="src/scene/include/MetaObjects.h" line="147" column="15" bodyfile="src/scene/include/MetaObjects.h" bodystart="147" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a5938a74025c87c462fe1872595c2a915" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::pair&lt; std::shared_ptr&lt; <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">LayoutNode</ref> &gt;, int &gt; &gt;</type>
-        <definition>std::vector&lt;std::pair&lt;std::shared_ptr&lt;LayoutNode&gt;, int &gt; &gt; fccvis::scene::meta::LayoutNode::children</definition>
+        <definition>std::vector&lt; std::pair&lt;std::shared_ptr&lt;LayoutNode&gt;, int &gt; &gt; fccvis::scene::meta::LayoutNode::children</definition>
         <argsstring></argsstring>
         <name>children</name>
         <qualifiedname>fccvis::scene::meta::LayoutNode::children</qualifiedname>
         <briefdescription>
+<para>Child nodes of this layout node. </para>
         </briefdescription>
         <detaileddescription>
+<para>Each child is represented by a shared pointer to another <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">LayoutNode</ref> together with an integer weight.</para>
+<para>For <computeroutput><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" kindref="member">LayoutKind::Pack</ref></computeroutput> nodes, the weight determines the child&apos;s relative share of the available layout space.</para>
+<para>For <computeroutput><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" kindref="member">LayoutKind::Tab</ref></computeroutput> nodes, the weight is ignored.</para>
+<para>Leaf nodes normally have no children. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/MetaObjects.h" line="22" column="17" bodyfile="src/scene/include/MetaObjects.h" bodystart="22" bodyend="-1"/>
+        <location file="src/scene/include/MetaObjects.h" line="164" column="7" bodyfile="src/scene/include/MetaObjects.h" bodystart="164" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Node in the hierarchical layout of visualization scenes. </para>
     </briefdescription>
     <detaileddescription>
+<para>A <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">LayoutNode</ref> forms one element of a tree describing how multiple scenes are presented together.</para>
+<para>The meaning of the node&apos;s other members depends on its kind:</para>
+<para><itemizedlist>
+<listitem><para>For <computeroutput><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" kindref="member">LayoutKind::Pack</ref></computeroutput>, <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" kindref="member">orientation</ref> and <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a5938a74025c87c462fe1872595c2a915" kindref="member">children</ref> are used. Child weights determine the relative allocation of space.</para>
+</listitem><listitem><para>For <computeroutput><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" kindref="member">LayoutKind::Tab</ref></computeroutput>, <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a5938a74025c87c462fe1872595c2a915" kindref="member">children</ref> is used and child weights are ignored.</para>
+</listitem><listitem><para>For <computeroutput><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" kindref="member">LayoutKind::Leaf</ref></computeroutput>, <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" kindref="member">sceneName</ref> identifies the scene materialized by the node.</para>
+</listitem></itemizedlist>
+</para>
+<para>This structure allows a session to represent nested arrangements, such as horizontal and vertical groups containing tabbed scenes.</para>
+<para><simplesect kind="see"><para><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" kindref="member">LayoutKind</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kindref="member">PackOrientation</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="classfccvis_1_1session_1_1SessionOptions" kindref="compound">fccvis::session::SessionOptions</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="src/scene/include/MetaObjects.h" line="12" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="12" bodyend="23"/>
+    <location file="src/scene/include/MetaObjects.h" line="122" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="122" bodyend="165"/>
     <listofallmembers>
-      <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>children</name></member>
+      <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a5938a74025c87c462fe1872595c2a915" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>children</name></member>
       <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>kind</name></member>
       <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>orientation</name></member>
       <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>sceneName</name></member>

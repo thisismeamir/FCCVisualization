@@ -1,20 +1,25 @@
 \doxysection{fccvis::scene::meta Namespace Reference}
 \hypertarget{namespacefccvis_1_1scene_1_1meta}{}\label{namespacefccvis_1_1scene_1_1meta}\index{fccvis::scene::meta@{fccvis::scene::meta}}
+
+
+Metadata and graphical primitives for visualization scenes.  
+
+
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera} configuration for a visualization scene. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter}{Filter}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{classfccvis_1_1scene_1_1meta_1_1Filter}{Filter} configuration for a visualization scene. \end{DoxyCompactList}\item 
 struct \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node}}
-\item 
+\begin{DoxyCompactList}\small\item\em Node in the hierarchical layout of visualization scenes. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Line}{Line}}
-\item 
+\begin{DoxyCompactList}\small\item\em A line-\/segment graphical primitive. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Marker}{Marker}}
-\item 
+\begin{DoxyCompactList}\small\item\em A point-\/like graphical primitive. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{Scene\+Options}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Configuration options associated with a visualization scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,17 +71,26 @@ enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242
 , \newline
 \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea8644f96ff7e3ae5af2cbe1c4a051724a}{Auto\+Energy}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{Color} specification for visualization primitives. \end{DoxyCompactList}\item 
 enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44}{Layout\+Kind}} \{ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292}{Pack}}
 , \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413}{Tab}}
 , \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5}{Leaf}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Describes the structural role of a node in a scene layout. \end{DoxyCompactList}\item 
 enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{Pack\+Orientation}} \{ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f}{Horizontal}}
 , \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012}{Vertical}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Specifies the orientation of a packed layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Metadata and graphical primitives for visualization scenes. 
+
+Metadata and configuration objects for visualization scenes.
+
+The {\ttfamily \doxylink{namespacefccvis_1_1scene_1_1meta}{fccvis::\+scene::\+meta}} namespace contains the lightweight configuration objects used to describe how scenes are constructed and displayed.
+
+These objects are primarily metadata rather than rendering objects. They can be composed into higher-\/level objects such as \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene} and \doxylink{classfccvis_1_1session_1_1SessionOptions}{fccvis::\+session::\+\+Session\+Options}. 
 
 \label{namespacefccvis_1_1scene_1_1meta_doc-enum-members}
 \Hypertarget{namespacefccvis_1_1scene_1_1meta_doc-enum-members}
@@ -87,227 +101,233 @@ enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030
 {\footnotesize\ttfamily \label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e} 
 enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{fccvis::\+scene::\+meta::\+\+Color}}\hspace{0.3cm}{\ttfamily [strong]}}
 
-\begin{DoxyEnumFields}[2]{Enumerator}
+
+
+\doxylink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{Color} specification for visualization primitives. 
+
+\doxylink{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106e}{Color} provides a backend-\/independent enumeration of the colors available to scene primitives such as \doxylink{classfccvis_1_1scene_1_1meta_1_1Marker}{Marker} and \doxylink{classfccvis_1_1scene_1_1meta_1_1Line}{Line}.
+
+In addition to explicit colors, the enumeration provides automatic color modes. The interpretation of automatic modes is performed by the visualization backend. \begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{White@{White}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!White@{White}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006} 
-White&\\
+White&White. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Black@{Black}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Black@{Black}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eae90dfb84e30edf611e326eeb04d680de}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eae90dfb84e30edf611e326eeb04d680de} 
-Black&\\
+Black&Black. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Red@{Red}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Red@{Red}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaee38e4d5dd68c4e440825018d549cb47}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaee38e4d5dd68c4e440825018d549cb47} 
-Red&\\
+Red&Red. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Green@{Green}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Green@{Green}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ead382816a3cbeed082c9e216e7392eed1}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ead382816a3cbeed082c9e216e7392eed1} 
-Green&\\
+Green&Green. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Blue@{Blue}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Blue@{Blue}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea9594eec95be70e7b1710f730fdda33d9}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea9594eec95be70e7b1710f730fdda33d9} 
-Blue&\\
+Blue&Blue. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Magenta@{Magenta}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Magenta@{Magenta}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eab91cc2c1416fcca942b61c7ac5b1a9ac}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eab91cc2c1416fcca942b61c7ac5b1a9ac} 
-Magenta&\\
+Magenta&Magenta. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Cyan@{Cyan}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Cyan@{Cyan}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea023c239d2f2538f140a20e72c7b73f20}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea023c239d2f2538f140a20e72c7b73f20} 
-Cyan&\\
+Cyan&Cyan. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Violet@{Violet}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Violet@{Violet}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea80f1187112e2e5e0403499147f7014b8}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea80f1187112e2e5e0403499147f7014b8} 
-Violet&\\
+Violet&Violet. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Pink@{Pink}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Pink@{Pink}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea8dc5344bc0746e1cc5abf896ca03bbdf}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea8dc5344bc0746e1cc5abf896ca03bbdf} 
-Pink&\\
+Pink&Pink. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Orange@{Orange}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Orange@{Orange}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea909cea0c97058cfe2e3ea8d675cb08e1}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea909cea0c97058cfe2e3ea8d675cb08e1} 
-Orange&\\
+Orange&Orange. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Yellow@{Yellow}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Yellow@{Yellow}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea51e6cd92b6c45f9affdc158ecca2b8b8}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea51e6cd92b6c45f9affdc158ecca2b8b8} 
-Yellow&\\
+Yellow&Yellow. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Spring@{Spring}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Spring@{Spring}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea38008dd81c2f4d7985ecf6e0ce8af1d1}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea38008dd81c2f4d7985ecf6e0ce8af1d1} 
-Spring&\\
+Spring&Spring green. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Teal@{Teal}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Teal@{Teal}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eae20385a2b41df1743f787ebef18222b8}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eae20385a2b41df1743f787ebef18222b8} 
-Teal&\\
+Teal&Teal. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Azure@{Azure}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Azure@{Azure}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea3a580f142203677f1f0bc30898f63f53}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea3a580f142203677f1f0bc30898f63f53} 
-Azure&\\
+Azure&Azure. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Gray@{Gray}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Gray@{Gray}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea994ae1d9731cebe455aff211bcb25b93}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea994ae1d9731cebe455aff211bcb25b93} 
-Gray&\\
+Gray&Gray. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkRed@{DarkRed}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkRed@{DarkRed}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea8746d21f8164452063398744f06307dd}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea8746d21f8164452063398744f06307dd} 
-Dark\+Red&\\
+Dark\+Red&Dark red. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkGreen@{DarkGreen}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkGreen@{DarkGreen}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaf780aab6295a2f368ac69a514f8b4605}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaf780aab6295a2f368ac69a514f8b4605} 
-Dark\+Green&\\
+Dark\+Green&Dark green. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkBlue@{DarkBlue}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkBlue@{DarkBlue}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea877716336e4eb22ac67faaa9c2b86635}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea877716336e4eb22ac67faaa9c2b86635} 
-Dark\+Blue&\\
+Dark\+Blue&Dark blue. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkMagenta@{DarkMagenta}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkMagenta@{DarkMagenta}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eadf1b1322cf6703efd9885b0651ddb57a}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eadf1b1322cf6703efd9885b0651ddb57a} 
-Dark\+Magenta&\\
+Dark\+Magenta&Dark magenta. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkCyan@{DarkCyan}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkCyan@{DarkCyan}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea85b1ae66e65b490f35c5e8b725e7049f}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea85b1ae66e65b490f35c5e8b725e7049f} 
-Dark\+Cyan&\\
+Dark\+Cyan&Dark cyan. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkViolet@{DarkViolet}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkViolet@{DarkViolet}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eafb49b4fcac3fd7164a4419a7f1db7c38}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eafb49b4fcac3fd7164a4419a7f1db7c38} 
-Dark\+Violet&\\
+Dark\+Violet&Dark violet. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkPink@{DarkPink}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkPink@{DarkPink}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea10cea9ecd7dbdede7edf97e382b55c0c}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea10cea9ecd7dbdede7edf97e382b55c0c} 
-Dark\+Pink&\\
+Dark\+Pink&Dark pink. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkOrange@{DarkOrange}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkOrange@{DarkOrange}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea0199f373639f4b589a135cf877981572}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea0199f373639f4b589a135cf877981572} 
-Dark\+Orange&\\
+Dark\+Orange&Dark orange. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{DarkYellow@{DarkYellow}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!DarkYellow@{DarkYellow}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea42d873bb34e1055e40aad0ec45039e8b}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea42d873bb34e1055e40aad0ec45039e8b} 
-Dark\+Yellow&\\
+Dark\+Yellow&Dark yellow. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightRed@{LightRed}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightRed@{LightRed}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaf9a96fb667261a141d10021a66d6ad0f}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaf9a96fb667261a141d10021a66d6ad0f} 
-Light\+Red&\\
+Light\+Red&Light red. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightGreen@{LightGreen}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightGreen@{LightGreen}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea7a6a38bec67cbc2a39ce22f34e4ed8e2}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea7a6a38bec67cbc2a39ce22f34e4ed8e2} 
-Light\+Green&\\
+Light\+Green&Light green. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightBlue@{LightBlue}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightBlue@{LightBlue}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea4d7ff7393a484a7b9ed2e381f5cdeaf7}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea4d7ff7393a484a7b9ed2e381f5cdeaf7} 
-Light\+Blue&\\
+Light\+Blue&Light blue. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightMagenta@{LightMagenta}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightMagenta@{LightMagenta}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaf1ec64ef9f82e9fb86b094f8b548f9f1}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eaf1ec64ef9f82e9fb86b094f8b548f9f1} 
-Light\+Magenta&\\
+Light\+Magenta&Light magenta. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightCyan@{LightCyan}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightCyan@{LightCyan}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eac37b5ce4ba80a097d82726ae74d34b13}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eac37b5ce4ba80a097d82726ae74d34b13} 
-Light\+Cyan&\\
+Light\+Cyan&Light cyan. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightViolet@{LightViolet}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightViolet@{LightViolet}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eab389fcb54d9e3ac8154a20ffb59c24a9}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eab389fcb54d9e3ac8154a20ffb59c24a9} 
-Light\+Violet&\\
+Light\+Violet&Light violet. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightPink@{LightPink}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightPink@{LightPink}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eab9c31a17936f5966fd4fbe74f9b09012}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eab9c31a17936f5966fd4fbe74f9b09012} 
-Light\+Pink&\\
+Light\+Pink&Light pink. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightOrange@{LightOrange}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightOrange@{LightOrange}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea475e89699fa47c1b7b07977437e16b3c}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea475e89699fa47c1b7b07977437e16b3c} 
-Light\+Orange&\\
+Light\+Orange&Light orange. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{LightYellow@{LightYellow}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!LightYellow@{LightYellow}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eafaf948b65bda38f44b17d156177d1728}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eafaf948b65bda38f44b17d156177d1728} 
-Light\+Yellow&\\
+Light\+Yellow&Light yellow. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Auto@{Auto}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Auto@{Auto}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea06b9281e396db002010bde1de57262eb}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea06b9281e396db002010bde1de57262eb} 
-Auto&\\
+Auto&Automatically select a color. The backend determines the color according to the visualization context. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{AutoId@{AutoId}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!AutoId@{AutoId}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eadc9a0f370cb685d1c48af0ba200f9ac1}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106eadc9a0f370cb685d1c48af0ba200f9ac1} 
-Auto\+Id&\\
+Auto\+Id&Automatically select a color based on object identity. The backend associates colors with object identifiers. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{AutoIter@{AutoIter}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!AutoIter@{AutoIter}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea33c47748c7e39073679b8adbaa2c1fdf}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea33c47748c7e39073679b8adbaa2c1fdf} 
-Auto\+Iter&\\
+Auto\+Iter&Automatically select a color based on iteration. The backend associates colors with the current iteration or sequence position. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{AutoEnergy@{AutoEnergy}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!AutoEnergy@{AutoEnergy}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea8644f96ff7e3ae5af2cbe1c4a051724a}\label{namespacefccvis_1_1scene_1_1meta_aff2f8169b31242b22ee2e21eb2ee106ea8644f96ff7e3ae5af2cbe1c4a051724a} 
-Auto\+Energy&\\
+Auto\+Energy&Automatically select a color based on energy. The backend associates colors with the relevant energy value. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -317,23 +337,39 @@ Auto\+Energy&\\
 {\footnotesize\ttfamily \label{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44} 
 enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44}{fccvis::\+scene::\+meta::\+\+Layout\+Kind}}\hspace{0.3cm}{\ttfamily [strong]}}
 
+
+
+Describes the structural role of a node in a scene layout. 
+
+A layout is represented as a tree of \doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node} objects. Each node has one of three structural roles:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Pack:} contains child nodes arranged according to an orientation.
+\item {\ttfamily Tab:} contains child nodes presented as alternative tab views.
+\item {\ttfamily Leaf:} represents a concrete scene slot.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{Layout\+Node} 
+\end{DoxySeeAlso}
 \begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Pack@{Pack}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Pack@{Pack}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292}\label{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292} 
-Pack&\\
+Pack&A container that arranges its children spatially. The arrangement direction is specified by \doxylink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{Pack\+Orientation}. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Tab@{Tab}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Tab@{Tab}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413}\label{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413} 
-Tab&\\
+Tab&A container that presents its children as tabs. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Leaf@{Leaf}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Leaf@{Leaf}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5}\label{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5} 
-Leaf&\\
+Leaf&A leaf node representing a concrete scene. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -343,17 +379,21 @@ Leaf&\\
 {\footnotesize\ttfamily \label{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9} 
 enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{fccvis::\+scene::\+meta::\+\+Pack\+Orientation}}\hspace{0.3cm}{\ttfamily [strong]}}
 
-\begin{DoxyEnumFields}[2]{Enumerator}
+
+
+Specifies the orientation of a packed layout. 
+
+This value is meaningful for \doxylink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292}{Layout\+Kind::\+\+Pack} nodes and determines the direction in which their children are arranged. \begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Horizontal@{Horizontal}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Horizontal@{Horizontal}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f}\label{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f} 
-Horizontal&\\
+Horizontal&Arrange children horizontally. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Vertical@{Vertical}!fccvis::scene::meta@{fccvis::scene::meta}}
 \index{fccvis::scene::meta@{fccvis::scene::meta}!Vertical@{Vertical}}
 }\Hypertarget{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012}\label{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012} 
-Vertical&\\
+Vertical&Arrange children vertically. \\
 \hline
 
 \end{DoxyEnumFields}

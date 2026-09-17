@@ -1,5 +1,5 @@
 <map id="fccvis::session::Session::Session" name="fccvis::session::Session::Session">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,180,50"/>
-<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" id="Node000001" title="Construct a Session by moving another session." alt="" coords="5,5,180,50"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title="Construct a visualization session." alt="" coords="228,5,402,50"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,25,215,27,209,28,180,30"/>
 </map>

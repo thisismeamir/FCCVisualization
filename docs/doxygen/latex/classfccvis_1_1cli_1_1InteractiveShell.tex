@@ -2,15 +2,39 @@
 \hypertarget{classfccvis_1_1cli_1_1InteractiveShell}{}\label{classfccvis_1_1cli_1_1InteractiveShell}\index{fccvis::cli::InteractiveShell@{fccvis::cli::InteractiveShell}}
 
 
+Interactive command-\/line shell for a visualization session.  
+
+
+
+
 {\ttfamily \+\#include $<$Interactive\+Shell.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1cli_1_1InteractiveShell_ab5da44aabf83e24cc47c9030bc7b5af2}{Interactive\+Shell}} (\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}} \&session)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct an interactive shell for a session. \end{DoxyCompactList}\item 
 void \doxymbox{\hyperlink{classfccvis_1_1cli_1_1InteractiveShell_abd04c304d28b259f30db574dc67ab15e}{Run}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Run the interactive shell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interactive command-\/line shell for a visualization session. 
+
+\doxylink{classfccvis_1_1cli_1_1InteractiveShell}{Interactive\+Shell} provides a command interface for inspecting and controlling an active \doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}.
+
+The shell maintains command history, provides built-\/in commands for scene management, and exposes the active session to the ROOT Cling interpreter.
+
+The shell uses a \doxylink{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager} to manage the ROOT-\/based visualization of scenes.
+
+\begin{DoxyNote}{Note}
+The Session is referenced but not owned by the shell. The referenced session must remain valid for the lifetime of the \doxylink{classfccvis_1_1cli_1_1InteractiveShell}{Interactive\+Shell}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session} 
+
+\doxylink{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager} 
+\end{DoxySeeAlso}
 
 
 \label{classfccvis_1_1cli_1_1InteractiveShell_doc-constructors}
@@ -24,6 +48,18 @@ fccvis::\+cli::\+\+Interactive\+Shell::\+\+Interactive\+Shell (\begin{DoxyParamC
 
 
 
+Construct an interactive shell for a session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Session controlled by the interactive shell.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The session is not owned by \doxylink{classfccvis_1_1cli_1_1InteractiveShell}{Interactive\+Shell}. 
+\end{DoxyNote}
+
+
 \label{classfccvis_1_1cli_1_1InteractiveShell_doc-func-members}
 \Hypertarget{classfccvis_1_1cli_1_1InteractiveShell_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -33,7 +69,11 @@ fccvis::\+cli::\+\+Interactive\+Shell::\+\+Interactive\+Shell (\begin{DoxyParamC
 {\footnotesize\ttfamily \label{classfccvis_1_1cli_1_1InteractiveShell_abd04c304d28b259f30db574dc67ab15e} 
 void fccvis::\+cli::\+\+Interactive\+Shell::\+\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function:
+
+
+Run the interactive shell. 
+
+Starts processing interactive input until the user requests termination. Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}

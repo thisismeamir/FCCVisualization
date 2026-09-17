@@ -113,20 +113,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>ROOT/TEve representation of an abstract visualization scene.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="RootScene_8h_source.html">RootScene.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3996df0da494feb359d0a628afbc2616" id="r_a3996df0da494feb359d0a628afbc2616"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3996df0da494feb359d0a628afbc2616">RootScene</a> (std::shared_ptr&lt; <a class="el" href="classfccvis_1_1scene_1_1Scene.html">fccvis::scene::Scene</a> &gt; scene)</td></tr>
+<tr class="memdesc:a3996df0da494feb359d0a628afbc2616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a ROOT representation of a scene.  <br /></td></tr>
 <tr class="memitem:ac43cfc1320b5032e1497c5710669ba99" id="r_ac43cfc1320b5032e1497c5710669ba99"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac43cfc1320b5032e1497c5710669ba99">~RootScene</a> ()</td></tr>
+<tr class="memdesc:ac43cfc1320b5032e1497c5710669ba99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the ROOT representation of the scene.  <br /></td></tr>
 <tr class="memitem:a47846a97d8e5e6cacb9ad034aba35d44" id="r_a47846a97d8e5e6cacb9ad034aba35d44"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a47846a97d8e5e6cacb9ad034aba35d44">RootScene</a> (const RootScene &amp;)=delete</td></tr>
+<tr class="memdesc:a47846a97d8e5e6cacb9ad034aba35d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy construction is disabled.  <br /></td></tr>
 <tr class="memitem:aabb15ab99537b6234a6cb88b93fb2aac" id="r_aabb15ab99537b6234a6cb88b93fb2aac"><td class="memItemLeft"><a class="el" href="#a3996df0da494feb359d0a628afbc2616">RootScene</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aabb15ab99537b6234a6cb88b93fb2aac">operator=</a> (const <a class="el" href="#a3996df0da494feb359d0a628afbc2616">RootScene</a> &amp;)=delete</td></tr>
+<tr class="memdesc:aabb15ab99537b6234a6cb88b93fb2aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment is disabled.  <br /></td></tr>
 <tr class="memitem:a895fda029418d2fedddc535a2b67385f" id="r_a895fda029418d2fedddc535a2b67385f"><td class="memItemLeft">TEveViewer *&#160;</td><td class="memItemRight"><a class="el" href="#a895fda029418d2fedddc535a2b67385f">Viewer</a> () const</td></tr>
+<tr class="memdesc:a895fda029418d2fedddc535a2b67385f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ROOT TEve viewer associated with the scene.  <br /></td></tr>
 <tr class="memitem:ac1d63d9dde356fb858167980c3888ca8" id="r_ac1d63d9dde356fb858167980c3888ca8"><td class="memItemLeft">TEveScene *&#160;</td><td class="memItemRight"><a class="el" href="#ac1d63d9dde356fb858167980c3888ca8">EveScene</a> () const</td></tr>
+<tr class="memdesc:ac1d63d9dde356fb858167980c3888ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ROOT TEve scene.  <br /></td></tr>
 <tr class="memitem:a8f80f1f03ff378365949c8ef3ae08d81" id="r_a8f80f1f03ff378365949c8ef3ae08d81"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8f80f1f03ff378365949c8ef3ae08d81">SyncCamera</a> ()</td></tr>
+<tr class="memdesc:a8f80f1f03ff378365949c8ef3ae08d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronize the ROOT camera with the abstract scene.  <br /></td></tr>
 <tr class="memitem:a49ac8ccf1948e04f02dbc5fb5e271a75" id="r_a49ac8ccf1948e04f02dbc5fb5e271a75"><td class="memItemLeft">std::shared_ptr&lt; <a class="el" href="classfccvis_1_1scene_1_1Scene.html">fccvis::scene::Scene</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a49ac8ccf1948e04f02dbc5fb5e271a75">GetSceneAbstract</a> ()</td></tr>
+<tr class="memdesc:a49ac8ccf1948e04f02dbc5fb5e271a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the underlying abstract scene.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ROOT/TEve representation of an abstract visualization scene. </p>
+<p><a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="ROOT/TEve representation of an abstract visualization scene.">RootScene</a> bridges the backend-independent <a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="fccvis::scene::Scene">fccvis::scene::Scene</a> representation and the corresponding ROOT/TEve graphical objects.</p>
+<p>The class maintains a shared reference to the abstract Scene while owning or managing its associated TEve-side representation.</p>
+<p>The abstract scene remains independent of ROOT and can therefore continue to exist separately from its materialized ROOT scene.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="A reusable visualization scene.">fccvis::scene::Scene</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html" title="Manages the live ROOT/TEve representations of session scenes.">fccvis::backend::root::RootSceneManager</a> </dd>
+<dd>
+TEveScene </dd>
+<dd>
+TEveViewer </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3996df0da494feb359d0a628afbc2616" name="a3996df0da494feb359d0a628afbc2616"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3996df0da494feb359d0a628afbc2616">&#9670;&#160;</a></span>RootScene() <span class="overload">[1/2]</span></h2>
 
@@ -149,13 +172,23 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a ROOT representation of a scene. </p>
+<p>Materializes the supplied abstract scene into the ROOT/TEve representation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scene</td><td>Abstract scene to materialize.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The abstract scene is retained through a <code>std::shared_ptr</code> and therefore remains alive as long as the <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="ROOT/TEve representation of an abstract visualization scene.">RootScene</a> retains its reference. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_cgraph.png" border="0" usemap="#aclassfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_cgraph" id="aclassfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,181,50"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title=" " alt="" coords="229,5,417,50"/>
+<area shape="rect" title="Construct a ROOT representation of a scene." alt="" coords="5,5,181,50"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title="Synchronize the ROOT camera with the abstract scene." alt="" coords="229,5,417,50"/>
 <area shape="poly" title=" " alt="" coords="181,25,216,27,210,28,181,30"/>
 </map>
 </div>
@@ -164,10 +197,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_icgraph.png" border="0" usemap="#aclassfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_icgraph" id="aclassfccvis_1_1backend_1_1root_1_1RootScene_a3996df0da494feb359d0a628afbc2616_icgraph">
-<area shape="rect" title=" " alt="" coords="229,40,404,85"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#aabb15ab99537b6234a6cb88b93fb2aac" title=" " alt="" coords="7,5,179,50"/>
+<area shape="rect" title="Construct a ROOT representation of a scene." alt="" coords="229,40,404,85"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#aabb15ab99537b6234a6cb88b93fb2aac" title="Copy assignment is disabled." alt="" coords="7,5,179,50"/>
 <area shape="poly" title=" " alt="" coords="211,47,180,44,179,38,216,46"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a47846a97d8e5e6cacb9ad034aba35d44" title=" " alt="" coords="5,75,181,119"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a47846a97d8e5e6cacb9ad034aba35d44" title="Copy construction is disabled." alt="" coords="5,75,181,119"/>
 <area shape="poly" title=" " alt="" coords="211,79,181,86,181,81,216,78"/>
 </map>
 </div>
@@ -188,6 +221,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroy the ROOT representation of the scene. </p>
+<p>Releases the ROOT/TEve resources associated with this scene. </p>
 
 </div>
 </div>
@@ -213,15 +249,18 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Copy construction is disabled. </p>
+<p>A <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="ROOT/TEve representation of an abstract visualization scene.">RootScene</a> represents live ROOT/TEve state and is therefore intentionally non-copyable. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44_cgraph.png" border="0" usemap="#aclassfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44_cgraph" id="aclassfccvis_1_1backend_1_1root_1_1RootScene_a47846a97d8e5e6cacb9ad034aba35d44_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,181,50"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a3996df0da494feb359d0a628afbc2616" title=" " alt="" coords="229,5,404,50"/>
+<area shape="rect" title="Copy construction is disabled." alt="" coords="5,5,181,50"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a3996df0da494feb359d0a628afbc2616" title="Construct a ROOT representation of a scene." alt="" coords="229,5,404,50"/>
 <area shape="poly" title=" " alt="" coords="181,25,216,27,211,28,181,30"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title=" " alt="" coords="452,5,640,50"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title="Synchronize the ROOT camera with the abstract scene." alt="" coords="452,5,640,50"/>
 <area shape="poly" title=" " alt="" coords="404,25,439,28,434,28,404,30"/>
 </map>
 </div>
@@ -252,6 +291,10 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Get the ROOT TEve scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the associated <code>TEveScene</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The returned pointer is non-owning and is managed by the ROOT/TEve infrastructure. </dd></dl>
+
 </div>
 </div>
 <a id="a49ac8ccf1948e04f02dbc5fb5e271a75" name="a49ac8ccf1948e04f02dbc5fb5e271a75"></a>
@@ -268,6 +311,9 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the underlying abstract scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the abstract <a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="fccvis::scene::Scene">fccvis::scene::Scene</a> represented by this object. </dd></dl>
 
 </div>
 </div>
@@ -293,15 +339,18 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Copy assignment is disabled. </p>
+<p>A <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="ROOT/TEve representation of an abstract visualization scene.">RootScene</a> represents live ROOT/TEve state and is therefore intentionally non-copyable. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac_cgraph.png" border="0" usemap="#aclassfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac_cgraph" id="aclassfccvis_1_1backend_1_1root_1_1RootScene_aabb15ab99537b6234a6cb88b93fb2aac_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,178,50"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a3996df0da494feb359d0a628afbc2616" title=" " alt="" coords="226,5,401,50"/>
+<area shape="rect" title="Copy assignment is disabled." alt="" coords="5,5,178,50"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a3996df0da494feb359d0a628afbc2616" title="Construct a ROOT representation of a scene." alt="" coords="226,5,401,50"/>
 <area shape="poly" title=" " alt="" coords="178,25,212,27,207,28,178,30"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title=" " alt="" coords="449,5,637,50"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title="Synchronize the ROOT camera with the abstract scene." alt="" coords="449,5,637,50"/>
 <area shape="poly" title=" " alt="" coords="401,25,436,28,431,28,401,30"/>
 </map>
 </div>
@@ -322,19 +371,23 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Synchronize the ROOT camera with the abstract scene. </p>
+<p>Pushes the camera position and viewing direction stored in <a class="el" href="classfccvis_1_1scene_1_1Scene.html#a65a3d5f541efe6c8238945e377edf558" title="fccvis::scene::Scene::camera">fccvis::scene::Scene::camera</a> into the ROOT/TEve viewer.</p>
+<p>This method synchronizes camera state from the abstract FCCVisualization representation to the ROOT rendering backend. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81_icgraph.png" border="0" usemap="#aclassfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81_icgraph" id="aclassfccvis_1_1backend_1_1root_1_1RootScene_a8f80f1f03ff378365949c8ef3ae08d81_icgraph">
-<area shape="rect" title=" " alt="" coords="487,75,675,119"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a3996df0da494feb359d0a628afbc2616" title=" " alt="" coords="246,40,422,85"/>
+<area shape="rect" title="Synchronize the ROOT camera with the abstract scene." alt="" coords="487,75,675,119"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a3996df0da494feb359d0a628afbc2616" title="Construct a ROOT representation of a scene." alt="" coords="246,40,422,85"/>
 <area shape="poly" title=" " alt="" coords="469,82,422,77,422,72,474,82"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html#a81cdc76f0fe4ffb80a0147adf555ce0b" title=" " alt="" coords="229,109,439,154"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html#a81cdc76f0fe4ffb80a0147adf555ce0b" title="Update an open ROOT scene." alt="" coords="229,109,439,154"/>
 <area shape="poly" title=" " alt="" coords="474,112,440,120,439,114,469,113"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#aabb15ab99537b6234a6cb88b93fb2aac" title=" " alt="" coords="7,5,179,50"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#aabb15ab99537b6234a6cb88b93fb2aac" title="Copy assignment is disabled." alt="" coords="7,5,179,50"/>
 <area shape="poly" title=" " alt="" coords="228,48,180,43,179,37,233,47"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a47846a97d8e5e6cacb9ad034aba35d44" title=" " alt="" coords="5,75,181,119"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a47846a97d8e5e6cacb9ad034aba35d44" title="Copy construction is disabled." alt="" coords="5,75,181,119"/>
 <area shape="poly" title=" " alt="" coords="228,78,182,87,181,82,233,76"/>
 </map>
 </div>
@@ -363,6 +416,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get the ROOT TEve viewer associated with the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the associated <code>TEveViewer</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The returned pointer is non-owning and is managed by the ROOT/TEve infrastructure. </dd></dl>
 
 </div>
 </div>

@@ -113,20 +113,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>Base class for named objects in an FCCVisualization session.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="BaseSessionObject_8h_source.html">BaseSessionObject.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for fccvis::scene::BaseSessionObject:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1scene_1_1BaseSessionObject__inherit__graph.png" border="0" usemap="#afccvis_1_1scene_1_1BaseSessionObject_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="afccvis_1_1scene_1_1BaseSessionObject_inherit__map" id="afccvis_1_1scene_1_1BaseSessionObject_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,92,201,136"/>
-<area shape="rect" href="classfccvis_1_1scene_1_1Scene.html" title=" " alt="" coords="249,5,401,33"/>
+<area shape="rect" title="Base class for named objects in an FCCVisualization session." alt="" coords="5,92,201,136"/>
+<area shape="rect" href="classfccvis_1_1scene_1_1Scene.html" title="A reusable visualization scene." alt="" coords="249,5,401,33"/>
 <area shape="poly" title=" " alt="" coords="161,82,248,42,280,32,276,35,250,47,163,86"/>
-<area shape="rect" href="classfccvis_1_1scene_1_1meta_1_1Camera.html" title=" " alt="" coords="251,57,398,102"/>
+<area shape="rect" href="classfccvis_1_1scene_1_1meta_1_1Camera.html" title="Camera configuration for a visualization scene." alt="" coords="251,57,398,102"/>
 <area shape="poly" title=" " alt="" coords="215,94,253,90,249,92,217,99"/>
-<area shape="rect" href="classfccvis_1_1scene_1_1meta_1_1Filter.html" title=" " alt="" coords="251,126,398,171"/>
+<area shape="rect" href="classfccvis_1_1scene_1_1meta_1_1Filter.html" title="Filter configuration for a visualization scene." alt="" coords="251,126,398,171"/>
 <area shape="poly" title=" " alt="" coords="216,129,254,136,248,138,216,134"/>
-<area shape="rect" href="classfccvis_1_1scene_1_1meta_1_1SceneOptions.html" title=" " alt="" coords="251,196,398,240"/>
+<area shape="rect" href="classfccvis_1_1scene_1_1meta_1_1SceneOptions.html" title="Configuration options associated with a visualization scene." alt="" coords="251,196,398,240"/>
 <area shape="poly" title=" " alt="" coords="166,141,250,181,277,195,271,195,248,186,165,146"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -134,13 +137,27 @@ Inheritance diagram for fccvis::scene::BaseSessionObject:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a38f75a9df9292d82101a5ce829ef87c7" id="r_a38f75a9df9292d82101a5ce829ef87c7"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a38f75a9df9292d82101a5ce829ef87c7">BaseSessionObject</a> (std::string objectName)</td></tr>
+<tr class="memdesc:a38f75a9df9292d82101a5ce829ef87c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a named session object.  <br /></td></tr>
 <tr class="memitem:aad5f8ee5d8196db921752e9157cdbe42" id="r_aad5f8ee5d8196db921752e9157cdbe42"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#aad5f8ee5d8196db921752e9157cdbe42">~BaseSessionObject</a> ()=default</td></tr>
+<tr class="memdesc:aad5f8ee5d8196db921752e9157cdbe42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the session object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a694285efaa01ef5f5cb9b0a1fdf04a22" id="r_a694285efaa01ef5f5cb9b0a1fdf04a22"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a694285efaa01ef5f5cb9b0a1fdf04a22">name</a></td></tr>
+<tr class="memdesc:a694285efaa01ef5f5cb9b0a1fdf04a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name identifying the object.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for named objects in an FCCVisualization session. </p>
+<p><a class="el" href="classfccvis_1_1scene_1_1BaseSessionObject.html" title="Base class for named objects in an FCCVisualization session.">BaseSessionObject</a> provides a common identity mechanism for objects that participate in a scene or session configuration.</p>
+<p>Derived classes inherit a public <a class="el" href="#a694285efaa01ef5f5cb9b0a1fdf04a22" title="name">name</a> member and can therefore be identified consistently throughout the visualization system.</p>
+<p>Examples of objects derived from this class include:</p><ul>
+<li><a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="fccvis::scene::Scene">fccvis::scene::Scene</a></li>
+<li><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Camera.html" title="fccvis::scene::meta::Camera">fccvis::scene::meta::Camera</a></li>
+<li><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Filter.html" title="fccvis::scene::meta::Filter">fccvis::scene::meta::Filter</a></li>
+<li><a class="el" href="classfccvis_1_1scene_1_1meta_1_1SceneOptions.html" title="fccvis::scene::meta::SceneOptions">fccvis::scene::meta::SceneOptions</a></li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>The class has a virtual destructor so that derived objects can be destroyed safely through a pointer or reference to the base class. </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a38f75a9df9292d82101a5ce829ef87c7" name="a38f75a9df9292d82101a5ce829ef87c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38f75a9df9292d82101a5ce829ef87c7">&#9670;&#160;</a></span>BaseSessionObject()</h2>
 
@@ -163,13 +180,21 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a named session object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objectName</td><td>Name used to identify the object within the visualization session. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7_icgraph.png" border="0" usemap="#aclassfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7_icgraph" id="aclassfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7_icgraph">
-<area shape="rect" title=" " alt="" coords="206,5,401,50"/>
-<area shape="rect" href="classfccvis_1_1scene_1_1Scene.html#ad673226e62b7c89b1dbdd0ee589a3c52" title=" " alt="" coords="5,5,158,50"/>
+<area shape="rect" title="Construct a named session object." alt="" coords="206,5,401,50"/>
+<area shape="rect" href="classfccvis_1_1scene_1_1Scene.html#ad673226e62b7c89b1dbdd0ee589a3c52" title="Construct a scene." alt="" coords="5,5,158,50"/>
 <area shape="poly" title=" " alt="" coords="187,28,158,30,158,25,193,27"/>
 </map>
 </div>
@@ -199,6 +224,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Destroy the session object. </p>
+<p>The virtual destructor allows derived session objects to be destroyed correctly through a <code><a class="el" href="classfccvis_1_1scene_1_1BaseSessionObject.html" title="Base class for named objects in an FCCVisualization session.">BaseSessionObject</a></code> pointer. </p>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -213,6 +241,9 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Name identifying the object. </p>
+<p>The name provides the object's identity within the session configuration and can be used by other session objects to refer to it. </p>
 
 </div>
 </div>

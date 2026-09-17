@@ -11,19 +11,30 @@
         <name>categories</name>
         <qualifiedname>fccvis::session::SessionData::categories</qualifiedname>
         <briefdescription>
+<para>Event frames grouped by category. </para>
         </briefdescription>
         <detaileddescription>
+<para>The map key identifies the category, while the associated vector contains the podio frames belonging to that category.</para>
+<para>The position of a frame in the vector is its entry index within that category. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/session/include/Session.h" line="27" column="22" bodyfile="src/session/include/Session.h" bodystart="27" bodyend="-1"/>
+        <location file="src/session/include/Session.h" line="145" column="22" bodyfile="src/session/include/Session.h" bodystart="145" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Event data loaded into a session. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1session_1_1SessionData" kindref="compound">SessionData</ref> organizes podio event frames into named categories.</para>
+<para>A category contains an ordered sequence of <computeroutput>podio::Frame</computeroutput> objects. The category name is used to distinguish different data sources or logical groups of events within a session.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>podio::Frame </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="src/session/include/Session.h" line="25" column="1" bodyfile="src/session/include/Session.h" bodystart="25" bodyend="28"/>
+    <location file="src/session/include/Session.h" line="134" column="1" bodyfile="src/session/include/Session.h" bodystart="134" bodyend="146"/>
     <listofallmembers>
       <member refid="classfccvis_1_1session_1_1SessionData_1aa64d148059aa9830c11aef0d420e413a" prot="public" virt="non-virtual"><scope>fccvis::session::SessionData</scope><name>categories</name></member>
     </listofallmembers>

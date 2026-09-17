@@ -1,14 +1,14 @@
 <map id="src/session/include/Session.h" name="src/session/include/Session.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="406,5,550,50"/>
-<area shape="rect" id="Node000002" href="$RootSceneManager_8h.html" title=" " alt="" coords="186,98,365,143"/>
+<area shape="rect" id="Node000001" title="Session state, input data, and visualization configuration." alt="" coords="406,5,550,50"/>
+<area shape="rect" id="Node000002" href="$RootSceneManager_8h.html" title="Management of materialized ROOT/TEve visualization scenes." alt="" coords="186,98,365,143"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,58,325,100,323,95,418,55"/>
-<area shape="rect" id="Node000004" href="$InteractiveShell_8h.html" title=" " alt="" coords="231,191,416,235"/>
+<area shape="rect" id="Node000004" href="$InteractiveShell_8h.html" title="Interactive command&#45;line shell for FCCVisualization." alt="" coords="231,191,416,235"/>
 <area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="453,60,343,192,339,189,448,63"/>
 <area shape="rect" id="Node000006" href="$RunApplication_8cc.html" title=" " alt="" coords="400,283,580,311"/>
 <area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="478,63,477,143,481,235,489,284,484,282,475,236,471,143,474,67"/>
 <area shape="rect" id="Node000007" href="$GuiApplication_8cc.html" title=" " alt="" coords="490,199,671,227"/>
 <area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="493,62,531,141,572,199,567,198,526,144,490,67"/>
-<area shape="rect" id="Node000008" href="$GuiApplication_8h.html" title=" " alt="" coords="541,106,767,134"/>
+<area shape="rect" id="Node000008" href="$GuiApplication_8h.html" title="ROOT GUI application lifecycle management." alt="" coords="541,106,767,134"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="534,55,631,106,626,106,533,60"/>
 <area shape="rect" id="Node000009" href="$Session_8cc.html" title=" " alt="" coords="791,106,957,134"/>
 <area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="566,46,819,105,814,107,565,52"/>

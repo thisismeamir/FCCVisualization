@@ -2,6 +2,11 @@
 \hypertarget{classfccvis_1_1scene_1_1BaseSessionObject}{}\label{classfccvis_1_1scene_1_1BaseSessionObject}\index{fccvis::scene::BaseSessionObject@{fccvis::scene::BaseSessionObject}}
 
 
+Base class for named objects in an FCCVisualization session.  
+
+
+
+
 {\ttfamily \+\#include $<$Base\+Session\+Object.\+h$>$}
 
 
@@ -18,14 +23,34 @@ Inheritance diagram for fccvis::scene::Base\+Session\+Object:
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{Base\+Session\+Object}} (std::\+string object\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a named session object. \end{DoxyCompactList}\item 
 virtual \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_aad5f8ee5d8196db921752e9157cdbe42}{\texorpdfstring{$\sim$}{\string~}\+Base\+Session\+Object}} ()=default
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destroy the session object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Name identifying the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for named objects in an FCCVisualization session. 
+
+\doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{Base\+Session\+Object} provides a common identity mechanism for objects that participate in a scene or session configuration.
+
+Derived classes inherit a public \doxylink{classfccvis_1_1scene_1_1BaseSessionObject_a694285efaa01ef5f5cb9b0a1fdf04a22}{name} member and can therefore be identified consistently throughout the visualization system.
+
+Examples of objects derived from this class include:
+\begin{DoxyItemize}
+\item \doxylink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}
+\item \doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera}
+\item \doxylink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter}
+\item \doxylink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::\+scene::\+meta::\+\+Scene\+Options}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The class has a virtual destructor so that derived objects can be destroyed safely through a pointer or reference to the base class. 
+\end{DoxyNote}
 
 
 \label{classfccvis_1_1scene_1_1BaseSessionObject_doc-constructors}
@@ -37,6 +62,15 @@ std::\+string \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a69
 {\footnotesize\ttfamily \label{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7} 
 fccvis::\+scene::\+\+Base\+Session\+Object::\+\+Base\+Session\+Object (\begin{DoxyParamCaption}\item[{std::\+string}]{object\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
+
+
+Construct a named session object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Name} & Name used to identify the object within the visualization session. \\
+\hline
+\end{DoxyParams}
 Here is the caller graph for this function:
 \nopagebreak
 \begin{figure}[H]
@@ -53,6 +87,10 @@ virtual fccvis::\+scene::\+\+Base\+Session\+Object::\+\texorpdfstring{$\sim$}{\s
 
 
 
+Destroy the session object. 
+
+The virtual destructor allows derived session objects to be destroyed correctly through a {\ttfamily \doxylink{classfccvis_1_1scene_1_1BaseSessionObject}{Base\+Session\+Object}} pointer. 
+
 \label{classfccvis_1_1scene_1_1BaseSessionObject_doc-variable-members}
 \Hypertarget{classfccvis_1_1scene_1_1BaseSessionObject_doc-variable-members}
 \doxysubsection{Member Data Documentation}
@@ -63,6 +101,10 @@ virtual fccvis::\+scene::\+\+Base\+Session\+Object::\+\texorpdfstring{$\sim$}{\s
 std::\+string fccvis::\+scene::\+\+Base\+Session\+Object::\+name}
 
 
+
+Name identifying the object. 
+
+The name provides the object\textquotesingle{}s identity within the session configuration and can be used by other session objects to refer to it. 
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 

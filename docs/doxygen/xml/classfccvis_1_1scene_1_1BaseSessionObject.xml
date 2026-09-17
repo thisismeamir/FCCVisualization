@@ -15,13 +15,15 @@
         <name>name</name>
         <qualifiedname>fccvis::scene::BaseSessionObject::name</qualifiedname>
         <briefdescription>
+<para>Name identifying the object. </para>
         </briefdescription>
         <detaileddescription>
+<para>The name provides the object&apos;s identity within the session configuration and can be used by other session objects to refer to it. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/BaseSessionObject.h" line="14" column="17" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="14" bodyend="-1"/>
-        <referencedby refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" compoundref="BaseSessionObject_8h" startline="12" endline="12">BaseSessionObject</referencedby>
+        <location file="src/scene/include/BaseSessionObject.h" line="85" column="17" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" compoundref="BaseSessionObject_8h" startline="67" endline="68">BaseSessionObject</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -36,14 +38,25 @@
           <declname>objectName</declname>
         </param>
         <briefdescription>
+<para>Construct a named session object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>objectName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name used to identify the object within the visualization session. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/BaseSessionObject.h" line="12" column="14" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="12" bodyend="12"/>
-        <references refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" compoundref="BaseSessionObject_8h" startline="14">name</references>
-        <referencedby refid="classfccvis_1_1scene_1_1Scene_1ad673226e62b7c89b1dbdd0ee589a3c52" compoundref="Scene_8h" startline="8" endline="9">fccvis::scene::Scene::Scene</referencedby>
+        <location file="src/scene/include/BaseSessionObject.h" line="67" column="14" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="67" bodyend="68"/>
+        <references refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" compoundref="BaseSessionObject_8h" startline="85">name</references>
+        <referencedby refid="classfccvis_1_1scene_1_1Scene_1ad673226e62b7c89b1dbdd0ee589a3c52" compoundref="Scene_8h" startline="72" endline="74">fccvis::scene::Scene::Scene</referencedby>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -52,17 +65,32 @@
         <name>~BaseSessionObject</name>
         <qualifiedname>fccvis::scene::BaseSessionObject::~BaseSessionObject</qualifiedname>
         <briefdescription>
+<para>Destroy the session object. </para>
         </briefdescription>
         <detaileddescription>
+<para>The virtual destructor allows derived session objects to be destroyed correctly through a <computeroutput><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">BaseSessionObject</ref></computeroutput> pointer. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/BaseSessionObject.h" line="13" column="13"/>
+        <location file="src/scene/include/BaseSessionObject.h" line="76" column="13"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Base class for named objects in an FCCVisualization session. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1scene_1_1BaseSessionObject" kindref="compound">BaseSessionObject</ref> provides a common identity mechanism for objects that participate in a scene or session configuration.</para>
+<para>Derived classes inherit a public <ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kindref="member">name</ref> member and can therefore be identified consistently throughout the visualization system.</para>
+<para>Examples of objects derived from this class include:<itemizedlist>
+<listitem><para><ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref></para>
+</listitem><listitem><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">fccvis::scene::meta::Camera</ref></para>
+</listitem><listitem><para><ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref></para>
+</listitem><listitem><para><ref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kindref="compound">fccvis::scene::meta::SceneOptions</ref></para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="note"><para>The class has a virtual destructor so that derived objects can be destroyed safely through a pointer or reference to the base class. </para>
+</simplesect>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
@@ -94,7 +122,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/scene/include/BaseSessionObject.h" line="9" column="1" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="10" bodyend="15"/>
+    <location file="src/scene/include/BaseSessionObject.h" line="59" column="1" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="59" bodyend="86"/>
     <listofallmembers>
       <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" virt="non-virtual"><scope>fccvis::scene::BaseSessionObject</scope><name>BaseSessionObject</name></member>
       <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" prot="public" virt="non-virtual"><scope>fccvis::scene::BaseSessionObject</scope><name>name</name></member>

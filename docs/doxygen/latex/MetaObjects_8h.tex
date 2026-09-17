@@ -1,6 +1,13 @@
 \doxysection{src/\+scene/\+include/\+\+Meta\+Objects.h File Reference}
 \hypertarget{MetaObjects_8h}{}\label{MetaObjects_8h}\index{src/scene/include/MetaObjects.h@{src/scene/include/MetaObjects.h}}
+
+
+Metadata objects used to configure FCCVisualization scenes.  
+
+
 {\ttfamily \+\#include $<$memory$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$utility$>$}\newline
 {\ttfamily \+\#include $<$vector$>$}\newline
 {\ttfamily \+\#include "{}Base\+Session\+Object.\+h"{}}\newline
 Include dependency graph for Meta\+Objects.\+h:
@@ -8,7 +15,7 @@ Include dependency graph for Meta\+Objects.\+h:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=338pt]{MetaObjects_8h__incl}
+\includegraphics[width=350pt]{MetaObjects_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file:
@@ -23,22 +30,22 @@ This graph shows which files directly or indirectly include this file:
 \begin{DoxyCompactItemize}
 \item 
 struct \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{fccvis::\+scene::\+meta::\+\+Layout\+Node}}
-\item 
+\begin{DoxyCompactList}\small\item\em Node in the hierarchical layout of visualization scenes. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera}{fccvis::\+scene::\+meta::\+\+Camera}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera} configuration for a visualization scene. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter}{fccvis::\+scene::\+meta::\+\+Filter}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{classfccvis_1_1scene_1_1meta_1_1Filter}{Filter} configuration for a visualization scene. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{fccvis::\+scene::\+meta::\+\+Scene\+Options}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Configuration options associated with a visualization scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis}{fccvis}}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis_1_1scene}{fccvis::\+scene}}
-\item 
+\begin{DoxyCompactList}\small\item\em Visualization scene objects. \end{DoxyCompactList}\item 
 namespace \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta}{fccvis::\+scene::\+meta}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metadata and graphical primitives for visualization scenes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,8 +53,26 @@ enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651e
 , \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413}{fccvis::\+scene::\+meta::\+\+Tab}}
 , \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5}{fccvis::\+scene::\+meta::\+\+Leaf}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Describes the structural role of a node in a scene layout. \end{DoxyCompactList}\item 
 enum class \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{fccvis::\+scene::\+meta::\+\+Pack\+Orientation}} \{ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f}{fccvis::\+scene::\+meta::\+\+Horizontal}}
 , \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012}{fccvis::\+scene::\+meta::\+\+Vertical}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Specifies the orientation of a packed layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Metadata objects used to configure FCCVisualization scenes. 
+
+Defines the metadata and configuration objects used by the scene system, including cameras, filters, scene options, and hierarchical scene layouts.
+
+\begin{DoxyAuthor}{Author}
+Amir H. Ebrahimnezhad \href{mailto:amir.ebh@cern.ch}{\texttt{amir.\+ebh@cern.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2026 FCC Project at CERN
+\end{DoxyCopyright}
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}https://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 

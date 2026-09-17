@@ -113,27 +113,57 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfccvis_1
 </div><!--header-->
 <div class="contents">
 
+<p>Node in the hierarchical layout of visualization scenes.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MetaObjects_8h_source.html">MetaObjects.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa857439454d802ec5f175ac95c36fe72" id="r_aa857439454d802ec5f175ac95c36fe72"><td class="memItemLeft"><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44">LayoutKind</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa857439454d802ec5f175ac95c36fe72">kind</a></td></tr>
+<tr class="memdesc:aa857439454d802ec5f175ac95c36fe72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structural kind of this layout node.  <br /></td></tr>
 <tr class="memitem:a1c51ffbd38dcd79619a36368506c58ac" id="r_a1c51ffbd38dcd79619a36368506c58ac"><td class="memItemLeft"><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9">PackOrientation</a>&#160;</td><td class="memItemRight"><a class="el" href="#a1c51ffbd38dcd79619a36368506c58ac">orientation</a> = <a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f">PackOrientation::Horizontal</a></td></tr>
+<tr class="memdesc:a1c51ffbd38dcd79619a36368506c58ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orientation of children in a packed node.  <br /></td></tr>
 <tr class="memitem:aab75d819120f1784e99c3623b917a4a6" id="r_aab75d819120f1784e99c3623b917a4a6"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#aab75d819120f1784e99c3623b917a4a6">sceneName</a></td></tr>
-<tr class="memitem:a38f7cc1bcf0653491cda8b413f360336" id="r_a38f7cc1bcf0653491cda8b413f360336"><td class="memItemLeft">std::vector&lt; std::pair&lt; std::shared_ptr&lt; <a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html">LayoutNode</a> &gt;, int &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a38f7cc1bcf0653491cda8b413f360336">children</a></td></tr>
+<tr class="memdesc:aab75d819120f1784e99c3623b917a4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the scene represented by a leaf node.  <br /></td></tr>
+<tr class="memitem:a5938a74025c87c462fe1872595c2a915" id="r_a5938a74025c87c462fe1872595c2a915"><td class="memItemLeft">std::vector&lt; std::pair&lt; std::shared_ptr&lt; <a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html">LayoutNode</a> &gt;, int &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5938a74025c87c462fe1872595c2a915">children</a></td></tr>
+<tr class="memdesc:a5938a74025c87c462fe1872595c2a915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Child nodes of this layout node.  <br /></td></tr>
 </table>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a38f7cc1bcf0653491cda8b413f360336" name="a38f7cc1bcf0653491cda8b413f360336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38f7cc1bcf0653491cda8b413f360336">&#9670;&#160;</a></span>children</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Node in the hierarchical layout of visualization scenes. </p>
+<p>A <a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html" title="Node in the hierarchical layout of visualization scenes.">LayoutNode</a> forms one element of a tree describing how multiple scenes are presented together.</p>
+<p>The meaning of the node's other members depends on its kind:</p>
+<ul>
+<li>For <code><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" title="A container that arranges its children spatially.">LayoutKind::Pack</a></code>, <a class="el" href="#a1c51ffbd38dcd79619a36368506c58ac" title="orientation">orientation</a> and <a class="el" href="#a5938a74025c87c462fe1872595c2a915" title="children">children</a> are used. Child weights determine the relative allocation of space.</li>
+<li>For <code><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" title="A container that presents its children as tabs.">LayoutKind::Tab</a></code>, <a class="el" href="#a5938a74025c87c462fe1872595c2a915" title="children">children</a> is used and child weights are ignored.</li>
+<li>For <code><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" title="A leaf node representing a concrete scene.">LayoutKind::Leaf</a></code>, <a class="el" href="#aab75d819120f1784e99c3623b917a4a6" title="sceneName">sceneName</a> identifies the scene materialized by the node.</li>
+</ul>
+<p>This structure allows a session to represent nested arrangements, such as horizontal and vertical groups containing tabbed scenes.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44" title="Describes the structural role of a node in a scene layout.">LayoutKind</a> </dd>
+<dd>
+<a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9" title="Specifies the orientation of a packed layout.">PackOrientation</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="A reusable visualization scene.">fccvis::scene::Scene</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1session_1_1SessionOptions.html" title="Visualization and runtime configuration for a session.">fccvis::session::SessionOptions</a> </dd></dl>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a5938a74025c87c462fe1872595c2a915" name="a5938a74025c87c462fe1872595c2a915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5938a74025c87c462fe1872595c2a915">&#9670;&#160;</a></span>children</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;std::shared_ptr&lt;<a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html">LayoutNode</a>&gt;, int &gt; &gt; fccvis::scene::meta::LayoutNode::children</td>
+          <td class="memname">std::vector&lt; std::pair&lt;std::shared_ptr&lt;<a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html">LayoutNode</a>&gt;, int &gt; &gt; fccvis::scene::meta::LayoutNode::children</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Child nodes of this layout node. </p>
+<p>Each child is represented by a shared pointer to another <a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html" title="LayoutNode">LayoutNode</a> together with an integer weight.</p>
+<p>For <code><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" title="A container that arranges its children spatially.">LayoutKind::Pack</a></code> nodes, the weight determines the child's relative share of the available layout space.</p>
+<p>For <code><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" title="A container that presents its children as tabs.">LayoutKind::Tab</a></code> nodes, the weight is ignored.</p>
+<p>Leaf nodes normally have no children. </p>
 
 </div>
 </div>
@@ -149,6 +179,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Structural kind of this layout node. </p>
+<p>Determines which of the other members are applicable. </p>
+
 </div>
 </div>
 <a id="a1c51ffbd38dcd79619a36368506c58ac" name="a1c51ffbd38dcd79619a36368506c58ac"></a>
@@ -163,6 +196,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Orientation of children in a packed node. </p>
+<p>This member is used when <a class="el" href="#aa857439454d802ec5f175ac95c36fe72" title="kind">kind</a> is <code><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" title="A container that arranges its children spatially.">LayoutKind::Pack</a></code>.</p>
+<p>The default orientation is horizontal. </p>
+
 </div>
 </div>
 <a id="aab75d819120f1784e99c3623b917a4a6" name="aab75d819120f1784e99c3623b917a4a6"></a>
@@ -176,6 +213,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Name of the scene represented by a leaf node. </p>
+<p>This member is used when <a class="el" href="#aa857439454d802ec5f175ac95c36fe72" title="kind">kind</a> is <code><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" title="A leaf node representing a concrete scene.">LayoutKind::Leaf</a></code>.</p>
+<p>The name identifies the <a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="fccvis::scene::Scene">fccvis::scene::Scene</a> that is materialized in this layout slot. </p>
 
 </div>
 </div>

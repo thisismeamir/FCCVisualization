@@ -11,13 +11,14 @@
         <name>name</name>
         <qualifiedname>fccvis::scene::meta::Line::name</qualifiedname>
         <briefdescription>
+<para>Name identifying the line. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="65" column="15" bodyfile="src/scene/include/Markers.h" bodystart="65" bodyend="-1"/>
-        <referencedby refid="classfccvis_1_1scene_1_1meta_1_1Line_1a0483ec33a881f069c0b44ba6f1b046cf" compoundref="Markers_8h" startline="63" endline="63">Line</referencedby>
+        <location file="src/scene/include/Markers.h" line="245" column="15" bodyfile="src/scene/include/Markers.h" bodystart="245" bodyend="-1"/>
+        <referencedby refid="classfccvis_1_1scene_1_1meta_1_1Line_1a0483ec33a881f069c0b44ba6f1b046cf" compoundref="Markers_8h" startline="240" endline="240">Line</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Line_1a259f03223c96dd38d57b101784df55f7" prot="public" static="no" mutable="no">
         <type>std::array&lt; double, 3 &gt;</type>
@@ -27,12 +28,13 @@
         <qualifiedname>fccvis::scene::meta::Line::start</qualifiedname>
         <initializer>{}</initializer>
         <briefdescription>
+<para>Three-dimensional starting position of the line. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="67" column="14" bodyfile="src/scene/include/Markers.h" bodystart="67" bodyend="67"/>
+        <location file="src/scene/include/Markers.h" line="250" column="14" bodyfile="src/scene/include/Markers.h" bodystart="250" bodyend="250"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Line_1adf93d67b25273bff91b11ae575cd341e" prot="public" static="no" mutable="no">
         <type>std::array&lt; double, 3 &gt;</type>
@@ -42,12 +44,13 @@
         <qualifiedname>fccvis::scene::meta::Line::end</qualifiedname>
         <initializer>{}</initializer>
         <briefdescription>
+<para>Three-dimensional ending position of the line. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="68" column="14" bodyfile="src/scene/include/Markers.h" bodystart="68" bodyend="68"/>
+        <location file="src/scene/include/Markers.h" line="255" column="14" bodyfile="src/scene/include/Markers.h" bodystart="255" bodyend="255"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Line_1af540c03803697a195229a47e5837e417" prot="public" static="no" mutable="no">
         <type><ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106e" kindref="member">Color</ref></type>
@@ -57,12 +60,14 @@
         <qualifiedname>fccvis::scene::meta::Line::color</qualifiedname>
         <initializer>= <ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006" kindref="member">Color::White</ref></initializer>
         <briefdescription>
+<para>Display color of the line. </para>
         </briefdescription>
         <detaileddescription>
+<para>Defaults to <ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006" kindref="member">Color::White</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="70" column="9" bodyfile="src/scene/include/Markers.h" bodystart="70" bodyend="-1"/>
+        <location file="src/scene/include/Markers.h" line="262" column="9" bodyfile="src/scene/include/Markers.h" bodystart="262" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Line_1a1e58ae4e8537a6a40153c369a4d1f861" prot="public" static="no" mutable="no">
         <type>unsigned int</type>
@@ -72,12 +77,14 @@
         <qualifiedname>fccvis::scene::meta::Line::width</qualifiedname>
         <initializer>= 1</initializer>
         <briefdescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Line" kindref="compound">Line</ref> width. </para>
         </briefdescription>
         <detaileddescription>
+<para>Defaults to one backend-defined width unit. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="72" column="16" bodyfile="src/scene/include/Markers.h" bodystart="72" bodyend="-1"/>
+        <location file="src/scene/include/Markers.h" line="269" column="16" bodyfile="src/scene/include/Markers.h" bodystart="269" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Line_1a180f4cb53a84da862b6206a470188053" prot="public" static="no" mutable="no">
         <type>unsigned int</type>
@@ -87,12 +94,14 @@
         <qualifiedname>fccvis::scene::meta::Line::style</qualifiedname>
         <initializer>= 1</initializer>
         <briefdescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Line" kindref="compound">Line</ref> rendering style. </para>
         </briefdescription>
         <detaileddescription>
+<para>The numerical value is interpreted by the visualization backend. The default value is one. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="73" column="16" bodyfile="src/scene/include/Markers.h" bodystart="73" bodyend="-1"/>
+        <location file="src/scene/include/Markers.h" line="277" column="16" bodyfile="src/scene/include/Markers.h" bodystart="277" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -107,20 +116,34 @@
           <declname>name</declname>
         </param>
         <briefdescription>
+<para>Construct a line with a name. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name identifying the line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/scene/include/Markers.h" line="63" column="3" bodyfile="src/scene/include/Markers.h" bodystart="63" bodyend="63"/>
-        <references refid="classfccvis_1_1scene_1_1meta_1_1Line_1a475f7eeba381a3dd2103ea9ae08ff4dc" compoundref="Markers_8h" startline="65">name</references>
+        <location file="src/scene/include/Markers.h" line="240" column="3" bodyfile="src/scene/include/Markers.h" bodystart="240" bodyend="240"/>
+        <references refid="classfccvis_1_1scene_1_1meta_1_1Line_1a475f7eeba381a3dd2103ea9ae08ff4dc" compoundref="Markers_8h" startline="245">name</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A line-segment graphical primitive. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1scene_1_1meta_1_1Line" kindref="compound">Line</ref> represents a straight segment between two three-dimensional positions.</para>
+<para>A line has independently configurable color, width, and rendering style. </para>
     </detaileddescription>
-    <location file="src/scene/include/Markers.h" line="61" column="1" bodyfile="src/scene/include/Markers.h" bodystart="61" bodyend="74"/>
+    <location file="src/scene/include/Markers.h" line="233" column="1" bodyfile="src/scene/include/Markers.h" bodystart="233" bodyend="278"/>
     <listofallmembers>
       <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1af540c03803697a195229a47e5837e417" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Line</scope><name>color</name></member>
       <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1adf93d67b25273bff91b11ae575cd341e" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Line</scope><name>end</name></member>

@@ -1,5 +1,5 @@
 <map id="fccvis::cli::ParseArgs" name="fccvis::cli::ParseArgs">
-<area shape="rect" id="Node000001" title=" " alt="" coords="109,29,264,57"/>
+<area shape="rect" id="Node000001" title="Parse application command&#45;line arguments." alt="" coords="109,29,264,57"/>
 <area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="210,13,203,10,186,8,171,10,163,14,161,20,164,30,159,28,155,20,159,11,169,5,186,3,204,5,216,14"/>
 <area shape="rect" id="Node000002" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="7,29,61,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,44,62,46,61,41,96,42"/>

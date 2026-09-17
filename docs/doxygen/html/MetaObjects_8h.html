@@ -112,7 +112,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('MetaObjects_8h
   <div class="headertitle"><div class="title">MetaObjects.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Metadata objects used to configure FCCVisualization scenes.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="BaseSessionObject_8h_source.html">BaseSessionObject.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -120,17 +125,19 @@ Include dependency graph for MetaObjects.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="MetaObjects_8h__incl.png" border="0" usemap="#asrc_2scene_2include_2MetaObjects_8h" loading="lazy" alt=""/></div>
 <map name="asrc_2scene_2include_2MetaObjects_8h" id="asrc_2scene_2include_2MetaObjects_8h">
-<area shape="rect" title=" " alt="" coords="21,5,252,33"/>
+<area shape="rect" title="Metadata objects used to configure FCCVisualization scenes." alt="" coords="120,5,351,33"/>
 <area shape="rect" title=" " alt="" coords="5,81,82,109"/>
-<area shape="poly" title=" " alt="" coords="119,36,74,73,70,69,122,31"/>
-<area shape="rect" title=" " alt="" coords="106,81,168,109"/>
-<area shape="poly" title=" " alt="" coords="138,31,139,66,134,64,136,36"/>
-<area shape="rect" href="BaseSessionObject_8h.html" title=" " alt="" coords="192,81,349,109"/>
-<area shape="poly" title=" " alt="" coords="161,31,236,73,231,74,160,36"/>
-<area shape="rect" title=" " alt="" coords="180,157,264,184"/>
-<area shape="poly" title=" " alt="" coords="264,108,241,146,237,142,259,111"/>
-<area shape="rect" title=" " alt="" coords="289,157,347,184"/>
-<area shape="poly" title=" " alt="" coords="280,107,304,144,299,143,278,112"/>
+<area shape="poly" title=" " alt="" coords="200,36,93,77,91,73,202,31"/>
+<area shape="rect" title=" " alt="" coords="157,157,215,184"/>
+<area shape="poly" title=" " alt="" coords="199,35,171,55,158,67,147,82,143,98,146,113,165,146,160,145,141,115,138,97,142,80,154,64,168,51,203,32"/>
+<area shape="rect" title=" " alt="" coords="255,157,314,184"/>
+<area shape="poly" title=" " alt="" coords="339,31,381,49,399,63,414,80,420,94,419,107,411,119,399,130,366,148,330,161,329,155,364,143,396,126,407,116,414,106,415,95,409,82,395,67,378,54,339,36"/>
+<area shape="rect" title=" " alt="" coords="338,81,400,109"/>
+<area shape="poly" title=" " alt="" coords="260,31,335,73,330,74,259,36"/>
+<area shape="rect" href="BaseSessionObject_8h.html" title="Base class for named objects belonging to a visualization session." alt="" coords="157,81,314,109"/>
+<area shape="poly" title=" " alt="" coords="237,31,238,66,233,64,234,36"/>
+<area shape="poly" title=" " alt="" coords="229,108,205,146,202,142,224,111"/>
+<area shape="poly" title=" " alt="" coords="246,107,270,144,265,143,243,112"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -138,24 +145,24 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="MetaObjects_8h__dep__incl.png" border="0" usemap="#asrc_2scene_2include_2MetaObjects_8hdep" loading="lazy" alt=""/></div>
 <map name="asrc_2scene_2include_2MetaObjects_8hdep" id="asrc_2scene_2include_2MetaObjects_8hdep">
-<area shape="rect" title=" " alt="" coords="262,5,493,33"/>
-<area shape="rect" href="Scene_8h.html" title=" " alt="" coords="218,81,407,109"/>
+<area shape="rect" title="Metadata objects used to configure FCCVisualization scenes." alt="" coords="262,5,493,33"/>
+<area shape="rect" href="Scene_8h.html" title="Scene definition and visualization configuration." alt="" coords="218,81,407,109"/>
 <area shape="poly" title=" " alt="" coords="354,47,326,82,322,79,358,43"/>
-<area shape="rect" href="Session_8h.html" title=" " alt="" coords="478,157,622,201"/>
+<area shape="rect" href="Session_8h.html" title="Session state, input data, and visualization configuration." alt="" coords="478,157,622,201"/>
 <area shape="poly" title=" " alt="" coords="403,41,529,156,524,157,402,46"/>
 <area shape="rect" href="RootScene_8cc.html" title=" " alt="" coords="24,258,243,286"/>
 <area shape="poly" title=" " alt="" coords="224,116,191,133,161,158,147,183,139,210,136,258,130,257,134,209,142,180,157,155,188,129,227,112"/>
 <area shape="rect" href="RootSceneManager_8cc.html" title=" " alt="" coords="26,342,228,387"/>
 <area shape="poly" title=" " alt="" coords="218,115,163,134,105,161,77,179,53,200,32,223,15,250,8,272,15,293,38,320,69,340,65,343,35,324,10,295,3,272,10,248,27,220,49,196,74,175,102,157,161,129,222,111"/>
-<area shape="rect" href="RootScene_8h.html" title=" " alt="" coords="171,157,350,201"/>
+<area shape="rect" href="RootScene_8h.html" title="ROOT/TEve materialization of an FCCVisualization scene." alt="" coords="171,157,350,201"/>
 <area shape="poly" title=" " alt="" coords="298,120,276,158,272,154,294,124"/>
-<area shape="rect" href="RootSceneManager_8h.html" title=" " alt="" coords="268,249,447,294"/>
+<area shape="rect" href="RootSceneManager_8h.html" title="Management of materialized ROOT/TEve visualization scenes." alt="" coords="268,249,447,294"/>
 <area shape="poly" title=" " alt="" coords="339,117,354,136,364,156,370,180,371,206,365,250,361,248,366,206,365,181,359,158,349,139,338,123"/>
 <area shape="poly" title=" " alt="" coords="365,111,489,155,484,157,365,117"/>
 <area shape="poly" title=" " alt="" coords="217,212,154,259,150,255,220,208"/>
 <area shape="poly" title=" " alt="" coords="295,209,337,249,332,249,294,215"/>
 <area shape="poly" title=" " alt="" coords="286,302,183,344,181,339,291,299"/>
-<area shape="rect" href="InteractiveShell_8h.html" title=" " alt="" coords="392,342,577,387"/>
+<area shape="rect" href="InteractiveShell_8h.html" title="Interactive command&#45;line shell for FCCVisualization." alt="" coords="392,342,577,387"/>
 <area shape="poly" title=" " alt="" coords="401,301,457,342,452,341,400,306"/>
 <area shape="rect" href="InteractiveShell_8cc.html" title=" " alt="" coords="393,435,576,462"/>
 <area shape="poly" title=" " alt="" coords="486,401,486,436,482,432,483,404"/>
@@ -166,7 +173,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="poly" title=" " alt="" coords="637,200,672,220,701,248,715,271,725,297,733,350,733,399,729,436,725,432,728,399,728,351,719,298,710,274,697,251,669,224,636,206"/>
 <area shape="rect" href="GuiApplication_8cc.html" title=" " alt="" coords="762,350,943,378"/>
 <area shape="poly" title=" " alt="" coords="637,199,692,220,745,247,776,272,805,300,846,351,841,349,801,303,773,276,742,252,690,224,637,205"/>
-<area shape="rect" href="GuiApplication_8h.html" title=" " alt="" coords="813,258,1039,286"/>
+<area shape="rect" href="GuiApplication_8h.html" title="ROOT GUI application lifecycle management." alt="" coords="813,258,1039,286"/>
 <area shape="poly" title=" " alt="" coords="637,198,874,257,869,258,637,204"/>
 <area shape="rect" href="Session_8cc.html" title=" " alt="" coords="522,258,687,286"/>
 <area shape="poly" title=" " alt="" coords="572,212,599,258,594,257,570,217"/>
@@ -180,15 +187,21 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta_3A_3ALayoutNode" id="r_fccvis_3A_3Ascene_3A_3Ameta_3A_3ALayoutNode"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html">fccvis::scene::meta::LayoutNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node in the hierarchical layout of visualization scenes.  <a href="structfccvis_1_1scene_1_1meta_1_1LayoutNode.html#details">More...</a><br /></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta_3A_3ACamera" id="r_fccvis_3A_3Ascene_3A_3Ameta_3A_3ACamera"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Camera.html">fccvis::scene::meta::Camera</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Camera.html" title="Camera configuration for a visualization scene.">Camera</a> configuration for a visualization scene.  <a href="classfccvis_1_1scene_1_1meta_1_1Camera.html#details">More...</a><br /></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta_3A_3AFilter" id="r_fccvis_3A_3Ascene_3A_3Ameta_3A_3AFilter"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Filter.html">fccvis::scene::meta::Filter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1Filter.html" title="Filter configuration for a visualization scene.">Filter</a> configuration for a visualization scene.  <a href="classfccvis_1_1scene_1_1meta_1_1Filter.html#details">More...</a><br /></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta_3A_3ASceneOptions" id="r_fccvis_3A_3Ascene_3A_3Ameta_3A_3ASceneOptions"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1scene_1_1meta_1_1SceneOptions.html">fccvis::scene::meta::SceneOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration options associated with a visualization scene.  <a href="classfccvis_1_1scene_1_1meta_1_1SceneOptions.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:fccvis" id="r_fccvis"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis.html">fccvis</a></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene" id="r_fccvis_3A_3Ascene"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1scene.html">fccvis::scene</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualization scene objects. <br /></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3Ameta" id="r_fccvis_3A_3Ascene_3A_3Ameta"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1scene_1_1meta.html">fccvis::scene::meta</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1scene_1_1meta"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metadata and graphical primitives for visualization scenes. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -196,11 +209,20 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413">fccvis::scene::meta::Tab</a>
 , <a class="el" href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5">fccvis::scene::meta::Leaf</a>
  }</td></tr>
+<tr class="memdesc:a017bf030c5651ecea05a747f42afba44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes the structural role of a node in a scene layout.  <a href="namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44">More...</a><br /></td></tr>
 <tr class="memitem:aa39904d71a1030ce42ba644e060b7ca9" id="r_aa39904d71a1030ce42ba644e060b7ca9"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9">fccvis::scene::meta::PackOrientation</a> { <a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f">fccvis::scene::meta::Horizontal</a>
 , <a class="el" href="namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012">fccvis::scene::meta::Vertical</a>
  }</td></tr>
+<tr class="memdesc:aa39904d71a1030ce42ba644e060b7ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the orientation of a packed layout.  <a href="namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9">More...</a><br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Metadata objects used to configure FCCVisualization scenes. </p>
+<p>Defines the metadata and configuration objects used by the scene system, including cameras, filters, scene options, and hierarchical scene layouts.</p>
+<dl class="section author"><dt>Author</dt><dd>Amir H. Ebrahimnezhad <a href="mai'+'lto:+'ami'+'r.'+'ebh'+'@c'+'ern'+'.c'+'h'">amir.<span class="obfuscator">.nosp@m.</span>ebh@<span class="obfuscator">.nosp@m.</span>cern.<span class="obfuscator">.nosp@m.</span>ch</a></dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2026 FCC Project at CERN</dd></dl>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">https://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

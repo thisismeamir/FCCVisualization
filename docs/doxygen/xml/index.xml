@@ -49,7 +49,7 @@
     <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" kind="variable"><name>kind</name></member>
     <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" kind="variable"><name>orientation</name></member>
     <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" kind="variable"><name>sceneName</name></member>
-    <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" kind="variable"><name>children</name></member>
+    <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a5938a74025c87c462fe1872595c2a915" kind="variable"><name>children</name></member>
   </compound>
   <compound refid="classfccvis_1_1scene_1_1meta_1_1Line" kind="class"><name>fccvis::scene::meta::Line</name>
     <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1a475f7eeba381a3dd2103ea9ae08ff4dc" kind="variable"><name>name</name></member>

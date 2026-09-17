@@ -112,18 +112,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('BaseSessionObj
   <div class="headertitle"><div class="title">BaseSessionObject.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
+
+<p>Base class for named objects belonging to a visualization session.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for BaseSessionObject.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="BaseSessionObject_8h__incl.png" border="0" usemap="#asrc_2scene_2include_2BaseSessionObject_8h" loading="lazy" alt=""/></div>
 <map name="asrc_2scene_2include_2BaseSessionObject_8h" id="asrc_2scene_2include_2BaseSessionObject_8h">
-<area shape="rect" title=" " alt="" coords="5,5,225,50"/>
-<area shape="rect" title=" " alt="" coords="25,98,109,126"/>
-<area shape="poly" title=" " alt="" coords="105,49,85,86,80,83,100,52"/>
-<area shape="rect" title=" " alt="" coords="134,98,192,126"/>
-<area shape="poly" title=" " alt="" coords="129,48,150,85,145,84,126,53"/>
+<area shape="rect" title="Base class for named objects belonging to a visualization session." alt="" coords="5,5,225,50"/>
+<area shape="rect" title=" " alt="" coords="44,98,103,126"/>
+<area shape="poly" title=" " alt="" coords="106,49,89,85,85,82,102,52"/>
+<area shape="rect" title=" " alt="" coords="127,98,186,126"/>
+<area shape="poly" title=" " alt="" coords="127,48,145,84,140,83,125,53"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -131,27 +134,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="BaseSessionObject_8h__dep__incl.png" border="0" usemap="#asrc_2scene_2include_2BaseSessionObject_8hdep" loading="lazy" alt=""/></div>
 <map name="asrc_2scene_2include_2BaseSessionObject_8hdep" id="asrc_2scene_2include_2BaseSessionObject_8hdep">
-<area shape="rect" title=" " alt="" coords="289,5,509,50"/>
-<area shape="rect" href="MetaObjects_8h.html" title=" " alt="" coords="361,98,592,126"/>
+<area shape="rect" title="Base class for named objects belonging to a visualization session." alt="" coords="289,5,509,50"/>
+<area shape="rect" href="MetaObjects_8h.html" title="Metadata objects used to configure FCCVisualization scenes." alt="" coords="361,98,592,126"/>
 <area shape="poly" title=" " alt="" coords="430,59,467,97,461,98,430,64"/>
-<area shape="rect" href="Scene_8h.html" title=" " alt="" coords="229,174,417,201"/>
+<area shape="rect" href="Scene_8h.html" title="Scene definition and visualization configuration." alt="" coords="229,174,417,201"/>
 <area shape="poly" title=" " alt="" coords="373,60,351,99,336,139,328,174,323,172,331,138,346,97,370,64"/>
 <area shape="poly" title=" " alt="" coords="433,134,352,175,349,171,437,131"/>
-<area shape="rect" href="Session_8h.html" title=" " alt="" coords="478,249,622,294"/>
+<area shape="rect" href="Session_8h.html" title="Session state, input data, and visualization configuration." alt="" coords="478,249,622,294"/>
 <area shape="poly" title=" " alt="" coords="490,137,542,249,537,249,488,142"/>
 <area shape="rect" href="RootScene_8cc.html" title=" " alt="" coords="24,350,243,378"/>
 <area shape="poly" title=" " alt="" coords="225,209,192,226,161,251,147,275,139,302,135,351,130,349,134,301,142,273,157,248,189,222,229,205"/>
 <area shape="rect" href="RootSceneManager_8cc.html" title=" " alt="" coords="26,435,228,479"/>
 <area shape="poly" title=" " alt="" coords="221,207,165,226,106,253,78,271,53,292,32,316,15,343,8,365,15,385,38,412,69,433,65,435,35,416,10,388,3,365,10,341,28,313,49,288,75,267,103,249,163,221,225,204"/>
-<area shape="rect" href="RootScene_8h.html" title=" " alt="" coords="171,249,350,294"/>
+<area shape="rect" href="RootScene_8h.html" title="ROOT/TEve materialization of an FCCVisualization scene." alt="" coords="171,249,350,294"/>
 <area shape="poly" title=" " alt="" coords="306,212,279,250,275,247,302,216"/>
-<area shape="rect" href="RootSceneManager_8h.html" title=" " alt="" coords="268,342,447,387"/>
+<area shape="rect" href="RootSceneManager_8h.html" title="Management of materialized ROOT/TEve visualization scenes." alt="" coords="268,342,447,387"/>
 <area shape="poly" title=" " alt="" coords="344,211,364,248,369,273,370,298,365,343,360,340,364,298,364,274,359,250,343,216"/>
 <area shape="poly" title=" " alt="" coords="374,204,492,248,487,250,374,210"/>
 <area shape="poly" title=" " alt="" coords="217,305,154,352,150,348,220,301"/>
 <area shape="poly" title=" " alt="" coords="295,302,337,341,332,342,294,307"/>
 <area shape="poly" title=" " alt="" coords="286,394,183,437,181,432,291,391"/>
-<area shape="rect" href="InteractiveShell_8h.html" title=" " alt="" coords="392,435,577,479"/>
+<area shape="rect" href="InteractiveShell_8h.html" title="Interactive command&#45;line shell for FCCVisualization." alt="" coords="392,435,577,479"/>
 <area shape="poly" title=" " alt="" coords="401,393,457,434,452,434,400,398"/>
 <area shape="rect" href="InteractiveShell_8cc.html" title=" " alt="" coords="393,527,576,555"/>
 <area shape="poly" title=" " alt="" coords="486,493,486,528,482,525,483,497"/>
@@ -162,7 +165,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="poly" title=" " alt="" coords="637,293,672,313,701,340,715,364,725,390,733,443,733,492,729,529,725,525,728,491,728,443,719,391,710,366,697,344,669,317,636,298"/>
 <area shape="rect" href="GuiApplication_8cc.html" title=" " alt="" coords="762,443,943,471"/>
 <area shape="poly" title=" " alt="" coords="637,292,692,312,745,340,776,364,805,392,846,443,841,442,801,396,773,368,742,344,690,317,637,297"/>
-<area shape="rect" href="GuiApplication_8h.html" title=" " alt="" coords="813,350,1039,378"/>
+<area shape="rect" href="GuiApplication_8h.html" title="ROOT GUI application lifecycle management." alt="" coords="813,350,1039,378"/>
 <area shape="poly" title=" " alt="" coords="637,291,874,349,869,351,637,296"/>
 <area shape="rect" href="Session_8cc.html" title=" " alt="" coords="522,350,687,378"/>
 <area shape="poly" title=" " alt="" coords="572,305,599,351,594,349,570,310"/>
@@ -176,13 +179,22 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene_3A_3ABaseSessionObject" id="r_fccvis_3A_3Ascene_3A_3ABaseSessionObject"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classfccvis_1_1scene_1_1BaseSessionObject.html">fccvis::scene::BaseSessionObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for named objects in an FCCVisualization session.  <a href="classfccvis_1_1scene_1_1BaseSessionObject.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:fccvis" id="r_fccvis"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis.html">fccvis</a></td></tr>
 <tr class="memitem:fccvis_3A_3Ascene" id="r_fccvis_3A_3Ascene"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacefccvis_1_1scene.html">fccvis::scene</a></td></tr>
+<tr class="memdesc:namespacefccvis_1_1scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualization scene objects. <br /></td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for named objects belonging to a visualization session. </p>
+<p>Provides a common identity mechanism for objects that are part of an FCCVisualization scene or session. Every derived object has a human-readable name that can be used to identify and reference it within the visualization configuration.</p>
+<dl class="section author"><dt>Author</dt><dd>Amir H. Ebrahimnezhad <a href="mai'+'lto:+'ami'+'r.'+'ebh'+'@c'+'ern'+'.c'+'h'">amir.<span class="obfuscator">.nosp@m.</span>ebh@<span class="obfuscator">.nosp@m.</span>cern.<span class="obfuscator">.nosp@m.</span>ch</a></dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2026 FCC Project at CERN</dd></dl>
+<p>Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p><pre class="fragment">https://www.apache.org/licenses/LICENSE-2.0
+</pre><p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

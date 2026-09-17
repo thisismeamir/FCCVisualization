@@ -1,5 +1,10 @@
 \doxysection{src/\+gui/\+include/\+\+Gui\+Application.h File Reference}
 \hypertarget{GuiApplication_8h}{}\label{GuiApplication_8h}\index{src/gui/include/GuiApplication.h@{src/gui/include/GuiApplication.h}}
+
+
+ROOT GUI application lifecycle management.  
+
+
 {\ttfamily \+\#include "{}Session.\+h"{}}\newline
 {\ttfamily \+\#include $<$TApplication.\+h$>$}\newline
 {\ttfamily \+\#include $<$memory$>$}\newline
@@ -23,11 +28,31 @@ This graph shows which files directly or indirectly include this file:
 \begin{DoxyCompactItemize}
 \item 
 class \doxymbox{\hyperlink{classfccvis_1_1gui_1_1GuiApplication}{fccvis::\+gui::\+\+Gui\+Application}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Manages the ROOT GUI application for FCCVisualization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis}{fccvis}}
 \item 
 namespace \doxymbox{\hyperlink{namespacefccvis_1_1gui}{fccvis::\+gui}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Graphical user interface components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ROOT GUI application lifecycle management. 
+
+Defines the \doxylink{classfccvis_1_1gui_1_1GuiApplication}{fccvis::\+gui::\+\+Gui\+Application} class, which owns and manages the ROOT {\ttfamily TApplication} instance used by the FCCVisualization graphical interface.
+
+The GUI application is associated with an existing \doxylink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session} and provides the main event loop and termination interface for the graphical application.
+
+\begin{DoxyAuthor}{Author}
+Amir H. Ebrahimnezhad \href{mailto:amir.ebh@cern.ch}{\texttt{amir.\+ebh@cern.\+ch}}
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright 2026 FCC Project at CERN
+\end{DoxyCopyright}
+Licensed under the Apache License, Version 2.\+0 (the "{}\+License"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}https://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "{}\+AS IS"{} BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 

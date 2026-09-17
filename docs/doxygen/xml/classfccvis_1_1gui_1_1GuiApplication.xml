@@ -11,12 +11,14 @@
         <name>m_application</name>
         <qualifiedname>fccvis::gui::GuiApplication::m_application</qualifiedname>
         <briefdescription>
+<para>ROOT application instance owned by the GUI application. </para>
         </briefdescription>
         <detaileddescription>
+<para>The <computeroutput>TApplication</computeroutput> manages the ROOT graphical application lifecycle and event processing. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/gui/include/GuiApplication.h" line="15" column="19" bodyfile="src/gui/include/GuiApplication.h" bodystart="15" bodyend="-1"/>
+        <location file="src/gui/include/GuiApplication.h" line="111" column="19" bodyfile="src/gui/include/GuiApplication.h" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classfccvis_1_1gui_1_1GuiApplication_1a8591bcd1dd7660a5cb11c6af6cb649e0" prot="private" static="no" mutable="no">
         <type><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> &amp;</type>
@@ -25,12 +27,14 @@
         <name>m_session</name>
         <qualifiedname>fccvis::gui::GuiApplication::m_session</qualifiedname>
         <briefdescription>
+<para>Session visualized by this application. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is a non-owning reference. The referenced Session must remain alive for the lifetime of the <ref refid="classfccvis_1_1gui_1_1GuiApplication" kindref="compound">GuiApplication</ref>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/gui/include/GuiApplication.h" line="16" column="28" bodyfile="src/gui/include/GuiApplication.h" bodystart="16" bodyend="-1"/>
+        <location file="src/gui/include/GuiApplication.h" line="119" column="28" bodyfile="src/gui/include/GuiApplication.h" bodystart="119" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -53,12 +57,42 @@
           <declname>session</declname>
         </param>
         <briefdescription>
+<para>Construct a GUI application. </para>
         </briefdescription>
         <detaileddescription>
+<para>Creates the underlying ROOT <computeroutput>TApplication</computeroutput> using the supplied command-line arguments and associates the application with an existing visualization session.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the application&apos;s command-line argument count. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command-line arguments passed to the ROOT application. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Session whose data and configuration are visualized.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The session is not owned by <ref refid="classfccvis_1_1gui_1_1GuiApplication" kindref="compound">GuiApplication</ref>. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/gui/include/GuiApplication.h" line="9" column="3" bodyfile="src/gui/GuiApplication.cc" bodystart="9" bodyend="15"/>
+        <location file="src/gui/include/GuiApplication.h" line="77" column="3" bodyfile="src/gui/GuiApplication.cc" bodystart="9" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1gui_1_1GuiApplication_1ae3646b04d083c560a778e91fd198ba47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -67,12 +101,14 @@
         <name>~GuiApplication</name>
         <qualifiedname>fccvis::gui::GuiApplication::~GuiApplication</qualifiedname>
         <briefdescription>
+<para>Destroy the GUI application. </para>
         </briefdescription>
         <detaileddescription>
+<para>Releases the owned ROOT <computeroutput>TApplication</computeroutput> instance. The associated Session is not destroyed because <ref refid="classfccvis_1_1gui_1_1GuiApplication" kindref="compound">GuiApplication</ref> does not own it. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/gui/include/GuiApplication.h" line="10" column="3" bodyfile="src/gui/GuiApplication.cc" bodystart="17" bodyend="21"/>
+        <location file="src/gui/include/GuiApplication.h" line="87" column="3" bodyfile="src/gui/GuiApplication.cc" bodystart="17" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -81,12 +117,14 @@
         <name>Run</name>
         <qualifiedname>fccvis::gui::GuiApplication::Run</qualifiedname>
         <briefdescription>
+<para>Start the GUI event loop. </para>
         </briefdescription>
         <detaileddescription>
+<para>Runs the underlying ROOT application and processes graphical events until the application is terminated. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/gui/include/GuiApplication.h" line="12" column="8" bodyfile="src/gui/GuiApplication.cc" bodystart="23" bodyend="26"/>
+        <location file="src/gui/include/GuiApplication.h" line="95" column="8" bodyfile="src/gui/GuiApplication.cc" bodystart="23" bodyend="26"/>
         <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
       </memberdef>
       <memberdef kind="function" id="classfccvis_1_1gui_1_1GuiApplication_1a236c303ead999265807969165a57b01f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -96,19 +134,29 @@
         <name>Terminate</name>
         <qualifiedname>fccvis::gui::GuiApplication::Terminate</qualifiedname>
         <briefdescription>
+<para>Request termination of the GUI application. </para>
         </briefdescription>
         <detaileddescription>
+<para>Stops the graphical application&apos;s event loop. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/gui/include/GuiApplication.h" line="13" column="8" bodyfile="src/gui/GuiApplication.cc" bodystart="27" bodyend="29"/>
+        <location file="src/gui/include/GuiApplication.h" line="102" column="8" bodyfile="src/gui/GuiApplication.cc" bodystart="27" bodyend="29"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Manages the ROOT GUI application for FCCVisualization. </para>
     </briefdescription>
     <detaileddescription>
+<para><ref refid="classfccvis_1_1gui_1_1GuiApplication" kindref="compound">GuiApplication</ref> owns the ROOT <computeroutput>TApplication</computeroutput> instance responsible for managing the graphical application&apos;s event loop.</para>
+<para>The application operates on an existing <ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>, which is referenced rather than owned by the GUI application. The lifetime of the Session must therefore extend beyond the lifetime of the <ref refid="classfccvis_1_1gui_1_1GuiApplication" kindref="compound">GuiApplication</ref>.</para>
+<para><simplesect kind="see"><para><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> </para>
+</simplesect>
+<simplesect kind="see"><para>TApplication </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="src/gui/include/GuiApplication.h" line="7" column="1" bodyfile="src/gui/include/GuiApplication.h" bodystart="7" bodyend="17"/>
+    <location file="src/gui/include/GuiApplication.h" line="61" column="1" bodyfile="src/gui/include/GuiApplication.h" bodystart="61" bodyend="120"/>
     <listofallmembers>
       <member refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" prot="public" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>GuiApplication</name></member>
       <member refid="classfccvis_1_1gui_1_1GuiApplication_1af2286a2ab576211e85351c079ebc0245" prot="private" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>m_application</name></member>

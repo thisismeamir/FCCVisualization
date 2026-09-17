@@ -113,30 +113,66 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>Represents an FCCVisualization session.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Session_8h_source.html">Session.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aeba1550ec6239fdf845f5c099f27d623" id="r_aeba1550ec6239fdf845f5c099f27d623"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aeba1550ec6239fdf845f5c099f27d623">Session</a> (std::string name, std::optional&lt; std::filesystem::path &gt; dataFilePath, std::optional&lt; std::filesystem::path &gt; optionsFilePath)</td></tr>
+<tr class="memdesc:aeba1550ec6239fdf845f5c099f27d623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a visualization session.  <br /></td></tr>
 <tr class="memitem:aac0ae08cfbf9ccc4fa7324bb0fcd20de" id="r_aac0ae08cfbf9ccc4fa7324bb0fcd20de"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aac0ae08cfbf9ccc4fa7324bb0fcd20de">~Session</a> ()</td></tr>
+<tr class="memdesc:aac0ae08cfbf9ccc4fa7324bb0fcd20de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the session.  <br /></td></tr>
 <tr class="memitem:a6644797681412b39b6896338c105ad4d" id="r_a6644797681412b39b6896338c105ad4d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a6644797681412b39b6896338c105ad4d">Session</a> (const Session &amp;)=delete</td></tr>
+<tr class="memdesc:a6644797681412b39b6896338c105ad4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> by copying another session.  <br /></td></tr>
 <tr class="memitem:ab9f048e500ea40a62cbca1d4282da848" id="r_ab9f048e500ea40a62cbca1d4282da848"><td class="memItemLeft"><a class="el" href="#aeba1550ec6239fdf845f5c099f27d623">Session</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ab9f048e500ea40a62cbca1d4282da848">operator=</a> (const <a class="el" href="#aeba1550ec6239fdf845f5c099f27d623">Session</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ab9f048e500ea40a62cbca1d4282da848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-assign a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a>.  <br /></td></tr>
 <tr class="memitem:a442580be155f6cd5306c6f38ab6552b5" id="r_a442580be155f6cd5306c6f38ab6552b5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a442580be155f6cd5306c6f38ab6552b5">Session</a> (Session &amp;&amp;) noexcept=default</td></tr>
+<tr class="memdesc:a442580be155f6cd5306c6f38ab6552b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> by moving another session.  <br /></td></tr>
 <tr class="memitem:a1707c5d13d7bc497054f223442c8abb3" id="r_a1707c5d13d7bc497054f223442c8abb3"><td class="memItemLeft"><a class="el" href="#aeba1550ec6239fdf845f5c099f27d623">Session</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a1707c5d13d7bc497054f223442c8abb3">operator=</a> (<a class="el" href="#aeba1550ec6239fdf845f5c099f27d623">Session</a> &amp;&amp;) noexcept=default</td></tr>
+<tr class="memdesc:a1707c5d13d7bc497054f223442c8abb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-assign a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a>.  <br /></td></tr>
 <tr class="memitem:ad3977b05e822af6371d797811af87322" id="r_ad3977b05e822af6371d797811af87322"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad3977b05e822af6371d797811af87322">initData</a> ()</td></tr>
+<tr class="memdesc:ad3977b05e822af6371d797811af87322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize event data.  <br /></td></tr>
 <tr class="memitem:a37331d0f91cf252aaab0cd20d340643e" id="r_a37331d0f91cf252aaab0cd20d340643e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a37331d0f91cf252aaab0cd20d340643e">initOptions</a> ()</td></tr>
+<tr class="memdesc:a37331d0f91cf252aaab0cd20d340643e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize session options.  <br /></td></tr>
 <tr class="memitem:ab81e55997ba1f2c56ac56a6bed42d2ba" id="r_ab81e55997ba1f2c56ac56a6bed42d2ba"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ab81e55997ba1f2c56ac56a6bed42d2ba">GetOptionsFile</a> ()</td></tr>
+<tr class="memdesc:ab81e55997ba1f2c56ac56a6bed42d2ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the session options-file path.  <br /></td></tr>
 <tr class="memitem:a9b9a58d799ff950721e959f90f040e57" id="r_a9b9a58d799ff950721e959f90f040e57"><td class="memItemLeft"><a class="el" href="classfccvis_1_1session_1_1SessionOptions.html">SessionOptions</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9b9a58d799ff950721e959f90f040e57">GetOptions</a> ()</td></tr>
+<tr class="memdesc:a9b9a58d799ff950721e959f90f040e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the session visualization options.  <br /></td></tr>
 <tr class="memitem:aeb73514b188f59bfd04f088639808d43" id="r_aeb73514b188f59bfd04f088639808d43"><td class="memItemLeft">const std::string &amp;&#160;</td><td class="memItemRight"><a class="el" href="#aeb73514b188f59bfd04f088639808d43">Name</a> () const</td></tr>
+<tr class="memdesc:aeb73514b188f59bfd04f088639808d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the session name.  <br /></td></tr>
 <tr class="memitem:abc3af1740e27ef5b6b7dae88e5518349" id="r_abc3af1740e27ef5b6b7dae88e5518349"><td class="memItemLeft">const <a class="el" href="classfccvis_1_1session_1_1SessionData.html">SessionData</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#abc3af1740e27ef5b6b7dae88e5518349">Data</a> () const</td></tr>
+<tr class="memdesc:abc3af1740e27ef5b6b7dae88e5518349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the session event data.  <br /></td></tr>
 <tr class="memitem:a4ed06b9a05f53d830377e579a94b2abe" id="r_a4ed06b9a05f53d830377e579a94b2abe"><td class="memItemLeft">const <a class="el" href="classfccvis_1_1session_1_1SessionOptions.html">SessionOptions</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a4ed06b9a05f53d830377e579a94b2abe">Options</a> () const</td></tr>
+<tr class="memdesc:a4ed06b9a05f53d830377e579a94b2abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the session visualization options.  <br /></td></tr>
 <tr class="memitem:a0215b2b549da22eaff76490193916dbe" id="r_a0215b2b549da22eaff76490193916dbe"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0215b2b549da22eaff76490193916dbe">Categories</a> () const</td></tr>
+<tr class="memdesc:a0215b2b549da22eaff76490193916dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the names of all available data categories.  <br /></td></tr>
 <tr class="memitem:a13d642f9984714f5d6a9bee855239cd8" id="r_a13d642f9984714f5d6a9bee855239cd8"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a13d642f9984714f5d6a9bee855239cd8">EntryCount</a> (const std::string &amp;category) const</td></tr>
+<tr class="memdesc:a13d642f9984714f5d6a9bee855239cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of entries in a data category.  <br /></td></tr>
 <tr class="memitem:abfeb70dc45d2b18889c591657524ebdf" id="r_abfeb70dc45d2b18889c591657524ebdf"><td class="memItemLeft">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight"><a class="el" href="#abfeb70dc45d2b18889c591657524ebdf">CollectionNames</a> (const std::string &amp;category, size_t entryIndex) const</td></tr>
+<tr class="memdesc:abfeb70dc45d2b18889c591657524ebdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the collection names for a category entry.  <br /></td></tr>
 <tr class="memitem:a883adf902b23ba4272607f06d4900713" id="r_a883adf902b23ba4272607f06d4900713"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a883adf902b23ba4272607f06d4900713">CollectionType</a> (const std::string &amp;category, size_t entryIndex, const std::string &amp;collName) const</td></tr>
+<tr class="memdesc:a883adf902b23ba4272607f06d4900713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of a collection in a category entry.  <br /></td></tr>
 <tr class="memitem:a623742faa2ae121e6417da9b14282c51" id="r_a623742faa2ae121e6417da9b14282c51"><td class="memItemLeft">const podio::Frame &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a623742faa2ae121e6417da9b14282c51">GetFrame</a> (const std::string &amp;category, size_t entryIndex) const</td></tr>
+<tr class="memdesc:a623742faa2ae121e6417da9b14282c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a podio frame from the session.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents an FCCVisualization session. </p>
+<p>A <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> is the central object that connects session configuration with loaded event data.</p>
+<p>A session consists of:</p><ul>
+<li>a name identifying the session;</li>
+<li>an optional event-data file;</li>
+<li>an optional options/configuration file;</li>
+<li><a class="el" href="classfccvis_1_1session_1_1SessionData.html" title="fccvis::session::SessionData">fccvis::session::SessionData</a> containing loaded podio frames;</li>
+<li><a class="el" href="classfccvis_1_1session_1_1SessionOptions.html" title="fccvis::session::SessionOptions">fccvis::session::SessionOptions</a> containing visualization configuration.</li>
+</ul>
+<p>The session provides the main programmatic interface for discovering available data categories, entries, collections, and collection types.</p>
+<dl class="section note"><dt>Note</dt><dd>Copy construction and copy assignment are disabled. Sessions are movable.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1session_1_1SessionData.html" title="Event data loaded into a session.">fccvis::session::SessionData</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1session_1_1SessionOptions.html" title="Visualization and runtime configuration for a session.">fccvis::session::SessionOptions</a> </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeba1550ec6239fdf845f5c099f27d623" name="aeba1550ec6239fdf845f5c099f27d623"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeba1550ec6239fdf845f5c099f27d623">&#9670;&#160;</a></span>Session() <span class="overload">[1/3]</span></h2>
 
@@ -160,19 +196,30 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a visualization session. </p>
+<p>The constructor stores the session identity and optional input paths. Data and options are initialized separately through <a class="el" href="#ad3977b05e822af6371d797811af87322" title="initData">initData</a> and <a class="el" href="#a37331d0f91cf252aaab0cd20d340643e" title="initOptions">initOptions</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name identifying the session. </td></tr>
+    <tr><td class="paramname">dataFilePath</td><td>Optional path to the event-data file. </td></tr>
+    <tr><td class="paramname">optionsFilePath</td><td>Optional path to the session options file. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623_icgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623_icgraph" id="aclassfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623_icgraph">
-<area shape="rect" title=" " alt="" coords="228,109,402,154"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#ab9f048e500ea40a62cbca1d4282da848" title=" " alt="" coords="5,5,180,50"/>
+<area shape="rect" title="Construct a visualization session." alt="" coords="228,109,402,154"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#ab9f048e500ea40a62cbca1d4282da848" title="Copy&#45;assign a Session." alt="" coords="5,5,180,50"/>
 <area shape="poly" title=" " alt="" coords="256,103,179,65,153,53,152,48,181,60,261,101"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title=" " alt="" coords="5,75,180,119"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title="Move&#45;assign a Session." alt="" coords="5,75,180,119"/>
 <area shape="poly" title=" " alt="" coords="210,117,181,113,180,108,215,115"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a6644797681412b39b6896338c105ad4d" title=" " alt="" coords="5,144,180,189"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a6644797681412b39b6896338c105ad4d" title="Construct a Session by copying another session." alt="" coords="5,144,180,189"/>
 <area shape="poly" title=" " alt="" coords="210,149,181,155,179,150,215,147"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a442580be155f6cd5306c6f38ab6552b5" title=" " alt="" coords="5,213,180,258"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a442580be155f6cd5306c6f38ab6552b5" title="Construct a Session by moving another session." alt="" coords="5,213,180,258"/>
 <area shape="poly" title=" " alt="" coords="261,161,181,203,154,215,152,210,179,199,256,163"/>
 </map>
 </div>
@@ -202,6 +249,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Destroy the session. </p>
+<p>Releases the session's data and visualization configuration. </p>
+
 </div>
 </div>
 <a id="a6644797681412b39b6896338c105ad4d" name="a6644797681412b39b6896338c105ad4d"></a>
@@ -226,13 +276,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> by copying another session. </p>
+<p>Copying sessions is intentionally disabled because a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> owns mutable session state and loaded event data. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d_cgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d_cgraph" id="aclassfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" title="Construct a Session by copying another session." alt="" coords="5,5,180,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title="Construct a visualization session." alt="" coords="228,5,402,50"/>
 <area shape="poly" title=" " alt="" coords="180,25,215,27,209,28,180,30"/>
 </map>
 </div>
@@ -261,13 +314,22 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> by moving another session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td><a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> whose state is transferred.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The moved-from session remains valid but its previous state should not be relied upon. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5_cgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5_cgraph" id="aclassfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" title="Construct a Session by moving another session." alt="" coords="5,5,180,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title="Construct a visualization session." alt="" coords="228,5,402,50"/>
 <area shape="poly" title=" " alt="" coords="180,25,215,27,209,28,180,30"/>
 </map>
 </div>
@@ -290,6 +352,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Get the names of all available data categories. </p>
+<dl class="section return"><dt>Returns</dt><dd>Vector containing the names of the categories currently available in the session.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1session_1_1SessionData.html#aa64d148059aa9830c11aef0d420e413a" title="Event frames grouped by category.">SessionData::categories</a> </dd></dl>
+
 </div>
 </div>
 <a id="abfeb70dc45d2b18889c591657524ebdf" name="abfeb70dc45d2b18889c591657524ebdf"></a>
@@ -310,13 +376,23 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the collection names for a category entry. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>Name of the data category. </td></tr>
+    <tr><td class="paramname">entryIndex</td><td>Zero-based index of the entry within the category.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Names of the collections contained in the requested frame. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf_cgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf_cgraph" id="aclassfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a623742faa2ae121e6417da9b14282c51" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" title="Get the collection names for a category entry." alt="" coords="5,5,180,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a623742faa2ae121e6417da9b14282c51" title="Get a podio frame from the session." alt="" coords="228,5,402,50"/>
 <area shape="poly" title=" " alt="" coords="180,25,215,27,209,28,180,30"/>
 </map>
 </div>
@@ -346,13 +422,24 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the type of a collection in a category entry. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>Name of the data category. </td></tr>
+    <tr><td class="paramname">entryIndex</td><td>Zero-based index of the entry within the category. </td></tr>
+    <tr><td class="paramname">collName</td><td>Name of the collection.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Type name of the requested collection. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713_cgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713_cgraph" id="aclassfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a623742faa2ae121e6417da9b14282c51" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" title="Get the type of a collection in a category entry." alt="" coords="5,5,180,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a623742faa2ae121e6417da9b14282c51" title="Get a podio frame from the session." alt="" coords="228,5,402,50"/>
 <area shape="poly" title=" " alt="" coords="180,25,215,27,209,28,180,30"/>
 </map>
 </div>
@@ -382,6 +469,10 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Get the session event data. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the session's <a class="el" href="classfccvis_1_1session_1_1SessionData.html" title="SessionData">SessionData</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The returned reference remains valid for the lifetime of the session unless the session's internal state is moved from. </dd></dl>
+
 </div>
 </div>
 <a id="a13d642f9984714f5d6a9bee855239cd8" name="a13d642f9984714f5d6a9bee855239cd8"></a>
@@ -398,6 +489,15 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the number of entries in a data category. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>Name of the category.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of podio frames stored in the specified category. </dd></dl>
 
 </div>
 </div>
@@ -419,15 +519,26 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get a podio frame from the session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>Name of the data category. </td></tr>
+    <tr><td class="paramname">entryIndex</td><td>Zero-based index of the entry within the category.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the requested <code>podio::Frame</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1session_1_1SessionData.html#aa64d148059aa9830c11aef0d420e413a" title="Event frames grouped by category.">SessionData::categories</a> </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51_icgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51_icgraph" id="aclassfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51_icgraph">
-<area shape="rect" title=" " alt="" coords="228,40,402,85"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#abfeb70dc45d2b18889c591657524ebdf" title=" " alt="" coords="5,5,180,50"/>
+<area shape="rect" title="Get a podio frame from the session." alt="" coords="228,40,402,85"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#abfeb70dc45d2b18889c591657524ebdf" title="Get the collection names for a category entry." alt="" coords="5,5,180,50"/>
 <area shape="poly" title=" " alt="" coords="210,47,180,44,180,39,215,46"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a883adf902b23ba4272607f06d4900713" title=" " alt="" coords="5,75,180,119"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a883adf902b23ba4272607f06d4900713" title="Get the type of a collection in a category entry." alt="" coords="5,75,180,119"/>
 <area shape="poly" title=" " alt="" coords="210,79,181,86,180,81,215,78"/>
 </map>
 </div>
@@ -448,13 +559,17 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the session visualization options. </p>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the session's <a class="el" href="classfccvis_1_1session_1_1SessionOptions.html" title="SessionOptions">SessionOptions</a>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a4ed06b9a05f53d830377e579a94b2abe" title="Get the session visualization options.">Options</a> </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57_icgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57_icgraph" id="aclassfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57_icgraph">
-<area shape="rect" title=" " alt="" coords="228,5,402,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title=" " alt="" coords="5,5,180,50"/>
+<area shape="rect" title="Get the session visualization options." alt="" coords="228,5,402,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title="Move&#45;assign a Session." alt="" coords="5,5,180,50"/>
 <area shape="poly" title=" " alt="" coords="210,28,180,30,180,25,215,27"/>
 </map>
 </div>
@@ -475,13 +590,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the session options-file path. </p>
+<dl class="section return"><dt>Returns</dt><dd>The configured options-file path, or an empty <code>std::optional</code> if no options file was configured. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba_icgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba_icgraph" id="aclassfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba_icgraph">
-<area shape="rect" title=" " alt="" coords="228,5,402,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title=" " alt="" coords="5,5,180,50"/>
+<area shape="rect" title="Get the session options&#45;file path." alt="" coords="228,5,402,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title="Move&#45;assign a Session." alt="" coords="5,5,180,50"/>
 <area shape="poly" title=" " alt="" coords="210,28,180,30,180,25,215,27"/>
 </map>
 </div>
@@ -502,13 +620,17 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize event data. </p>
+<p>Loads and prepares the event data associated with the session's configured data-file path.</p>
+<dl class="section note"><dt>Note</dt><dd>The exact loading behavior is determined by the corresponding implementation. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322_icgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322_icgraph" id="aclassfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322_icgraph">
-<area shape="rect" title=" " alt="" coords="228,5,402,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title=" " alt="" coords="5,5,180,50"/>
+<area shape="rect" title="Initialize event data." alt="" coords="228,5,402,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title="Move&#45;assign a Session." alt="" coords="5,5,180,50"/>
 <area shape="poly" title=" " alt="" coords="210,28,180,30,180,25,215,27"/>
 </map>
 </div>
@@ -529,13 +651,17 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize session options. </p>
+<p>Loads and prepares the visualization configuration associated with the session's configured options-file path.</p>
+<dl class="section note"><dt>Note</dt><dd>The exact configuration format and loading behavior are determined by the corresponding implementation. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e_icgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e_icgraph" id="aclassfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e_icgraph">
-<area shape="rect" title=" " alt="" coords="228,5,402,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title=" " alt="" coords="5,5,180,50"/>
+<area shape="rect" title="Initialize session options." alt="" coords="228,5,402,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a1707c5d13d7bc497054f223442c8abb3" title="Move&#45;assign a Session." alt="" coords="5,5,180,50"/>
 <area shape="poly" title=" " alt="" coords="210,28,180,30,180,25,215,27"/>
 </map>
 </div>
@@ -564,12 +690,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get the session name. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the session name. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_cgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_cgraph" id="aclassfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_cgraph">
-<area shape="rect" title=" " alt="" coords="5,29,180,74"/>
+<area shape="rect" title="Get the session name." alt="" coords="5,29,180,74"/>
 <area shape="poly" title=" " alt="" coords="59,28,58,19,63,10,75,5,93,3,111,5,124,14,119,14,110,10,92,8,77,10,67,14,63,21,64,30"/>
 </map>
 </div>
@@ -578,7 +707,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_icgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_icgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_icgraph" id="aclassfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_icgraph">
-<area shape="rect" title=" " alt="" coords="5,29,180,74"/>
+<area shape="rect" title="Get the session name." alt="" coords="5,29,180,74"/>
 <area shape="poly" title=" " alt="" coords="119,14,110,10,92,8,77,10,67,14,63,21,64,30,59,28,58,19,63,10,75,5,93,3,111,5,124,14"/>
 </map>
 </div>
@@ -607,13 +736,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Copy-assign a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a>. </p>
+<p>Copy assignment is intentionally disabled.</p>
+<dl class="section return"><dt>Returns</dt><dd>This operation is deleted and cannot be called. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848_cgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848_cgraph" id="aclassfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,50"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" title="Copy&#45;assign a Session." alt="" coords="5,5,180,50"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title="Construct a visualization session." alt="" coords="228,5,402,50"/>
 <area shape="poly" title=" " alt="" coords="180,25,215,27,209,28,180,30"/>
 </map>
 </div>
@@ -642,21 +775,30 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Move-assign a <a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td><a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">Session</a> whose state is transferred.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to this session. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3_cgraph.png" border="0" usemap="#aclassfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3_cgraph" id="aclassfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,144,180,189"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a9b9a58d799ff950721e959f90f040e57" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" title="Move&#45;assign a Session." alt="" coords="5,144,180,189"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a9b9a58d799ff950721e959f90f040e57" title="Get the session visualization options." alt="" coords="228,5,402,50"/>
 <area shape="poly" title=" " alt="" coords="117,141,166,101,226,60,239,55,235,59,229,65,169,105,121,145"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#ab81e55997ba1f2c56ac56a6bed42d2ba" title=" " alt="" coords="228,75,402,119"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#ab81e55997ba1f2c56ac56a6bed42d2ba" title="Get the session options&#45;file path." alt="" coords="228,75,402,119"/>
 <area shape="poly" title=" " alt="" coords="165,141,229,123,224,126,168,146"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#ad3977b05e822af6371d797811af87322" title=" " alt="" coords="228,144,402,189"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#ad3977b05e822af6371d797811af87322" title="Initialize event data." alt="" coords="228,144,402,189"/>
 <area shape="poly" title=" " alt="" coords="179,164,215,165,210,167,181,169"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a37331d0f91cf252aaab0cd20d340643e" title=" " alt="" coords="228,213,402,258"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#a37331d0f91cf252aaab0cd20d340643e" title="Initialize session options." alt="" coords="228,213,402,258"/>
 <area shape="poly" title=" " alt="" coords="166,187,229,207,224,209,166,192"/>
-<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title=" " alt="" coords="228,283,402,327"/>
+<area shape="rect" href="classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title="Construct a visualization session." alt="" coords="228,283,402,327"/>
 <area shape="poly" title=" " alt="" coords="120,187,169,227,229,268,240,276,235,275,226,273,166,232,118,192"/>
 </map>
 </div>
@@ -685,6 +827,10 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get the session visualization options. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the session's <a class="el" href="classfccvis_1_1session_1_1SessionOptions.html" title="SessionOptions">SessionOptions</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Unlike <a class="el" href="#a9b9a58d799ff950721e959f90f040e57" title="GetOptions">GetOptions</a>, this method does not create a copy. </dd></dl>
 
 </div>
 </div>

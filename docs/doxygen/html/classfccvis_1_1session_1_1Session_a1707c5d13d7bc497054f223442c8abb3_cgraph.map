@@ -1,13 +1,13 @@
 <map id="fccvis::session::Session::operator=" name="fccvis::session::Session::operator=">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,144,180,189"/>
-<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#a9b9a58d799ff950721e959f90f040e57" title=" " alt="" coords="228,5,402,50"/>
+<area shape="rect" id="Node000001" title="Move&#45;assign a Session." alt="" coords="5,144,180,189"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1session_1_1Session.html#a9b9a58d799ff950721e959f90f040e57" title="Get the session visualization options." alt="" coords="228,5,402,50"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,141,166,101,226,60,239,55,235,59,229,65,169,105,121,145"/>
-<area shape="rect" id="Node000003" href="$classfccvis_1_1session_1_1Session.html#ab81e55997ba1f2c56ac56a6bed42d2ba" title=" " alt="" coords="228,75,402,119"/>
+<area shape="rect" id="Node000003" href="$classfccvis_1_1session_1_1Session.html#ab81e55997ba1f2c56ac56a6bed42d2ba" title="Get the session options&#45;file path." alt="" coords="228,75,402,119"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,141,229,123,224,126,168,146"/>
-<area shape="rect" id="Node000004" href="$classfccvis_1_1session_1_1Session.html#ad3977b05e822af6371d797811af87322" title=" " alt="" coords="228,144,402,189"/>
+<area shape="rect" id="Node000004" href="$classfccvis_1_1session_1_1Session.html#ad3977b05e822af6371d797811af87322" title="Initialize event data." alt="" coords="228,144,402,189"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,164,215,165,210,167,181,169"/>
-<area shape="rect" id="Node000005" href="$classfccvis_1_1session_1_1Session.html#a37331d0f91cf252aaab0cd20d340643e" title=" " alt="" coords="228,213,402,258"/>
+<area shape="rect" id="Node000005" href="$classfccvis_1_1session_1_1Session.html#a37331d0f91cf252aaab0cd20d340643e" title="Initialize session options." alt="" coords="228,213,402,258"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="166,187,229,207,224,209,166,192"/>
-<area shape="rect" id="Node000006" href="$classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title=" " alt="" coords="228,283,402,327"/>
+<area shape="rect" id="Node000006" href="$classfccvis_1_1session_1_1Session.html#aeba1550ec6239fdf845f5c099f27d623" title="Construct a visualization session." alt="" coords="228,283,402,327"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="120,187,169,227,229,268,240,276,235,275,226,273,166,232,118,192"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="fccvis::cli::ValidateArgs" name="fccvis::cli::ValidateArgs">
-<area shape="rect" id="Node000001" title=" " alt="" coords="111,29,283,57"/>
+<area shape="rect" id="Node000001" title="Validate parsed command&#45;line options." alt="" coords="111,29,283,57"/>
 <area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="223,14,215,10,197,8,181,10,172,15,170,20,174,30,169,28,164,20,168,11,179,5,197,3,216,5,228,14"/>
 <area shape="rect" id="Node000002" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="9,29,63,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,44,63,46,63,41,98,43"/>

@@ -7,8 +7,6 @@
     <includes local="no">TEveScene.h</includes>
     <includes local="no">TEveViewer.h</includes>
     <includes local="no">memory</includes>
-    <includes local="no">string</includes>
-    <includes local="no">vector</includes>
     <includedby refid="RootScene_8cc" local="yes">src/backend/root/RootScene.cc</includedby>
     <includedby refid="RootSceneManager_8h" local="yes">src/backend/root/include/RootSceneManager.h</includedby>
     <incdepgraph>
@@ -17,17 +15,13 @@
         <link refid="RootScene_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -43,6 +37,10 @@
         <link refid="MetaObjects_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
@@ -55,28 +53,25 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="9">
         <label>TEveManager.h</label>
       </node>
-      <node id="11">
+      <node id="10">
         <label>TEveScene.h</label>
       </node>
-      <node id="12">
+      <node id="11">
         <label>TEveViewer.h</label>
-      </node>
-      <node id="4">
-        <label>algorithm</label>
       </node>
       <node id="7">
         <label>memory</label>
       </node>
-      <node id="5">
+      <node id="4">
         <label>string</label>
       </node>
-      <node id="9">
+      <node id="5">
         <label>utility</label>
       </node>
       <node id="8">
@@ -130,40 +125,61 @@
     <innernamespace refid="namespacefccvis_1_1backend">fccvis::backend</innernamespace>
     <innernamespace refid="namespacefccvis_1_1backend_1_1root">fccvis::backend::root</innernamespace>
     <briefdescription>
+<para>ROOT/TEve materialization of an FCCVisualization scene. </para>
     </briefdescription>
     <detaileddescription>
+<para>Defines <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">fccvis::backend::root::RootScene</ref>, which connects an abstract FCCVisualization scene to its ROOT/TEve representation.</para>
+<para>An abstract <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> describes the visualization independently of the rendering backend. RootScene materializes that description into the corresponding ROOT TEve objects, including a <computeroutput>TEveScene</computeroutput> and <computeroutput>TEveViewer</computeroutput>.</para>
+<para><simplesect kind="author"><para>Amir H. Ebrahimnezhad <ulink url="mailto:amir.ebh@cern.ch">amir.ebh@cern.ch</ulink></para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright 2026 FCC Project at CERN</para>
+</simplesect>
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License. You may obtain a copy of the License at <verbatim>https://www.apache.org/licenses/LICENSE-2.0
+</verbatim></para>
+<para>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </para>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveManager.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveScene.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveViewer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8" refid="namespacefccvis" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1backend_1_1root" kindref="compound">fccvis::backend::root</ref><sp/>{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10" refid="classfccvis_1_1backend_1_1root_1_1RootScene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref></highlight></codeline>
-<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>(std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/><ref refid="namespacefccvis_1_1scene" kindref="compound">scene</ref>);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">~RootScene</ref>();</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" kindref="member">RootScene</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="17" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>&amp;<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveViewer*<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" kindref="member">Viewer</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pViewer;<sp/>}</highlight></codeline>
-<codeline lineno="20" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveScene*<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" kindref="member">EveScene</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pEveScene;<sp/>}</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" kindref="member">SyncCamera</ref>();<sp/><sp/></highlight><highlight class="comment">//<sp/>pushes<sp/>Scene::camera&apos;s<sp/>position/direction<sp/>into<sp/>the<sp/>TGLViewer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" kindref="member">GetSceneAbstract</ref>();</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/>m_scene;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveViewer*<sp/>m_pViewer;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveScene*<sp/>m_pEveScene;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveManager.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveScene.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveViewer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="namespacefccvis" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1backend_1_1root" kindref="compound">fccvis::backend::root</ref><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classfccvis_1_1backend_1_1root_1_1RootScene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>(std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/><ref refid="namespacefccvis_1_1scene" kindref="compound">scene</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">~RootScene</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" kindref="member">RootScene</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>&amp;<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveViewer*<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" kindref="member">Viewer</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pViewer;<sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveScene*<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" kindref="member">EveScene</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pEveScene;<sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" kindref="member">SyncCamera</ref>();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" kindref="member">GetSceneAbstract</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/>m_scene;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveViewer*<sp/>m_pViewer;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>TEveScene*<sp/>m_pEveScene;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::backend::root</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/backend/root/include/RootScene.h"/>
   </compounddef>

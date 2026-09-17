@@ -1,5 +1,5 @@
 <map id="fccvis::cli::RunApplication" name="fccvis::cli::RunApplication">
-<area shape="rect" id="Node000001" title=" " alt="" coords="112,29,301,57"/>
+<area shape="rect" id="Node000001" title="Run the FCCVisualization application." alt="" coords="112,29,301,57"/>
 <area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="234,14,225,10,207,8,189,10,180,15,178,20,182,30,177,28,172,20,176,11,188,5,207,3,227,5,239,14"/>
 <area shape="rect" id="Node000002" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="10,29,64,57"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,44,65,46,65,41,100,43"/>

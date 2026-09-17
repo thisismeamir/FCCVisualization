@@ -113,21 +113,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfccvis_1_
 </div><!--header-->
 <div class="contents">
 
+<p>Manages the live ROOT/TEve representations of session scenes.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="RootSceneManager_8h_source.html">RootSceneManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8d2892d1b81fa9961de8fcf57c7be543" id="r_a8d2892d1b81fa9961de8fcf57c7be543"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a8d2892d1b81fa9961de8fcf57c7be543">RootSceneManager</a> (<a class="el" href="classfccvis_1_1session_1_1Session.html">fccvis::session::Session</a> &amp;session)</td></tr>
+<tr class="memdesc:a8d2892d1b81fa9961de8fcf57c7be543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a ROOT scene manager for a session.  <br /></td></tr>
 <tr class="memitem:a494634f1895f1d44cf7c7bab95bac15c" id="r_a494634f1895f1d44cf7c7bab95bac15c"><td class="memItemLeft"><a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html">RootScene</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a494634f1895f1d44cf7c7bab95bac15c">Open</a> (const std::string &amp;sceneName)</td></tr>
+<tr class="memdesc:a494634f1895f1d44cf7c7bab95bac15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open and materialize a scene.  <br /></td></tr>
 <tr class="memitem:a77cdf08c8eab81c3a96c39b2cfa72f68" id="r_a77cdf08c8eab81c3a96c39b2cfa72f68"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a77cdf08c8eab81c3a96c39b2cfa72f68">Close</a> (const std::string &amp;sceneName)</td></tr>
+<tr class="memdesc:a77cdf08c8eab81c3a96c39b2cfa72f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close a materialized scene.  <br /></td></tr>
 <tr class="memitem:a81cdc76f0fe4ffb80a0147adf555ce0b" id="r_a81cdc76f0fe4ffb80a0147adf555ce0b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a81cdc76f0fe4ffb80a0147adf555ce0b">Update</a> (const std::string &amp;sceneName)</td></tr>
+<tr class="memdesc:a81cdc76f0fe4ffb80a0147adf555ce0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an open ROOT scene.  <br /></td></tr>
 <tr class="memitem:ade5c6465ef8672c54d373e6921da8d28" id="r_ade5c6465ef8672c54d373e6921da8d28"><td class="memItemLeft"><a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html">RootScene</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ade5c6465ef8672c54d373e6921da8d28">Get</a> (const std::string &amp;sceneName) const</td></tr>
+<tr class="memdesc:ade5c6465ef8672c54d373e6921da8d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an open ROOT scene by name.  <br /></td></tr>
 <tr class="memitem:a3e94a44331718088a84f9759bd5c64a1" id="r_a3e94a44331718088a84f9759bd5c64a1"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3e94a44331718088a84f9759bd5c64a1">IsOpen</a> (const std::string &amp;sceneName) const</td></tr>
+<tr class="memdesc:a3e94a44331718088a84f9759bd5c64a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a scene is currently open.  <br /></td></tr>
 <tr class="memitem:a2b014bd850b64301af0ef67f8cae8870" id="r_a2b014bd850b64301af0ef67f8cae8870"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2b014bd850b64301af0ef67f8cae8870">CloseAll</a> ()</td></tr>
+<tr class="memdesc:a2b014bd850b64301af0ef67f8cae8870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all currently open scenes.  <br /></td></tr>
 <tr class="memitem:a124a5c5cce68d10d6842bceac47a6fe6" id="r_a124a5c5cce68d10d6842bceac47a6fe6"><td class="memItemLeft">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classfccvis_1_1scene_1_1Scene.html">fccvis::scene::Scene</a> &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a124a5c5cce68d10d6842bceac47a6fe6">OpenScenes</a> ()</td></tr>
+<tr class="memdesc:a124a5c5cce68d10d6842bceac47a6fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the abstract scenes currently open in ROOT.  <br /></td></tr>
 <tr class="memitem:af9ab8883d43662e696dbefad676b396d" id="r_af9ab8883d43662e696dbefad676b396d"><td class="memItemLeft">std::vector&lt; std::shared_ptr&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af9ab8883d43662e696dbefad676b396d">SceneNames</a> ()</td></tr>
+<tr class="memdesc:af9ab8883d43662e696dbefad676b396d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the names of currently open scenes.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages the live ROOT/TEve representations of session scenes. </p>
+<p><a class="el" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html" title="Manages the live ROOT/TEve representations of session scenes.">RootSceneManager</a> provides the main interface for opening, updating, querying, and closing ROOT representations of abstract <a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="fccvis::scene::Scene">fccvis::scene::Scene</a> objects.</p>
+<p>The manager holds a non-owning reference to an existing <a class="el" href="classfccvis_1_1session_1_1Session.html" title="fccvis::session::Session">fccvis::session::Session</a>. Abstract scenes are discovered from that session and materialized into <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="RootScene">RootScene</a> objects when requested.</p>
+<p>Multiple open scenes are tracked by their names. Opening an already open scene returns the existing materialization rather than creating a second ROOT representation.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="ROOT/TEve representation of an abstract visualization scene.">RootScene</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1session_1_1Session.html" title="Represents an FCCVisualization session.">fccvis::session::Session</a> </dd>
+<dd>
+<a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="A reusable visualization scene.">fccvis::scene::Scene</a> </dd></dl>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8d2892d1b81fa9961de8fcf57c7be543" name="a8d2892d1b81fa9961de8fcf57c7be543"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d2892d1b81fa9961de8fcf57c7be543">&#9670;&#160;</a></span>RootSceneManager()</h2>
 
@@ -151,6 +173,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a ROOT scene manager for a session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>Session containing the abstract scenes managed by this object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The session is referenced but not owned. It must remain valid for the lifetime of the <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html" title="Manages the live ROOT/TEve representations of session scenes.">RootSceneManager</a>. </dd></dl>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -169,6 +200,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Close a materialized scene. </p>
+<p>Tears down the ROOT/TEve representation identified by <code class="param">sceneName</code>.</p>
+<p>Closing a scene does not modify the corresponding abstract <a class="el" href="classfccvis_1_1scene_1_1Scene.html" title="fccvis::scene::Scene">fccvis::scene::Scene</a> or the session's event data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>Name of the scene to close. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2b014bd850b64301af0ef67f8cae8870" name="a2b014bd850b64301af0ef67f8cae8870"></a>
@@ -185,6 +226,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Close all currently open scenes. </p>
+<p>Tears down every ROOT/TEve scene managed by this object while leaving the abstract session scenes and event data unchanged. </p>
 
 </div>
 </div>
@@ -203,6 +247,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get an open ROOT scene by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>Name of the scene.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the corresponding open <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="ROOT/TEve representation of an abstract visualization scene.">RootScene</a>, or <code>nullptr</code> if the scene is not currently open.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The returned pointer is non-owning. Lifetime is managed by the <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootSceneManager.html" title="Manages the live ROOT/TEve representations of session scenes.">RootSceneManager</a>. </dd></dl>
+
 </div>
 </div>
 <a id="a3e94a44331718088a84f9759bd5c64a1" name="a3e94a44331718088a84f9759bd5c64a1"></a>
@@ -219,6 +273,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Check whether a scene is currently open. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>Name of the scene to query.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the scene has a live ROOT representation; otherwise <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -237,6 +300,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Open and materialize a scene. </p>
+<p>Finds the abstract scene identified by <code class="param">sceneName</code> and materializes it as a live <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="RootScene">RootScene</a>.</p>
+<p>If the scene is already open, the existing <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html" title="ROOT/TEve representation of an abstract visualization scene.">RootScene</a> is returned instead of creating a new materialization.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>Name of the abstract scene to open.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the open ROOT representation, or <code>nullptr</code> if the requested scene cannot be materialized. </dd></dl>
+
 </div>
 </div>
 <a id="a124a5c5cce68d10d6842bceac47a6fe6" name="a124a5c5cce68d10d6842bceac47a6fe6"></a>
@@ -253,6 +327,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the abstract scenes currently open in ROOT. </p>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointers to the abstract scenes corresponding to the currently materialized ROOT scenes. </dd></dl>
 
 </div>
 </div>
@@ -271,6 +348,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the names of currently open scenes. </p>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointers containing the names of all currently open scenes. </dd></dl>
+
 </div>
 </div>
 <a id="a81cdc76f0fe4ffb80a0147adf555ce0b" name="a81cdc76f0fe4ffb80a0147adf555ce0b"></a>
@@ -287,13 +367,24 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Update an open ROOT scene. </p>
+<p>Re-synchronizes the ROOT representation with the corresponding abstract scene.</p>
+<p>In particular, camera state is pushed through <a class="el" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title="RootScene::SyncCamera">RootScene::SyncCamera</a>. Shared scene configuration such as filters remains associated with the same abstract objects.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>Name of the scene to update.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the scene was found and updated; <code>false</code> otherwise. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b_cgraph.png" border="0" usemap="#aclassfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b_cgraph" loading="lazy" alt=""/></div>
 <map name="aclassfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b_cgraph" id="aclassfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,216,50"/>
-<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title=" " alt="" coords="264,5,452,50"/>
+<area shape="rect" title="Update an open ROOT scene." alt="" coords="5,5,216,50"/>
+<area shape="rect" href="classfccvis_1_1backend_1_1root_1_1RootScene.html#a8f80f1f03ff378365949c8ef3ae08d81" title="Synchronize the ROOT camera with the abstract scene." alt="" coords="264,5,452,50"/>
 <area shape="poly" title=" " alt="" coords="216,25,251,28,245,28,216,30"/>
 </map>
 </div>
