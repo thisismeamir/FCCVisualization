@@ -11,12 +11,4 @@ FCCVisualization is currently being developed as a successor and generalization 
 
 The architecture is being designed while the implementation is becoming stable. APIs and internal structure may therefore change during early development stages.
 
-
-```{toctree}
-:maxdepth: 2
-:numbered:
-
-getting-started/index
-
-
-```
+To learn the basics of visualization using fccvis check out [[getting-started/index]]. If you'd like to contribute check out [[concepts/index]] and [[development/index]], and finally to get the api documentation of the project in depth checkout [[api/index]].
