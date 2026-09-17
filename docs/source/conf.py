@@ -14,7 +14,7 @@ release = '0.0.1'
 extensions = [
     "myst_parser",
     "breathe",
-    "sphinx.ext.graphviz"
+    "sphinx.ext.graphviz",
     "sphinxcontrib.mermaid",
 ]
 
