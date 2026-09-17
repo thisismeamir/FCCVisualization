@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="BaseSessionObject_8h" kind="file" language="C++">
+    <compoundname>BaseSessionObject.h</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">string</includes>
+    <includedby refid="MetaObjects_8h" local="yes">src/scene/include/MetaObjects.h</includedby>
+    <includedby refid="Scene_8h" local="yes">src/scene/include/Scene.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/scene/include/BaseSessionObject.h</label>
+        <link refid="BaseSessionObject_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>src/backend/root/RootScene.cc</label>
+        <link refid="RootScene_8cc"/>
+      </node>
+      <node id="5">
+        <label>src/backend/root/RootSceneManager.cc</label>
+        <link refid="RootSceneManager_8cc"/>
+      </node>
+      <node id="6">
+        <label>src/backend/root/include/RootScene.h</label>
+        <link refid="RootScene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/backend/root/include/RootSceneManager.h</label>
+        <link refid="RootSceneManager_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/cli/InteractiveShell.cc</label>
+        <link refid="InteractiveShell_8cc"/>
+      </node>
+      <node id="10">
+        <label>src/cli/RunApplication.cc</label>
+        <link refid="RunApplication_8cc"/>
+      </node>
+      <node id="8">
+        <label>src/cli/include/InteractiveShell.h</label>
+        <link refid="InteractiveShell_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/gui/GuiApplication.cc</label>
+        <link refid="GuiApplication_8cc"/>
+      </node>
+      <node id="13">
+        <label>src/gui/include/GuiApplication.h</label>
+        <link refid="GuiApplication_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/scene/include/BaseSessionObject.h</label>
+        <link refid="BaseSessionObject_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/scene/include/MetaObjects.h</label>
+        <link refid="MetaObjects_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/scene/include/Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>src/session/Session.cc</label>
+        <link refid="Session_8cc"/>
+      </node>
+      <node id="11">
+        <label>src/session/include/Session.h</label>
+        <link refid="Session_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfccvis_1_1scene_1_1BaseSessionObject" prot="public">fccvis::scene::BaseSessionObject</innerclass>
+    <innernamespace refid="namespacefccvis">fccvis</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1scene">fccvis::scene</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="namespacefccvis_1_1scene" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1scene" kindref="compound">fccvis::scene</ref><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>A<sp/>base<sp/>for<sp/>all<sp/>the<sp/>object<sp/>in<sp/>a<sp/>scene<sp/>to<sp/>identify<sp/>them<sp/>using<sp/>the<sp/>name.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classfccvis_1_1scene_1_1BaseSessionObject" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12" refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kindref="member">BaseSessionObject</ref>(std::string<sp/>objectName)<sp/>:<sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kindref="member">name</ref>(std::move(objectName))<sp/>{}</highlight></codeline>
+<codeline lineno="13" refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" kindref="member">~BaseSessionObject</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14" refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/scene/include/BaseSessionObject.h"/>
+  </compounddef>
+</doxygen>

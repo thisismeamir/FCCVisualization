@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1backend_1_1root_1_1RootScene" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::backend::root::RootScene</compoundname>
+    <includes refid="RootScene_8h" local="no">RootScene.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootScene_1ae0b566e0cc6f2284f0de8111b88198ea" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;fccvis::scene::Scene&gt; fccvis::backend::root::RootScene::m_scene</definition>
+        <argsstring></argsstring>
+        <name>m_scene</name>
+        <qualifiedname>fccvis::backend::root::RootScene::m_scene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="25" column="21" bodyfile="src/backend/root/include/RootScene.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a73c71fe3e0d89fb45c5a2af8acbf8a52" prot="private" static="no" mutable="no">
+        <type>TEveViewer *</type>
+        <definition>TEveViewer* fccvis::backend::root::RootScene::m_pViewer</definition>
+        <argsstring></argsstring>
+        <name>m_pViewer</name>
+        <qualifiedname>fccvis::backend::root::RootScene::m_pViewer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="26" column="16" bodyfile="src/backend/root/include/RootScene.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootScene_1aff89d4c02d5e2bb13c548c13c7012b38" prot="private" static="no" mutable="no">
+        <type>TEveScene *</type>
+        <definition>TEveScene* fccvis::backend::root::RootScene::m_pEveScene</definition>
+        <argsstring></argsstring>
+        <name>m_pEveScene</name>
+        <qualifiedname>fccvis::backend::root::RootScene::m_pEveScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="27" column="15" bodyfile="src/backend/root/include/RootScene.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::backend::root::RootScene::RootScene</definition>
+        <argsstring>(std::shared_ptr&lt; fccvis::scene::Scene &gt; scene)</argsstring>
+        <name>RootScene</name>
+        <qualifiedname>fccvis::backend::root::RootScene::RootScene</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt;</type>
+          <declname>scene</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="13" column="14" bodyfile="src/backend/root/RootScene.cc" bodystart="11" bodyend="19"/>
+        <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" compoundref="RootScene_8cc" startline="33" endline="85">SyncCamera</references>
+        <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac">operator=</referencedby>
+        <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44">RootScene</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1ac43cfc1320b5032e1497c5710669ba99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::backend::root::RootScene::~RootScene</definition>
+        <argsstring>()</argsstring>
+        <name>~RootScene</name>
+        <qualifiedname>fccvis::backend::root::RootScene::~RootScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="14" column="5" bodyfile="src/backend/root/RootScene.cc" bodystart="20" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::backend::root::RootScene::RootScene</definition>
+        <argsstring>(const RootScene &amp;)=delete</argsstring>
+        <name>RootScene</name>
+        <qualifiedname>fccvis::backend::root::RootScene::RootScene</qualifiedname>
+        <param>
+          <type>const RootScene &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="16" column="5"/>
+        <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" compoundref="RootScene_8cc" startline="11" endline="19">RootScene</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref> &amp;</type>
+        <definition>RootScene &amp; fccvis::backend::root::RootScene::operator=</definition>
+        <argsstring>(const RootScene &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>fccvis::backend::root::RootScene::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="17" column="15"/>
+        <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" compoundref="RootScene_8cc" startline="11" endline="19">RootScene</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TEveViewer *</type>
+        <definition>TEveViewer * fccvis::backend::root::RootScene::Viewer</definition>
+        <argsstring>() const</argsstring>
+        <name>Viewer</name>
+        <qualifiedname>fccvis::backend::root::RootScene::Viewer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="19" column="16" bodyfile="src/backend/root/include/RootScene.h" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>TEveScene *</type>
+        <definition>TEveScene * fccvis::backend::root::RootScene::EveScene</definition>
+        <argsstring>() const</argsstring>
+        <name>EveScene</name>
+        <qualifiedname>fccvis::backend::root::RootScene::EveScene</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="20" column="15" bodyfile="src/backend/root/include/RootScene.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::backend::root::RootScene::SyncCamera</definition>
+        <argsstring>()</argsstring>
+        <name>SyncCamera</name>
+        <qualifiedname>fccvis::backend::root::RootScene::SyncCamera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="22" column="10" bodyfile="src/backend/root/RootScene.cc" bodystart="33" bodyend="85"/>
+        <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" compoundref="RootScene_8cc" startline="11" endline="19">RootScene</referencedby>
+        <referencedby refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a81cdc76f0fe4ffb80a0147adf555ce0b" compoundref="RootSceneManager_8cc" startline="45" endline="52">fccvis::backend::root::RootSceneManager::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; fccvis::scene::Scene &gt; fccvis::backend::root::RootScene::GetSceneAbstract</definition>
+        <argsstring>()</argsstring>
+        <name>GetSceneAbstract</name>
+        <qualifiedname>fccvis::backend::root::RootScene::GetSceneAbstract</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootScene.h" line="23" column="21" bodyfile="src/backend/root/RootScene.cc" bodystart="87" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/backend/root/include/RootScene.h" line="10" column="1" bodyfile="src/backend/root/include/RootScene.h" bodystart="11" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>EveScene</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>GetSceneAbstract</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aff89d4c02d5e2bb13c548c13c7012b38" prot="private" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>m_pEveScene</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a73c71fe3e0d89fb45c5a2af8acbf8a52" prot="private" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>m_pViewer</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ae0b566e0cc6f2284f0de8111b88198ea" prot="private" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>m_scene</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>operator=</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>RootScene</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>RootScene</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>SyncCamera</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>Viewer</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac43cfc1320b5032e1497c5710669ba99" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootScene</scope><name>~RootScene</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

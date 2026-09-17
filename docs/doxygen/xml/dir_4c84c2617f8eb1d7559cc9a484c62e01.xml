@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_4c84c2617f8eb1d7559cc9a484c62e01" kind="dir">
+    <compoundname>src/scene/include</compoundname>
+    <innerfile refid="BaseSessionObject_8h">BaseSessionObject.h</innerfile>
+    <innerfile refid="Markers_8h">Markers.h</innerfile>
+    <innerfile refid="MetaObjects_8h">MetaObjects.h</innerfile>
+    <innerfile refid="Scene_8h">Scene.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/scene/include/"/>
+  </compounddef>
+</doxygen>

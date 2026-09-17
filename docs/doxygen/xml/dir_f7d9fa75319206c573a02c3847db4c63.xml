@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_f7d9fa75319206c573a02c3847db4c63" kind="dir">
+    <compoundname>src/cli/include</compoundname>
+    <innerfile refid="CliOptions_8h">CliOptions.h</innerfile>
+    <innerfile refid="InteractiveShell_8h">InteractiveShell.h</innerfile>
+    <innerfile refid="RunApplication_8h">RunApplication.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/cli/include/"/>
+  </compounddef>
+</doxygen>

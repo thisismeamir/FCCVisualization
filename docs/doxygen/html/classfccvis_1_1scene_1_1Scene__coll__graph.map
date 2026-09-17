@@ -1,0 +1,8 @@
+<map id="fccvis::scene::Scene" name="fccvis::scene::Scene">
+<area shape="rect" id="Node000001" title=" " alt="" coords="32,217,184,245"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1scene_1_1BaseSessionObject.html" title=" " alt="" coords="5,5,201,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,65,111,217,105,216,101,67"/>
+<area shape="rect" id="Node000003" href="$classfccvis_1_1scene_1_1meta_1_1SceneOptions.html" title=" " alt="" coords="124,99,271,144"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="137,58,178,98,173,99,136,64"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,155,121,219,117,215,167,156"/>
+</map>

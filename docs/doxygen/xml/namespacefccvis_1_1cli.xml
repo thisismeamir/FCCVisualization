@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacefccvis_1_1cli" kind="namespace" language="C++">
+    <compoundname>fccvis::cli</compoundname>
+    <innerclass refid="structfccvis_1_1cli_1_1CliOptions" prot="public">fccvis::cli::CliOptions</innerclass>
+    <innerclass refid="classfccvis_1_1cli_1_1InteractiveShell" prot="public">fccvis::cli::InteractiveShell</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref></type>
+        <definition>CliOptions fccvis::cli::ParseArgs</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>ParseArgs</name>
+        <qualifiedname>fccvis::cli::ParseArgs</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/CliOptions.cc" line="6" column="12" bodyfile="src/cli/CliOptions.cc" bodystart="6" bodyend="44" declfile="src/cli/include/CliOptions.h" declline="12" declcolumn="12"/>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" compoundref="CliOptions_8h" startline="8">fccvis::cli::CliOptions::dataFile</references>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" compoundref="CliOptions_8h" startline="6">fccvis::cli::CliOptions::guiRequested</references>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" compoundref="CliOptions_8h" startline="7">fccvis::cli::CliOptions::interactive</references>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" compoundref="CliOptions_8h" startline="9">fccvis::cli::CliOptions::optionsFile</references>
+        <references refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">ParseArgs</references>
+        <referencedby refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="main_8cpp" startline="6" endline="15">main</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">ParseArgs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::ValidateArgs</definition>
+        <argsstring>(const CliOptions &amp;opts)</argsstring>
+        <name>ValidateArgs</name>
+        <qualifiedname>fccvis::cli::ValidateArgs</qualifiedname>
+        <param>
+          <type>const <ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref> &amp;</type>
+          <declname>opts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/CliOptions.cc" line="47" column="6" bodyfile="src/cli/CliOptions.cc" bodystart="47" bodyend="54" declfile="src/cli/include/CliOptions.h" declline="13" declcolumn="6"/>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" compoundref="CliOptions_8h" startline="8">fccvis::cli::CliOptions::dataFile</references>
+        <references refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" compoundref="CliOptions_8cc" startline="47" endline="54">ValidateArgs</references>
+        <referencedby refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="main_8cpp" startline="6" endline="15">main</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" compoundref="CliOptions_8cc" startline="47" endline="54">ValidateArgs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fccvis::cli::RunApplication</definition>
+        <argsstring>(const CliOptions &amp;options, int &amp;argc, char **argv)</argsstring>
+        <name>RunApplication</name>
+        <qualifiedname>fccvis::cli::RunApplication</qualifiedname>
+        <param>
+          <type>const <ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/RunApplication.cc" line="10" column="5" bodyfile="src/cli/RunApplication.cc" bodystart="10" bodyend="49" declfile="src/cli/include/RunApplication.h" declline="3" declcolumn="5"/>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" compoundref="CliOptions_8h" startline="8">fccvis::cli::CliOptions::dataFile</references>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" compoundref="CliOptions_8h" startline="6">fccvis::cli::CliOptions::guiRequested</references>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" compoundref="CliOptions_8h" startline="7">fccvis::cli::CliOptions::interactive</references>
+        <references refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" compoundref="CliOptions_8h" startline="9">fccvis::cli::CliOptions::optionsFile</references>
+        <references refid="classfccvis_1_1cli_1_1InteractiveShell_1abd04c304d28b259f30db574dc67ab15e" compoundref="InteractiveShell_8cc" startline="47" endline="63">fccvis::cli::InteractiveShell::Run</references>
+        <references refid="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" compoundref="GuiApplication_8cc" startline="23" endline="26">fccvis::gui::GuiApplication::Run</references>
+        <references refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">RunApplication</references>
+        <referencedby refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="main_8cpp" startline="6" endline="15">main</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">RunApplication</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/cli/CliOptions.cc" line="4" column="1"/>
+  </compounddef>
+</doxygen>

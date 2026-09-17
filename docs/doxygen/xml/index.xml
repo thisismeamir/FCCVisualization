@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.18.0" xml:lang="en-US">
+  <compound refid="classfccvis_1_1scene_1_1BaseSessionObject" kind="class"><name>fccvis::scene::BaseSessionObject</name>
+    <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" kind="variable"><name>name</name></member>
+    <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" kind="function"><name>BaseSessionObject</name></member>
+    <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" kind="function"><name>~BaseSessionObject</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1scene_1_1meta_1_1Camera" kind="class"><name>fccvis::scene::meta::Camera</name>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Camera_1ab2468abaa4d03a6aca891ac7defde84e" kind="variable"><name>positionVector</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a19defb3ee986339f458c989538597ba1" kind="variable"><name>directionVector</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Camera_1a38f75a9df9292d82101a5ce829ef87c7" kind="function"><name>BaseSessionObject</name></member>
+  </compound>
+  <compound refid="structfccvis_1_1cli_1_1CliOptions" kind="struct"><name>fccvis::cli::CliOptions</name>
+    <member refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" kind="variable"><name>guiRequested</name></member>
+    <member refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" kind="variable"><name>interactive</name></member>
+    <member refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" kind="variable"><name>dataFile</name></member>
+    <member refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" kind="variable"><name>optionsFile</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1scene_1_1meta_1_1Filter" kind="class"><name>fccvis::scene::meta::Filter</name>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Filter_1a38f75a9df9292d82101a5ce829ef87c7" kind="function"><name>BaseSessionObject</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1gui_1_1GuiApplication" kind="class"><name>fccvis::gui::GuiApplication</name>
+    <member refid="classfccvis_1_1gui_1_1GuiApplication_1af2286a2ab576211e85351c079ebc0245" kind="variable"><name>m_application</name></member>
+    <member refid="classfccvis_1_1gui_1_1GuiApplication_1a8591bcd1dd7660a5cb11c6af6cb649e0" kind="variable"><name>m_session</name></member>
+    <member refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kind="function"><name>GuiApplication</name></member>
+    <member refid="classfccvis_1_1gui_1_1GuiApplication_1ae3646b04d083c560a778e91fd198ba47" kind="function"><name>~GuiApplication</name></member>
+    <member refid="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" kind="function"><name>Run</name></member>
+    <member refid="classfccvis_1_1gui_1_1GuiApplication_1a236c303ead999265807969165a57b01f" kind="function"><name>Terminate</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1cli_1_1InteractiveShell" kind="class"><name>fccvis::cli::InteractiveShell</name>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a2336604a17890ee30a28606ad44c9adc" kind="variable"><name>m_session</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a0c762255dc5a379cff97fb51369fd4aa" kind="variable"><name>m_sceneManager</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a2cd8627ce2c336768d02256fdf17c6b2" kind="variable"><name>m_commandHistory</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a6097306445a75fcbff9590e8f15d0794" kind="variable"><name>m_quitRequested</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ab5da44aabf83e24cc47c9030bc7b5af2" kind="function"><name>InteractiveShell</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1abd04c304d28b259f30db574dc67ab15e" kind="function"><name>Run</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a270933f25eb3421b3214780376b2cce9" kind="function"><name>EnsureEveManager</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a00d0d3de797061b9a3f79c3b098cf433" kind="function"><name>BindSessionIntoCling</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ad344d1cce57e7db9b4015910c3a49d98" kind="function"><name>HandleBuiltin</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a9a22713ab78333d83371d407f810ccdb" kind="function"><name>Quit</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ae4c96f0283f04a4e41c009bfe8abf30a" kind="function"><name>Save</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1adf9d34d7685608942878a307d20db2fc" kind="function"><name>See</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ada5df51320e4725f0a1c1c1c3edbcd2b" kind="function"><name>Close</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a7a57a41cb40032cb75211896578aec73" kind="function"><name>ListScenes</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a2237b82938102cb3894cc63cb5a29837" kind="function"><name>ListOpen</name></member>
+    <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ad6a2ed6239a1c06d7baabdb419f841f1" kind="function"><name>Help</name></member>
+  </compound>
+  <compound refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kind="struct"><name>fccvis::scene::meta::LayoutNode</name>
+    <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" kind="variable"><name>kind</name></member>
+    <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" kind="variable"><name>orientation</name></member>
+    <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" kind="variable"><name>sceneName</name></member>
+    <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" kind="variable"><name>children</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1scene_1_1meta_1_1Line" kind="class"><name>fccvis::scene::meta::Line</name>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1a475f7eeba381a3dd2103ea9ae08ff4dc" kind="variable"><name>name</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1a259f03223c96dd38d57b101784df55f7" kind="variable"><name>start</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1adf93d67b25273bff91b11ae575cd341e" kind="variable"><name>end</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1af540c03803697a195229a47e5837e417" kind="variable"><name>color</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1a1e58ae4e8537a6a40153c369a4d1f861" kind="variable"><name>width</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1a180f4cb53a84da862b6206a470188053" kind="variable"><name>style</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Line_1a0483ec33a881f069c0b44ba6f1b046cf" kind="function"><name>Line</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1scene_1_1meta_1_1Marker" kind="class"><name>fccvis::scene::meta::Marker</name>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1add30902c67b2724f7923c6143e24531e" kind="variable"><name>name</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1acfac11443ac158e86482f24b8e7153a0" kind="variable"><name>position</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1a257a23670774845427de9379542d3870" kind="variable"><name>color</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ae8d2bec2d68b5d385ffe941ce608a8b1" kind="variable"><name>size</name></member>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ad0eded8e2b74d32e5499ac654ad4560a" kind="function"><name>Marker</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1backend_1_1root_1_1RootScene" kind="class"><name>fccvis::backend::root::RootScene</name>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ae0b566e0cc6f2284f0de8111b88198ea" kind="variable"><name>m_scene</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a73c71fe3e0d89fb45c5a2af8acbf8a52" kind="variable"><name>m_pViewer</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aff89d4c02d5e2bb13c548c13c7012b38" kind="variable"><name>m_pEveScene</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kind="function"><name>RootScene</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac43cfc1320b5032e1497c5710669ba99" kind="function"><name>~RootScene</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a47846a97d8e5e6cacb9ad034aba35d44" kind="function"><name>RootScene</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1aabb15ab99537b6234a6cb88b93fb2aac" kind="function"><name>operator=</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a895fda029418d2fedddc535a2b67385f" kind="function"><name>Viewer</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac1d63d9dde356fb858167980c3888ca8" kind="function"><name>EveScene</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" kind="function"><name>SyncCamera</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" kind="function"><name>GetSceneAbstract</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kind="class"><name>fccvis::backend::root::RootSceneManager</name>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1af6925b0fd25c25dd35993805cf0c2d3f" kind="variable"><name>m_session</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ab72b73713eab05590f7ecbc541afb3e9" kind="variable"><name>m_openScenes</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a8d2892d1b81fa9961de8fcf57c7be543" kind="function"><name>RootSceneManager</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a494634f1895f1d44cf7c7bab95bac15c" kind="function"><name>Open</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a77cdf08c8eab81c3a96c39b2cfa72f68" kind="function"><name>Close</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a81cdc76f0fe4ffb80a0147adf555ce0b" kind="function"><name>Update</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ade5c6465ef8672c54d373e6921da8d28" kind="function"><name>Get</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a3e94a44331718088a84f9759bd5c64a1" kind="function"><name>IsOpen</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a2b014bd850b64301af0ef67f8cae8870" kind="function"><name>CloseAll</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a124a5c5cce68d10d6842bceac47a6fe6" kind="function"><name>OpenScenes</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1af9ab8883d43662e696dbefad676b396d" kind="function"><name>SceneNames</name></member>
+    <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1aa5033bb2a9adaec02126dce079639a13" kind="function"><name>FindAbstractScene</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1scene_1_1Scene" kind="class"><name>fccvis::scene::Scene</name>
+    <member refid="classfccvis_1_1scene_1_1Scene_1a65a3d5f541efe6c8238945e377edf558" kind="variable"><name>camera</name></member>
+    <member refid="classfccvis_1_1scene_1_1Scene_1af0c6dd7d9700550a8b81d75a880433ad" kind="variable"><name>filters</name></member>
+    <member refid="classfccvis_1_1scene_1_1Scene_1a939d9f1437dded2002ec08717080c355" kind="variable"><name>options</name></member>
+    <member refid="classfccvis_1_1scene_1_1Scene_1ad673226e62b7c89b1dbdd0ee589a3c52" kind="function"><name>Scene</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" kind="class"><name>fccvis::scene::meta::SceneOptions</name>
+    <member refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions_1a38f75a9df9292d82101a5ce829ef87c7" kind="function"><name>BaseSessionObject</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1session_1_1Session" kind="class"><name>fccvis::session::Session</name>
+    <member refid="classfccvis_1_1session_1_1Session_1ae4d24f250462063b21205c74e57c4d56" kind="variable"><name>m_name</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1ac8727cf29f5fdf94d1dcd95178fea16c" kind="variable"><name>m_dataFilePath</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1af742e1d45bfa7e47ee22c2961909e0ba" kind="variable"><name>m_optionsFilePath</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1aa613b97dd3a99989dbaf78fa7675e2b4" kind="variable"><name>m_data</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a65ef17f045583ee52f2e44b2d72ec732" kind="variable"><name>m_options</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" kind="function"><name>Session</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1aac0ae08cfbf9ccc4fa7324bb0fcd20de" kind="function"><name>~Session</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a6644797681412b39b6896338c105ad4d" kind="function"><name>Session</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1ab9f048e500ea40a62cbca1d4282da848" kind="function"><name>operator=</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a442580be155f6cd5306c6f38ab6552b5" kind="function"><name>Session</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3" kind="function"><name>operator=</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1ad3977b05e822af6371d797811af87322" kind="function"><name>initData</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a37331d0f91cf252aaab0cd20d340643e" kind="function"><name>initOptions</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1ab81e55997ba1f2c56ac56a6bed42d2ba" kind="function"><name>GetOptionsFile</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a9b9a58d799ff950721e959f90f040e57" kind="function"><name>GetOptions</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1aeb73514b188f59bfd04f088639808d43" kind="function"><name>Name</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1abc3af1740e27ef5b6b7dae88e5518349" kind="function"><name>Data</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a4ed06b9a05f53d830377e579a94b2abe" kind="function"><name>Options</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a0215b2b549da22eaff76490193916dbe" kind="function"><name>Categories</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a13d642f9984714f5d6a9bee855239cd8" kind="function"><name>EntryCount</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1abfeb70dc45d2b18889c591657524ebdf" kind="function"><name>CollectionNames</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a883adf902b23ba4272607f06d4900713" kind="function"><name>CollectionType</name></member>
+    <member refid="classfccvis_1_1session_1_1Session_1a623742faa2ae121e6417da9b14282c51" kind="function"><name>GetFrame</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1session_1_1SessionData" kind="class"><name>fccvis::session::SessionData</name>
+    <member refid="classfccvis_1_1session_1_1SessionData_1aa64d148059aa9830c11aef0d420e413a" kind="variable"><name>categories</name></member>
+  </compound>
+  <compound refid="classfccvis_1_1session_1_1SessionOptions" kind="class"><name>fccvis::session::SessionOptions</name>
+    <member refid="classfccvis_1_1session_1_1SessionOptions_1a0f5da7b2a7b8e607707df594ffcdfb50" kind="variable"><name>cameras</name></member>
+    <member refid="classfccvis_1_1session_1_1SessionOptions_1a27509f8d779705054af5423aebf71724" kind="variable"><name>filters</name></member>
+    <member refid="classfccvis_1_1session_1_1SessionOptions_1a38476377e71e24b0cedb87b74a0981c2" kind="variable"><name>scenes</name></member>
+    <member refid="classfccvis_1_1session_1_1SessionOptions_1a9c55f994ba2b738b7ec957de56a9000f" kind="variable"><name>sceneLayout</name></member>
+    <member refid="classfccvis_1_1session_1_1SessionOptions_1a70fb72404f388ebe66b86c4233e7d0d4" kind="variable"><name>geometryFilePath</name></member>
+  </compound>
+  <compound refid="namespacefccvis" kind="namespace"><name>fccvis</name>
+  </compound>
+  <compound refid="namespacefccvis_1_1backend" kind="namespace"><name>fccvis::backend</name>
+  </compound>
+  <compound refid="namespacefccvis_1_1backend_1_1root" kind="namespace"><name>fccvis::backend::root</name>
+  </compound>
+  <compound refid="namespacefccvis_1_1cli" kind="namespace"><name>fccvis::cli</name>
+    <member refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" kind="function"><name>ParseArgs</name></member>
+    <member refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" kind="function"><name>ValidateArgs</name></member>
+    <member refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" kind="function"><name>RunApplication</name></member>
+  </compound>
+  <compound refid="namespacefccvis_1_1gui" kind="namespace"><name>fccvis::gui</name>
+  </compound>
+  <compound refid="namespacefccvis_1_1scene" kind="namespace"><name>fccvis::scene</name>
+  </compound>
+  <compound refid="namespacefccvis_1_1scene_1_1meta" kind="namespace"><name>fccvis::scene::meta</name>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106e" kind="enum"><name>Color</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006" kind="enumvalue"><name>White</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eae90dfb84e30edf611e326eeb04d680de" kind="enumvalue"><name>Black</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eaee38e4d5dd68c4e440825018d549cb47" kind="enumvalue"><name>Red</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ead382816a3cbeed082c9e216e7392eed1" kind="enumvalue"><name>Green</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea9594eec95be70e7b1710f730fdda33d9" kind="enumvalue"><name>Blue</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eab91cc2c1416fcca942b61c7ac5b1a9ac" kind="enumvalue"><name>Magenta</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea023c239d2f2538f140a20e72c7b73f20" kind="enumvalue"><name>Cyan</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea80f1187112e2e5e0403499147f7014b8" kind="enumvalue"><name>Violet</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea8dc5344bc0746e1cc5abf896ca03bbdf" kind="enumvalue"><name>Pink</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea909cea0c97058cfe2e3ea8d675cb08e1" kind="enumvalue"><name>Orange</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea51e6cd92b6c45f9affdc158ecca2b8b8" kind="enumvalue"><name>Yellow</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea38008dd81c2f4d7985ecf6e0ce8af1d1" kind="enumvalue"><name>Spring</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eae20385a2b41df1743f787ebef18222b8" kind="enumvalue"><name>Teal</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea3a580f142203677f1f0bc30898f63f53" kind="enumvalue"><name>Azure</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea994ae1d9731cebe455aff211bcb25b93" kind="enumvalue"><name>Gray</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea8746d21f8164452063398744f06307dd" kind="enumvalue"><name>DarkRed</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eaf780aab6295a2f368ac69a514f8b4605" kind="enumvalue"><name>DarkGreen</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea877716336e4eb22ac67faaa9c2b86635" kind="enumvalue"><name>DarkBlue</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eadf1b1322cf6703efd9885b0651ddb57a" kind="enumvalue"><name>DarkMagenta</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea85b1ae66e65b490f35c5e8b725e7049f" kind="enumvalue"><name>DarkCyan</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eafb49b4fcac3fd7164a4419a7f1db7c38" kind="enumvalue"><name>DarkViolet</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea10cea9ecd7dbdede7edf97e382b55c0c" kind="enumvalue"><name>DarkPink</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea0199f373639f4b589a135cf877981572" kind="enumvalue"><name>DarkOrange</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea42d873bb34e1055e40aad0ec45039e8b" kind="enumvalue"><name>DarkYellow</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eaf9a96fb667261a141d10021a66d6ad0f" kind="enumvalue"><name>LightRed</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea7a6a38bec67cbc2a39ce22f34e4ed8e2" kind="enumvalue"><name>LightGreen</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea4d7ff7393a484a7b9ed2e381f5cdeaf7" kind="enumvalue"><name>LightBlue</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eaf1ec64ef9f82e9fb86b094f8b548f9f1" kind="enumvalue"><name>LightMagenta</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eac37b5ce4ba80a097d82726ae74d34b13" kind="enumvalue"><name>LightCyan</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eab389fcb54d9e3ac8154a20ffb59c24a9" kind="enumvalue"><name>LightViolet</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eab9c31a17936f5966fd4fbe74f9b09012" kind="enumvalue"><name>LightPink</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea475e89699fa47c1b7b07977437e16b3c" kind="enumvalue"><name>LightOrange</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eafaf948b65bda38f44b17d156177d1728" kind="enumvalue"><name>LightYellow</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea06b9281e396db002010bde1de57262eb" kind="enumvalue"><name>Auto</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106eadc9a0f370cb685d1c48af0ba200f9ac1" kind="enumvalue"><name>AutoId</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea33c47748c7e39073679b8adbaa2c1fdf" kind="enumvalue"><name>AutoIter</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea8644f96ff7e3ae5af2cbe1c4a051724a" kind="enumvalue"><name>AutoEnergy</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" kind="enum"><name>LayoutKind</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292" kind="enumvalue"><name>Pack</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413" kind="enumvalue"><name>Tab</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5" kind="enumvalue"><name>Leaf</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kind="enum"><name>PackOrientation</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" kind="enumvalue"><name>Horizontal</name></member>
+    <member refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012" kind="enumvalue"><name>Vertical</name></member>
+  </compound>
+  <compound refid="namespacefccvis_1_1session" kind="namespace"><name>fccvis::session</name>
+  </compound>
+  <compound refid="api_2placeholder_8cc" kind="file"><name>placeholder.cc</name>
+  </compound>
+  <compound refid="core_2placeholder_8cc" kind="file"><name>placeholder.cc</name>
+  </compound>
+  <compound refid="filter_2placeholder_8cc" kind="file"><name>placeholder.cc</name>
+  </compound>
+  <compound refid="geometry_2placeholder_8cc" kind="file"><name>placeholder.cc</name>
+  </compound>
+  <compound refid="scene_2placeholder_8cc" kind="file"><name>placeholder.cc</name>
+  </compound>
+  <compound refid="session_2placeholder_8cc" kind="file"><name>placeholder.cc</name>
+  </compound>
+  <compound refid="visualization_2placeholder_8cc" kind="file"><name>placeholder.cc</name>
+  </compound>
+  <compound refid="RootScene_8h" kind="file"><name>RootScene.h</name>
+  </compound>
+  <compound refid="RootSceneManager_8h" kind="file"><name>RootSceneManager.h</name>
+  </compound>
+  <compound refid="RootScene_8cc" kind="file"><name>RootScene.cc</name>
+  </compound>
+  <compound refid="RootSceneManager_8cc" kind="file"><name>RootSceneManager.cc</name>
+  </compound>
+  <compound refid="CliOptions_8cc" kind="file"><name>CliOptions.cc</name>
+  </compound>
+  <compound refid="CliOptions_8h" kind="file"><name>CliOptions.h</name>
+  </compound>
+  <compound refid="InteractiveShell_8h" kind="file"><name>InteractiveShell.h</name>
+  </compound>
+  <compound refid="RunApplication_8h" kind="file"><name>RunApplication.h</name>
+  </compound>
+  <compound refid="InteractiveShell_8cc" kind="file"><name>InteractiveShell.cc</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="RunApplication_8cc" kind="file"><name>RunApplication.cc</name>
+  </compound>
+  <compound refid="GuiApplication_8cc" kind="file"><name>GuiApplication.cc</name>
+  </compound>
+  <compound refid="GuiApplication_8h" kind="file"><name>GuiApplication.h</name>
+  </compound>
+  <compound refid="BaseSessionObject_8h" kind="file"><name>BaseSessionObject.h</name>
+  </compound>
+  <compound refid="Markers_8h" kind="file"><name>Markers.h</name>
+  </compound>
+  <compound refid="MetaObjects_8h" kind="file"><name>MetaObjects.h</name>
+  </compound>
+  <compound refid="Scene_8h" kind="file"><name>Scene.h</name>
+  </compound>
+  <compound refid="Session_8h" kind="file"><name>Session.h</name>
+  </compound>
+  <compound refid="Session_8cc" kind="file"><name>Session.cc</name>
+  </compound>
+  <compound refid="dir_da61e3e9a357748887e3ca8d7c5a0c16" kind="dir"><name>src/api</name>
+  </compound>
+  <compound refid="dir_3f615ade772d23cefe5e20dcb18424a2" kind="dir"><name>src/backend</name>
+  </compound>
+  <compound refid="dir_b78fdfbbb632ce54d070469d6a721373" kind="dir"><name>src/cli</name>
+  </compound>
+  <compound refid="dir_aebb8dcc11953d78e620bbef0b9e2183" kind="dir"><name>src/core</name>
+  </compound>
+  <compound refid="dir_8681a82a265081a91d191144ff606af9" kind="dir"><name>src/filter</name>
+  </compound>
+  <compound refid="dir_405fd32de3649961a5f009c7a3fe84df" kind="dir"><name>src/geometry</name>
+  </compound>
+  <compound refid="dir_99d0482cf009f9d97a0877749b817f19" kind="dir"><name>src/gui</name>
+  </compound>
+  <compound refid="dir_ced5c810739bf8f90b20e9c42cdcc50f" kind="dir"><name>src/backend/root/include</name>
+  </compound>
+  <compound refid="dir_f7d9fa75319206c573a02c3847db4c63" kind="dir"><name>src/cli/include</name>
+  </compound>
+  <compound refid="dir_3f114c29a0ce492d6b55d396113ab8e1" kind="dir"><name>src/gui/include</name>
+  </compound>
+  <compound refid="dir_4c84c2617f8eb1d7559cc9a484c62e01" kind="dir"><name>src/scene/include</name>
+  </compound>
+  <compound refid="dir_189d92c3d6c48a20c804e04c2a9d9ec2" kind="dir"><name>src/session/include</name>
+  </compound>
+  <compound refid="dir_8b58597cf1c2e878209c4da7fa5fb3f4" kind="dir"><name>src/backend/root</name>
+  </compound>
+  <compound refid="dir_35781f0e74aa8deac19fa31b37174dc2" kind="dir"><name>src/scene</name>
+  </compound>
+  <compound refid="dir_53e88f7fa585331171beac223e0e5b81" kind="dir"><name>src/session</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_b00de47ad7e2e13a637d9aa605dec95e" kind="dir"><name>src/visualization</name>
+  </compound>
+</doxygenindex>

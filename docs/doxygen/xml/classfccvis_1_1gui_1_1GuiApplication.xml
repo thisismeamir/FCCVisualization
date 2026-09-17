@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1gui_1_1GuiApplication" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::gui::GuiApplication</compoundname>
+    <includes refid="GuiApplication_8h" local="no">GuiApplication.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1gui_1_1GuiApplication_1af2286a2ab576211e85351c079ebc0245" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; TApplication &gt;</type>
+        <definition>std::unique_ptr&lt;TApplication&gt; fccvis::gui::GuiApplication::m_application</definition>
+        <argsstring></argsstring>
+        <name>m_application</name>
+        <qualifiedname>fccvis::gui::GuiApplication::m_application</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gui/include/GuiApplication.h" line="15" column="19" bodyfile="src/gui/include/GuiApplication.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1gui_1_1GuiApplication_1a8591bcd1dd7660a5cb11c6af6cb649e0" prot="private" static="no" mutable="no">
+        <type><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> &amp;</type>
+        <definition>fccvis::session::Session&amp; fccvis::gui::GuiApplication::m_session</definition>
+        <argsstring></argsstring>
+        <name>m_session</name>
+        <qualifiedname>fccvis::gui::GuiApplication::m_session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gui/include/GuiApplication.h" line="16" column="28" bodyfile="src/gui/include/GuiApplication.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::gui::GuiApplication::GuiApplication</definition>
+        <argsstring>(int &amp;argc, char **argv, fccvis::session::Session &amp;session)</argsstring>
+        <name>GuiApplication</name>
+        <qualifiedname>fccvis::gui::GuiApplication::GuiApplication</qualifiedname>
+        <param>
+          <type>int &amp;</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <param>
+          <type><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> &amp;</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gui/include/GuiApplication.h" line="9" column="3" bodyfile="src/gui/GuiApplication.cc" bodystart="9" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1gui_1_1GuiApplication_1ae3646b04d083c560a778e91fd198ba47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::gui::GuiApplication::~GuiApplication</definition>
+        <argsstring>()</argsstring>
+        <name>~GuiApplication</name>
+        <qualifiedname>fccvis::gui::GuiApplication::~GuiApplication</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gui/include/GuiApplication.h" line="10" column="3" bodyfile="src/gui/GuiApplication.cc" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::gui::GuiApplication::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <qualifiedname>fccvis::gui::GuiApplication::Run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gui/include/GuiApplication.h" line="12" column="8" bodyfile="src/gui/GuiApplication.cc" bodystart="23" bodyend="26"/>
+        <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1gui_1_1GuiApplication_1a236c303ead999265807969165a57b01f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::gui::GuiApplication::Terminate</definition>
+        <argsstring>()</argsstring>
+        <name>Terminate</name>
+        <qualifiedname>fccvis::gui::GuiApplication::Terminate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gui/include/GuiApplication.h" line="13" column="8" bodyfile="src/gui/GuiApplication.cc" bodystart="27" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gui/include/GuiApplication.h" line="7" column="1" bodyfile="src/gui/include/GuiApplication.h" bodystart="7" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" prot="public" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>GuiApplication</name></member>
+      <member refid="classfccvis_1_1gui_1_1GuiApplication_1af2286a2ab576211e85351c079ebc0245" prot="private" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>m_application</name></member>
+      <member refid="classfccvis_1_1gui_1_1GuiApplication_1a8591bcd1dd7660a5cb11c6af6cb649e0" prot="private" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>m_session</name></member>
+      <member refid="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" prot="public" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>Run</name></member>
+      <member refid="classfccvis_1_1gui_1_1GuiApplication_1a236c303ead999265807969165a57b01f" prot="public" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>Terminate</name></member>
+      <member refid="classfccvis_1_1gui_1_1GuiApplication_1ae3646b04d083c560a778e91fd198ba47" prot="public" virt="non-virtual"><scope>fccvis::gui::GuiApplication</scope><name>~GuiApplication</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

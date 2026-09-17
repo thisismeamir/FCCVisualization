@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1scene_1_1meta_1_1Marker" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::scene::meta::Marker</compoundname>
+    <includes refid="Markers_8h" local="no">Markers.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Marker_1add30902c67b2724f7923c6143e24531e" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fccvis::scene::meta::Marker::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>fccvis::scene::meta::Marker::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/Markers.h" line="52" column="15" bodyfile="src/scene/include/Markers.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ad0eded8e2b74d32e5499ac654ad4560a" compoundref="Markers_8h" startline="50" endline="50">Marker</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Marker_1acfac11443ac158e86482f24b8e7153a0" prot="public" static="no" mutable="no">
+        <type>std::array&lt; double, 3 &gt;</type>
+        <definition>std::array&lt;double, 3&gt; fccvis::scene::meta::Marker::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>fccvis::scene::meta::Marker::position</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/Markers.h" line="54" column="14" bodyfile="src/scene/include/Markers.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Marker_1a257a23670774845427de9379542d3870" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106e" kindref="member">Color</ref></type>
+        <definition>Color fccvis::scene::meta::Marker::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>fccvis::scene::meta::Marker::color</qualifiedname>
+        <initializer>= <ref refid="namespacefccvis_1_1scene_1_1meta_1aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006" kindref="member">Color::White</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/Markers.h" line="56" column="9" bodyfile="src/scene/include/Markers.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1scene_1_1meta_1_1Marker_1ae8d2bec2d68b5d385ffe941ce608a8b1" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int fccvis::scene::meta::Marker::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>fccvis::scene::meta::Marker::size</qualifiedname>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/Markers.h" line="58" column="16" bodyfile="src/scene/include/Markers.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1scene_1_1meta_1_1Marker_1ad0eded8e2b74d32e5499ac654ad4560a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::scene::meta::Marker::Marker</definition>
+        <argsstring>(std::string name)</argsstring>
+        <name>Marker</name>
+        <qualifiedname>fccvis::scene::meta::Marker::Marker</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/Markers.h" line="50" column="3" bodyfile="src/scene/include/Markers.h" bodystart="50" bodyend="50"/>
+        <references refid="classfccvis_1_1scene_1_1meta_1_1Marker_1add30902c67b2724f7923c6143e24531e" compoundref="Markers_8h" startline="52">name</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/scene/include/Markers.h" line="48" column="1" bodyfile="src/scene/include/Markers.h" bodystart="48" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1a257a23670774845427de9379542d3870" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Marker</scope><name>color</name></member>
+      <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ad0eded8e2b74d32e5499ac654ad4560a" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Marker</scope><name>Marker</name></member>
+      <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1add30902c67b2724f7923c6143e24531e" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Marker</scope><name>name</name></member>
+      <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1acfac11443ac158e86482f24b8e7153a0" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Marker</scope><name>position</name></member>
+      <member refid="classfccvis_1_1scene_1_1meta_1_1Marker_1ae8d2bec2d68b5d385ffe941ce608a8b1" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Marker</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

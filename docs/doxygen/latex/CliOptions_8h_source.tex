@@ -1,0 +1,20 @@
+\doxysection{Cli\+Options.\+h}
+\hypertarget{CliOptions_8h_source}{}\label{CliOptions_8h_source}\index{src/cli/include/CliOptions.h@{src/cli/include/CliOptions.h}}
+\doxymbox{\hyperlink{CliOptions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1cli}{fccvis::cli}}\ \{}
+\DoxyCodeLine{00005\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions}{CliOptions}}\ \{}
+\DoxyCodeLine{00006\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions_a0dd3e9c3e13de997d669ae6dbb727bf3}{guiRequested}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00007\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions_a6df682ea2e1f4d2dec01214225664ef0}{interactive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00008\ \ \ std::optional<std::filesystem::path>\ \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions_a5dfe016ca8685a8e972e9ee92119b80e}{dataFile}};}
+\DoxyCodeLine{00009\ \ \ std::optional<std::filesystem::path>\ \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions_a4b33ea1479d62ce86acf1e5bf1ee91f5}{optionsFile}};}
+\DoxyCodeLine{00010\ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions}{CliOptions}}\ \doxymbox{\hyperlink{namespacefccvis_1_1cli_a9df900401f86ac0342fb05ee8148ed3a}{ParseArgs}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}**\ argv);}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespacefccvis_1_1cli_a9c48da64fb25e8151b2a7b530cfc999e}{ValidateArgs}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structfccvis_1_1cli_1_1CliOptions}{CliOptions}}\&\ opts);}
+\DoxyCodeLine{00014\ \}\ \textcolor{comment}{//\ namespace\ fccvis::cli}}
+
+\end{DoxyCode}

@@ -1,19 +1,17 @@
 #include "InteractiveShell.h"
+#include "fccvis/FccvisConfig.h"
+#include <TApplication.h>
 #include <TEveManager.h>
 #include <TInterpreter.h>
-#include <TSystem.h>
 #include <TROOT.h>
+#include <TSystem.h>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include "fccvis/FccvisConfig.h"
-#include <TApplication.h>
-
-
 
 namespace fccvis::cli {
 
-InteractiveShell::InteractiveShell(fccvis::session::Session& session)
+InteractiveShell::InteractiveShell(fccvis::session::Session &session)
     : m_session(session), m_sceneManager(session) {
   EnsureEveManager();
   BindSessionIntoCling();
@@ -22,11 +20,12 @@ InteractiveShell::InteractiveShell(fccvis::session::Session& session)
 void InteractiveShell::EnsureEveManager() {
   if (!gApplication) {
     int argc = 0;
-    char** argv = nullptr;
+    char **argv = nullptr;
     new TApplication("fccvis_headless", &argc, argv);
   }
   if (!gEve) {
-    TEveManager::Create(kFALSE); // map_window=false — no visible browser chrome, but a real display exists
+    TEveManager::Create(kFALSE); // map_window=false — no visible browser
+                                 // chrome, but a real display exists
   }
 }
 
@@ -35,12 +34,14 @@ void InteractiveShell::BindSessionIntoCling() {
   gInterpreter->AddIncludePath(FCCVIS_UNIFIED_INCLUDE_DIR "/fccvis");
   gInterpreter->Declare("#include <fccvis/Session.h>");
 
-  gSystem->Load(FCCVIS_BUILD_LIB_DIR "/libFCCVisualization.so");
-
-  gInterpreter->ProcessLine(
-      Form("fccvis::session::Session* session = "
-           "(fccvis::session::Session*)%p;",
-           (void*)&m_session));
+  gSystem->Load("libFCCVisualization.so");
+  gInterpreter->ProcessLine(Form("fccvis::session::Session* session = "
+                                 "(fccvis::session::Session*)%p;",
+                                 (void *)&m_session));
+  // Making sure that if the user had previous saved data we load it
+  if (const auto &optionsFile = m_session.GetOptionsFile()) {
+    gInterpreter->LoadFile(optionsFile->c_str());
+  }
 }
 
 void InteractiveShell::Run() {
@@ -61,7 +62,7 @@ void InteractiveShell::Run() {
   }
 }
 
-bool InteractiveShell::HandleBuiltin(const std::string& line) {
+bool InteractiveShell::HandleBuiltin(const std::string &line) {
   if (line.empty() || line[0] != '.') {
     return false;
   }
@@ -96,11 +97,9 @@ bool InteractiveShell::HandleBuiltin(const std::string& line) {
   return true;
 }
 
-void InteractiveShell::Quit() {
-  m_quitRequested = true;
-}
+void InteractiveShell::Quit() { m_quitRequested = true; }
 
-void InteractiveShell::Save(const std::string& path) {
+void InteractiveShell::Save(const std::string &path) {
   if (path.empty()) {
     std::cerr << "fccvis: .save requires a path\n";
     return;
@@ -110,23 +109,23 @@ void InteractiveShell::Save(const std::string& path) {
     std::cerr << "fccvis: could not open '" << path << "' for writing\n";
     return;
   }
-  const auto& optionsFile = m_session.GetOptionsFile();
+  const auto &optionsFile = m_session.GetOptionsFile();
   if (optionsFile) {
     std::ifstream in(*optionsFile);
     if (in) {
       out << in.rdbuf() << "\n";
     } else {
       std::cerr << "fccvis: warning — could not reopen original options file '"
-                 << *optionsFile << "', continuing with commands only\n";
+                << *optionsFile << "', continuing with commands only\n";
     }
   }
   out << "// --- commands appended by interactive session ---\n";
-  for (const auto& c : m_commandHistory) {
+  for (const auto &c : m_commandHistory) {
     out << c << "\n";
   }
 }
 
-void InteractiveShell::See(const std::string& name) {
+void InteractiveShell::See(const std::string &name) {
   if (name.empty()) {
     std::cerr << "fccvis: .see requires a scene name\n";
     return;
@@ -140,7 +139,7 @@ void InteractiveShell::See(const std::string& name) {
   }
 }
 
-void InteractiveShell::Close(const std::string& name) {
+void InteractiveShell::Close(const std::string &name) {
   if (name.empty()) {
     std::cerr << "fccvis: .close requires a scene name\n";
     return;
@@ -149,25 +148,25 @@ void InteractiveShell::Close(const std::string& name) {
 }
 
 void InteractiveShell::ListScenes() {
-  for (const auto& name : m_sceneManager.SceneNames()) { // your new accessor
+  for (const auto &name : m_sceneManager.SceneNames()) { // your new accessor
     std::cout << (m_sceneManager.IsOpen(*name) ? "* " : "  ") << name << "\n";
   }
 }
 
 void InteractiveShell::ListOpen() {
-  for (const auto& scene : m_sceneManager.OpenScenes()) { // your new accessor
-    std::cout << scene->name << "\n"; // adjust to whatever RootScene actually exposes
+  for (const auto &scene : m_sceneManager.OpenScenes()) { // your new accessor
+    std::cout << scene->name
+              << "\n"; // adjust to whatever RootScene actually exposes
   }
 }
 
 void InteractiveShell::Help() {
-  std::cout <<
-    ".see <name>    open or refresh a scene\n" <<
-    ".close <name>  close an open scene\n" <<
-    ".scenes        list all known scenes ('*' = open)\n" <<
-    ".open          list currently open scenes\n" <<
-    ".save <path>   write session to a new options.cpp\n" <<
-    ".quit / .q     exit\n";
+  std::cout << ".see <name>    open or refresh a scene\n"
+            << ".close <name>  close an open scene\n"
+            << ".scenes        list all known scenes ('*' = open)\n"
+            << ".open          list currently open scenes\n"
+            << ".save <path>   write session to a new options.cpp\n"
+            << ".quit / .q     exit\n";
 }
 
 } // namespace fccvis::cli

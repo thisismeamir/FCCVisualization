@@ -1,0 +1,8 @@
+<map id="fccvis::cli::RunApplication" name="fccvis::cli::RunApplication">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,44,194,72"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="56,44,49,36,55,26,72,20,100,18,129,20,147,29,142,30,128,26,99,23,73,25,58,30,55,35,61,44"/>
+<area shape="rect" id="Node000002" href="$classfccvis_1_1cli_1_1InteractiveShell.html#abd04c304d28b259f30db574dc67ab15e" title=" " alt="" coords="273,5,434,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,44,260,39,255,40,194,50"/>
+<area shape="rect" id="Node000003" href="$classfccvis_1_1gui_1_1GuiApplication.html#a03dc968acfcbc83815709953d36d0973" title=" " alt="" coords="242,74,465,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,67,229,73,223,73,194,72"/>
+</map>

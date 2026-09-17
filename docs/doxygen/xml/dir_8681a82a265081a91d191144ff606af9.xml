@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_8681a82a265081a91d191144ff606af9" kind="dir">
+    <compoundname>src/filter</compoundname>
+    <innerfile refid="filter_2placeholder_8cc">placeholder.cc</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/filter/"/>
+  </compounddef>
+</doxygen>

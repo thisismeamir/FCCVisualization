@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structfccvis_1_1cli_1_1CliOptions" kind="struct" language="C++" prot="public">
+    <compoundname>fccvis::cli::CliOptions</compoundname>
+    <includes refid="CliOptions_8h" local="no">CliOptions.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fccvis::cli::CliOptions::guiRequested</definition>
+        <argsstring></argsstring>
+        <name>guiRequested</name>
+        <qualifiedname>fccvis::cli::CliOptions::guiRequested</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/CliOptions.h" line="6" column="8" bodyfile="src/cli/include/CliOptions.h" bodystart="6" bodyend="-1"/>
+        <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fccvis::cli::CliOptions::interactive</definition>
+        <argsstring></argsstring>
+        <name>interactive</name>
+        <qualifiedname>fccvis::cli::CliOptions::interactive</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/CliOptions.h" line="7" column="8" bodyfile="src/cli/include/CliOptions.h" bodystart="7" bodyend="-1"/>
+        <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::filesystem::path &gt;</type>
+        <definition>std::optional&lt;std::filesystem::path&gt; fccvis::cli::CliOptions::dataFile</definition>
+        <argsstring></argsstring>
+        <name>dataFile</name>
+        <qualifiedname>fccvis::cli::CliOptions::dataFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/CliOptions.h" line="8" column="17" bodyfile="src/cli/include/CliOptions.h" bodystart="8" bodyend="-1"/>
+        <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" compoundref="CliOptions_8cc" startline="47" endline="54">fccvis::cli::ValidateArgs</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::filesystem::path &gt;</type>
+        <definition>std::optional&lt;std::filesystem::path&gt; fccvis::cli::CliOptions::optionsFile</definition>
+        <argsstring></argsstring>
+        <name>optionsFile</name>
+        <qualifiedname>fccvis::cli::CliOptions::optionsFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/CliOptions.h" line="9" column="17" bodyfile="src/cli/include/CliOptions.h" bodystart="9" bodyend="-1"/>
+        <referencedby refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" compoundref="CliOptions_8cc" startline="6" endline="44">fccvis::cli::ParseArgs</referencedby>
+        <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/cli/include/CliOptions.h" line="5" column="1" bodyfile="src/cli/include/CliOptions.h" bodystart="5" bodyend="10"/>
+    <listofallmembers>
+      <member refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" prot="public" virt="non-virtual"><scope>fccvis::cli::CliOptions</scope><name>dataFile</name></member>
+      <member refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" prot="public" virt="non-virtual"><scope>fccvis::cli::CliOptions</scope><name>guiRequested</name></member>
+      <member refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" prot="public" virt="non-virtual"><scope>fccvis::cli::CliOptions</scope><name>interactive</name></member>
+      <member refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" prot="public" virt="non-virtual"><scope>fccvis::cli::CliOptions</scope><name>optionsFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

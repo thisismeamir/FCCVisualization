@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="CliOptions_8h" kind="file" language="C++">
+    <compoundname>CliOptions.h</compoundname>
+    <includes local="no">filesystem</includes>
+    <includes local="no">optional</includes>
+    <includedby refid="CliOptions_8cc" local="yes">src/cli/CliOptions.cc</includedby>
+    <includedby refid="RunApplication_8cc" local="yes">src/cli/RunApplication.cc</includedby>
+    <includedby refid="RunApplication_8h" local="yes">src/cli/include/RunApplication.h</includedby>
+    <includedby refid="main_8cpp" local="yes">src/cli/main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/cli/include/CliOptions.h</label>
+        <link refid="CliOptions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>filesystem</label>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/cli/CliOptions.cc</label>
+        <link refid="CliOptions_8cc"/>
+      </node>
+      <node id="3">
+        <label>src/cli/RunApplication.cc</label>
+        <link refid="RunApplication_8cc"/>
+      </node>
+      <node id="1">
+        <label>src/cli/include/CliOptions.h</label>
+        <link refid="CliOptions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/cli/include/RunApplication.h</label>
+        <link refid="RunApplication_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/cli/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structfccvis_1_1cli_1_1CliOptions" prot="public">fccvis::cli::CliOptions</innerclass>
+    <innernamespace refid="namespacefccvis">fccvis</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1cli">fccvis::cli</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1cli" kindref="compound">fccvis::cli</ref><sp/>{</highlight></codeline>
+<codeline lineno="5" refid="structfccvis_1_1cli_1_1CliOptions" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref><sp/>{</highlight></codeline>
+<codeline lineno="6" refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a0dd3e9c3e13de997d669ae6dbb727bf3" kindref="member">guiRequested</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7" refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a6df682ea2e1f4d2dec01214225664ef0" kindref="member">interactive</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8" refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" refkind="member"><highlight class="normal"><sp/><sp/>std::optional&lt;std::filesystem::path&gt;<sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a5dfe016ca8685a8e972e9ee92119b80e" kindref="member">dataFile</ref>;</highlight></codeline>
+<codeline lineno="9" refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" refkind="member"><highlight class="normal"><sp/><sp/>std::optional&lt;std::filesystem::path&gt;<sp/><ref refid="structfccvis_1_1cli_1_1CliOptions_1a4b33ea1479d62ce86acf1e5bf1ee91f5" kindref="member">optionsFile</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref><sp/><ref refid="namespacefccvis_1_1cli_1a9df900401f86ac0342fb05ee8148ed3a" kindref="member">ParseArgs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespacefccvis_1_1cli_1a9c48da64fb25e8151b2a7b530cfc999e" kindref="member">ValidateArgs</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structfccvis_1_1cli_1_1CliOptions" kindref="compound">CliOptions</ref>&amp;<sp/>opts);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>fccvis::cli</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/cli/include/CliOptions.h"/>
+  </compounddef>
+</doxygen>

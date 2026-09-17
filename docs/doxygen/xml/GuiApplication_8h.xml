@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="GuiApplication_8h" kind="file" language="C++">
+    <compoundname>GuiApplication.h</compoundname>
+    <includes refid="Session_8h" local="yes">Session.h</includes>
+    <includes local="no">TApplication.h</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="RunApplication_8cc" local="yes">src/cli/RunApplication.cc</includedby>
+    <includedby refid="GuiApplication_8cc" local="yes">src/gui/GuiApplication.cc</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/gui/include/GuiApplication.h</label>
+        <link refid="GuiApplication_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>BaseSessionObject.h</label>
+        <link refid="BaseSessionObject_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MetaObjects.h</label>
+        <link refid="MetaObjects_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Session.h</label>
+        <link refid="Session_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>TApplication.h</label>
+      </node>
+      <node id="7">
+        <label>algorithm</label>
+      </node>
+      <node id="11">
+        <label>filesystem</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="12">
+        <label>optional</label>
+      </node>
+      <node id="13">
+        <label>podio/Frame.h</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="14">
+        <label>string_view</label>
+      </node>
+      <node id="15">
+        <label>unordered_map</label>
+      </node>
+      <node id="10">
+        <label>utility</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/cli/RunApplication.cc</label>
+        <link refid="RunApplication_8cc"/>
+      </node>
+      <node id="3">
+        <label>src/gui/GuiApplication.cc</label>
+        <link refid="GuiApplication_8cc"/>
+      </node>
+      <node id="1">
+        <label>src/gui/include/GuiApplication.h</label>
+        <link refid="GuiApplication_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classfccvis_1_1gui_1_1GuiApplication" prot="public">fccvis::gui::GuiApplication</innerclass>
+    <innernamespace refid="namespacefccvis">fccvis</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1gui">fccvis::gui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Session_8h" kindref="compound">Session.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TApplication.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1gui" kindref="compound">fccvis::gui</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classfccvis_1_1gui_1_1GuiApplication" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">GuiApplication</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">GuiApplication</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv,<sp/><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>&amp;<sp/><ref refid="namespacefccvis_1_1session" kindref="compound">session</ref>);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a402348fc86f726c18cac134241250135" kindref="member">~GuiApplication</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a03dc968acfcbc83815709953d36d0973" kindref="member">Run</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1gui_1_1GuiApplication_1a236c303ead999265807969165a57b01f" kindref="member">Terminate</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>std::unique_ptr&lt;TApplication&gt;<sp/>m_application;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref>&amp;<sp/>m_session;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/gui/include/GuiApplication.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1scene_1_1BaseSessionObject" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::scene::BaseSessionObject</compoundname>
+    <derivedcompoundref refid="classfccvis_1_1scene_1_1Scene" prot="public" virt="non-virtual">fccvis::scene::Scene</derivedcompoundref>
+    <derivedcompoundref refid="classfccvis_1_1scene_1_1meta_1_1Camera" prot="public" virt="non-virtual">fccvis::scene::meta::Camera</derivedcompoundref>
+    <derivedcompoundref refid="classfccvis_1_1scene_1_1meta_1_1Filter" prot="public" virt="non-virtual">fccvis::scene::meta::Filter</derivedcompoundref>
+    <derivedcompoundref refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions" prot="public" virt="non-virtual">fccvis::scene::meta::SceneOptions</derivedcompoundref>
+    <includes refid="BaseSessionObject_8h" local="no">BaseSessionObject.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fccvis::scene::BaseSessionObject::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>fccvis::scene::BaseSessionObject::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/BaseSessionObject.h" line="14" column="17" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="14" bodyend="-1"/>
+        <referencedby refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" compoundref="BaseSessionObject_8h" startline="12" endline="12">BaseSessionObject</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::scene::BaseSessionObject::BaseSessionObject</definition>
+        <argsstring>(std::string objectName)</argsstring>
+        <name>BaseSessionObject</name>
+        <qualifiedname>fccvis::scene::BaseSessionObject::BaseSessionObject</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>objectName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/BaseSessionObject.h" line="12" column="14" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="12" bodyend="12"/>
+        <references refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" compoundref="BaseSessionObject_8h" startline="14">name</references>
+        <referencedby refid="classfccvis_1_1scene_1_1Scene_1ad673226e62b7c89b1dbdd0ee589a3c52" compoundref="Scene_8h" startline="8" endline="9">fccvis::scene::Scene::Scene</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual fccvis::scene::BaseSessionObject::~BaseSessionObject</definition>
+        <argsstring>()=default</argsstring>
+        <name>~BaseSessionObject</name>
+        <qualifiedname>fccvis::scene::BaseSessionObject::~BaseSessionObject</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/BaseSessionObject.h" line="13" column="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>fccvis::scene::BaseSessionObject</label>
+        <link refid="classfccvis_1_1scene_1_1BaseSessionObject"/>
+      </node>
+      <node id="2">
+        <label>fccvis::scene::Scene</label>
+        <link refid="classfccvis_1_1scene_1_1Scene"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>fccvis::scene::meta::Camera</label>
+        <link refid="classfccvis_1_1scene_1_1meta_1_1Camera"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>fccvis::scene::meta::Filter</label>
+        <link refid="classfccvis_1_1scene_1_1meta_1_1Filter"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>fccvis::scene::meta::SceneOptions</label>
+        <link refid="classfccvis_1_1scene_1_1meta_1_1SceneOptions"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/scene/include/BaseSessionObject.h" line="9" column="1" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="10" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" virt="non-virtual"><scope>fccvis::scene::BaseSessionObject</scope><name>BaseSessionObject</name></member>
+      <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" prot="public" virt="non-virtual"><scope>fccvis::scene::BaseSessionObject</scope><name>name</name></member>
+      <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" prot="public" virt="virtual"><scope>fccvis::scene::BaseSessionObject</scope><name>~BaseSessionObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

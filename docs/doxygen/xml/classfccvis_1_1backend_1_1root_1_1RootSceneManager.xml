@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::backend::root::RootSceneManager</compoundname>
+    <includes refid="RootSceneManager_8h" local="no">RootSceneManager.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1af6925b0fd25c25dd35993805cf0c2d3f" prot="private" static="no" mutable="no">
+        <type><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> &amp;</type>
+        <definition>fccvis::session::Session&amp; fccvis::backend::root::RootSceneManager::m_session</definition>
+        <argsstring></argsstring>
+        <name>m_session</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::m_session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="36" column="30" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ab72b73713eab05590f7ecbc541afb3e9" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::unique_ptr&lt; <ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::unique_ptr&lt;RootScene&gt; &gt; fccvis::backend::root::RootSceneManager::m_openScenes</definition>
+        <argsstring></argsstring>
+        <name>m_openScenes</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::m_openScenes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="37" column="14" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a8d2892d1b81fa9961de8fcf57c7be543" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::backend::root::RootSceneManager::RootSceneManager</definition>
+        <argsstring>(fccvis::session::Session &amp;session)</argsstring>
+        <name>RootSceneManager</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::RootSceneManager</qualifiedname>
+        <param>
+          <type><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> &amp;</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="15" column="14" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="10" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a494634f1895f1d44cf7c7bab95bac15c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> *</type>
+        <definition>RootScene * fccvis::backend::root::RootSceneManager::Open</definition>
+        <argsstring>(const std::string &amp;sceneName)</argsstring>
+        <name>Open</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::Open</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="19" column="15" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="23" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a77cdf08c8eab81c3a96c39b2cfa72f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::backend::root::RootSceneManager::Close</definition>
+        <argsstring>(const std::string &amp;sceneName)</argsstring>
+        <name>Close</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::Close</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="22" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a81cdc76f0fe4ffb80a0147adf555ce0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fccvis::backend::root::RootSceneManager::Update</definition>
+        <argsstring>(const std::string &amp;sceneName)</argsstring>
+        <name>Update</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::Update</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="28" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="45" bodyend="52"/>
+        <references refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" compoundref="RootScene_8cc" startline="33" endline="85">fccvis::backend::root::RootScene::SyncCamera</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ade5c6465ef8672c54d373e6921da8d28" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene" kindref="compound">RootScene</ref> *</type>
+        <definition>RootScene * fccvis::backend::root::RootSceneManager::Get</definition>
+        <argsstring>(const std::string &amp;sceneName) const</argsstring>
+        <name>Get</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::Get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="30" column="15" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a3e94a44331718088a84f9759bd5c64a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fccvis::backend::root::RootSceneManager::IsOpen</definition>
+        <argsstring>(const std::string &amp;sceneName) const</argsstring>
+        <name>IsOpen</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::IsOpen</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="31" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a2b014bd850b64301af0ef67f8cae8870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::backend::root::RootSceneManager::CloseAll</definition>
+        <argsstring>()</argsstring>
+        <name>CloseAll</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::CloseAll</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="32" column="10" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a124a5c5cce68d10d6842bceac47a6fe6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; fccvis::scene::Scene &gt; &gt; fccvis::backend::root::RootSceneManager::OpenScenes</definition>
+        <argsstring>()</argsstring>
+        <name>OpenScenes</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::OpenScenes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="33" column="17" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="68" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1af9ab8883d43662e696dbefad676b396d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::shared_ptr&lt; std::string &gt; &gt;</type>
+        <definition>std::vector&lt; std::shared_ptr&lt; std::string &gt; &gt; fccvis::backend::root::RootSceneManager::SceneNames</definition>
+        <argsstring>()</argsstring>
+        <name>SceneNames</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::SceneNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="34" column="17" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="76" bodyend="84"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1aa5033bb2a9adaec02126dce079639a13" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; fccvis::scene::Scene &gt; fccvis::backend::root::RootSceneManager::FindAbstractScene</definition>
+        <argsstring>(const std::string &amp;sceneName) const</argsstring>
+        <name>FindAbstractScene</name>
+        <qualifiedname>fccvis::backend::root::RootSceneManager::FindAbstractScene</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/backend/root/include/RootSceneManager.h" line="39" column="21" bodyfile="src/backend/root/RootSceneManager.cc" bodystart="14" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/backend/root/include/RootSceneManager.h" line="12" column="1" bodyfile="src/backend/root/include/RootSceneManager.h" bodystart="13" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a77cdf08c8eab81c3a96c39b2cfa72f68" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>Close</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a2b014bd850b64301af0ef67f8cae8870" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>CloseAll</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1aa5033bb2a9adaec02126dce079639a13" prot="private" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>FindAbstractScene</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ade5c6465ef8672c54d373e6921da8d28" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>Get</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a3e94a44331718088a84f9759bd5c64a1" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>IsOpen</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1ab72b73713eab05590f7ecbc541afb3e9" prot="private" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>m_openScenes</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1af6925b0fd25c25dd35993805cf0c2d3f" prot="private" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>m_session</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a494634f1895f1d44cf7c7bab95bac15c" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>Open</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a124a5c5cce68d10d6842bceac47a6fe6" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>OpenScenes</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a8d2892d1b81fa9961de8fcf57c7be543" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>RootSceneManager</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1af9ab8883d43662e696dbefad676b396d" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>SceneNames</name></member>
+      <member refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager_1a81cdc76f0fe4ffb80a0147adf555ce0b" prot="public" virt="non-virtual"><scope>fccvis::backend::root::RootSceneManager</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

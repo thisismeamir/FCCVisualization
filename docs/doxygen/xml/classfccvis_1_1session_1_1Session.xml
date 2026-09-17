@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1session_1_1Session" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::session::Session</compoundname>
+    <includes refid="Session_8h" local="no">Session.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1Session_1ae4d24f250462063b21205c74e57c4d56" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fccvis::session::Session::m_name</definition>
+        <argsstring></argsstring>
+        <name>m_name</name>
+        <qualifiedname>fccvis::session::Session::m_name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="57" column="15" bodyfile="src/session/include/Session.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1Session_1ac8727cf29f5fdf94d1dcd95178fea16c" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::filesystem::path &gt;</type>
+        <definition>std::optional&lt;std::filesystem::path&gt; fccvis::session::Session::m_dataFilePath</definition>
+        <argsstring></argsstring>
+        <name>m_dataFilePath</name>
+        <qualifiedname>fccvis::session::Session::m_dataFilePath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="58" column="17" bodyfile="src/session/include/Session.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1Session_1af742e1d45bfa7e47ee22c2961909e0ba" prot="private" static="no" mutable="no">
+        <type>std::optional&lt; std::filesystem::path &gt;</type>
+        <definition>std::optional&lt;std::filesystem::path&gt; fccvis::session::Session::m_optionsFilePath</definition>
+        <argsstring></argsstring>
+        <name>m_optionsFilePath</name>
+        <qualifiedname>fccvis::session::Session::m_optionsFilePath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="59" column="17" bodyfile="src/session/include/Session.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1Session_1aa613b97dd3a99989dbaf78fa7675e2b4" prot="private" static="no" mutable="no">
+        <type><ref refid="classfccvis_1_1session_1_1SessionData" kindref="compound">SessionData</ref></type>
+        <definition>SessionData fccvis::session::Session::m_data</definition>
+        <argsstring></argsstring>
+        <name>m_data</name>
+        <qualifiedname>fccvis::session::Session::m_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="61" column="15" bodyfile="src/session/include/Session.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1Session_1a65ef17f045583ee52f2e44b2d72ec732" prot="private" static="no" mutable="no">
+        <type><ref refid="classfccvis_1_1session_1_1SessionOptions" kindref="compound">SessionOptions</ref></type>
+        <definition>SessionOptions fccvis::session::Session::m_options</definition>
+        <argsstring></argsstring>
+        <name>m_options</name>
+        <qualifiedname>fccvis::session::Session::m_options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="62" column="18" bodyfile="src/session/include/Session.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::session::Session::Session</definition>
+        <argsstring>(std::string name, std::optional&lt; std::filesystem::path &gt; dataFilePath, std::optional&lt; std::filesystem::path &gt; optionsFilePath)</argsstring>
+        <name>Session</name>
+        <qualifiedname>fccvis::session::Session::Session</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; std::filesystem::path &gt;</type>
+          <declname>dataFilePath</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; std::filesystem::path &gt;</type>
+          <declname>optionsFilePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="32" column="3" bodyfile="src/session/Session.cc" bodystart="14" bodyend="25"/>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1ab9f048e500ea40a62cbca1d4282da848">operator=</referencedby>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3">operator=</referencedby>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a6644797681412b39b6896338c105ad4d">Session</referencedby>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a442580be155f6cd5306c6f38ab6552b5">Session</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1aac0ae08cfbf9ccc4fa7324bb0fcd20de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::session::Session::~Session</definition>
+        <argsstring>()</argsstring>
+        <name>~Session</name>
+        <qualifiedname>fccvis::session::Session::~Session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="34" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a6644797681412b39b6896338c105ad4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::session::Session::Session</definition>
+        <argsstring>(const Session &amp;)=delete</argsstring>
+        <name>Session</name>
+        <qualifiedname>fccvis::session::Session::Session</qualifiedname>
+        <param>
+          <type>const Session &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="36" column="3"/>
+        <references refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" compoundref="Session_8cc" startline="14" endline="25">Session</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1ab9f048e500ea40a62cbca1d4282da848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" kindref="member">Session</ref> &amp;</type>
+        <definition>Session &amp; fccvis::session::Session::operator=</definition>
+        <argsstring>(const Session &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>fccvis::session::Session::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" kindref="member">Session</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="37" column="11"/>
+        <references refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" compoundref="Session_8cc" startline="14" endline="25">Session</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a442580be155f6cd5306c6f38ab6552b5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::session::Session::Session</definition>
+        <argsstring>(Session &amp;&amp;) noexcept=default</argsstring>
+        <name>Session</name>
+        <qualifiedname>fccvis::session::Session::Session</qualifiedname>
+        <param>
+          <type>Session &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="38" column="3"/>
+        <references refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" compoundref="Session_8cc" startline="14" endline="25">Session</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" kindref="member">Session</ref> &amp;</type>
+        <definition>Session &amp; fccvis::session::Session::operator=</definition>
+        <argsstring>(Session &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>fccvis::session::Session::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" kindref="member">Session</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="39" column="11"/>
+        <references refid="classfccvis_1_1session_1_1Session_1a9b9a58d799ff950721e959f90f040e57" compoundref="Session_8cc" startline="50" endline="50">GetOptions</references>
+        <references refid="classfccvis_1_1session_1_1Session_1ab81e55997ba1f2c56ac56a6bed42d2ba" compoundref="Session_8cc" startline="46" endline="48">GetOptionsFile</references>
+        <references refid="classfccvis_1_1session_1_1Session_1ad3977b05e822af6371d797811af87322" compoundref="Session_8cc" startline="29" endline="43">initData</references>
+        <references refid="classfccvis_1_1session_1_1Session_1a37331d0f91cf252aaab0cd20d340643e" compoundref="Session_8cc" startline="45" endline="45">initOptions</references>
+        <references refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" compoundref="Session_8cc" startline="14" endline="25">Session</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1ad3977b05e822af6371d797811af87322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::session::Session::initData</definition>
+        <argsstring>()</argsstring>
+        <name>initData</name>
+        <qualifiedname>fccvis::session::Session::initData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="40" column="8" bodyfile="src/session/Session.cc" bodystart="29" bodyend="43"/>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a37331d0f91cf252aaab0cd20d340643e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::session::Session::initOptions</definition>
+        <argsstring>()</argsstring>
+        <name>initOptions</name>
+        <qualifiedname>fccvis::session::Session::initOptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="41" column="8" bodyfile="src/session/Session.cc" bodystart="45" bodyend="45"/>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1ab81e55997ba1f2c56ac56a6bed42d2ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; std::filesystem::path &gt;</type>
+        <definition>std::optional&lt; std::filesystem::path &gt; fccvis::session::Session::GetOptionsFile</definition>
+        <argsstring>()</argsstring>
+        <name>GetOptionsFile</name>
+        <qualifiedname>fccvis::session::Session::GetOptionsFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="42" column="17" bodyfile="src/session/Session.cc" bodystart="46" bodyend="48"/>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a9b9a58d799ff950721e959f90f040e57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classfccvis_1_1session_1_1SessionOptions" kindref="compound">SessionOptions</ref></type>
+        <definition>SessionOptions fccvis::session::Session::GetOptions</definition>
+        <argsstring>()</argsstring>
+        <name>GetOptions</name>
+        <qualifiedname>fccvis::session::Session::GetOptions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="43" column="18" bodyfile="src/session/Session.cc" bodystart="50" bodyend="50"/>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1aeb73514b188f59bfd04f088639808d43" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; fccvis::session::Session::Name</definition>
+        <argsstring>() const</argsstring>
+        <name>Name</name>
+        <qualifiedname>fccvis::session::Session::Name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="44" column="21" bodyfile="src/session/include/Session.h" bodystart="44" bodyend="44"/>
+        <references refid="classfccvis_1_1session_1_1Session_1aeb73514b188f59bfd04f088639808d43" compoundref="Session_8h" startline="44" endline="44">Name</references>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1aeb73514b188f59bfd04f088639808d43" compoundref="Session_8h" startline="44" endline="44">Name</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1abc3af1740e27ef5b6b7dae88e5518349" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfccvis_1_1session_1_1SessionData" kindref="compound">SessionData</ref> &amp;</type>
+        <definition>const SessionData &amp; fccvis::session::Session::Data</definition>
+        <argsstring>() const</argsstring>
+        <name>Data</name>
+        <qualifiedname>fccvis::session::Session::Data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="45" column="21" bodyfile="src/session/include/Session.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a4ed06b9a05f53d830377e579a94b2abe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classfccvis_1_1session_1_1SessionOptions" kindref="compound">SessionOptions</ref> &amp;</type>
+        <definition>const SessionOptions &amp; fccvis::session::Session::Options</definition>
+        <argsstring>() const</argsstring>
+        <name>Options</name>
+        <qualifiedname>fccvis::session::Session::Options</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="46" column="24" bodyfile="src/session/include/Session.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a0215b2b549da22eaff76490193916dbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; fccvis::session::Session::Categories</definition>
+        <argsstring>() const</argsstring>
+        <name>Categories</name>
+        <qualifiedname>fccvis::session::Session::Categories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="47" column="15" bodyfile="src/session/Session.cc" bodystart="52" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a13d642f9984714f5d6a9bee855239cd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t fccvis::session::Session::EntryCount</definition>
+        <argsstring>(const std::string &amp;category) const</argsstring>
+        <name>EntryCount</name>
+        <qualifiedname>fccvis::session::Session::EntryCount</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="48" column="10" bodyfile="src/session/Session.cc" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1abfeb70dc45d2b18889c591657524ebdf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; fccvis::session::Session::CollectionNames</definition>
+        <argsstring>(const std::string &amp;category, size_t entryIndex) const</argsstring>
+        <name>CollectionNames</name>
+        <qualifiedname>fccvis::session::Session::CollectionNames</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>entryIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="49" column="15" bodyfile="src/session/Session.cc" bodystart="71" bodyend="74"/>
+        <references refid="classfccvis_1_1session_1_1Session_1a623742faa2ae121e6417da9b14282c51" compoundref="Session_8cc" startline="66" endline="69">GetFrame</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a883adf902b23ba4272607f06d4900713" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string fccvis::session::Session::CollectionType</definition>
+        <argsstring>(const std::string &amp;category, size_t entryIndex, const std::string &amp;collName) const</argsstring>
+        <name>CollectionType</name>
+        <qualifiedname>fccvis::session::Session::CollectionType</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>entryIndex</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>collName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="51" column="15" bodyfile="src/session/Session.cc" bodystart="76" bodyend="81"/>
+        <references refid="classfccvis_1_1session_1_1Session_1a623742faa2ae121e6417da9b14282c51" compoundref="Session_8cc" startline="66" endline="69">GetFrame</references>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1session_1_1Session_1a623742faa2ae121e6417da9b14282c51" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const podio::Frame &amp;</type>
+        <definition>const podio::Frame &amp; fccvis::session::Session::GetFrame</definition>
+        <argsstring>(const std::string &amp;category, size_t entryIndex) const</argsstring>
+        <name>GetFrame</name>
+        <qualifiedname>fccvis::session::Session::GetFrame</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>entryIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="53" column="22" bodyfile="src/session/Session.cc" bodystart="66" bodyend="69"/>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1abfeb70dc45d2b18889c591657524ebdf" compoundref="Session_8cc" startline="71" endline="74">CollectionNames</referencedby>
+        <referencedby refid="classfccvis_1_1session_1_1Session_1a883adf902b23ba4272607f06d4900713" compoundref="Session_8cc" startline="76" endline="81">CollectionType</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/session/include/Session.h" line="30" column="1" bodyfile="src/session/include/Session.h" bodystart="30" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1session_1_1Session_1a0215b2b549da22eaff76490193916dbe" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>Categories</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1abfeb70dc45d2b18889c591657524ebdf" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>CollectionNames</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a883adf902b23ba4272607f06d4900713" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>CollectionType</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1abc3af1740e27ef5b6b7dae88e5518349" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>Data</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a13d642f9984714f5d6a9bee855239cd8" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>EntryCount</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a623742faa2ae121e6417da9b14282c51" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>GetFrame</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a9b9a58d799ff950721e959f90f040e57" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>GetOptions</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1ab81e55997ba1f2c56ac56a6bed42d2ba" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>GetOptionsFile</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1ad3977b05e822af6371d797811af87322" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>initData</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a37331d0f91cf252aaab0cd20d340643e" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>initOptions</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1aa613b97dd3a99989dbaf78fa7675e2b4" prot="private" virt="non-virtual"><scope>fccvis::session::Session</scope><name>m_data</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1ac8727cf29f5fdf94d1dcd95178fea16c" prot="private" virt="non-virtual"><scope>fccvis::session::Session</scope><name>m_dataFilePath</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1ae4d24f250462063b21205c74e57c4d56" prot="private" virt="non-virtual"><scope>fccvis::session::Session</scope><name>m_name</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a65ef17f045583ee52f2e44b2d72ec732" prot="private" virt="non-virtual"><scope>fccvis::session::Session</scope><name>m_options</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1af742e1d45bfa7e47ee22c2961909e0ba" prot="private" virt="non-virtual"><scope>fccvis::session::Session</scope><name>m_optionsFilePath</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1aeb73514b188f59bfd04f088639808d43" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>Name</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1ab9f048e500ea40a62cbca1d4282da848" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>operator=</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a1707c5d13d7bc497054f223442c8abb3" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>operator=</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a4ed06b9a05f53d830377e579a94b2abe" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>Options</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1aeba1550ec6239fdf845f5c099f27d623" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>Session</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a6644797681412b39b6896338c105ad4d" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>Session</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1a442580be155f6cd5306c6f38ab6552b5" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>Session</name></member>
+      <member refid="classfccvis_1_1session_1_1Session_1aac0ae08cfbf9ccc4fa7324bb0fcd20de" prot="public" virt="non-virtual"><scope>fccvis::session::Session</scope><name>~Session</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_ced5c810739bf8f90b20e9c42cdcc50f" kind="dir">
+    <compoundname>src/backend/root/include</compoundname>
+    <innerfile refid="RootScene_8h">RootScene.h</innerfile>
+    <innerfile refid="RootSceneManager_8h">RootSceneManager.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/backend/root/include/"/>
+  </compounddef>
+</doxygen>

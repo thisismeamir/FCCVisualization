@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_da61e3e9a357748887e3ca8d7c5a0c16">src/api</innerdir>
+    <innerdir refid="dir_3f615ade772d23cefe5e20dcb18424a2">src/backend</innerdir>
+    <innerdir refid="dir_b78fdfbbb632ce54d070469d6a721373">src/cli</innerdir>
+    <innerdir refid="dir_aebb8dcc11953d78e620bbef0b9e2183">src/core</innerdir>
+    <innerdir refid="dir_8681a82a265081a91d191144ff606af9">src/filter</innerdir>
+    <innerdir refid="dir_405fd32de3649961a5f009c7a3fe84df">src/geometry</innerdir>
+    <innerdir refid="dir_99d0482cf009f9d97a0877749b817f19">src/gui</innerdir>
+    <innerdir refid="dir_35781f0e74aa8deac19fa31b37174dc2">src/scene</innerdir>
+    <innerdir refid="dir_53e88f7fa585331171beac223e0e5b81">src/session</innerdir>
+    <innerdir refid="dir_b00de47ad7e2e13a637d9aa605dec95e">src/visualization</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

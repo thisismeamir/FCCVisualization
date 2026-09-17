@@ -9,6 +9,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
 set(FCCVIS_UNIFIED_INCLUDE_DIR ${CMAKE_SOURCE_DIR})
 configure_file(
     ${CMAKE_SOURCE_DIR}/cmake/FccvisConfig.h.in
@@ -73,4 +74,3 @@ fccvis_export_headers(gui)
 fccvis_export_headers(scene)
 fccvis_export_headers(cli)
 fccvis_export_headers(geometry)
-fccvis_export_headers(data)

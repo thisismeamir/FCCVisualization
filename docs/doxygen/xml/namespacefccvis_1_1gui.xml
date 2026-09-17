@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacefccvis_1_1gui" kind="namespace" language="C++">
+    <compoundname>fccvis::gui</compoundname>
+    <innerclass refid="classfccvis_1_1gui_1_1GuiApplication" prot="public">fccvis::gui::GuiApplication</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/gui/GuiApplication.cc" line="7" column="1"/>
+  </compounddef>
+</doxygen>

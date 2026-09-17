@@ -1,0 +1,54 @@
+\doxysection{Meta\+Objects.\+h}
+\hypertarget{MetaObjects_8h_source}{}\label{MetaObjects_8h_source}\index{src/scene/include/MetaObjects.h@{src/scene/include/MetaObjects.h}}
+\doxymbox{\hyperlink{MetaObjects_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{BaseSessionObject_8h}{BaseSessionObject.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta}{fccvis::scene::meta}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44}{LayoutKind}}\ \{\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292}{Pack}},\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413}{Tab}},\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5}{Leaf}}\ \};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum\ class}\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{PackOrientation}}\ \{\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f}{Horizontal}},\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012}{Vertical}}\ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode}{LayoutNode}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_a017bf030c5651ecea05a747f42afba44}{LayoutKind}}\ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aa857439454d802ec5f175ac95c36fe72}{kind}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Pack-\/only}}
+\DoxyCodeLine{00016\ \ \ \ \ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9}{PackOrientation}}\ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a1c51ffbd38dcd79619a36368506c58ac}{orientation}}\ =\ \doxymbox{\hyperlink{namespacefccvis_1_1scene_1_1meta_aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f}{PackOrientation::Horizontal}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Leaf-\/only:\ name\ of\ the\ Scene\ this\ slot\ materializes}}
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_aab75d819120f1784e99c3623b917a4a6}{sceneName}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Pack/Tab-\/only:\ children,\ each\ optionally\ weighted\ (Pack)\ or\ unweighted\ (Tab)}}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<std::pair<std::shared\_ptr<LayoutNode>,\ \textcolor{keywordtype}{int}\ \textcolor{comment}{/*weight,\ Pack\ only*/}>>\ \doxymbox{\hyperlink{structfccvis_1_1scene_1_1meta_1_1LayoutNode_a38f7cc1bcf0653491cda8b413f360336}{children}};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera}{Camera}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::scene::BaseSessionObject}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject::BaseSessionObject}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<double>\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera_ab2468abaa4d03a6aca891ac7defde84e}{positionVector}};}
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<double>\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Camera_a19defb3ee986339f458c989538597ba1}{directionVector}};}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter}{Filter}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1Filter_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject::BaseSessionObject}};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1meta_1_1SceneOptions}{SceneOptions}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject}{fccvis::scene::BaseSessionObject}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{classfccvis_1_1scene_1_1BaseSessionObject_a38f75a9df9292d82101a5ce829ef87c7}{BaseSessionObject::BaseSessionObject}};}
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ TODO:\ scene\ options,\ coloring,\ and\ other\ possible\ things.}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}

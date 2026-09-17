@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1scene_1_1meta_1_1Filter" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::scene::meta::Filter</compoundname>
+    <basecompoundref refid="classfccvis_1_1scene_1_1BaseSessionObject" prot="public" virt="non-virtual">fccvis::scene::BaseSessionObject</basecompoundref>
+    <includes refid="MetaObjects_8h" local="no">MetaObjects.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1scene_1_1meta_1_1Filter_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::scene::BaseSessionObject::BaseSessionObject</definition>
+        <argsstring>(std::string objectName)</argsstring>
+        <name>BaseSessionObject</name>
+        <qualifiedname>fccvis::scene::meta::Filter::BaseSessionObject</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>objectName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/MetaObjects.h" line="38" column="3" bodyfile="src/scene/include/BaseSessionObject.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>fccvis::scene::BaseSessionObject</label>
+        <link refid="classfccvis_1_1scene_1_1BaseSessionObject"/>
+      </node>
+      <node id="1">
+        <label>fccvis::scene::meta::Filter</label>
+        <link refid="classfccvis_1_1scene_1_1meta_1_1Filter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>fccvis::scene::BaseSessionObject</label>
+        <link refid="classfccvis_1_1scene_1_1BaseSessionObject"/>
+      </node>
+      <node id="1">
+        <label>fccvis::scene::meta::Filter</label>
+        <link refid="classfccvis_1_1scene_1_1meta_1_1Filter"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/scene/include/MetaObjects.h" line="35" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="36" bodyend="39"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1scene_1_1meta_1_1Filter_1a38f75a9df9292d82101a5ce829ef87c7" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Filter</scope><name>BaseSessionObject</name></member>
+      <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1a694285efaa01ef5f5cb9b0a1fdf04a22" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::Filter</scope><name>name</name></member>
+      <member refid="classfccvis_1_1scene_1_1BaseSessionObject_1aad5f8ee5d8196db921752e9157cdbe42" prot="public" virt="virtual"><scope>fccvis::scene::meta::Filter</scope><name>~BaseSessionObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

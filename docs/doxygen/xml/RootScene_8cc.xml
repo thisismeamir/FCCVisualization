@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="RootScene_8cc" kind="file" language="C++">
+    <compoundname>RootScene.cc</compoundname>
+    <includes refid="RootScene_8h" local="yes">RootScene.h</includes>
+    <includes refid="Scene_8h" local="yes">Scene.h</includes>
+    <includes local="no">TEveManager.h</includes>
+    <includes local="no">TEveScene.h</includes>
+    <includes local="no">TEveViewer.h</includes>
+    <includes local="no">TGLViewer.h</includes>
+    <includes local="no">TGLPerspectiveCamera.h</includes>
+    <includes local="no">TMath.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/backend/root/RootScene.cc</label>
+        <link refid="RootScene_8cc"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RootScene.h</label>
+        <link refid="RootScene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>BaseSessionObject.h</label>
+        <link refid="BaseSessionObject_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>MetaObjects.h</label>
+        <link refid="MetaObjects_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Scene.h</label>
+        <link refid="Scene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>TEveManager.h</label>
+      </node>
+      <node id="12">
+        <label>TEveScene.h</label>
+      </node>
+      <node id="13">
+        <label>TEveViewer.h</label>
+      </node>
+      <node id="15">
+        <label>TGLPerspectiveCamera.h</label>
+      </node>
+      <node id="14">
+        <label>TGLViewer.h</label>
+      </node>
+      <node id="16">
+        <label>TMath.h</label>
+      </node>
+      <node id="5">
+        <label>algorithm</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>utility</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacefccvis">fccvis</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1backend">fccvis::backend</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1backend_1_1root">fccvis::backend::root</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="RootScene_8h" kindref="compound">RootScene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveManager.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveScene.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TEveViewer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TGLViewer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TGLPerspectiveCamera.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;TMath.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacefccvis_1_1backend_1_1root" kindref="compound">fccvis::backend::root</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" refkind="member"><highlight class="normal"><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a3996df0da494feb359d0a628afbc2616" kindref="member">RootScene::RootScene</ref>(std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/><ref refid="namespacefccvis_1_1scene" kindref="compound">scene</ref>)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>m_scene(std::move(<ref refid="namespacefccvis_1_1scene" kindref="compound">scene</ref>))</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pEveScene<sp/>=<sp/>gEve-&gt;SpawnNewScene(m_scene-&gt;name.c_str());</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pViewer<sp/>=<sp/>gEve-&gt;SpawnNewViewer(m_scene-&gt;name.c_str());</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pViewer-&gt;AddScene(m_pEveScene);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" kindref="member">SyncCamera</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac43cfc1320b5032e1497c5710669ba99" refkind="member"><highlight class="normal"><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1ac43cfc1320b5032e1497c5710669ba99" kindref="member">RootScene::~RootScene</ref>()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Detach<sp/>the<sp/>scene<sp/>from<sp/>this<sp/>viewer<sp/>first,<sp/>so<sp/>the<sp/>viewer<sp/>doesn&apos;t<sp/>hold</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>a<sp/>dangling<sp/>child<sp/>reference<sp/>once<sp/>the<sp/>scene<sp/>below<sp/>is<sp/>deleted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_pViewer<sp/>&amp;&amp;<sp/>m_pEveScene)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pViewer-&gt;RemoveElement(m_pEveScene);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Single-parent<sp/>elements:<sp/>TEveElement&apos;s<sp/>own<sp/>destructor<sp/>detaches<sp/>from</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>gEve&apos;s<sp/>viewer/scene<sp/>lists<sp/>automatically<sp/>—<sp/>no<sp/>global<sp/>Destroy()<sp/>needed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_pViewer;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>m_pEveScene;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a8f80f1f03ff378365949c8ef3ae08d81" kindref="member">RootScene::SyncCamera</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_pViewer<sp/>||<sp/>!m_scene<sp/>||<sp/>!m_scene-&gt;camera)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>TGLViewer*<sp/>glViewer<sp/>=<sp/>m_pViewer-&gt;GetGLViewer();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!glViewer)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pos<sp/>=<sp/>m_scene-&gt;camera-&gt;positionVector;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>dir<sp/>=<sp/>m_scene-&gt;camera-&gt;directionVector;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pos.size()<sp/>&lt;<sp/>3<sp/>||<sp/>dir.size()<sp/>&lt;<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Normalize<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dx<sp/>=<sp/>dir[0],<sp/>dy<sp/>=<sp/>dir[1],<sp/>dz<sp/>=<sp/>dir[2];</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dlen<sp/>=<sp/>std::sqrt(dx*dx<sp/>+<sp/>dy*dy<sp/>+<sp/>dz*dz);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dlen<sp/>&lt;<sp/>1e-9)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>dx<sp/>/=<sp/>dlen;<sp/>dy<sp/>/=<sp/>dlen;<sp/>dz<sp/>/=<sp/>dlen;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Look-at<sp/>target:<sp/>a<sp/>point<sp/>ahead<sp/>of<sp/>the<sp/>eye<sp/>along<sp/>the<sp/>direction<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>Double_t<sp/>center[3]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos[0]<sp/>+<sp/>dx,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos[1]<sp/>+<sp/>dy,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pos[2]<sp/>+<sp/>dz</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>dolly:<sp/>distance<sp/>from<sp/>center<sp/>back<sp/>to<sp/>eye<sp/>(camera<sp/>sits<sp/>&apos;dolly&apos;<sp/>back<sp/>from<sp/>center)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>Double_t<sp/>dolly<sp/>=<sp/>std::sqrt(</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pos[0]-center[0])*(pos[0]-center[0])<sp/>+</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pos[1]-center[1])*(pos[1]-center[1])<sp/>+</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(pos[2]-center[2])*(pos[2]-center[2])</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>hRotate/vRotate<sp/>express<sp/>orientation<sp/>relative<sp/>to<sp/>kCameraPerspXOY&apos;s</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>default<sp/>facing<sp/>axis<sp/>—<sp/>calibrate<sp/>signs/offsets<sp/>against<sp/>that<sp/>convention.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>Double_t<sp/>hRotate<sp/>=<sp/>TMath::RadToDeg()<sp/>*<sp/>std::atan2(dy,<sp/>dx);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>Double_t<sp/>vRotate<sp/>=<sp/>TMath::RadToDeg()<sp/>*<sp/>std::asin(dz);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>Double_t<sp/>fov<sp/>=<sp/>30.0;<sp/></highlight><highlight class="comment">//<sp/>expose<sp/>via<sp/>SceneOptions<sp/>if<sp/>you<sp/>want<sp/>it<sp/>tunable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>glViewer-&gt;SetCurrentCamera(TGLViewer::kCameraPerspXOY);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>glViewer-&gt;SetPerspectiveCamera(</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TGLViewer::kCameraPerspXOY,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fov,<sp/>dolly,<sp/>center,<sp/>hRotate,<sp/>vRotate</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>glViewer-&gt;RequestDraw();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" refkind="member"><highlight class="normal">std::shared_ptr&lt;fccvis::scene::Scene&gt;<sp/><ref refid="classfccvis_1_1backend_1_1root_1_1RootScene_1a49ac8ccf1948e04f02dbc5fb5e271a75" kindref="member">RootScene::GetSceneAbstract</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_scene;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/backend/root/RootScene.cc"/>
+  </compounddef>
+</doxygen>

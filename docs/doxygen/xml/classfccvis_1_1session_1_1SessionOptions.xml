@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1session_1_1SessionOptions" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::session::SessionOptions</compoundname>
+    <includes refid="Session_8h" local="no">Session.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a0f5da7b2a7b8e607707df594ffcdfb50" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1meta_1_1Camera" kindref="compound">fccvis::scene::meta::Camera</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;fccvis::scene::meta::Camera&gt; &gt; fccvis::session::SessionOptions::cameras</definition>
+        <argsstring></argsstring>
+        <name>cameras</name>
+        <qualifiedname>fccvis::session::SessionOptions::cameras</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="17" column="15" bodyfile="src/session/include/Session.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a27509f8d779705054af5423aebf71724" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1meta_1_1Filter" kindref="compound">fccvis::scene::meta::Filter</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;fccvis::scene::meta::Filter&gt; &gt; fccvis::session::SessionOptions::filters</definition>
+        <argsstring></argsstring>
+        <name>filters</name>
+        <qualifiedname>fccvis::session::SessionOptions::filters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="18" column="15" bodyfile="src/session/include/Session.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a38476377e71e24b0cedb87b74a0981c2" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classfccvis_1_1scene_1_1Scene" kindref="compound">fccvis::scene::Scene</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;fccvis::scene::Scene&gt; &gt; fccvis::session::SessionOptions::scenes</definition>
+        <argsstring></argsstring>
+        <name>scenes</name>
+        <qualifiedname>fccvis::session::SessionOptions::scenes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="19" column="15" bodyfile="src/session/include/Session.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a9c55f994ba2b738b7ec957de56a9000f" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">fccvis::scene::meta::LayoutNode</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;fccvis::scene::meta::LayoutNode&gt; fccvis::session::SessionOptions::sceneLayout</definition>
+        <argsstring></argsstring>
+        <name>sceneLayout</name>
+        <qualifiedname>fccvis::session::SessionOptions::sceneLayout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="21" column="7" bodyfile="src/session/include/Session.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionOptions_1a70fb72404f388ebe66b86c4233e7d0d4" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; std::filesystem::path &gt;</type>
+        <definition>std::optional&lt;std::filesystem::path&gt; fccvis::session::SessionOptions::geometryFilePath</definition>
+        <argsstring></argsstring>
+        <name>geometryFilePath</name>
+        <qualifiedname>fccvis::session::SessionOptions::geometryFilePath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="22" column="17" bodyfile="src/session/include/Session.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/session/include/Session.h" line="14" column="1" bodyfile="src/session/include/Session.h" bodystart="14" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1session_1_1SessionOptions_1a0f5da7b2a7b8e607707df594ffcdfb50" prot="public" virt="non-virtual"><scope>fccvis::session::SessionOptions</scope><name>cameras</name></member>
+      <member refid="classfccvis_1_1session_1_1SessionOptions_1a27509f8d779705054af5423aebf71724" prot="public" virt="non-virtual"><scope>fccvis::session::SessionOptions</scope><name>filters</name></member>
+      <member refid="classfccvis_1_1session_1_1SessionOptions_1a70fb72404f388ebe66b86c4233e7d0d4" prot="public" virt="non-virtual"><scope>fccvis::session::SessionOptions</scope><name>geometryFilePath</name></member>
+      <member refid="classfccvis_1_1session_1_1SessionOptions_1a9c55f994ba2b738b7ec957de56a9000f" prot="public" virt="non-virtual"><scope>fccvis::session::SessionOptions</scope><name>sceneLayout</name></member>
+      <member refid="classfccvis_1_1session_1_1SessionOptions_1a38476377e71e24b0cedb87b74a0981c2" prot="public" virt="non-virtual"><scope>fccvis::session::SessionOptions</scope><name>scenes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

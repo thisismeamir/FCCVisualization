@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kind="struct" language="C++" prot="public">
+    <compoundname>fccvis::scene::meta::LayoutNode</compoundname>
+    <includes refid="MetaObjects_8h" local="no">MetaObjects.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacefccvis_1_1scene_1_1meta_1a017bf030c5651ecea05a747f42afba44" kindref="member">LayoutKind</ref></type>
+        <definition>LayoutKind fccvis::scene::meta::LayoutNode::kind</definition>
+        <argsstring></argsstring>
+        <name>kind</name>
+        <qualifiedname>fccvis::scene::meta::LayoutNode::kind</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/MetaObjects.h" line="13" column="16" bodyfile="src/scene/include/MetaObjects.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9" kindref="member">PackOrientation</ref></type>
+        <definition>PackOrientation fccvis::scene::meta::LayoutNode::orientation</definition>
+        <argsstring></argsstring>
+        <name>orientation</name>
+        <qualifiedname>fccvis::scene::meta::LayoutNode::orientation</qualifiedname>
+        <initializer>= <ref refid="namespacefccvis_1_1scene_1_1meta_1aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f" kindref="member">PackOrientation::Horizontal</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/MetaObjects.h" line="16" column="21" bodyfile="src/scene/include/MetaObjects.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string fccvis::scene::meta::LayoutNode::sceneName</definition>
+        <argsstring></argsstring>
+        <name>sceneName</name>
+        <qualifiedname>fccvis::scene::meta::LayoutNode::sceneName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/MetaObjects.h" line="19" column="17" bodyfile="src/scene/include/MetaObjects.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; std::shared_ptr&lt; <ref refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode" kindref="compound">LayoutNode</ref> &gt;, int &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;std::shared_ptr&lt;LayoutNode&gt;, int &gt; &gt; fccvis::scene::meta::LayoutNode::children</definition>
+        <argsstring></argsstring>
+        <name>children</name>
+        <qualifiedname>fccvis::scene::meta::LayoutNode::children</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/scene/include/MetaObjects.h" line="22" column="17" bodyfile="src/scene/include/MetaObjects.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/scene/include/MetaObjects.h" line="12" column="1" bodyfile="src/scene/include/MetaObjects.h" bodystart="12" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a38f7cc1bcf0653491cda8b413f360336" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>children</name></member>
+      <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aa857439454d802ec5f175ac95c36fe72" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>kind</name></member>
+      <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1a1c51ffbd38dcd79619a36368506c58ac" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>orientation</name></member>
+      <member refid="structfccvis_1_1scene_1_1meta_1_1LayoutNode_1aab75d819120f1784e99c3623b917a4a6" prot="public" virt="non-virtual"><scope>fccvis::scene::meta::LayoutNode</scope><name>sceneName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

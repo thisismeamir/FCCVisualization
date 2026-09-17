@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacefccvis" kind="namespace" language="C++">
+    <compoundname>fccvis</compoundname>
+    <innernamespace refid="namespacefccvis_1_1backend">fccvis::backend</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1cli">fccvis::cli</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1gui">fccvis::gui</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1scene">fccvis::scene</innernamespace>
+    <innernamespace refid="namespacefccvis_1_1session">fccvis::session</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/backend/root/include/RootScene.h" line="8" column="1"/>
+  </compounddef>
+</doxygen>

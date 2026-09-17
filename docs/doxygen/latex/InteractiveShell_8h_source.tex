@@ -1,0 +1,39 @@
+\doxysection{Interactive\+Shell.\+h}
+\hypertarget{InteractiveShell_8h_source}{}\label{InteractiveShell_8h_source}\index{src/cli/include/InteractiveShell.h@{src/cli/include/InteractiveShell.h}}
+\doxymbox{\hyperlink{InteractiveShell_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Session_8h}{Session.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{RootSceneManager_8h}{src/backend/root/include/RootSceneManager.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1cli}{fccvis::cli}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1cli_1_1InteractiveShell_ab5da44aabf83e24cc47c9030bc7b5af2}{InteractiveShell}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classfccvis_1_1cli_1_1InteractiveShell_ab5da44aabf83e24cc47c9030bc7b5af2}{InteractiveShell}}(\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::session::Session}}\&\ \doxymbox{\hyperlink{namespacefccvis_1_1session}{session}});}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classfccvis_1_1cli_1_1InteractiveShell_abd04c304d28b259f30db574dc67ab15e}{Run}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::session::Session}}\&\ m\_session;}
+\DoxyCodeLine{00016\ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{fccvis::backend::root::RootSceneManager}}\ m\_sceneManager;}
+\DoxyCodeLine{00017\ \ \ std::vector<std::string>\ m\_commandHistory;}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{bool}\ m\_quitRequested\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ EnsureEveManager();}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ BindSessionIntoCling();}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{bool}\ HandleBuiltin(\textcolor{keyword}{const}\ std::string\&\ line);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ Quit();}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ Save(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ See(\textcolor{keyword}{const}\ std::string\&\ sceneName);}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ Close(\textcolor{keyword}{const}\ std::string\&\ sceneName);}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ ListScenes();}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ ListOpen();}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ Help();}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{//\ namespace\ fccvis::cli}}
+
+\end{DoxyCode}

@@ -1,0 +1,105 @@
+\doxysection{fccvis::backend::root::Root\+Scene\+Manager Class Reference}
+\hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager}{}\label{classfccvis_1_1backend_1_1root_1_1RootSceneManager}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+
+
+{\ttfamily \+\#include $<$Root\+Scene\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a8d2892d1b81fa9961de8fcf57c7be543}{Root\+Scene\+Manager}} (\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}} \&session)
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a494634f1895f1d44cf7c7bab95bac15c}{Open}} (const std::\+string \&scene\+Name)
+\item 
+void \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a77cdf08c8eab81c3a96c39b2cfa72f68}{Close}} (const std::\+string \&scene\+Name)
+\item 
+bool \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b}{Update}} (const std::\+string \&scene\+Name)
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28}{Get}} (const std::\+string \&scene\+Name) const
+\item 
+bool \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a3e94a44331718088a84f9759bd5c64a1}{Is\+Open}} (const std::\+string \&scene\+Name) const
+\item 
+void \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a2b014bd850b64301af0ef67f8cae8870}{Close\+All}} ()
+\item 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a124a5c5cce68d10d6842bceac47a6fe6}{Open\+Scenes}} ()
+\item 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ std::\+string $>$ $>$ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_af9ab8883d43662e696dbefad676b396d}{Scene\+Names}} ()
+\end{DoxyCompactItemize}
+
+
+\label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_doc-constructors}
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a8d2892d1b81fa9961de8fcf57c7be543}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!RootSceneManager@{RootSceneManager}}
+\index{RootSceneManager@{RootSceneManager}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{RootSceneManager()}{RootSceneManager()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a8d2892d1b81fa9961de8fcf57c7be543} 
+fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Root\+Scene\+Manager (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::\+session::\+\+Session}} \&}]{session}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_doc-func-members}
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a77cdf08c8eab81c3a96c39b2cfa72f68}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Close@{Close}}
+\index{Close@{Close}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a77cdf08c8eab81c3a96c39b2cfa72f68} 
+void fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Close (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a2b014bd850b64301af0ef67f8cae8870}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!CloseAll@{CloseAll}}
+\index{CloseAll@{CloseAll}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{CloseAll()}{CloseAll()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a2b014bd850b64301af0ef67f8cae8870} 
+void fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Close\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Get@{Get}}
+\index{Get@{Get}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28} 
+\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Get (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a3e94a44331718088a84f9759bd5c64a1}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!IsOpen@{IsOpen}}
+\index{IsOpen@{IsOpen}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{IsOpen()}{IsOpen()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a3e94a44331718088a84f9759bd5c64a1} 
+bool fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Is\+Open (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a494634f1895f1d44cf7c7bab95bac15c}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Open@{Open}}
+\index{Open@{Open}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a494634f1895f1d44cf7c7bab95bac15c} 
+\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{Root\+Scene}} \texorpdfstring{$\ast$}{*} fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Open (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a124a5c5cce68d10d6842bceac47a6fe6}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!OpenScenes@{OpenScenes}}
+\index{OpenScenes@{OpenScenes}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{OpenScenes()}{OpenScenes()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a124a5c5cce68d10d6842bceac47a6fe6} 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ \doxymbox{\hyperlink{classfccvis_1_1scene_1_1Scene}{fccvis::\+scene::\+\+Scene}} $>$ $>$ fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Open\+Scenes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_af9ab8883d43662e696dbefad676b396d}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!SceneNames@{SceneNames}}
+\index{SceneNames@{SceneNames}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{SceneNames()}{SceneNames()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_af9ab8883d43662e696dbefad676b396d} 
+std::\+vector$<$ std::\+shared\+\_\+ptr$<$ std::\+string $>$ $>$ fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Scene\+Names (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b}\index{fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}!Update@{Update}}
+\index{Update@{Update}!fccvis::backend::root::RootSceneManager@{fccvis::backend::root::RootSceneManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b} 
+bool fccvis::\+backend::\+root::\+\+Root\+Scene\+Manager::\+\+Update (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{scene\+Name}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+backend/\+root/\+include/\doxymbox{\hyperlink{RootSceneManager_8h}{Root\+Scene\+Manager.\+h}}\item 
+src/\+backend/\+root/\doxymbox{\hyperlink{RootSceneManager_8cc}{Root\+Scene\+Manager.\+cc}}\end{DoxyCompactItemize}

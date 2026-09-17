@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1cli_1_1InteractiveShell" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::cli::InteractiveShell</compoundname>
+    <includes refid="InteractiveShell_8h" local="no">InteractiveShell.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1cli_1_1InteractiveShell_1a2336604a17890ee30a28606ad44c9adc" prot="private" static="no" mutable="no">
+        <type><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> &amp;</type>
+        <definition>fccvis::session::Session&amp; fccvis::cli::InteractiveShell::m_session</definition>
+        <argsstring></argsstring>
+        <name>m_session</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::m_session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="15" column="28" bodyfile="src/cli/include/InteractiveShell.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1cli_1_1InteractiveShell_1a0c762255dc5a379cff97fb51369fd4aa" prot="private" static="no" mutable="no">
+        <type><ref refid="classfccvis_1_1backend_1_1root_1_1RootSceneManager" kindref="compound">fccvis::backend::root::RootSceneManager</ref></type>
+        <definition>fccvis::backend::root::RootSceneManager fccvis::cli::InteractiveShell::m_sceneManager</definition>
+        <argsstring></argsstring>
+        <name>m_sceneManager</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::m_sceneManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="16" column="43" bodyfile="src/cli/include/InteractiveShell.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1cli_1_1InteractiveShell_1a2cd8627ce2c336768d02256fdf17c6b2" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; fccvis::cli::InteractiveShell::m_commandHistory</definition>
+        <argsstring></argsstring>
+        <name>m_commandHistory</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::m_commandHistory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="17" column="15" bodyfile="src/cli/include/InteractiveShell.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classfccvis_1_1cli_1_1InteractiveShell_1a6097306445a75fcbff9590e8f15d0794" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool fccvis::cli::InteractiveShell::m_quitRequested</definition>
+        <argsstring></argsstring>
+        <name>m_quitRequested</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::m_quitRequested</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="18" column="8" bodyfile="src/cli/include/InteractiveShell.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1ab5da44aabf83e24cc47c9030bc7b5af2" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fccvis::cli::InteractiveShell::InteractiveShell</definition>
+        <argsstring>(fccvis::session::Session &amp;session)</argsstring>
+        <name>InteractiveShell</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::InteractiveShell</qualifiedname>
+        <param>
+          <type><ref refid="classfccvis_1_1session_1_1Session" kindref="compound">fccvis::session::Session</ref> &amp;</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="11" column="12" bodyfile="src/cli/InteractiveShell.cc" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1abd04c304d28b259f30db574dc67ab15e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::Run</definition>
+        <argsstring>()</argsstring>
+        <name>Run</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::Run</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="12" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="47" bodyend="63"/>
+        <referencedby refid="namespacefccvis_1_1cli_1a633227c3a37438a118039eb88649b120" compoundref="RunApplication_8cc" startline="10" endline="49">fccvis::cli::RunApplication</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1a270933f25eb3421b3214780376b2cce9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::EnsureEveManager</definition>
+        <argsstring>()</argsstring>
+        <name>EnsureEveManager</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::EnsureEveManager</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="20" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="20" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1a00d0d3de797061b9a3f79c3b098cf433" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::BindSessionIntoCling</definition>
+        <argsstring>()</argsstring>
+        <name>BindSessionIntoCling</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::BindSessionIntoCling</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="21" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="32" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1ad344d1cce57e7db9b4015910c3a49d98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool fccvis::cli::InteractiveShell::HandleBuiltin</definition>
+        <argsstring>(const std::string &amp;line)</argsstring>
+        <name>HandleBuiltin</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::HandleBuiltin</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="22" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="65" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1a9a22713ab78333d83371d407f810ccdb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::Quit</definition>
+        <argsstring>()</argsstring>
+        <name>Quit</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::Quit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="24" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1ae4c96f0283f04a4e41c009bfe8abf30a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::Save</definition>
+        <argsstring>(const std::string &amp;path)</argsstring>
+        <name>Save</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::Save</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="25" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="102" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1adf9d34d7685608942878a307d20db2fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::See</definition>
+        <argsstring>(const std::string &amp;sceneName)</argsstring>
+        <name>See</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::See</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="26" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="128" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1ada5df51320e4725f0a1c1c1c3edbcd2b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::Close</definition>
+        <argsstring>(const std::string &amp;sceneName)</argsstring>
+        <name>Close</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::Close</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sceneName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="27" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="142" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1a7a57a41cb40032cb75211896578aec73" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::ListScenes</definition>
+        <argsstring>()</argsstring>
+        <name>ListScenes</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::ListScenes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="28" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="150" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1a2237b82938102cb3894cc63cb5a29837" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::ListOpen</definition>
+        <argsstring>()</argsstring>
+        <name>ListOpen</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::ListOpen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="29" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="156" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classfccvis_1_1cli_1_1InteractiveShell_1ad6a2ed6239a1c06d7baabdb419f841f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void fccvis::cli::InteractiveShell::Help</definition>
+        <argsstring>()</argsstring>
+        <name>Help</name>
+        <qualifiedname>fccvis::cli::InteractiveShell::Help</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/cli/include/InteractiveShell.h" line="30" column="8" bodyfile="src/cli/InteractiveShell.cc" bodystart="163" bodyend="170"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/cli/include/InteractiveShell.h" line="9" column="1" bodyfile="src/cli/include/InteractiveShell.h" bodystart="9" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a00d0d3de797061b9a3f79c3b098cf433" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>BindSessionIntoCling</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ada5df51320e4725f0a1c1c1c3edbcd2b" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>Close</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a270933f25eb3421b3214780376b2cce9" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>EnsureEveManager</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ad344d1cce57e7db9b4015910c3a49d98" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>HandleBuiltin</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ad6a2ed6239a1c06d7baabdb419f841f1" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>Help</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ab5da44aabf83e24cc47c9030bc7b5af2" prot="public" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>InteractiveShell</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a2237b82938102cb3894cc63cb5a29837" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>ListOpen</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a7a57a41cb40032cb75211896578aec73" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>ListScenes</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a2cd8627ce2c336768d02256fdf17c6b2" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>m_commandHistory</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a6097306445a75fcbff9590e8f15d0794" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>m_quitRequested</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a0c762255dc5a379cff97fb51369fd4aa" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>m_sceneManager</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a2336604a17890ee30a28606ad44c9adc" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>m_session</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1a9a22713ab78333d83371d407f810ccdb" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>Quit</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1abd04c304d28b259f30db574dc67ab15e" prot="public" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>Run</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1ae4c96f0283f04a4e41c009bfe8abf30a" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>Save</name></member>
+      <member refid="classfccvis_1_1cli_1_1InteractiveShell_1adf9d34d7685608942878a307d20db2fc" prot="private" virt="non-virtual"><scope>fccvis::cli::InteractiveShell</scope><name>See</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

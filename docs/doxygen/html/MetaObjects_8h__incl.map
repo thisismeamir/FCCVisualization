@@ -1,0 +1,13 @@
+<map id="src/scene/include/MetaObjects.h" name="src/scene/include/MetaObjects.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="21,5,252,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,82,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,36,74,73,70,69,122,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="106,81,168,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,31,139,66,134,64,136,36"/>
+<area shape="rect" id="Node000004" href="$BaseSessionObject_8h.html" title=" " alt="" coords="192,81,349,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,31,236,73,231,74,160,36"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="180,157,264,184"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,108,241,146,237,142,259,111"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="289,157,347,184"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="280,107,304,144,299,143,278,112"/>
+</map>

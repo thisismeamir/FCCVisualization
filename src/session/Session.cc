@@ -1,15 +1,14 @@
 #include "Session.h"
-#include "edm4hep/SimCalorimeterHitCollection.h"
-#include "edm4hep/SimTrackerHitCollection.h"
+
 #include "podio/Frame.h"
 #include "podio/ROOTReader.h"
-#include <algorithm>
 #include <filesystem>
-#include <memory>
 #include <optional>
+#include <podio/CollectionBase.h>
 #include <string>
+#include <string_view>
+#include <unordered_map>
 #include <utility>
-
 namespace fccvis::session {
 
 Session::Session(std::string name,
@@ -31,52 +30,53 @@ void Session::initData() {
   podio::ROOTReader reader;
   reader.openFile(m_dataFilePath->string());
 
-  const unsigned int numEvents = reader.getEntries("events");
-  m_data.events.reserve(numEvents);
+  for (const auto &categoryView : reader.getAvailableCategories()) {
+    const std::string category{categoryView};
+    const auto nEntries = reader.getEntries(category);
+    auto &frames = m_data.categories[category];
+    frames.reserve(nEntries);
 
-  for (unsigned int i = 0; i < numEvents; ++i) {
-    auto frameData = reader.readEntry("events", i);
-    podio::Frame frame(std::move(frameData));
-
-    session::Event event;
-
-    for (const auto &collectionName : frame.getAvailableCollections()) {
-      const podio::CollectionBase *pCollection = frame.get(collectionName);
-      if (pCollection == nullptr)
-        continue;
-
-      if (const auto *pTrackerHits =
-              dynamic_cast<const edm4hep::SimCalorimeterHitCollection *>(
-                  pCollection)) {
-        for (const auto &hit : *pTrackerHits)
-          event.markers.push_back(
-              std::make_shared<scene::objects::Marker>(collectionName));
-        // TODO: populate marker position from hit.getPosition()
-      } else if (const auto *pCaloHits =
-                     dynamic_cast<const edm4hep::SimCalorimeterHitCollection *>(
-                         pCollection)) {
-        for (const auto &hit : *pCaloHits)
-          event.markers.push_back(
-              std::make_shared<scene::objects::Marker>(collectionName));
-        // TODO: populate marker position from hit.getPosition()
-      }
-      // TODO: other edm4hep collection types (tracks, clusters, MC particles,
-      // ...)
+    for (unsigned i = 0; i < nEntries; ++i) {
+      frames.emplace_back(reader.readNextEntry(category));
     }
-
-    m_data.events.push_back(std::move(event));
   }
-};
+}
 
-void Session::initOptions() {
-   m_options = SessionOptions{};
-};
+void Session::initOptions() { m_options = SessionOptions{}; };
 std::optional<std::filesystem::path> Session::GetOptionsFile() {
   return m_optionsFilePath;
 }
 
-SessionOptions Session::GetOptions() {
-  return m_options;
+SessionOptions Session::GetOptions() { return m_options; }
+
+std::vector<std::string> Session::Categories() const {
+  std::vector<std::string> names;
+  names.reserve(m_data.categories.size());
+  for (const auto &[name, frames] : m_data.categories) {
+    names.push_back(name);
+  }
+  return names;
 }
 
+size_t Session::EntryCount(const std::string &category) const {
+  const auto it = m_data.categories.find(category);
+  return it == m_data.categories.end() ? 0 : it->second.size();
+}
+
+const podio::Frame &Session::GetFrame(const std::string &category,
+                                      size_t entryIndex) const {
+  return m_data.categories.at(category).at(entryIndex);
+}
+
+std::vector<std::string> Session::CollectionNames(const std::string &category,
+                                                  size_t entryIndex) const {
+  return GetFrame(category, entryIndex).getAvailableCollections();
+}
+
+std::string Session::CollectionType(const std::string &category,
+                                    size_t entryIndex,
+                                    const std::string &collName) const {
+  const auto *coll = GetFrame(category, entryIndex).get(collName);
+  return coll ? std::string{coll->getTypeName()} : std::string{};
+}
 } // namespace fccvis::session

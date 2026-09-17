@@ -1,0 +1,281 @@
+\doxysection{fccvis::session::Session Class Reference}
+\hypertarget{classfccvis_1_1session_1_1Session}{}\label{classfccvis_1_1session_1_1Session}\index{fccvis::session::Session@{fccvis::session::Session}}
+
+
+{\ttfamily \+\#include $<$Session.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} (std::\+string name, std::\+optional$<$ std::\+filesystem::\+path $>$ data\+File\+Path, std::\+optional$<$ std::\+filesystem::\+path $>$ options\+File\+Path)
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aac0ae08cfbf9ccc4fa7324bb0fcd20de}{\texorpdfstring{$\sim$}{\string~}\+Session}} ()
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d}{Session}} (const Session \&)=delete
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848}{operator=}} (const \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&)=delete
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5}{Session}} (Session \&\&) noexcept=default
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3}{operator=}} (\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&\&) noexcept=default
+\item 
+void \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322}{init\+Data}} ()
+\item 
+void \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e}{init\+Options}} ()
+\item 
+std::\+optional$<$ std::\+filesystem::\+path $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba}{Get\+Options\+File}} ()
+\item 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57}{Get\+Options}} ()
+\item 
+const std::\+string \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43}{Name}} () const
+\item 
+const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{Session\+Data}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_abc3af1740e27ef5b6b7dae88e5518349}{Data}} () const
+\item 
+const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a4ed06b9a05f53d830377e579a94b2abe}{Options}} () const
+\item 
+std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a0215b2b549da22eaff76490193916dbe}{Categories}} () const
+\item 
+size\+\_\+t \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a13d642f9984714f5d6a9bee855239cd8}{Entry\+Count}} (const std::\+string \&category) const
+\item 
+std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf}{Collection\+Names}} (const std::\+string \&category, size\+\_\+t entry\+Index) const
+\item 
+std::\+string \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713}{Collection\+Type}} (const std::\+string \&category, size\+\_\+t entry\+Index, const std::\+string \&coll\+Name) const
+\item 
+const podio::\+\+Frame \& \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51}{Get\+Frame}} (const std::\+string \&category, size\+\_\+t entry\+Index) const
+\end{DoxyCompactItemize}
+
+
+\label{classfccvis_1_1session_1_1Session_doc-constructors}
+\Hypertarget{classfccvis_1_1session_1_1Session_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}\index{fccvis::session::Session@{fccvis::session::Session}!Session@{Session}}
+\index{Session@{Session}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623} 
+fccvis::\+session::\+\+Session::\+\+Session (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{, }\item[{std::\+optional$<$ std::\+filesystem::\+path $>$}]{data\+File\+Path}{, }\item[{std::\+optional$<$ std::\+filesystem::\+path $>$}]{options\+File\+Path}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_aac0ae08cfbf9ccc4fa7324bb0fcd20de}\index{fccvis::session::Session@{fccvis::session::Session}!````~Session@{\texorpdfstring{$\sim$}{\string~}Session}}
+\index{````~Session@{\texorpdfstring{$\sim$}{\string~}Session}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Session()}{\string~Session()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_aac0ae08cfbf9ccc4fa7324bb0fcd20de} 
+fccvis::\+session::\+\+Session::\+\texorpdfstring{$\sim$}{\string~}\+Session (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d}\index{fccvis::session::Session@{fccvis::session::Session}!Session@{Session}}
+\index{Session@{Session}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d} 
+fccvis::\+session::\+\+Session::\+\+Session (\begin{DoxyParamCaption}\item[{const Session \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5}\index{fccvis::session::Session@{fccvis::session::Session}!Session@{Session}}
+\index{Session@{Session}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5} 
+fccvis::\+session::\+\+Session::\+\+Session (\begin{DoxyParamCaption}\item[{Session \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{classfccvis_1_1session_1_1Session_doc-func-members}
+\Hypertarget{classfccvis_1_1session_1_1Session_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classfccvis_1_1session_1_1Session_a0215b2b549da22eaff76490193916dbe}\index{fccvis::session::Session@{fccvis::session::Session}!Categories@{Categories}}
+\index{Categories@{Categories}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{Categories()}{Categories()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a0215b2b549da22eaff76490193916dbe} 
+std::\+vector$<$ std::\+string $>$ fccvis::\+session::\+\+Session::\+\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf}\index{fccvis::session::Session@{fccvis::session::Session}!CollectionNames@{CollectionNames}}
+\index{CollectionNames@{CollectionNames}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{CollectionNames()}{CollectionNames()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf} 
+std::\+vector$<$ std::\+string $>$ fccvis::\+session::\+\+Session::\+\+Collection\+Names (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{, }\item[{size\+\_\+t}]{entry\+Index}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713}\index{fccvis::session::Session@{fccvis::session::Session}!CollectionType@{CollectionType}}
+\index{CollectionType@{CollectionType}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{CollectionType()}{CollectionType()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713} 
+std::\+string fccvis::\+session::\+\+Session::\+\+Collection\+Type (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{, }\item[{size\+\_\+t}]{entry\+Index}{, }\item[{const std::\+string \&}]{coll\+Name}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_abc3af1740e27ef5b6b7dae88e5518349}\index{fccvis::session::Session@{fccvis::session::Session}!Data@{Data}}
+\index{Data@{Data}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_abc3af1740e27ef5b6b7dae88e5518349} 
+const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{Session\+Data}} \& fccvis::\+session::\+\+Session::\+\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classfccvis_1_1session_1_1Session_a13d642f9984714f5d6a9bee855239cd8}\index{fccvis::session::Session@{fccvis::session::Session}!EntryCount@{EntryCount}}
+\index{EntryCount@{EntryCount}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{EntryCount()}{EntryCount()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a13d642f9984714f5d6a9bee855239cd8} 
+size\+\_\+t fccvis::\+session::\+\+Session::\+\+Entry\+Count (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51}\index{fccvis::session::Session@{fccvis::session::Session}!GetFrame@{GetFrame}}
+\index{GetFrame@{GetFrame}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{GetFrame()}{GetFrame()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51} 
+const podio::\+\+Frame \& fccvis::\+session::\+\+Session::\+\+Get\+Frame (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{category}{, }\item[{size\+\_\+t}]{entry\+Index}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57}\index{fccvis::session::Session@{fccvis::session::Session}!GetOptions@{GetOptions}}
+\index{GetOptions@{GetOptions}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{GetOptions()}{GetOptions()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57} 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} fccvis::\+session::\+\+Session::\+\+Get\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba}\index{fccvis::session::Session@{fccvis::session::Session}!GetOptionsFile@{GetOptionsFile}}
+\index{GetOptionsFile@{GetOptionsFile}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{GetOptionsFile()}{GetOptionsFile()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba} 
+std::\+optional$<$ std::\+filesystem::\+path $>$ fccvis::\+session::\+\+Session::\+\+Get\+Options\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322}\index{fccvis::session::Session@{fccvis::session::Session}!initData@{initData}}
+\index{initData@{initData}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{initData()}{initData()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322} 
+void fccvis::\+session::\+\+Session::\+init\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e}\index{fccvis::session::Session@{fccvis::session::Session}!initOptions@{initOptions}}
+\index{initOptions@{initOptions}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{initOptions()}{initOptions()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e} 
+void fccvis::\+session::\+\+Session::\+init\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43}\index{fccvis::session::Session@{fccvis::session::Session}!Name@{Name}}
+\index{Name@{Name}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{Name()}{Name()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43} 
+const std::\+string \& fccvis::\+session::\+\+Session::\+\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848}\index{fccvis::session::Session@{fccvis::session::Session}!operator=@{operator=}}
+\index{operator=@{operator=}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848} 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& fccvis::\+session::\+\+Session::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3}\index{fccvis::session::Session@{fccvis::session::Session}!operator=@{operator=}}
+\index{operator=@{operator=}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3} 
+\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \& fccvis::\+session::\+\+Session::\+operator= (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}} \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfccvis_1_1session_1_1Session_a1707c5d13d7bc497054f223442c8abb3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classfccvis_1_1session_1_1Session_a4ed06b9a05f53d830377e579a94b2abe}\index{fccvis::session::Session@{fccvis::session::Session}!Options@{Options}}
+\index{Options@{Options}!fccvis::session::Session@{fccvis::session::Session}}
+\doxysubsubsection{\texorpdfstring{Options()}{Options()}}
+{\footnotesize\ttfamily \label{classfccvis_1_1session_1_1Session_a4ed06b9a05f53d830377e579a94b2abe} 
+const \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{Session\+Options}} \& fccvis::\+session::\+\+Session::\+\+Options (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+session/\+include/\doxymbox{\hyperlink{Session_8h}{Session.\+h}}\item 
+src/\+session/\doxymbox{\hyperlink{Session_8cc}{Session.\+cc}}\end{DoxyCompactItemize}

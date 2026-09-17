@@ -12,7 +12,6 @@ find_package(EDM4HEP CONFIG REQUIRED)
 target_link_libraries(fccvis_session PUBLIC
     FCCVisualization::CompilerWarnings
     fccvis_scene
-    fccvis_data
     podio::podio
     podio::podioRootIO
     EDM4HEP::edm4hep

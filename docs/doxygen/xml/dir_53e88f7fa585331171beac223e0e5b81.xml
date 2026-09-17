@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="dir_53e88f7fa585331171beac223e0e5b81" kind="dir">
+    <compoundname>src/session</compoundname>
+    <innerdir refid="dir_189d92c3d6c48a20c804e04c2a9d9ec2">src/session/include</innerdir>
+    <innerfile refid="session_2placeholder_8cc">placeholder.cc</innerfile>
+    <innerfile refid="Session_8cc">Session.cc</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/session/"/>
+  </compounddef>
+</doxygen>

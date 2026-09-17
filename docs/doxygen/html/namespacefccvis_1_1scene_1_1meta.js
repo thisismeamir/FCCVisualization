@@ -1,0 +1,57 @@
+var namespacefccvis_1_1scene_1_1meta =
+[
+    [ "Camera", "classfccvis_1_1scene_1_1meta_1_1Camera.html", "classfccvis_1_1scene_1_1meta_1_1Camera" ],
+    [ "Filter", "classfccvis_1_1scene_1_1meta_1_1Filter.html", "classfccvis_1_1scene_1_1meta_1_1Filter" ],
+    [ "LayoutNode", "structfccvis_1_1scene_1_1meta_1_1LayoutNode.html", "structfccvis_1_1scene_1_1meta_1_1LayoutNode" ],
+    [ "Line", "classfccvis_1_1scene_1_1meta_1_1Line.html", "classfccvis_1_1scene_1_1meta_1_1Line" ],
+    [ "Marker", "classfccvis_1_1scene_1_1meta_1_1Marker.html", "classfccvis_1_1scene_1_1meta_1_1Marker" ],
+    [ "SceneOptions", "classfccvis_1_1scene_1_1meta_1_1SceneOptions.html", "classfccvis_1_1scene_1_1meta_1_1SceneOptions" ],
+    [ "Color", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106e", [
+      [ "White", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea25a81701fbfa4a1efdf660a950c1d006", null ],
+      [ "Black", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eae90dfb84e30edf611e326eeb04d680de", null ],
+      [ "Red", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eaee38e4d5dd68c4e440825018d549cb47", null ],
+      [ "Green", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ead382816a3cbeed082c9e216e7392eed1", null ],
+      [ "Blue", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea9594eec95be70e7b1710f730fdda33d9", null ],
+      [ "Magenta", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eab91cc2c1416fcca942b61c7ac5b1a9ac", null ],
+      [ "Cyan", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea023c239d2f2538f140a20e72c7b73f20", null ],
+      [ "Violet", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea80f1187112e2e5e0403499147f7014b8", null ],
+      [ "Pink", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea8dc5344bc0746e1cc5abf896ca03bbdf", null ],
+      [ "Orange", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea909cea0c97058cfe2e3ea8d675cb08e1", null ],
+      [ "Yellow", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea51e6cd92b6c45f9affdc158ecca2b8b8", null ],
+      [ "Spring", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea38008dd81c2f4d7985ecf6e0ce8af1d1", null ],
+      [ "Teal", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eae20385a2b41df1743f787ebef18222b8", null ],
+      [ "Azure", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea3a580f142203677f1f0bc30898f63f53", null ],
+      [ "Gray", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea994ae1d9731cebe455aff211bcb25b93", null ],
+      [ "DarkRed", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea8746d21f8164452063398744f06307dd", null ],
+      [ "DarkGreen", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eaf780aab6295a2f368ac69a514f8b4605", null ],
+      [ "DarkBlue", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea877716336e4eb22ac67faaa9c2b86635", null ],
+      [ "DarkMagenta", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eadf1b1322cf6703efd9885b0651ddb57a", null ],
+      [ "DarkCyan", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea85b1ae66e65b490f35c5e8b725e7049f", null ],
+      [ "DarkViolet", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eafb49b4fcac3fd7164a4419a7f1db7c38", null ],
+      [ "DarkPink", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea10cea9ecd7dbdede7edf97e382b55c0c", null ],
+      [ "DarkOrange", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea0199f373639f4b589a135cf877981572", null ],
+      [ "DarkYellow", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea42d873bb34e1055e40aad0ec45039e8b", null ],
+      [ "LightRed", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eaf9a96fb667261a141d10021a66d6ad0f", null ],
+      [ "LightGreen", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea7a6a38bec67cbc2a39ce22f34e4ed8e2", null ],
+      [ "LightBlue", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea4d7ff7393a484a7b9ed2e381f5cdeaf7", null ],
+      [ "LightMagenta", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eaf1ec64ef9f82e9fb86b094f8b548f9f1", null ],
+      [ "LightCyan", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eac37b5ce4ba80a097d82726ae74d34b13", null ],
+      [ "LightViolet", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eab389fcb54d9e3ac8154a20ffb59c24a9", null ],
+      [ "LightPink", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eab9c31a17936f5966fd4fbe74f9b09012", null ],
+      [ "LightOrange", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea475e89699fa47c1b7b07977437e16b3c", null ],
+      [ "LightYellow", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eafaf948b65bda38f44b17d156177d1728", null ],
+      [ "Auto", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea06b9281e396db002010bde1de57262eb", null ],
+      [ "AutoId", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106eadc9a0f370cb685d1c48af0ba200f9ac1", null ],
+      [ "AutoIter", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea33c47748c7e39073679b8adbaa2c1fdf", null ],
+      [ "AutoEnergy", "namespacefccvis_1_1scene_1_1meta.html#aff2f8169b31242b22ee2e21eb2ee106ea8644f96ff7e3ae5af2cbe1c4a051724a", null ]
+    ] ],
+    [ "LayoutKind", "namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44", [
+      [ "Pack", "namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a4492081ca02b059f9e8af4ddaf0f7292", null ],
+      [ "Tab", "namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44a5c6ba25104401c9ee0650230fc6ba413", null ],
+      [ "Leaf", "namespacefccvis_1_1scene_1_1meta.html#a017bf030c5651ecea05a747f42afba44ac3b5e1f7de11d645fb1da6c5415b1fa5", null ]
+    ] ],
+    [ "PackOrientation", "namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9", [
+      [ "Horizontal", "namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9ac1b5fa03ecdb95d4a45dd1c40b02527f", null ],
+      [ "Vertical", "namespacefccvis_1_1scene_1_1meta.html#aa39904d71a1030ce42ba644e060b7ca9a06ce2a25e5d12c166a36f654dbea6012", null ]
+    ] ]
+];

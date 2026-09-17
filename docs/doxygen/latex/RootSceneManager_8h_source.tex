@@ -1,0 +1,48 @@
+\doxysection{Root\+Scene\+Manager.\+h}
+\hypertarget{RootSceneManager_8h_source}{}\label{RootSceneManager_8h_source}\index{src/backend/root/include/RootSceneManager.h@{src/backend/root/include/RootSceneManager.h}}
+\doxymbox{\hyperlink{RootSceneManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{RootScene_8h}{RootScene.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Session_8h}{Session.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1backend_1_1root}{fccvis::backend::root}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a8d2892d1b81fa9961de8fcf57c7be543}{RootSceneManager}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a8d2892d1b81fa9961de8fcf57c7be543}{RootSceneManager}}(\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::session::Session}}\&\ \doxymbox{\hyperlink{namespacefccvis_1_1session}{session}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Materializes\ abstract\ Scene\ 'sceneName'\ into\ a\ live\ TEveScene/TEveViewer.}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Returns\ the\ existing\ RootScene\ if\ already\ open.}}
+\DoxyCodeLine{00019\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{RootScene}}*\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a494634f1895f1d44cf7c7bab95bac15c}{Open}}(\textcolor{keyword}{const}\ std::string\&\ sceneName);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Tears\ down\ this\ scene's\ TEve-\/side\ objects\ only.\ Abstract\ Scene/data\ untouched.}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a77cdf08c8eab81c3a96c39b2cfa72f68}{Close}}(\textcolor{keyword}{const}\ std::string\&\ sceneName);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Re-\/pushes\ camera\ state\ into\ an\ already-\/open\ scene.}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Filters/data\ are\ shared\_ptrs\ into\ the\ same\ objects\ TEve\ already\ draws}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ from,\ so\ those\ stay\ live\ without\ any\ action\ here\ —\ this\ only\ covers}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ what\ SyncCamera()\ explicitly\ pushes\ (camera\ position/direction).}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a81cdc76f0fe4ffb80a0147adf555ce0b}{Update}}(\textcolor{keyword}{const}\ std::string\&\ sceneName);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootScene}{RootScene}}*\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_ade5c6465ef8672c54d373e6921da8d28}{Get}}(\textcolor{keyword}{const}\ std::string\&\ sceneName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a3e94a44331718088a84f9759bd5c64a1}{IsOpen}}(\textcolor{keyword}{const}\ std::string\&\ sceneName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a2b014bd850b64301af0ef67f8cae8870}{CloseAll}}();}
+\DoxyCodeLine{00033\ \ \ \ \ std::vector<std::shared\_ptr<fccvis::scene::Scene>>\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_a124a5c5cce68d10d6842bceac47a6fe6}{OpenScenes}}();}
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<std::shared\_ptr<std::string>>\ \doxymbox{\hyperlink{classfccvis_1_1backend_1_1root_1_1RootSceneManager_af9ab8883d43662e696dbefad676b396d}{SceneNames}}();}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session}{fccvis::session::Session}}\&\ m\_session;}
+\DoxyCodeLine{00037\ \ \ \ \ std::map<std::string,\ std::unique\_ptr<RootScene>>\ m\_openScenes;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::shared\_ptr<fccvis::scene::Scene>\ FindAbstractScene(\textcolor{keyword}{const}\ std::string\&\ sceneName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \}\ \textcolor{comment}{//\ namespace\ fccvis::backend::root}}
+
+\end{DoxyCode}

@@ -1,0 +1,71 @@
+\doxysection{Session.\+h}
+\hypertarget{Session_8h_source}{}\label{Session_8h_source}\index{src/session/include/Session.h@{src/session/include/Session.h}}
+\doxymbox{\hyperlink{Session_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{MetaObjects_8h}{MetaObjects.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{Scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <podio/Frame.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespacefccvis_1_1session}{fccvis::session}}\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{SessionOptions}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ std::vector<std::shared\_ptr<fccvis::scene::meta::Camera>>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a0f5da7b2a7b8e607707df594ffcdfb50}{cameras}};}
+\DoxyCodeLine{00018\ \ \ std::vector<std::shared\_ptr<fccvis::scene::meta::Filter>>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a27509f8d779705054af5423aebf71724}{filters}};}
+\DoxyCodeLine{00019\ \ \ std::vector<std::shared\_ptr<fccvis::scene::Scene>>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a38476377e71e24b0cedb87b74a0981c2}{scenes}};}
+\DoxyCodeLine{00020\ \ \ std::shared\_ptr<fccvis::scene::meta::LayoutNode>}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a9c55f994ba2b738b7ec957de56a9000f}{sceneLayout}};\ \textcolor{comment}{//\ scene\ names\ shown\ together}}
+\DoxyCodeLine{00022\ \ \ std::optional<std::filesystem::path>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions_a70fb72404f388ebe66b86c4233e7d0d4}{geometryFilePath}};}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{SessionData}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ std::unordered\_map<std::string,\ std::vector<podio::Frame>>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData_aa64d148059aa9830c11aef0d420e413a}{categories}};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}(std::string\ name,\ std::optional<std::filesystem::path>\ dataFilePath,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ std::optional<std::filesystem::path>\ optionsFilePath);}
+\DoxyCodeLine{00034\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aac0ae08cfbf9ccc4fa7324bb0fcd20de}{\string~Session}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a6644797681412b39b6896338c105ad4d}{Session}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}\ \&\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ab9f048e500ea40a62cbca1d4282da848}{operator=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00038\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a442580be155f6cd5306c6f38ab6552b5}{Session}}(\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}\ \&\&)\ noexcept\ =\ default;}
+\DoxyCodeLine{00039\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}\ \&operator=(\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeba1550ec6239fdf845f5c099f27d623}{Session}}\ \&\&)\ noexcept\ =\ default;}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ad3977b05e822af6371d797811af87322}{initData}}();}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a37331d0f91cf252aaab0cd20d340643e}{initOptions}}();}
+\DoxyCodeLine{00042\ \ \ std::optional<std::filesystem::path>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_ab81e55997ba1f2c56ac56a6bed42d2ba}{GetOptionsFile}}();}
+\DoxyCodeLine{00043\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{SessionOptions}}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a9b9a58d799ff950721e959f90f040e57}{GetOptions}}();}
+\DoxyCodeLine{00044\ \ \ const\ std::\textcolor{keywordtype}{string}\ \&\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_aeb73514b188f59bfd04f088639808d43}{Name}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_name;\ \}}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{SessionData}}\ \&\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_abc3af1740e27ef5b6b7dae88e5518349}{Data}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_data;\ \}}
+\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{SessionOptions}}\ \&\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a4ed06b9a05f53d830377e579a94b2abe}{Options}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_options;\ \}}
+\DoxyCodeLine{00047\ \ \ std::vector<std::string>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a0215b2b549da22eaff76490193916dbe}{Categories}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{size\_t}\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a13d642f9984714f5d6a9bee855239cd8}{EntryCount}}(\textcolor{keyword}{const}\ std::string\ \&category)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ std::vector<std::string>\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_abfeb70dc45d2b18889c591657524ebdf}{CollectionNames}}(\textcolor{keyword}{const}\ std::string\ \&category,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ entryIndex)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ std::string\ \doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a883adf902b23ba4272607f06d4900713}{CollectionType}}(\textcolor{keyword}{const}\ std::string\ \&category,\ \textcolor{keywordtype}{size\_t}\ entryIndex,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&collName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{const}\ podio::Frame\ \&\doxymbox{\hyperlink{classfccvis_1_1session_1_1Session_a623742faa2ae121e6417da9b14282c51}{GetFrame}}(\textcolor{keyword}{const}\ std::string\ \&category,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ entryIndex)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ std::string\ m\_name;}
+\DoxyCodeLine{00058\ \ \ std::optional<std::filesystem::path>\ m\_dataFilePath;}
+\DoxyCodeLine{00059\ \ \ std::optional<std::filesystem::path>\ m\_optionsFilePath;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionData}{SessionData}}\ m\_data;}
+\DoxyCodeLine{00062\ \ \ \doxymbox{\hyperlink{classfccvis_1_1session_1_1SessionOptions}{SessionOptions}}\ m\_options;}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \}\ \textcolor{comment}{//\ namespace\ fccvis::session}}
+
+\end{DoxyCode}

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classfccvis_1_1session_1_1SessionData" kind="class" language="C++" prot="public">
+    <compoundname>fccvis::session::SessionData</compoundname>
+    <includes refid="Session_8h" local="no">Session.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classfccvis_1_1session_1_1SessionData_1aa64d148059aa9830c11aef0d420e413a" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::vector&lt; podio::Frame &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::vector&lt;podio::Frame&gt; &gt; fccvis::session::SessionData::categories</definition>
+        <argsstring></argsstring>
+        <name>categories</name>
+        <qualifiedname>fccvis::session::SessionData::categories</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/session/include/Session.h" line="27" column="22" bodyfile="src/session/include/Session.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/session/include/Session.h" line="25" column="1" bodyfile="src/session/include/Session.h" bodystart="25" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classfccvis_1_1session_1_1SessionData_1aa64d148059aa9830c11aef0d420e413a" prot="public" virt="non-virtual"><scope>fccvis::session::SessionData</scope><name>categories</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
