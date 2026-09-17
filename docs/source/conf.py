@@ -15,6 +15,7 @@ extensions = [
     "myst_parser",
     "breathe",
     "sphinx.ext.graphviz"
+    "sphinxcontrib.mermaid",
 ]
 
 html_theme = "alabaster"
