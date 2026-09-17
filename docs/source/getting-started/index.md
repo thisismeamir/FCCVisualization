@@ -28,23 +28,5 @@ The system should make it possible to add new visualization concepts without the
 
 Every Visualization starts with a defined set of data (`.edm4hep.root` file) given to a session. The session is the first object that is going to be created once `fccvis` command is running. 
 
-```{mermaid}
-mindmap
-  root((FCCVisualization))
-    Visualization
-      Scenes
-      Cameras
-      Filters
-      Rendering
-    Data
-      EDM4hep
-      podio
-      Pandora
-    Analysis
-      FCCAnalyses
-      Histograms
-    Interaction
-      Interactive Shell
-      Cling
-      Session
-``` 
+```{doxygenindex}
+```
