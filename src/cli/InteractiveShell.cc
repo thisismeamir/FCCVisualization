@@ -1,5 +1,6 @@
 #include "InteractiveShell.h"
 #include "fccvis/FccvisConfig.h"
+#include "src/backend/root/include/RootSceneManager.h"
 #include <TApplication.h>
 #include <TEveManager.h>
 #include <TInterpreter.h>
@@ -33,11 +34,17 @@ void InteractiveShell::BindSessionIntoCling() {
   gInterpreter->AddIncludePath(FCCVIS_UNIFIED_INCLUDE_DIR);
   gInterpreter->AddIncludePath(FCCVIS_UNIFIED_INCLUDE_DIR "/fccvis");
   gInterpreter->Declare("#include <fccvis/Session.h>");
+  gInterpreter->Declare("#include <fccvis/RootSceneManager.h>");
 
   gSystem->Load("libFCCVisualization.so");
   gInterpreter->ProcessLine(Form("fccvis::session::Session* session = "
                                  "(fccvis::session::Session*)%p;",
                                  (void *)&m_session));
+  gInterpreter->ProcessLine(Form(
+    "fccvis::backend::root::RootSceneManager* backend = "
+    "(fccvis::backend::root::RootSceneManager*) %p;",
+    (void *) &m_sceneManager
+  ));
   // Making sure that if the user had previous saved data we load it
   if (const auto &optionsFile = m_session.GetOptionsFile()) {
     gInterpreter->LoadFile(optionsFile->c_str());
