@@ -177,6 +177,7 @@ struct LayoutNode {
  * @see fccvis::scene::Scene
  * @see fccvis::scene::BaseSessionObject
  */
+
 class Camera : public fccvis::scene::BaseSessionObject {
 public:
   /**
@@ -197,7 +198,7 @@ public:
    * The interpretation of the vector components is determined by
    * the visualization backend.
    */
-  std::vector<double> positionVector;
+  std::vector<double> positionVector{0.0, 0.0, 0.0};
 
   /**
    * @brief Viewing direction of the camera.
@@ -205,9 +206,49 @@ public:
    * Stores the direction in which the camera is oriented as a
    * sequence of numerical components.
    */
-  std::vector<double> directionVector;
-};
+  std::vector<double> directionVector{0.0, 0.0, 1.0};
+  
+  /**
+   * @brief a scaling factor to change the default magnitude of the direction vector.
+  */
+  double magnification{1.0};
 
+  /**
+   * @brief Changes both the position and direction vectors.
+   */
+  void ChangeCameraSpec(std::vector<double> position, std::vector<double> direction) {
+    positionVector = std::move(position);
+    directionVector = std::move(direction);
+  }
+
+  /**
+   * @brief Changes the position vector.
+   */
+  void ChangeCameraPosition(std::vector<double> position) {
+    positionVector = std::move(position);
+  }
+
+  /**
+   * @brief Changes the direction vector.
+   */
+  void ChangeCameraDirection(std::vector<double> direction) {
+    directionVector = std::move(direction);
+  }
+
+  /**
+   * @brief Sets the magnification scale factor.
+   */
+  void Magnification(double scale) {
+    magnification = scale;
+  }
+
+  /**
+   * @brief Resets the magnification scale factor to default.
+   */
+  void ResetMagnification() {
+    magnification = 1.0;
+  }
+};
 /**
  * @brief Filter configuration for a visualization scene.
  *

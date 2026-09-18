@@ -28,7 +28,9 @@
 #include "BaseSessionObject.h"
 #include "MetaObjects.h"
 
+#include <memory>
 #include <utility>
+#include <vector>
 
 /**
  * @brief Scene and visualization objects.
@@ -108,6 +110,21 @@ public:
    * @see fccvis::scene::meta::SceneOptions
    */
   fccvis::scene::meta::SceneOptions options;
+
+  /**
+   * @brief Setting up the scene camera
+   *
+   * let's the user to point to a camera object to
+   * be associated with the scene
+   *
+   * @see fccvis::scene::meta::Camera
+   */
+  void SetCamera(std::shared_ptr<fccvis::scene::meta::Camera>& camera);
+  
+
+
+  std::vector<std::shared_ptr<fccvis::scene::meta::Filter>> GetAllFilters();
+  
 };
 
 } // namespace fccvis::scene
