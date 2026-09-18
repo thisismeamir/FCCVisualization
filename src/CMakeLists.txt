@@ -48,7 +48,14 @@ endif()
 # Assemble final library target(s)
 # ---------------------------------------------------------------------------
 set(_fccvis_all_objects
+    $<TARGET_OBJECTS:fccvis_api>
+    $<TARGET_OBJECTS:fccvis_core_impl>
+    $<TARGET_OBJECTS:fccvis_scene>
+    $<TARGET_OBJECTS:fccvis_filter>
+    $<TARGET_OBJECTS:fccvis_geometry>
+    $<TARGET_OBJECTS:fccvis_visualization>
     $<TARGET_OBJECTS:fccvis_core>
+    $<TARGET_OBJECTS:fccvis_session>
     $<TARGET_OBJECTS:fccvis_backend_root>
 )
 if(FCCVIS_ENABLE_GUI)

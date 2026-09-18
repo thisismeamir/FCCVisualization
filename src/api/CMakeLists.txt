@@ -1,5 +1,5 @@
 add_library(fccvis_api OBJECT
-    placeholder.cc
+  FCCVisApi.cc
 )
 
 target_include_directories(fccvis_api PUBLIC
@@ -8,7 +8,10 @@ target_include_directories(fccvis_api PUBLIC
 
 target_link_libraries(fccvis_api PRIVATE
     FCCVisualization::CompilerWarnings
-)
+    fccvis_session
+    fccvis_scene
+    fccvis_backend
+  )
 
 set_target_properties(fccvis_api PROPERTIES
     CXX_STANDARD 17
