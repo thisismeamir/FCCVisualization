@@ -1,7 +1,11 @@
 #include "RootScene.h"
+#include "CollectionVisualizer.h"
 #include "Scene.h"
+#include <TEveBoxSet.h>
 #include <TEveManager.h>
+#include <TEvePointSet.h>
 #include <TEveScene.h>
+#include <TEveTrack.h>
 #include <TEveViewer.h>
 #include <TGLViewer.h>
 #include <TGLPerspectiveCamera.h>
@@ -86,6 +90,63 @@ void RootScene::SyncCamera()
 
 std::shared_ptr<fccvis::scene::Scene> RootScene::GetSceneAbstract() {
   return m_scene;
+}
+
+void RootScene::MaterializeFrame(const podio::Frame& frame) {
+  if (!m_pEveScene) return;
+
+  // 1. Destroy existing elements to prepare for the new frame
+  m_pEveScene->DestroyElements();
+
+  // 2. Generate unstyled raw TEve hierarchy via CollectionVisualizer
+  TEveElement* frameList = m_visualizer.VisualizeFrame(frame);
+  if (!frameList) return;
+
+  // 3. Iterate through top-level collections and apply styles from m_scene->options
+  for (TEveElement::List_i it = frameList->BeginChildren(); it != frameList->EndChildren(); ++it) {
+    TEveElement* child = *it;
+    std::string collectionName = child->GetElementName();
+
+    // Fetch collection style from scene options
+    auto style = m_scene->options.GetStyleForCollection(collectionName);
+    ApplyStyle(child, style);
+  }
+
+  // 4. Attach to the ROOT scene and trigger redraw
+  m_pEveScene->AddElement(frameList);
+  gEve->Redraw3D(kTRUE);
+}
+
+void RootScene::ApplyStyle(TEveElement* element, const fccvis::scene::meta::CollectionStyle& style) {
+  if (!element) return;
+
+  // Visibility and Transparency
+  element->SetRnrSelf(style.visible);
+  element->SetRnrChildren(style.visible);
+
+  if (style.color != fccvis::scene::meta::Color::Auto) {
+    element->SetMainColor(fccvis::backend::root::ToRootColor(style.color));
+  }
+
+  // Handle Point Sets (Tracker Hits, Sim Hits)
+  if (auto* pointSet = dynamic_cast<TEvePointSet*>(element)) {
+    pointSet->SetMarkerSize(static_cast<Float_t>(style.markerSize));
+  }
+  // Handle Track Lists / Helices
+  else if (auto* trackList = dynamic_cast<TEveTrackList*>(element)) {
+    trackList->SetLineWidth(static_cast<Width_t>(style.lineWidth));
+    trackList->SetLineStyle(static_cast<Style_t>(style.lineStyle));
+  }
+  // Handle Calorimeter Box Sets
+  else if (auto* boxSet = dynamic_cast<TEveBoxSet*>(element)) {
+    // Custom BoxSet styling options (e.g., rendering modes)
+    boxSet->GetRenderMode();
+  }
+
+  // Recurse down element children
+  for (TEveElement::List_i it = element->BeginChildren(); it != element->EndChildren(); ++it) {
+    ApplyStyle(*it, style);
+  }
 }
 
 }

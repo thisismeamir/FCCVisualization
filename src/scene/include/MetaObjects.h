@@ -27,10 +27,12 @@
 
 #include <memory>
 #include <string>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 
 #include "BaseSessionObject.h"
+#include "Markers.h"
 
 /**
  * @brief Metadata and configuration objects for visualization scenes.
@@ -177,7 +179,6 @@ struct LayoutNode {
  * @see fccvis::scene::Scene
  * @see fccvis::scene::BaseSessionObject
  */
-
 class Camera : public fccvis::scene::BaseSessionObject {
 public:
   /**
@@ -207,7 +208,7 @@ public:
    * sequence of numerical components.
    */
   std::vector<double> directionVector{0.0, 0.0, 1.0};
-  
+
   /**
    * @brief a scaling factor to change the default magnitude of the direction vector.
   */
@@ -274,36 +275,65 @@ public:
 };
 
 /**
- * @brief Configuration options associated with a visualization scene.
- *
- * SceneOptions represents the extensible configuration associated
- * with a @ref fccvis::scene::Scene.
- *
- * The class currently contains no additional configuration fields
- * beyond the identity inherited from
- * @ref fccvis::scene::BaseSessionObject. It provides the intended
- * extension point for future scene configuration, including
- * coloring and other rendering-related options.
- *
- * @see fccvis::scene::Scene
- * @see fccvis::scene::BaseSessionObject
+ * @brief Styling properties applicable to an event collection or visual grouping.
  */
-class SceneOptions : public fccvis::scene::BaseSessionObject {
+struct CollectionStyle {
+  /** @brief Primary color of the collection primitives. */
+  Color color = Color::Auto;
+
+  /** @brief Marker or point size (applicable to hits and points). */
+  unsigned int markerSize = 1;
+
+  /** @brief Line or trajectory stroke width (applicable to tracks). */
+  unsigned int lineWidth = 1;
+
+  /** @brief Line style index (e.g., solid, dashed, dotted). */
+  unsigned int lineStyle = 1;
+
+  /** @brief Transparency level (0.0 = fully opaque, 1.0 = fully transparent). */
+  double transparency = 0.0;
+
+  /** @brief Visibility flag to toggle rendering of this collection. */
+  bool visible = true;
+};
+
+/**
+ * @brief Visual options and primitive definitions associated with a scene.
+ *
+ * SceneOptions holds both per-collection style configurations and standalone
+ * visual primitives (Markers, Lines) defined for the scene.
+ */
+class SceneOptions : public BaseSessionObject {
 public:
-  /**
-   * @brief Inherit constructors from BaseSessionObject.
-   *
-   * Allows SceneOptions to be constructed using the naming
-   * interface provided by the base session object.
-   */
   using BaseSessionObject::BaseSessionObject;
 
   /**
-   * @brief Future scene-specific configuration.
-   *
-   * This class is intentionally extensible. Planned configuration
-   * includes scene coloring and other visualization options.
+   * @brief Collection-specific styling map.
+   * Key: Collection name (e.g., "ECalBarrelHits", "CentralTracks").
+   * Value: Associated CollectionStyle parameters.
    */
+  std::unordered_map<std::string, CollectionStyle> collectionStyles;
+
+  /**
+   * @brief Standalone point markers belonging directly to the scene.
+   */
+  std::vector<fccvis::scene::meta::Marker> markers;
+
+  /**
+   * @brief Standalone line segments belonging directly to the scene.
+   */
+  std::vector<Line> lines;
+
+  /**
+   * @brief Retrieves the style for a collection, returning defaults if non-existent.
+   */
+  CollectionStyle GetStyleForCollection(const std::string& collectionName) const {
+    auto it = collectionStyles.find(collectionName);
+    if (it != collectionStyles.end()) {
+      return it->second;
+    }
+    return CollectionStyle{}; // Default configuration
+  }
 };
 
 } // namespace fccvis::scene::meta

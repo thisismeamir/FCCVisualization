@@ -170,4 +170,5 @@ TEveElement* CollectionVisualizer::ConvertClusters(const podio::Frame& frame, st
   return clusterList;
 }
 
+
 } // namespace fccvis::backend::root

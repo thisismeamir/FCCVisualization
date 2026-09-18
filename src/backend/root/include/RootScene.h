@@ -29,13 +29,17 @@
 
 #pragma once
 
+#include "CollectionVisualizer.h"
+#include "MetaObjects.h"
 #include "Scene.h"
 
+#include <TEveElement.h>
 #include <TEveManager.h>
 #include <TEveScene.h>
 #include <TEveViewer.h>
 
 #include <memory>
+#include <podio/Frame.h>
 
 /**
  * @brief ROOT rendering backend.
@@ -140,6 +144,16 @@ public:
      *         @ref fccvis::scene::Scene represented by this object.
      */
     std::shared_ptr<fccvis::scene::Scene> GetSceneAbstract();
+    /**
+     * @brief Renders a podio frame into the TEve scene and applies SceneOptions styling.
+     * @param frame the EDM4hep event frame to materialize.
+     */
+    void MaterializeFrame(const podio::Frame& frame);
+
+    /**
+     * @brief applies SceneOptions styles (color, marker size, line-width, transparency, etc) recursively to a TEveElement hierarchy.
+     */
+    void ApplyStyle(TEveElement* element, const  fccvis::scene::meta::CollectionStyle& style);
 
 private:
     /**
@@ -165,6 +179,11 @@ private:
      * abstract FCCVisualization scene.
      */
     TEveScene* m_pEveScene;
+
+    /**
+     * @brief The events and visualizable components (aside from the detector).
+    */
+    CollectionVisualizer m_visualizer;
 };
 
 } // namespace fccvis::backend::root
