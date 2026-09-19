@@ -183,7 +183,7 @@ private:
     /**
      * @brief The events and visualizable components (aside from the detector).
     */
-    CollectionVisualizer m_visualizer;
+    CollectionVisualizer* m_visualizer;
 };
 
 } // namespace fccvis::backend::root

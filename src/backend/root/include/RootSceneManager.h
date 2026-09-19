@@ -179,6 +179,8 @@ public:
      */
     std::vector<std::shared_ptr<std::string>> SceneNames();
 
+    // TODO: Funcationalities to introduce new scenes, cameras etc should be given here.
+
 private:
     /**
      * @brief Session containing the abstract scene definitions.

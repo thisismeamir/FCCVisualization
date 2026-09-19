@@ -99,7 +99,7 @@ void RootScene::MaterializeFrame(const podio::Frame& frame) {
   m_pEveScene->DestroyElements();
 
   // 2. Generate unstyled raw TEve hierarchy via CollectionVisualizer
-  TEveElement* frameList = m_visualizer.VisualizeFrame(frame);
+  TEveElement* frameList = m_visualizer->VisualizeFrame(frame);
   if (!frameList) return;
 
   // 3. Iterate through top-level collections and apply styles from m_scene->options

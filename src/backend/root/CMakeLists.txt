@@ -1,7 +1,7 @@
 add_library(fccvis_backend_root OBJECT
+  CollectionVisualizer.cc
   RootScene.cc
   RootSceneManager.cc
-  CollectionVisualizer.cc
 )
 
 target_include_directories(fccvis_backend_root PUBLIC

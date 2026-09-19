@@ -4,6 +4,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <CollectionVisualizer.h>
 
 namespace fccvis::backend::root {
 

@@ -171,4 +171,43 @@ TEveElement* CollectionVisualizer::ConvertClusters(const podio::Frame& frame, st
 }
 
 
+Color_t ToRootColor(fccvis::scene::meta::Color color) {
+  using fccvis::scene::meta::Color;
+  switch (color) {
+    case Color::White:       return kWhite;
+    case Color::Black:       return kBlack;
+    case Color::Red:         return kRed;
+    case Color::Green:       return kGreen;
+    case Color::Blue:        return kBlue;
+    case Color::Magenta:     return kMagenta;
+    case Color::Cyan:        return kCyan;
+    case Color::Violet:      return kViolet;
+    case Color::Pink:        return kPink;
+    case Color::Orange:      return kOrange;
+    case Color::Yellow:      return kYellow;
+    case Color::Spring:      return kSpring;
+    case Color::Teal:        return kTeal;
+    case Color::Azure:       return kAzure;
+    case Color::Gray:        return kGray;
+    case Color::DarkRed:     return kRed + 2;
+    case Color::DarkGreen:   return kGreen + 2;
+    case Color::DarkBlue:    return kBlue + 2;
+    case Color::DarkMagenta: return kMagenta + 2;
+    case Color::DarkCyan:    return kCyan + 2;
+    case Color::DarkViolet:  return kViolet + 2;
+    case Color::DarkPink:    return kPink + 2;
+    case Color::DarkOrange:  return kOrange + 2;
+    case Color::DarkYellow:  return kYellow + 2;
+    case Color::LightRed:    return kRed - 7;
+    case Color::LightGreen:  return kGreen - 7;
+    case Color::LightBlue:   return kBlue - 7;
+    case Color::LightMagenta:return kMagenta - 7;
+    case Color::LightCyan:   return kCyan - 7;
+    case Color::LightViolet: return kViolet - 7;
+    case Color::LightPink:   return kPink - 7;
+    case Color::LightOrange: return kOrange - 7;
+    case Color::LightYellow: return kYellow - 7;
+    default:                 return kWhite;
+  }
+}
 } // namespace fccvis::backend::root

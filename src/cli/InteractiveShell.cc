@@ -31,10 +31,9 @@ void InteractiveShell::EnsureEveManager() {
 }
 
 void InteractiveShell::BindSessionIntoCling() {
-  gInterpreter->AddIncludePath(FCCVIS_UNIFIED_INCLUDE_DIR);
-  gInterpreter->AddIncludePath(FCCVIS_UNIFIED_INCLUDE_DIR "/fccvis");
   gInterpreter->Declare("#include <fccvis/Session.h>");
   gInterpreter->Declare("#include <fccvis/RootSceneManager.h>");
+  gInterpreter->Declare("#include <fccvis/CollectionVisualizer.h>");
 
   gSystem->Load("libFCCVisualization.so");
   gInterpreter->ProcessLine(Form("fccvis::session::Session* session = "
