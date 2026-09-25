@@ -25,15 +25,14 @@ void InteractiveShell::EnsureEveManager() {
     new TApplication("fccvis_headless", &argc, argv);
   }
   if (!gEve) {
-    TEveManager::Create(kFALSE); // map_window=false — no visible browser
-                                 // chrome, but a real display exists
+    TEveManager::Create(kTRUE, "FI");
   }
 }
 
 void InteractiveShell::BindSessionIntoCling() {
   gInterpreter->Declare("#include <fccvis/Session.h>");
-  gInterpreter->Declare("#include <fccvis/RootSceneManager.h>");
   gInterpreter->Declare("#include <fccvis/CollectionVisualizer.h>");
+  gInterpreter->Declare("#include <fccvis/RootSceneManager.h>");
 
   gSystem->Load("libFCCVisualization.so");
   gInterpreter->ProcessLine(Form("fccvis::session::Session* session = "
@@ -51,22 +50,12 @@ void InteractiveShell::BindSessionIntoCling() {
 }
 
 void InteractiveShell::Run() {
-  std::string line;
-  std::cout << "fccvis> ";
-  while (!m_quitRequested && std::getline(std::cin, line)) {
-    if (line.empty()) {
-      std::cout << "fccvis> ";
-      continue;
-    }
-    if (!HandleBuiltin(line)) {
-      m_commandHistory.push_back(line);
-      gInterpreter->ProcessLine(line.c_str());
-    }
-    if (!m_quitRequested) {
-      std::cout << "fccvis> ";
-    }
-  }
+std::cout << "fccvis> " << std::flush;
+auto handler = std::make_unique<StdinHandler>(*this);
+handler->Add();
+gApplication->Run(kTRUE); // returns once Terminate() is called
 }
+
 
 bool InteractiveShell::HandleBuiltin(const std::string &line) {
   if (line.empty() || line[0] != '.') {
@@ -103,7 +92,28 @@ bool InteractiveShell::HandleBuiltin(const std::string &line) {
   return true;
 }
 
-void InteractiveShell::Quit() { m_quitRequested = true; }
+void InteractiveShell::ProcessOneLine() {
+  std::string line;
+  if (!std::getline(std::cin, line)) { // EOF (Ctrl-D)
+    Quit();
+    return;
+  }
+  if (!line.empty()) {
+    if (!HandleBuiltin(line)) {
+      m_commandHistory.push_back(line);
+      gInterpreter->ProcessLine(line.c_str());
+    }
+  }
+  if (!m_quitRequested) {
+    std::cout << "fccvis> " << std::flush;
+  }
+}
+
+void InteractiveShell::Quit() {
+  m_quitRequested = true;
+  m_sceneManager.CloseAll();
+  if(gApplication) gApplication->Terminate();
+}
 
 void InteractiveShell::Save(const std::string &path) {
   if (path.empty()) {
@@ -155,7 +165,7 @@ void InteractiveShell::Close(const std::string &name) {
 
 void InteractiveShell::ListScenes() {
   for (const auto &name : m_sceneManager.SceneNames()) { // your new accessor
-    std::cout << (m_sceneManager.IsOpen(*name) ? "* " : "  ") << name << "\n";
+    std::cout << (m_sceneManager.IsOpen(*name) ? "* " : "  ") << *name << "\n";
   }
 }
 
@@ -167,7 +177,7 @@ void InteractiveShell::ListOpen() {
 }
 
 void InteractiveShell::Help() {
-  std::cout << ".see <name>    open or refresh a scene\n"
+  std::cout << ".*see <name>    open or refresh a scene\n"
             << ".close <name>  close an open scene\n"
             << ".scenes        list all known scenes ('*' = open)\n"
             << ".open          list currently open scenes\n"

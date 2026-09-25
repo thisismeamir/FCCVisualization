@@ -81,6 +81,12 @@ public:
    */
   void Run();
 
+  /**
+  * @brief Processes one line of shell.
+  */
+  void ProcessOneLine();
+
+
 private:
   /**
    * @brief Session controlled by the shell.
@@ -183,6 +189,21 @@ private:
    * @brief Display help for available shell commands.
    */
   void Help();
+};
+
+
+class StdinHandler : public TFileHandler {
+public:
+  explicit StdinHandler(fccvis::cli::InteractiveShell &shell)
+      : TFileHandler(0, TFileHandler::kRead), m_shell(shell) {}
+
+  Bool_t ReadNotify() override {
+    m_shell.ProcessOneLine();
+    return kTRUE;
+  }
+
+private:
+  fccvis::cli::InteractiveShell &m_shell;
 };
 
 } // namespace fccvis::cli
