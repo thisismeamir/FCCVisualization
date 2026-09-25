@@ -32,7 +32,9 @@
 #include <vector>
 
 #include "BaseSessionObject.h"
+#include "Geometry.h"
 #include "Markers.h"
+
 
 /**
  * @brief Metadata and configuration objects for visualization scenes.
@@ -272,6 +274,15 @@ public:
    * interface as other session objects.
    */
   using BaseSessionObject::BaseSessionObject;
+
+  /**
+   * @brief Shape of the filter is a geometrical object of type shape.
+   *
+   */
+  fccvis::geometry::Shape m_shape;
+
+
+
 };
 
 /**

@@ -349,6 +349,10 @@ public:
   const podio::Frame &GetFrame(const std::string &category,
                                size_t entryIndex) const;
 
+
+  /** TODO:
+   * @brief Create a new Scene object via the session
+   */
 private:
   /**
    * @brief Name identifying the session.

@@ -3,6 +3,7 @@
 #include "podio/Frame.h"
 #include "podio/ROOTReader.h"
 #include <filesystem>
+#include <memory>
 #include <optional>
 #include <podio/CollectionBase.h>
 #include <string>
@@ -42,7 +43,17 @@ void Session::initData() {
   }
 }
 
-void Session::initOptions() { m_options = SessionOptions{}; };
+void Session::initOptions() { m_options = SessionOptions{};
+  const bool hasDefault = std::any_of(
+      m_options.scenes.begin(), m_options.scenes.end(),
+      [](const auto &s) { return s->Name() == "default"; });
+
+  if (!hasDefault) {
+    auto scene = std::make_shared<fccvis::scene::Scene>("default", "default");
+    scene->camera = std::make_shared<fccvis::scene::meta::Camera>("default");
+    m_options.scenes.push_back(std::move(scene));
+  }
+};
 std::optional<std::filesystem::path> Session::GetOptionsFile() {
   return m_optionsFilePath;
 }

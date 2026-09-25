@@ -83,6 +83,11 @@ public:
      * refer to it.
      */
     std::string name;
+
+
+    std::string& Name() {
+    return name;
+  }
 };
 
 } // namespace fccvis::scene
