@@ -2,6 +2,8 @@
 
 #include <edm4hep/CalorimeterHitCollection.h>
 #include <edm4hep/ClusterCollection.h>
+#include <edm4hep/MCParticleCollection.h>
+#include <edm4hep/SimCalorimeterHitCollection.h>
 #include <edm4hep/SimTrackerHitCollection.h>
 #include <edm4hep/TrackCollection.h>
 #include <edm4hep/TrackerHit3DCollection.h>
@@ -17,12 +19,12 @@
 
 namespace fccvis::backend::root {
 
-TEveElement* CollectionVisualizer::VisualizeFrame(const podio::Frame& frame) {
-  auto* frameList = new TEveElementList("EventFrame");
+TEveElement *CollectionVisualizer::VisualizeFrame(const podio::Frame &frame) {
+  auto *frameList = new TEveElementList("EventFrame");
 
-  const auto& collectionNames = frame.getAvailableCollections();
-  for (const auto& name : collectionNames) {
-    if (TEveElement* elem = VisualizeCollection(frame, name)) {
+  const auto &collectionNames = frame.getAvailableCollections();
+  for (const auto &name : collectionNames) {
+    if (TEveElement *elem = VisualizeCollection(frame, name)) {
       frameList->AddElement(elem);
     }
   }
@@ -30,12 +32,16 @@ TEveElement* CollectionVisualizer::VisualizeFrame(const podio::Frame& frame) {
   return frameList;
 }
 
-TEveElement* CollectionVisualizer::VisualizeCollection(const podio::Frame& frame, std::string_view collectionName) {
+TEveElement *
+CollectionVisualizer::VisualizeCollection(const podio::Frame &frame,
+                                          std::string_view collectionName) {
   const std::string nameStr(collectionName);
 
-  const podio::CollectionBase* coll = frame.get(nameStr);
-  if (!coll || !coll->hasID()) return nullptr;
-  const std::string typeName = std::string{coll->getValueTypeName()};
+  const podio::CollectionBase *coll = frame.get(nameStr);
+  if (!coll || !coll->hasID())
+    return nullptr;
+
+  const std::string typeName = std::string{coll->getTypeName()};
 
   if (typeName == "edm4hep::CalorimeterHitCollection") {
     return ConvertCalorimeterHits(frame, collectionName);
@@ -47,88 +53,162 @@ TEveElement* CollectionVisualizer::VisualizeCollection(const podio::Frame& frame
     return ConvertTracks(frame, collectionName);
   } else if (typeName == "edm4hep::ClusterCollection") {
     return ConvertClusters(frame, collectionName);
+  } else if (typeName == "edm4hep::SimCalorimeterHitCollection") {
+    return ConvertSimCalorimeterHits(frame, collectionName);
+  } else if (typeName == "edm4hep::MCParticleCollection") {
+    return ConvertMCParticles(frame, collectionName);
   }
 
   return nullptr;
 }
 
-TEveElement* CollectionVisualizer::ConvertCalorimeterHits(const podio::Frame& frame, std::string_view collectionName) {
+TEveElement* CollectionVisualizer::ConvertMCParticles(const podio::Frame& frame, std::string_view collectionName, double bzTesla) {
   const std::string nameStr(collectionName);
-  const auto& hits = frame.get<edm4hep::CalorimeterHitCollection>(nameStr);
-  if (!hits.hasID()) return nullptr;
+  const auto& particles = frame.get<edm4hep::MCParticleCollection>(nameStr);
+  if (!particles.hasID()) return nullptr;
+  constexpr double kMaxR = 6000.0;      // mm, propagation cutoff
+  constexpr double kMaxZ = 6000.0;      // mm
 
-  auto* boxSet = new TEveBoxSet(nameStr.c_str());
+  auto* trackList = new TEveTrackList(nameStr.c_str());
+  auto* propagator = trackList->GetPropagator();
+  propagator->SetMagField(bzTesla / 10.0); // field scaled by 1/10 because the hits are in mm
+  propagator->SetMaxR(kMaxR);
+  propagator->SetMaxZ(kMaxZ);
+
+  Int_t idx = 0;
+  for (const auto& p : particles) {
+    const auto& v = p.getVertex();
+    const auto& m = p.getMomentum();
+
+    TEveRecTrackD rec;
+    rec.fV.Set(v.x, v.y, v.z);
+    rec.fP.Set(m.x, m.y, m.z);
+    rec.fSign = (p.getCharge() > 0) ? 1 : (p.getCharge() < 0) ? -1 : 0; // 0 = neutral, straight line
+
+    auto* track = new TEveTrack(&rec, propagator);
+    track->SetName(Form("MCParticle_%d_pdg%d", idx++, p.getPDG()));
+    track->MakeTrack();
+    trackList->AddElement(track);
+  }
+
+  return trackList;
+}
+
+TEveElement *CollectionVisualizer::ConvertSimCalorimeterHits(
+    const podio::Frame &frame, std::string_view collectionName) {
+  const std::string nameStr(collectionName);
+  const auto &hits = frame.get<edm4hep::SimCalorimeterHitCollection>(nameStr);
+  if (!hits.hasID())
+    return nullptr;
+
+  auto *boxSet = new TEveBoxSet(nameStr.c_str());
   boxSet->Reset(TEveBoxSet::kBT_AABox, kFALSE, hits.size());
 
-  for (const auto& hit : hits) {
-    const auto& pos = hit.getPosition();
-    // Default box dimensions (10mm x 10mm x 10mm), styled/scaled downstream
-    boxSet->AddBox(
-      static_cast<Float_t>(pos.x - 5.0),
-      static_cast<Float_t>(pos.y - 5.0),
-      static_cast<Float_t>(pos.z - 5.0),
-      10.0f, 10.0f, 10.0f
-    );
-    boxSet->DigitValue(static_cast<Int_t>(hit.getEnergy() * 1000.0)); // Store scaled energy into digit value
+  for (const auto &hit : hits) {
+    const auto &pos = hit.getPosition();
+    // Fixed 10 mm cell: sim hits carry no cell dimensions, geometry will supply
+    // them later
+    boxSet->AddBox(pos.x - 5.0f, pos.y - 5.0f, pos.z - 5.0f, 10.0f, 10.0f,
+                   10.0f);
+    boxSet->DigitValue(static_cast<Int_t>(hit.getEnergy() * 1000.0));
   }
 
   boxSet->RefitPlex();
   return boxSet;
 }
 
-TEveElement* CollectionVisualizer::ConvertTrackerHits(const podio::Frame& frame, std::string_view collectionName) {
+TEveElement *
+CollectionVisualizer::ConvertCalorimeterHits(const podio::Frame &frame,
+                                             std::string_view collectionName) {
   const std::string nameStr(collectionName);
-  const auto& hits = frame.get<edm4hep::TrackerHit3DCollection>(nameStr);
-  if (!hits.hasID()) return nullptr;
+  const auto &hits = frame.get<edm4hep::CalorimeterHitCollection>(nameStr);
+  if (!hits.hasID())
+    return nullptr;
 
-  auto* pointSet = new TEvePointSet(nameStr.c_str());
+  auto *boxSet = new TEveBoxSet(nameStr.c_str());
+  boxSet->Reset(TEveBoxSet::kBT_AABox, kFALSE, hits.size());
+
+  for (const auto &hit : hits) {
+    const auto &pos = hit.getPosition();
+    // Default box dimensions (10mm x 10mm x 10mm), styled/scaled downstream
+    boxSet->AddBox(static_cast<Float_t>(pos.x - 5.0),
+                   static_cast<Float_t>(pos.y - 5.0),
+                   static_cast<Float_t>(pos.z - 5.0), 10.0f, 10.0f, 10.0f);
+    boxSet->DigitValue(static_cast<Int_t>(
+        hit.getEnergy() * 1000.0)); // Store scaled energy into digit value
+  }
+
+  boxSet->RefitPlex();
+  return boxSet;
+}
+
+TEveElement *
+CollectionVisualizer::ConvertTrackerHits(const podio::Frame &frame,
+                                         std::string_view collectionName) {
+  const std::string nameStr(collectionName);
+  const auto &hits = frame.get<edm4hep::TrackerHit3DCollection>(nameStr);
+  if (!hits.hasID())
+    return nullptr;
+
+  auto *pointSet = new TEvePointSet(nameStr.c_str());
   pointSet->Reset(hits.size());
 
   Int_t pointIdx = 0;
-  for (const auto& hit : hits) {
-    const auto& pos = hit.getPosition();
+  for (const auto &hit : hits) {
+    const auto &pos = hit.getPosition();
     pointSet->SetPoint(pointIdx++, pos.x, pos.y, pos.z);
   }
 
   return pointSet;
 }
 
-TEveElement* CollectionVisualizer::ConvertSimTrackerHits(const podio::Frame& frame, std::string_view collectionName) {
+TEveElement *
+CollectionVisualizer::ConvertSimTrackerHits(const podio::Frame &frame,
+                                            std::string_view collectionName) {
   const std::string nameStr(collectionName);
-  const auto& hits = frame.get<edm4hep::SimTrackerHitCollection>(nameStr);
-  if (!hits.hasID()) return nullptr;
+  const auto &hits = frame.get<edm4hep::SimTrackerHitCollection>(nameStr);
+  if (!hits.hasID())
+    return nullptr;
 
-  auto* pointSet = new TEvePointSet(nameStr.c_str());
+  auto *pointSet = new TEvePointSet(nameStr.c_str());
   pointSet->Reset(hits.size());
 
   Int_t pointIdx = 0;
-  for (const auto& hit : hits) {
-    const auto& pos = hit.getPosition();
+  for (const auto &hit : hits) {
+    const auto &pos = hit.getPosition();
     pointSet->SetPoint(pointIdx++, pos.x, pos.y, pos.z);
   }
 
   return pointSet;
 }
 
-TEveElement* CollectionVisualizer::ConvertTracks(const podio::Frame& frame, std::string_view collectionName) {
+TEveElement *
+CollectionVisualizer::ConvertTracks(const podio::Frame &frame,
+                                    std::string_view collectionName) {
   const std::string nameStr(collectionName);
-  const auto& tracks = frame.get<edm4hep::TrackCollection>(nameStr);
-  if (!tracks.hasID()) return nullptr;
+  const auto &tracks = frame.get<edm4hep::TrackCollection>(nameStr);
+  if (!tracks.hasID())
+    return nullptr;
 
-  auto* trackList = new TEveTrackList(nameStr.c_str());
-  auto* propagator = trackList->GetPropagator();
-  propagator->SetMagField(2.0); // Default B-field estimate; overridden by RootScene configuration if required
+  auto *trackList = new TEveTrackList(nameStr.c_str());
+  auto *propagator = trackList->GetPropagator();
+  propagator->SetMagField(2.0); // Default B-field estimate; overridden by
+                                // RootScene configuration if required
 
   Int_t trackIdx = 0;
-  for (const auto& track : tracks) {
-    if (track.trackStates_size() == 0) continue;
+  for (const auto &track : tracks) {
+    if (track.trackStates_size() == 0)
+      continue;
 
-    const auto& state = track.getTrackStates(0); // Take reference track state at IP/first layer
-    const auto& pos = state.referencePoint;
+    const auto &state =
+        track.getTrackStates(0); // Take reference track state at IP/first layer
+    const auto &pos = state.referencePoint;
 
     // Convert helical parameters to momentum estimates (pX, pY, pZ)
     const double omega = state.omega;
-    const double pt = (std::abs(omega) > 1e-6) ? (0.3 * 2.0 / (std::abs(omega) * 1000.0)) : 1.0;
+    const double pt = (std::abs(omega) > 1e-6)
+                          ? (0.3 * 2.0 / (std::abs(omega) * 1000.0))
+                          : 1.0;
     const double px = pt * std::cos(state.phi);
     const double py = pt * std::sin(state.phi);
     const double pz = pt * state.tanLambda;
@@ -138,7 +218,7 @@ TEveElement* CollectionVisualizer::ConvertTracks(const podio::Frame& frame, std:
     recTrack.fP.Set(px, py, pz);
     recTrack.fSign = (omega >= 0) ? 1 : -1;
 
-    auto* eveTrack = new TEveTrack(&recTrack, propagator);
+    auto *eveTrack = new TEveTrack(&recTrack, propagator);
     eveTrack->SetName(Form("Track_%d", trackIdx++));
     eveTrack->MakeTrack();
     trackList->AddElement(eveTrack);
@@ -147,21 +227,24 @@ TEveElement* CollectionVisualizer::ConvertTracks(const podio::Frame& frame, std:
   return trackList;
 }
 
-TEveElement* CollectionVisualizer::ConvertClusters(const podio::Frame& frame, std::string_view collectionName) {
+TEveElement *
+CollectionVisualizer::ConvertClusters(const podio::Frame &frame,
+                                      std::string_view collectionName) {
   const std::string nameStr(collectionName);
-  const auto& clusters = frame.get<edm4hep::ClusterCollection>(nameStr);
-  if (!clusters.hasID()) return nullptr;
+  const auto &clusters = frame.get<edm4hep::ClusterCollection>(nameStr);
+  if (!clusters.hasID())
+    return nullptr;
 
-  auto* clusterList = new TEveElementList(nameStr.c_str());
+  auto *clusterList = new TEveElementList(nameStr.c_str());
 
   Int_t clusterIdx = 0;
-  for (const auto& cluster : clusters) {
-    auto* hitPoints = new TEvePointSet(Form("Cluster_%d", clusterIdx++));
+  for (const auto &cluster : clusters) {
+    auto *hitPoints = new TEvePointSet(Form("Cluster_%d", clusterIdx++));
     hitPoints->Reset(cluster.hits_size());
 
     Int_t pointIdx = 0;
-    for (const auto& hit : cluster.getHits()) {
-      const auto& pos = hit.getPosition();
+    for (const auto &hit : cluster.getHits()) {
+      const auto &pos = hit.getPosition();
       hitPoints->SetPoint(pointIdx++, pos.x, pos.y, pos.z);
     }
     clusterList->AddElement(hitPoints);
@@ -170,44 +253,77 @@ TEveElement* CollectionVisualizer::ConvertClusters(const podio::Frame& frame, st
   return clusterList;
 }
 
-
 Color_t ToRootColor(fccvis::scene::meta::Color color) {
   using fccvis::scene::meta::Color;
   switch (color) {
-    case Color::White:       return kWhite;
-    case Color::Black:       return kBlack;
-    case Color::Red:         return kRed;
-    case Color::Green:       return kGreen;
-    case Color::Blue:        return kBlue;
-    case Color::Magenta:     return kMagenta;
-    case Color::Cyan:        return kCyan;
-    case Color::Violet:      return kViolet;
-    case Color::Pink:        return kPink;
-    case Color::Orange:      return kOrange;
-    case Color::Yellow:      return kYellow;
-    case Color::Spring:      return kSpring;
-    case Color::Teal:        return kTeal;
-    case Color::Azure:       return kAzure;
-    case Color::Gray:        return kGray;
-    case Color::DarkRed:     return kRed + 2;
-    case Color::DarkGreen:   return kGreen + 2;
-    case Color::DarkBlue:    return kBlue + 2;
-    case Color::DarkMagenta: return kMagenta + 2;
-    case Color::DarkCyan:    return kCyan + 2;
-    case Color::DarkViolet:  return kViolet + 2;
-    case Color::DarkPink:    return kPink + 2;
-    case Color::DarkOrange:  return kOrange + 2;
-    case Color::DarkYellow:  return kYellow + 2;
-    case Color::LightRed:    return kRed - 7;
-    case Color::LightGreen:  return kGreen - 7;
-    case Color::LightBlue:   return kBlue - 7;
-    case Color::LightMagenta:return kMagenta - 7;
-    case Color::LightCyan:   return kCyan - 7;
-    case Color::LightViolet: return kViolet - 7;
-    case Color::LightPink:   return kPink - 7;
-    case Color::LightOrange: return kOrange - 7;
-    case Color::LightYellow: return kYellow - 7;
-    default:                 return kWhite;
+  case Color::White:
+    return kWhite;
+  case Color::Black:
+    return kBlack;
+  case Color::Red:
+    return kRed;
+  case Color::Green:
+    return kGreen;
+  case Color::Blue:
+    return kBlue;
+  case Color::Magenta:
+    return kMagenta;
+  case Color::Cyan:
+    return kCyan;
+  case Color::Violet:
+    return kViolet;
+  case Color::Pink:
+    return kPink;
+  case Color::Orange:
+    return kOrange;
+  case Color::Yellow:
+    return kYellow;
+  case Color::Spring:
+    return kSpring;
+  case Color::Teal:
+    return kTeal;
+  case Color::Azure:
+    return kAzure;
+  case Color::Gray:
+    return kGray;
+  case Color::DarkRed:
+    return kRed + 2;
+  case Color::DarkGreen:
+    return kGreen + 2;
+  case Color::DarkBlue:
+    return kBlue + 2;
+  case Color::DarkMagenta:
+    return kMagenta + 2;
+  case Color::DarkCyan:
+    return kCyan + 2;
+  case Color::DarkViolet:
+    return kViolet + 2;
+  case Color::DarkPink:
+    return kPink + 2;
+  case Color::DarkOrange:
+    return kOrange + 2;
+  case Color::DarkYellow:
+    return kYellow + 2;
+  case Color::LightRed:
+    return kRed - 7;
+  case Color::LightGreen:
+    return kGreen - 7;
+  case Color::LightBlue:
+    return kBlue - 7;
+  case Color::LightMagenta:
+    return kMagenta - 7;
+  case Color::LightCyan:
+    return kCyan - 7;
+  case Color::LightViolet:
+    return kViolet - 7;
+  case Color::LightPink:
+    return kPink - 7;
+  case Color::LightOrange:
+    return kOrange - 7;
+  case Color::LightYellow:
+    return kYellow - 7;
+  default:
+    return kWhite;
   }
 }
 } // namespace fccvis::backend::root

@@ -53,6 +53,9 @@ private:
   TEveElement* ConvertSimTrackerHits(const podio::Frame& frame, std::string_view collectionName);
   TEveElement* ConvertTracks(const podio::Frame& frame, std::string_view collectionName);
   TEveElement* ConvertClusters(const podio::Frame& frame, std::string_view collectionName);
+  TEveElement* ConvertSimCalorimeterHits(const podio::Frame& frame, std::string_view collectionName);
+  TEveElement* ConvertMCParticles(const podio::Frame& frame, std::string_view collectionName, double bzTesla = 2.0);
+
 };
 
 } // namespace fccvis::backend::root

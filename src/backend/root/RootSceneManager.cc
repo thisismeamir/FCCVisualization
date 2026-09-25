@@ -13,13 +13,16 @@ RootSceneManager::RootSceneManager(fccvis::session::Session &session)
 
 std::shared_ptr<fccvis::scene::Scene>
 RootSceneManager::FindAbstractScene(const std::string &sceneName) const {
-  for (const auto &scene : m_session.GetOptions().scenes) {
+  for (const auto &scene : m_session.Options().scenes) {
     if (scene->name == sceneName) {
       return scene;
     }
   }
   return nullptr;
 }
+
+
+
 
 RootScene *RootSceneManager::Open(const std::string &sceneName) {
   if (auto it = m_openScenes.find(sceneName); it != m_openScenes.end()) {
@@ -36,6 +39,26 @@ RootScene *RootSceneManager::Open(const std::string &sceneName) {
   RootScene *raw = rootScene.get();
   m_openScenes.emplace(sceneName, std::move(rootScene));
   return raw;
+}
+
+RootScene *RootSceneManager::OpenWithData(const std::string &sceneName,
+                                          const std::string &category,
+                                          size_t entryIndex) {
+  // Validate before opening, so a bad request leaves no empty scene behind
+  if (entryIndex >= m_session.EntryCount(category)) {
+    std::cerr << "fccvis: category '" << category << "' has no entry "
+              << entryIndex << "\n";
+    return nullptr;
+  }
+  
+
+  RootScene *scene = Open(sceneName); // returns the existing scene if already open
+  if (!scene) {
+    return nullptr;
+  }
+
+  scene->MaterializeFrame(m_session.GetFrame(category, entryIndex));
+  return scene;
 }
 
 void RootSceneManager::Close(const std::string &sceneName) {
@@ -77,7 +100,7 @@ std::vector<std::shared_ptr<fccvis::scene::Scene>> RootSceneManager::OpenScenes(
 std::vector<std::shared_ptr<std::string>> RootSceneManager::SceneNames() {
   std::vector<std::shared_ptr<std::string>> names{};
 
-  for (const auto &scene : m_session.GetOptions().scenes) {
+  for (const auto &scene : m_session.Options().scenes) {
     names.push_back(std::make_shared<std::string>(scene->name));
   }
 

@@ -179,6 +179,12 @@ public:
      */
     std::vector<std::shared_ptr<std::string>> SceneNames();
 
+    /**
+     * @brief Opens a given Scene with the category and index of an event data
+     */
+    RootScene *OpenWithData(const std::string &sceneName,
+                        const std::string &category,
+                        size_t entryIndex);
     // TODO: Funcationalities to introduce new scenes, cameras etc should be given here.
 
 private:

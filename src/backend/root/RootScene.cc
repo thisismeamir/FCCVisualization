@@ -91,30 +91,40 @@ void RootScene::SyncCamera()
 std::shared_ptr<fccvis::scene::Scene> RootScene::GetSceneAbstract() {
   return m_scene;
 }
-
 void RootScene::MaterializeFrame(const podio::Frame& frame) {
   if (!m_pEveScene) return;
+  if (!m_visualizer) {
+    std::cerr << "fccvis: scene '" << m_scene->name
+              << "' has no CollectionVisualizer\n";
+    return;
+  }
 
-  // 1. Destroy existing elements to prepare for the new frame
+  // 1. Clear the previous frame
   m_pEveScene->DestroyElements();
 
-  // 2. Generate unstyled raw TEve hierarchy via CollectionVisualizer
+  // 2. Build the unstyled TEve hierarchy
   TEveElement* frameList = m_visualizer->VisualizeFrame(frame);
   if (!frameList) return;
 
-  // 3. Iterate through top-level collections and apply styles from m_scene->options
-  for (TEveElement::List_i it = frameList->BeginChildren(); it != frameList->EndChildren(); ++it) {
-    TEveElement* child = *it;
-    std::string collectionName = child->GetElementName();
-
-    // Fetch collection style from scene options
-    auto style = m_scene->options.GetStyleForCollection(collectionName);
-    ApplyStyle(child, style);
+  if (frameList->NumChildren() == 0) {
+    std::cerr << "fccvis: frame produced no drawable collections\n";
   }
 
-  // 4. Attach to the ROOT scene and trigger redraw
+  // 3. Style each top-level collection from the scene options
+  for (auto it = frameList->BeginChildren(); it != frameList->EndChildren(); ++it) {
+    TEveElement* child = *it;
+    ApplyStyle(child, m_scene->options.GetStyleForCollection(child->GetElementName()));
+  }
+
+  // 4. Attach to this scene only
   m_pEveScene->AddElement(frameList);
-  gEve->Redraw3D(kTRUE);
+
+  // 5. Refresh this viewer and fit the camera to the new content
+  if (TGLViewer* glViewer = m_pViewer ? m_pViewer->GetGLViewer() : nullptr) {
+    glViewer->UpdateScene();
+    glViewer->ResetCurrentCamera();
+    glViewer->RequestDraw();
+  }
 }
 
 void RootScene::ApplyStyle(TEveElement* element, const fccvis::scene::meta::CollectionStyle& style) {
