@@ -8,7 +8,7 @@ target_include_directories(fccvis_scene PUBLIC
 
 target_link_libraries(fccvis_scene PRIVATE
     FCCVisualization::CompilerWarnings
-
+    fccvis_geometry
   )
 
 set_target_properties(fccvis_scene PROPERTIES

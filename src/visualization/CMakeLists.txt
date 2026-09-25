@@ -1,5 +1,5 @@
 add_library(fccvis_visualization OBJECT
-  CollectionVisualizer.cc
+  CollectionVisualizer-placeholder.cc
 )
 
 target_include_directories(fccvis_visualization PUBLIC
