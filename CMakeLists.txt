@@ -66,7 +66,6 @@ include(FCCVisHeaders)
 
 fccvis_export_headers(filter)
 fccvis_export_headers(api)
-fccvis_export_headers(core)
 fccvis_export_headers(backend)
 fccvis_export_headers(geometry)
 fccvis_export_headers(backend/root)

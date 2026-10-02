@@ -2,19 +2,17 @@
 # Core object library (no ROOT/TEve dependency)
 # ---------------------------------------------------------------------------
 add_subdirectory(api)
-add_subdirectory(core)
-
-add_subdirectory(geometry)
 add_subdirectory(filter)
+add_subdirectory(geometry)
 add_subdirectory(scene)
 add_subdirectory(visualization)
 add_subdirectory(session)
+
 add_library(fccvis_core OBJECT
     $<TARGET_OBJECTS:fccvis_api>
-    $<TARGET_OBJECTS:fccvis_core_impl>
     $<TARGET_OBJECTS:fccvis_geometry>
-    $<TARGET_OBJECTS:fccvis_scene>
     $<TARGET_OBJECTS:fccvis_filter>
+    $<TARGET_OBJECTS:fccvis_scene>
     $<TARGET_OBJECTS:fccvis_visualization>
     $<TARGET_OBJECTS:fccvis_session>
 )
@@ -49,7 +47,6 @@ endif()
 # ---------------------------------------------------------------------------
 set(_fccvis_all_objects
     $<TARGET_OBJECTS:fccvis_api>
-    $<TARGET_OBJECTS:fccvis_core_impl>
     $<TARGET_OBJECTS:fccvis_geometry>
     $<TARGET_OBJECTS:fccvis_filter>
     $<TARGET_OBJECTS:fccvis_scene>
