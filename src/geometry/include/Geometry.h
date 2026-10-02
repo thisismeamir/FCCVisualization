@@ -179,4 +179,5 @@ private:
   Transform m_transform;
 };
 
+
 } // namespace fccvis::geometry

@@ -12,6 +12,7 @@ find_package(EDM4HEP CONFIG REQUIRED)
 target_link_libraries(fccvis_session PUBLIC
     FCCVisualization::CompilerWarnings
     fccvis_geometry
+    fccvis_filter
     fccvis_scene
     podio::podio
     podio::podioRootIO

@@ -8,11 +8,12 @@ target_include_directories(fccvis_scene PUBLIC
 
 target_link_libraries(fccvis_scene PRIVATE
     FCCVisualization::CompilerWarnings
+    fccvis_filter
     fccvis_geometry
   )
 
 set_target_properties(fccvis_scene PROPERTIES
-    CXX_STANDARD 17
+    CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
     POSITION_INDEPENDENT_CODE ON
 )

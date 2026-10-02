@@ -10,9 +10,13 @@ struct SegmentsGuard {
   int old;
   explicit SegmentsGuard(int n)
       : old(gGeoManager ? gGeoManager->GetNsegments() : 0) {
-    if (gGeoManager) gGeoManager->SetNsegments(n);
+    if (gGeoManager)
+      gGeoManager->SetNsegments(n);
   }
-  ~SegmentsGuard() { if (gGeoManager) gGeoManager->SetNsegments(old); }
+  ~SegmentsGuard() {
+    if (gGeoManager)
+      gGeoManager->SetNsegments(old);
+  }
 };
 
 class TGeoShapeAdapter final : public AbstractShape {
@@ -35,9 +39,9 @@ public:
   }
   Mesh
   Tessellate(double tolerance) const override; // the TBuffer3D implementation
-
 private:
   std::shared_ptr<const TGeoShape> m_shape;
 };
 
+TGeoHMatrix ToTGeoHMatrix(const Transform &transform);
 } // namespace fccvis::geometry

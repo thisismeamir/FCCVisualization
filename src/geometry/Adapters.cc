@@ -1,40 +1,41 @@
-#include "Detector.h"
 #include "Adapters.h"
+#include "Detector.h"
 #include <DD4hep/DetElement.h>
+#include <TEveManager.h>
 #include <TGeoMatrix.h>
 #include <memory>
 
 namespace fccvis::geometry::detector {
 
-const std::string& DetectorNode::Name() const { return m_name; }
-const std::string& DetectorNode::Path() const { return m_path; }
-const Shape& DetectorNode::GetShape() const { return m_shape; }
-const std::vector<std::shared_ptr<DetectorNode>>& DetectorNode::Children() const {
+const std::string &DetectorNode::Name() const { return m_name; }
+const std::string &DetectorNode::Path() const { return m_path; }
+const Shape &DetectorNode::GetShape() const { return m_shape; }
+const std::vector<std::shared_ptr<DetectorNode>> &
+DetectorNode::Children() const {
   return m_children;
 }
 
-Transform DetectorNode::WorldTransform(const Transform& parentWorld) const {
+Transform DetectorNode::WorldTransform(const Transform &parentWorld) const {
   return parentWorld * m_shape.GetTransform();
 }
 
-Transform ToTransform(const TGeoMatrix& m) {
-  const Double_t* r = m.GetRotationMatrix(); // 9 values, row-major
-  const Double_t* t = m.GetTranslation();    // 3 values
+Transform ToTransform(const TGeoMatrix &m) {
+  const Double_t *r = m.GetRotationMatrix(); // 9 values, row-major
+  const Double_t *t = m.GetTranslation();    // 3 values
 
   Transform::Matrix R;
-  for (int i = 0; i < 9; ++i) R[i] = r[i];
-
-  Transform::Vector T = {t[0], t[1], t[2]};
-
+  for (int i = 0; i < 9; ++i)
+    R[i] = r[i];
+  Transform::Vector T = {t[0] * 10.0, t[1] * 10.0, t[2] * 10.0};
   return Transform(T, R);
 }
-
 
 std::shared_ptr<DetectorNode> BuildNode(dd4hep::DetElement de) {
   dd4hep::PlacedVolume pv = de.placement();
 
-  TGeoShape* rawShape = pv.volume().solid().ptr();
-  std::shared_ptr<const TGeoShape> nonOwning(rawShape, [](const TGeoShape*) {});
+  TGeoShape *rawShape = pv.volume().solid().ptr();
+  std::shared_ptr<const TGeoShape> nonOwning(rawShape,
+                                             [](const TGeoShape *) {});
   auto adapter = std::make_shared<TGeoShapeAdapter>(std::move(nonOwning));
 
   Transform local = ToTransform(pv.matrix());
@@ -43,13 +44,29 @@ std::shared_ptr<DetectorNode> BuildNode(dd4hep::DetElement de) {
 
   std::vector<std::shared_ptr<DetectorNode>> children;
   children.reserve(de.children().size());
-  for (auto& [childName, childDe] : de.children())
+  for (auto &[childName, childDe] : de.children())
     children.push_back(BuildNode(childDe));
 
-  return std::make_shared<DetectorNode>(de.name(),
-                                        de.path(),
-                                        std::move(shape),
+  return std::make_shared<DetectorNode>(de.name(), de.path(), std::move(shape),
                                         std::move(children));
 }
-
 } // namespace fccvis::geometry::detector
+
+namespace fccvis::geometry {
+TGeoHMatrix ToTGeoHMatrix(const Transform &transform) {
+  TGeoHMatrix matrix;
+
+  const auto &t = transform.Translation();
+  const auto &r = transform.Rotation();
+
+  Double_t translation[3] = {t[0], t[1], t[2]};
+
+  Double_t rotation[9] = {r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8]};
+
+  matrix.SetTranslation(translation);
+  matrix.SetRotation(rotation);
+
+  return matrix;
+}
+
+} // namespace fccvis::geometry

@@ -22,7 +22,7 @@ target_link_libraries(fccvis_geometry PRIVATE
 )
 
 set_target_properties(fccvis_geometry PROPERTIES
-    CXX_STANDARD 17
+    CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
     POSITION_INDEPENDENT_CODE ON
 )

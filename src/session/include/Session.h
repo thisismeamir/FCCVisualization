@@ -8,6 +8,10 @@
  * - @ref fccvis::session::Session coordinates the session name, data,
  *   options, and access to event information.
  *
+ * The session owns the data and the registry of scenes. Scenes hold no data:
+ * they keep the filters and style rules applied when session content becomes
+ * drawables. The layout only references scenes by name.
+ *
  * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
  *
  * @copyright Copyright 2026 FCC Project at CERN
@@ -27,16 +31,20 @@
 
 #pragma once
 
-#include "MetaObjects.h"
+#include "Camera.h"
+#include "Detector.h"
+#include "Layout.h"
 #include "Scene.h"
 
 #include <filesystem>
+#include <functional>
 #include <memory>
 #include <optional>
 #include <podio/Frame.h>
 #include <string>
 #include <string_view>
 #include <unordered_map>
+#include <utility>
 #include <vector>
 
 /**
@@ -52,63 +60,60 @@ namespace fccvis::session {
  * @brief Visualization and runtime configuration for a session.
  *
  * SessionOptions describes the objects that configure how a session is
- * visualized. It contains the available cameras, filters, scenes, and
- * scene layout, together with the optional path to a detector geometry
+ * visualized: the available cameras, the scenes, and the layout that arranges
+ * the scenes, together with the optional path to a detector geometry
  * description.
  *
- * The objects referenced by this class are shared through
- * @c std::shared_ptr because the same visualization object may be
- * referenced by multiple parts of the visualization system.
+ * Cameras and scenes are shared through @c std::shared_ptr because the same
+ * object may be referenced by several parts of the visualization system
+ * (several scenes may use one camera, and a scene may appear in several
+ * layout panes).
+ *
+ * Filters are not registered here: they are typed
+ * (@ref fccvis::Filter<X>) and are assigned to scenes through shared handles,
+ * so one filter can be shared by assigning the same handle to several scenes.
+ *
+ * @note Copying SessionOptions deep-copies the layout tree but aliases the
+ *       shared cameras and scenes.
  *
  * @see fccvis::session::Session
  * @see fccvis::scene::Scene
- * @see fccvis::scene::meta::Camera
- * @see fccvis::scene::meta::Filter
- * @see fccvis::scene::meta::LayoutNode
+ * @see fccvis::scene::camera::Camera
+ * @see fccvis::layout::LayoutNode
  */
 class SessionOptions {
 public:
   /**
    * @brief Cameras available to the session.
    *
-   * Each camera is represented by a shared pointer to a
-   * @ref fccvis::scene::meta::Camera object.
-   *
-   * A camera describes a viewpoint and related camera configuration
-   * that can be used when displaying a scene.
+   * A camera describes a viewpoint and related camera configuration that
+   * scenes can use. Several scenes may share one camera to stay
+   * synchronized.
    */
-  std::vector<std::shared_ptr<fccvis::scene::meta::Camera>> cameras;
+  std::vector<std::shared_ptr<fccvis::scene::camera::Camera>> cameras;
 
   /**
-   * @brief Filters available to the session.
+   * @brief Scenes available to the session, keyed by unique scene name.
    *
-   * Each filter is represented by a shared pointer to a
-   * @ref fccvis::scene::meta::Filter object.
+   * A scene is a unit of visualization: its camera, selection filters, and
+   * style rules. Scenes exist independently of the layout and may be placed
+   * in any number of panes.
    *
-   * Filters control which visualization objects or event data are
-   * included in a rendered view.
+   * Prefer @ref Session::CreateScene over inserting directly, which enforces
+   * name uniqueness.
    */
-  std::vector<std::shared_ptr<fccvis::scene::meta::Filter>> filters;
+  std::unordered_map<std::string, std::shared_ptr<fccvis::scene::Scene>>
 
-  /**
-   * @brief Scenes available to the session.
-   *
-   * Each scene is represented by a shared pointer to a
-   * @ref fccvis::scene::Scene object.
-   *
-   * A scene defines a reusable visualization configuration that can
-   * be applied to event data.
-   */
-  std::vector<std::shared_ptr<fccvis::scene::Scene>> scenes;
-
+      scenes;
   /**
    * @brief Layout describing how scenes are presented together.
    *
-   * The layout is represented by a tree of
-   * @ref fccvis::scene::meta::LayoutNode objects. It determines how
-   * scene views are arranged and which scene names are shown together.
+   * A value-owned tree of @ref fccvis::layout::LayoutNode whose panes refer
+   * to scenes by name. Empty if no layout has been set.
+   *
+   * @see Session::ValidateLayout
    */
-  std::shared_ptr<fccvis::scene::meta::LayoutNode> sceneLayout;
+  std::optional<fccvis::scene::layout::LayoutNode> sceneLayout;
 
   /**
    * @brief Optional path to the detector geometry file.
@@ -157,10 +162,11 @@ public:
  * - an optional options/configuration file;
  * - @ref fccvis::session::SessionData containing loaded podio frames;
  * - @ref fccvis::session::SessionOptions containing visualization
- *   configuration.
+ *   configuration (cameras, scenes, layout).
  *
  * The session provides the main programmatic interface for discovering
- * available data categories, entries, collections, and collection types.
+ * available data categories, entries, collections, and collection types, and
+ * for creating and looking up scenes.
  *
  * @note Copy construction and copy assignment are disabled. Sessions
  *       are movable.
@@ -181,8 +187,7 @@ public:
    * @param dataFilePath Optional path to the event-data file.
    * @param optionsFilePath Optional path to the session options file.
    */
-  Session(std::string name,
-          std::optional<std::filesystem::path> dataFilePath,
+  Session(std::string name, std::optional<std::filesystem::path> dataFilePath,
           std::optional<std::filesystem::path> optionsFilePath);
 
   /**
@@ -243,7 +248,8 @@ public:
    * @brief Initialize session options.
    *
    * Loads and prepares the visualization configuration associated with
-   * the session's configured options-file path.
+   * the session's configured options-file path. The loader populates the
+   * cameras, the scene registry, and the layout.
    *
    * @note The exact configuration format and loading behavior are
    *       determined by the corresponding implementation.
@@ -256,16 +262,17 @@ public:
    * @return The configured options-file path, or an empty
    *         @c std::optional if no options file was configured.
    */
-  std::optional<std::filesystem::path> GetOptionsFile();
+  std::optional<std::filesystem::path> GetOptionsFile() const;
 
   /**
    * @brief Get the session visualization options.
    *
-   * @return A copy of the session's @ref SessionOptions.
+   * @return A copy of the session's @ref SessionOptions. The layout is
+   *         deep-copied; cameras and scenes are shared with the session.
    *
    * @see Options
    */
-  SessionOptions GetOptions();
+  SessionOptions GetOptions() const;
 
   /**
    * @brief Get the session name.
@@ -320,8 +327,8 @@ public:
    *
    * @return Names of the collections contained in the requested frame.
    */
-  std::vector<std::string>
-  CollectionNames(const std::string &category, size_t entryIndex) const;
+  std::vector<std::string> CollectionNames(const std::string &category,
+                                           size_t entryIndex) const;
 
   /**
    * @brief Get the type of a collection in a category entry.
@@ -332,8 +339,7 @@ public:
    *
    * @return Type name of the requested collection.
    */
-  std::string CollectionType(const std::string &category,
-                             size_t entryIndex,
+  std::string CollectionType(const std::string &category, size_t entryIndex,
                              const std::string &collName) const;
 
   /**
@@ -349,10 +355,100 @@ public:
   const podio::Frame &GetFrame(const std::string &category,
                                size_t entryIndex) const;
 
-
-  /** TODO:
-   * @brief Create a new Scene object via the session
+  /**
+   * @brief Get the detector node object.
+   *
+   * @return Shared pointer to the root detector node, or nullptr if no
+   *         geometry has been loaded.
    */
+  const std::shared_ptr<fccvis::geometry::detector::DetectorNode> &
+  Detector() const {
+    return m_detector;
+  }
+
+  /**
+   * @brief Load the detector geometry from a DD4hep compact XML description.
+   *
+   * On success the root detector node is available through @ref Detector;
+   * on failure @ref Detector stays nullptr.
+   *
+   * @param mainXMLPath Path to the main DD4hep compact XML file.
+   */
+  void InitializeDetectorGeometry(const std::string &mainXMLPath);
+
+  /**
+   * @brief Create a new, empty scene and register it in the session.
+   *
+   * Scene names are unique within a session. The returned scene is shared
+   * with the session's registry and may be configured (camera, filters,
+   * style rules) through its own interface.
+   *
+   * @param name Unique name of the new scene.
+   *
+   * @return The new scene, or nullptr if a scene with this name already
+   *         exists.
+   */
+  std::shared_ptr<fccvis::scene::Scene> CreateScene(const std::string &name) {
+    auto scene = std::make_shared<fccvis::scene::Scene>(name);
+    const bool inserted = m_options.scenes.emplace(name, scene).second;
+    return inserted ? scene : nullptr;
+  }
+
+  /**
+   * @brief Look up a scene by name.
+   *
+   * @param name Name of the scene.
+   *
+   * @return The scene, or nullptr if no scene has this name.
+   */
+  std::shared_ptr<fccvis::scene::Scene>
+  FindScene(const std::string &name) const {
+    auto it = m_options.scenes.find(name);
+    return it == m_options.scenes.end() ? nullptr : it->second;
+  }
+
+  /**
+   * @brief Check whether a scene with the given name exists.
+   *
+   * @param name Name of the scene.
+   *
+   * @return True if the scene is registered.
+   */
+  bool HasScene(const std::string &name) const {
+    return m_options.scenes.find(name) != m_options.scenes.end();
+  }
+
+  /**
+   * @brief Set the scene layout.
+   *
+   * The layout is stored as given and not validated here; call
+   * @ref ValidateLayout to check it against the registered scenes.
+   *
+   * @param layout Root of the new layout tree.
+   */
+  void SetLayout(fccvis::scene::layout::LayoutNode layout) {
+    m_options.sceneLayout = std::move(layout);
+  }
+
+  /**
+   * @brief Validate the current layout against the registered scenes.
+   *
+   * Checks that every pane refers to an existing scene, that containers are
+   * not empty, and that split weights are positive. The same scene appearing
+   * in several panes is valid.
+   *
+   * @return One message per violation; empty if the layout is valid or no
+   *         layout is set.
+   *
+   * @see fccvis::layout::Validate
+   */
+  std::vector<std::string> ValidateLayout() const {
+    if (!m_options.sceneLayout) return {};
+    return fccvis::scene::layout::Validate(
+        *m_options.sceneLayout,
+        [this](const std::string &name) { return HasScene(name); });
+  }
+
 private:
   /**
    * @brief Name identifying the session.
@@ -372,7 +468,8 @@ private:
   /**
    * @brief Event data loaded by the session.
    *
-   * Contains the podio frames organized into named categories.
+   * Contains the podio frames organized into named categories. Scenes never
+   * copy this data; they select from it when drawables are materialized.
    *
    * @see SessionData
    */
@@ -384,6 +481,11 @@ private:
    * @see SessionOptions
    */
   SessionOptions m_options;
+
+  /**
+   * @brief Root of the loaded detector geometry, or nullptr.
+   */
+  std::shared_ptr<fccvis::geometry::detector::DetectorNode> m_detector;
 };
 
 } // namespace fccvis::session

@@ -31,8 +31,11 @@ int SegmentsFromTolerance(double relTolerance) {
                     360);
 }
 Mesh TGeoShapeAdapter::Tessellate(double tolerance) const {
-  if (dynamic_cast<const TGeoShapeAssembly*>(m_shape.get()))
-    return Mesh{}; // assemblies have no surface of their own
+  // TODO: The ShapeAssembly are ditched for now, later on we should add this as
+  // a feaature as well.
+  if (dynamic_cast<const TGeoShapeAssembly *>(m_shape.get()) ||
+      dynamic_cast<const TGeoCompositeShape *>(m_shape.get()))
+    return Mesh{}; // no direct surface tessellation for these yet
 
   const int nSeg = SegmentsFromTolerance(tolerance);
   const int oldSeg = gGeoManager ? gGeoManager->GetNsegments() : 20;
@@ -48,10 +51,9 @@ Mesh TGeoShapeAdapter::Tessellate(double tolerance) const {
   if (b.SectionsValid(TBuffer3D::kRaw) && b.NbPnts() > 0 && b.NbPols() > 0) {
     mesh.vertices.reserve(b.NbPnts());
     for (UInt_t i = 0; i < b.NbPnts(); ++i)
-      mesh.vertices.push_back({static_cast<float>(b.fPnts[3 * i]),
-                               static_cast<float>(b.fPnts[3 * i + 1]),
-                               static_cast<float>(b.fPnts[3 * i + 2])});
-
+      mesh.vertices.push_back({static_cast<float>(b.fPnts[3 * i] * 10.0),
+                               static_cast<float>(b.fPnts[3 * i + 1] * 10.0),
+                               static_cast<float>(b.fPnts[3 * i + 2] * 10.0)});
     const Int_t *pol = b.fPols;
     for (UInt_t p = 0; p < b.NbPols(); ++p) {
       const auto loop = PolygonLoop(b, pol);
@@ -86,29 +88,20 @@ Transform::Vector Transform::Inverse(const Vector &p) const {
   };
 }
 
-Transform Transform::Inverse() const
-{
-  const auto& R = m_rotation;
+Transform Transform::Inverse() const {
+  const auto &R = m_rotation;
 
-  Matrix inverseRotation{
-      R[0], R[3], R[6],
-      R[1], R[4], R[7],
-      R[2], R[5], R[8]
-  };
+  Matrix inverseRotation{R[0], R[3], R[6], R[1], R[4], R[7], R[2], R[5], R[8]};
 
   const Vector inverseTranslation{
-      -(R[0] * m_translation[0] +
-        R[3] * m_translation[1] +
+      -(R[0] * m_translation[0] + R[3] * m_translation[1] +
         R[6] * m_translation[2]),
 
-      -(R[1] * m_translation[0] +
-        R[4] * m_translation[1] +
+      -(R[1] * m_translation[0] + R[4] * m_translation[1] +
         R[7] * m_translation[2]),
 
-      -(R[2] * m_translation[0] +
-        R[5] * m_translation[1] +
-        R[8] * m_translation[2])
-  };
+      -(R[2] * m_translation[0] + R[5] * m_translation[1] +
+        R[8] * m_translation[2])};
 
   return Transform(inverseTranslation, inverseRotation);
 }
@@ -117,70 +110,63 @@ Transform::Matrix Transform::MatMul(const Matrix &m1, const Matrix &m2) {
   Transform::Matrix r{};
   for (int i = 0; i < 3; ++i) {
     for (int j = 0; j < 3; ++j) {
-      r[3*i+j] = m1[3*i]*m2[j] + m1[3*i+1]*m2[j+3] + m1[3*i+2]*m2[j+6];
+      r[3 * i + j] = m1[3 * i] * m2[j] + m1[3 * i + 1] * m2[j + 3] +
+                     m1[3 * i + 2] * m2[j + 6];
     }
   }
   return r;
 }
 
-Transform Transform::operator*(const Transform& other) const {
+Transform Transform::operator*(const Transform &other) const {
   Transform::Matrix R = Transform::MatMul(m_rotation, other.m_rotation);
 
   Transform::Vector T = {
-    m_rotation[0]*other.m_translation[0] + m_rotation[1]*other.m_translation[1] + m_rotation[2]*other.m_translation[2] + m_translation[0],
-    m_rotation[3]*other.m_translation[0] + m_rotation[4]*other.m_translation[1] + m_rotation[5]*other.m_translation[2] + m_translation[1],
-    m_rotation[6]*other.m_translation[0] + m_rotation[7]*other.m_translation[1] + m_rotation[8]*other.m_translation[2] + m_translation[2],
+      m_rotation[0] * other.m_translation[0] +
+          m_rotation[1] * other.m_translation[1] +
+          m_rotation[2] * other.m_translation[2] + m_translation[0],
+      m_rotation[3] * other.m_translation[0] +
+          m_rotation[4] * other.m_translation[1] +
+          m_rotation[5] * other.m_translation[2] + m_translation[1],
+      m_rotation[6] * other.m_translation[0] +
+          m_rotation[7] * other.m_translation[1] +
+          m_rotation[8] * other.m_translation[2] + m_translation[2],
   };
-
 
   return Transform(T, R);
 }
 
-
-bool Shape::Contains(const Transform::Vector& point) const {
-  return m_geometry->Criterion(m_transform.Inverse(point)) <= 0.0;
+bool Shape::Contains(const Transform::Vector &point) const {
+  Transform::Vector x = {
+    point[0] / 10.0, point[1] / 10.0, point[2] / 10.0
+  };
+  return m_geometry->Criterion(m_transform.Inverse(x)) <= 0.0;
 }
 
 Transform::Transform(Vector translation, Matrix rotation)
     : m_translation(translation), m_rotation(rotation) {}
 
-const Transform::Vector& Transform::Translation() const { return m_translation; }
-const Transform::Matrix& Transform::Rotation() const { return m_rotation; }
+const Transform::Vector &Transform::Translation() const {
+  return m_translation;
+}
+const Transform::Matrix &Transform::Rotation() const { return m_rotation; }
 
 Shape::Shape(std::shared_ptr<AbstractShape> geometry, Transform transform)
     : m_geometry(std::move(geometry)), m_transform(std::move(transform)) {}
 
-const AbstractShape& Shape::Geometry() const { return *m_geometry; }
-const Transform& Shape::GetTransform() const { return m_transform; }
-Transform& Shape::GetTransform() { return m_transform; }
+const AbstractShape &Shape::Geometry() const { return *m_geometry; }
+const Transform &Shape::GetTransform() const { return m_transform; }
+Transform &Shape::GetTransform() { return m_transform; }
 
+Transform &Placement::GetTransform() { return m_transform; }
 
-Transform& Placement::GetTransform() {
-  return m_transform;
-}
+Transform::Vector &Transform::Translation() { return m_translation; }
 
-
-
-Transform::Vector& Transform::Translation()
-{
-  return m_translation;
-}
-
-void Transform::SetTranslation(const Vector& translation)
-{
+void Transform::SetTranslation(const Vector &translation) {
   m_translation = translation;
 }
 
+Transform::Matrix &Transform::Rotation() { return m_rotation; }
 
-Transform::Matrix& Transform::Rotation()
-{
-  return m_rotation;
-}
-
-void Transform::SetRotation(const Matrix& rotation)
-{
-  m_rotation = rotation;
-}
-
+void Transform::SetRotation(const Matrix &rotation) { m_rotation = rotation; }
 
 } // namespace fccvis::geometry

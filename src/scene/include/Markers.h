@@ -1,5 +1,5 @@
 /**
- * @fillineName.h
+ * @Markers.h
  * @brief Basic graphical primitives and color configuration.
  *
  * Defines the lightweight scene primitives used by FCCVisualization
@@ -32,7 +32,7 @@
 /**
  * @brief Metadata and graphical primitives for visualization scenes.
  */
-namespace fccvis::scene::meta {
+namespace fccvis::scene::markers {
 
 /**
  * @brief Color specification for visualization primitives.
@@ -276,5 +276,29 @@ public:
    */
   unsigned int style = 1;
 };
+
+/**
+* @brief Styling properties applicable to an event collection or visual grouping.
+*/
+struct CollectionStyle {
+ /** @brief Primary color of the collection primitives. */
+ Color color = Color::Auto;
+
+ /** @brief Marker or point size (applicable to hits and points). */
+ unsigned int markerSize = 1;
+
+ /** @brief Line or trajectory stroke width (applicable to tracks). */
+ unsigned int lineWidth = 1;
+
+ /** @brief Line style index (e.g., solid, dashed, dotted). */
+ unsigned int lineStyle = 1;
+
+ /** @brief Transparency level (0.0 = fully opaque, 1.0 = fully transparent). */
+ double transparency = 0.0;
+
+ /** @brief Visibility flag to toggle rendering of this collection. */
+ bool visible = true;
+};
+
 
 } // namespace fccvis::scene::meta
