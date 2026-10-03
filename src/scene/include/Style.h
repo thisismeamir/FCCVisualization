@@ -27,18 +27,6 @@
 #include "Filter.h"     // fccvis::Filter<X>
 #include "Mergeable.h"  // fccvis::merge::Mergeable
 
-namespace fccvis::data {
-// PLACEHOLDERS: replace with the real drawable types / includes.
-struct Hit;       ///< Tracker hit.
-struct Vertex;    ///< Reconstructed or MC vertex.
-struct Track;     ///< Reconstructed track.
-struct Particle;  ///< MC particle.
-struct Cluster;   ///< Calorimeter cluster.
-struct CaloCell;  ///< Calorimeter cell / hit.
-struct Jet;       ///< Reconstructed jet.
-struct Volume;    ///< Geometry volume.
-}  // namespace fccvis::data
-
 namespace fccvis::style {
 
 /**
@@ -147,28 +135,6 @@ struct EnvironmentStyle : merge::Mergeable<EnvironmentStyle> {
 };
 
 /**
- * @brief Maps a drawable type to its style record.
- *
- * Specialize once per drawable type. Several drawable types may share a style
- * record; style sheets remain separate per drawable type.
- */
-template <typename X>
-struct StyleTraits;
-
-/** @brief Style record of drawable type @p X. */
-template <typename X>
-using StyleOf = typename StyleTraits<X>::type;
-
-template <> struct StyleTraits<data::Hit>      { using type = PointStyle; };
-template <> struct StyleTraits<data::Vertex>   { using type = PointStyle; };
-template <> struct StyleTraits<data::Cluster>  { using type = PointStyle; };
-template <> struct StyleTraits<data::Track>    { using type = LineStyle; };
-template <> struct StyleTraits<data::Particle> { using type = LineStyle; };
-template <> struct StyleTraits<data::CaloCell> { using type = SurfaceStyle; };
-template <> struct StyleTraits<data::Jet>      { using type = SurfaceStyle; };
-template <> struct StyleTraits<data::Volume>   { using type = SurfaceStyle; };
-
-/**
  * @brief "Elements passing @ref when get @ref style."
  *
  * @tparam X Drawable type.
@@ -229,110 +195,6 @@ class StyleSheet {
     a.base = a.base.CompleteBy(b.base);
     a.rules.insert(a.rules.begin(), b.rules.begin(), b.rules.end());
   }
-};
-
-/**
- * @brief One style sheet per drawable type, keyed by type.
- *
- * Deep-copied on copy. A drawable type without a sheet resolves to an empty
- * style.
- */
-class StyleSet {
- public:
-  StyleSet() = default;
-
-  /** @brief Deep copy: every sheet is cloned. */
-  StyleSet(const StyleSet& o) {
-    for (const auto& [k, v] : o.sheets_) sheets_.emplace(k, v->Clone());
-  }
-  /** @brief Deep copy assignment. */
-  StyleSet& operator=(const StyleSet& o) {
-    if (this != &o) {
-      StyleSet tmp(o);
-      sheets_.swap(tmp.sheets_);
-    }
-    return *this;
-  }
-  StyleSet(StyleSet&&) noexcept = default;
-  StyleSet& operator=(StyleSet&&) noexcept = default;
-
-  /**
-   * @brief Sheet for drawable type @p X, created if missing.
-   * @tparam X Drawable type.
-   */
-  template <typename X>
-  StyleSheet<X>& For() {
-    auto& slot = sheets_[std::type_index(typeid(X))];
-    if (!slot) slot = std::make_unique<Holder<X>>();
-    return static_cast<Holder<X>&>(*slot).sheet;
-  }
-
-  /**
-   * @brief Sheet for drawable type @p X, or nullptr if none exists.
-   * @tparam X Drawable type.
-   */
-  template <typename X>
-  [[nodiscard]] const StyleSheet<X>* Find() const {
-    auto it = sheets_.find(std::type_index(typeid(X)));
-    return it == sheets_.end()
-               ? nullptr
-               : &static_cast<const Holder<X>&>(*it->second).sheet;
-  }
-
-  /**
-   * @brief Resolves the style of an element and completes it with defaults.
-   * @tparam X Drawable type.
-   * @param x        Element to style.
-   * @param defaults Lowest-priority style, typically the backend defaults.
-   */
-  template <typename X>
-  [[nodiscard]] StyleOf<X> Resolve(const X& x,
-                                   const StyleOf<X>& defaults = {}) const {
-    const auto* s = Find<X>();
-    return (s ? s->Resolve(x) : StyleOf<X>{}).CompleteBy(defaults);
-  }
-
-  /** @brief Per-type `TakeRef`: sheets present in @p b override. */
-  friend void TakeRefInto(StyleSet& a, const StyleSet& b) {
-    for (const auto& [k, v] : b.sheets_) {
-      auto it = a.sheets_.find(k);
-      if (it == a.sheets_.end()) a.sheets_.emplace(k, v->Clone());
-      else it->second->TakeRefFrom(*v);
-    }
-  }
-
-  /** @brief Per-type `CompleteBy`: this set keeps priority. */
-  friend void CompleteInto(StyleSet& a, const StyleSet& b) {
-    for (const auto& [k, v] : b.sheets_) {
-      auto it = a.sheets_.find(k);
-      if (it == a.sheets_.end()) a.sheets_.emplace(k, v->Clone());
-      else it->second->CompleteFrom(*v);
-    }
-  }
-
- private:
-  struct SheetBase {
-    virtual ~SheetBase() = default;
-    virtual std::unique_ptr<SheetBase> Clone() const = 0;
-    virtual void TakeRefFrom(const SheetBase& other) = 0;
-    virtual void CompleteFrom(const SheetBase& other) = 0;
-  };
-
-  template <typename X>
-  struct Holder final : SheetBase {
-    StyleSheet<X> sheet;
-    std::unique_ptr<SheetBase> Clone() const override {
-      return std::make_unique<Holder>(*this);
-    }
-    void TakeRefFrom(const SheetBase& o) override {
-      TakeRefInto(sheet, static_cast<const Holder&>(o).sheet);
-    }
-    void CompleteFrom(const SheetBase& o) override {
-      CompleteInto(sheet, static_cast<const Holder&>(o).sheet);
-    }
-  };
-
-  std::map<std::type_index, std::unique_ptr<SheetBase>> sheets_;
 };
 
 }  // namespace fccvis::style

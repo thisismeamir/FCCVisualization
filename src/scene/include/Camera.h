@@ -7,8 +7,33 @@
  */
 
 #include "BaseSessionObject.h"
+#include <optional>
 #include <vector>
+#include "Mergeable.h"
+
 namespace fccvis::scene::camera {
+/** @brief How the camera behaves in a scene. */
+enum class CameraMode {
+  Free,      ///< The user may move the camera freely.
+  Fixed,     ///< The camera is locked.
+  Animated   ///< The camera follows a scripted motion.
+};
+
+/**
+ * @brief Scene-specific camera behaviour.
+ *
+ * Kept apart from the camera itself, which may be shared between scenes.
+ */
+struct CameraOptions : merge::Mergeable<CameraOptions> {
+  std::optional<CameraMode> mode;          ///< Camera behaviour.
+  std::optional<float> animationSeconds;   ///< Duration of one animation cycle.
+
+  /** @brief Members taking part in merging. */
+  static constexpr auto Members() {
+    return std::tuple{&CameraOptions::mode, &CameraOptions::animationSeconds};
+  }
+};
+
 
 /**
  * @brief Camera configuration for a visualization scene.

@@ -1,5 +1,5 @@
 add_library(fccvis_session OBJECT
-  Session.cc
+  placeholder.cc
 )
 
 target_include_directories(fccvis_session PUBLIC
@@ -13,6 +13,7 @@ target_link_libraries(fccvis_session PUBLIC
     FCCVisualization::CompilerWarnings
     fccvis_geometry
     fccvis_filter
+    fccvis_data
     fccvis_scene
     podio::podio
     podio::podioRootIO

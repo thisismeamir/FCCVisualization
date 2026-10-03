@@ -2,6 +2,7 @@
 # Core object library (no ROOT/TEve dependency)
 # ---------------------------------------------------------------------------
 add_subdirectory(api)
+add_subdirectory(data)
 add_subdirectory(filter)
 add_subdirectory(geometry)
 add_subdirectory(scene)
@@ -11,6 +12,7 @@ add_subdirectory(session)
 add_library(fccvis_core OBJECT
     $<TARGET_OBJECTS:fccvis_api>
     $<TARGET_OBJECTS:fccvis_geometry>
+    $<TARGET_OBJECTS:fccvis_data>
     $<TARGET_OBJECTS:fccvis_filter>
     $<TARGET_OBJECTS:fccvis_scene>
     $<TARGET_OBJECTS:fccvis_visualization>
@@ -39,7 +41,7 @@ set_target_properties(fccvis_core PROPERTIES
 add_subdirectory(backend/root)
 
 if(FCCVIS_ENABLE_GUI)
-    add_subdirectory(gui)
+  #add_subdirectory(gui)
 endif()
 
 # ---------------------------------------------------------------------------
@@ -48,6 +50,7 @@ endif()
 set(_fccvis_all_objects
     $<TARGET_OBJECTS:fccvis_api>
     $<TARGET_OBJECTS:fccvis_geometry>
+    $<TARGET_OBJECTS:fccvis_data>
     $<TARGET_OBJECTS:fccvis_filter>
     $<TARGET_OBJECTS:fccvis_scene>
     $<TARGET_OBJECTS:fccvis_visualization>
@@ -56,7 +59,7 @@ set(_fccvis_all_objects
     $<TARGET_OBJECTS:fccvis_backend_root>
 )
 if(FCCVIS_ENABLE_GUI)
-    list(APPEND _fccvis_all_objects $<TARGET_OBJECTS:fccvis_gui>)
+  #list(APPEND _fccvis_all_objects $<TARGET_OBJECTS:fccvis_gui>)
 endif()
 
 if(FCCVIS_BUILD_SHARED)
