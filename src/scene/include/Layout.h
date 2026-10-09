@@ -198,4 +198,44 @@ Validate(const LayoutNode& n,
   return errors;
 }
 
+/**
+ * @brief Reduces a layout to the scenes accepted by @p isOpen.
+ *
+ * A pane survives if its scene is open. Containers drop closed children,
+ * disappear when empty, and collapse into their only remaining child.
+ * Weights are kept among the survivors.
+ *
+ * @return The pruned tree, or nullopt if nothing remains.
+ */
+inline std::optional<LayoutNode>
+Prune(const LayoutNode& n,
+      const std::function<bool(const std::string&)>& isOpen) {
+  return std::visit(
+      [&](const auto& v) -> std::optional<LayoutNode> {
+        using T = std::decay_t<decltype(v)>;
+        if constexpr (std::is_same_v<T, Pane>) {
+          if (!isOpen(v.sceneName)) return std::nullopt;
+          return n;
+        } else if constexpr (std::is_same_v<T, Split>) {
+          Split out;
+          out.orientation = v.orientation;
+          for (const auto& s : v.children)
+            if (auto c = Prune(s.node, isOpen))
+              out.children.push_back({std::move(*c), s.label, s.weight});
+          if (out.children.empty()) return std::nullopt;
+          if (out.children.size() == 1) return std::move(out.children.front().node);
+          return LayoutNode{std::move(out)};
+        } else {
+          Tabs out;
+          for (const auto& s : v.children)
+            if (auto c = Prune(s.node, isOpen))
+              out.children.push_back({std::move(*c), s.label});
+          if (out.children.empty()) return std::nullopt;
+          if (out.children.size() == 1) return std::move(out.children.front().node);
+          return LayoutNode{std::move(out)};
+        }
+      },
+      n.value);
+}
+
 }  // namespace fccvis::layout

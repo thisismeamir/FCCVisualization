@@ -32,10 +32,8 @@
 #include <typeinfo>
 #include <utility>
 #include <vector>
-
-#include "BaseSessionObject.h"
-#include "Camera.h"
 #include "Filter.h"
+#include "Camera.h"
 #include "Mergeable.h"
 #include "Data.h"
 #include "Style.h"
@@ -203,6 +201,9 @@ class LayerSet {
     }
   }
 
+  /** @brief Removes layer @p name. @return False if it does not exist. */
+  bool Remove(const std::string& name) { return m_layers.erase(name) > 0; }
+
  private:
   struct Slot {
     virtual ~Slot() = default;
@@ -271,15 +272,14 @@ using CameraPtr = std::shared_ptr<fccvis::scene::camera::Camera>;
  *
  * @note Scene must be copy-constructible for merging, which copies the receiver.
  */
-class Scene : public BaseSessionObject, public merge::Mergeable<Scene> {
+class Scene: public merge::Mergeable<Scene> {
  public:
   /**
    * @brief Constructs an empty scene.
    * @param sceneName Unique name identifying the scene.
    */
   explicit Scene(std::string sceneName)
-      : BaseSessionObject(std::move(sceneName)) {}
-
+    : name(std::move(sceneName)) {};
   /** @brief Camera defining the viewpoint; may be shared between scenes. */
   CameraPtr camera;
 
@@ -308,9 +308,9 @@ class Scene : public BaseSessionObject, public merge::Mergeable<Scene> {
    * @return The layer, or nullptr if @p name is taken by a layer of another type.
    */
   template <typename X>
-  meta::Layer<X>* AddLayer(const std::string& name, data::SeriesRef series,
+  meta::Layer<X>* AddLayer(const std::string& layerName, data::SeriesRef series,
                            std::size_t entry = 0) {
-    auto* layer = layers.Add<X>(name);
+    auto* layer = layers.Add<X>(layerName);
     if (layer) {
       layer->series = std::move(series);
       layer->entry = entry;
@@ -323,8 +323,8 @@ class Scene : public BaseSessionObject, public merge::Mergeable<Scene> {
    * @return False if the layer does not exist or has another type.
    */
   template <typename X>
-  bool SetEntry(const std::string& name, std::size_t entry) {
-    auto* layer = layers.Find<X>(name);
+  bool SetEntry(const std::string& entryName, std::size_t entry) {
+    auto* layer = layers.Find<X>(entryName);
     if (!layer) return false;
     layer->entry = entry;
     return true;
@@ -400,6 +400,10 @@ class Scene : public BaseSessionObject, public merge::Mergeable<Scene> {
     return std::tuple{&Scene::camera, &Scene::cameraOptions,
                       &Scene::environment, &Scene::layers};
   }
+
+private:
+
+  std::string name;
 };
 
 }  // namespace fccvis::scene

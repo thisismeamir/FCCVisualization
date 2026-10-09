@@ -23,11 +23,22 @@
 #include <typeinfo>
 #include <utility>
 #include <vector>
-
 #include "Filter.h"     // fccvis::Filter<X>
 #include "Mergeable.h"  // fccvis::merge::Mergeable
-
+#include "Elements.h"
 namespace fccvis::style {
+
+/**
+ * @brief Maps a drawable type to its style record.
+ *
+ * Specialize once per drawable type. Several drawable types may share a style
+ * record; style sheets remain separate per drawable type.
+ */
+template <typename X>
+struct StyleTraits;
+/** @brief Style record of drawable type @p X. */
+template <typename X>
+using StyleOf = typename StyleTraits<X>::type;
 
 /**
  * @brief 8-bit RGBA color.
@@ -196,5 +207,10 @@ class StyleSheet {
     a.rules.insert(a.rules.begin(), b.rules.begin(), b.rules.end());
   }
 };
+
+
+template <> struct StyleTraits<data::Element<data::Point>>   { using type = PointStyle; };
+template <> struct StyleTraits<data::Element<data::Line>>    { using type = LineStyle; };
+template <> struct StyleTraits<data::Element<data::Surface>> { using type = SurfaceStyle; };
 
 }  // namespace fccvis::style

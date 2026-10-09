@@ -5,9 +5,9 @@
 #include <string_view>
 namespace fccvis::visualization {
 
-class CollectionVisualizer {
+class  CollectionVisualizerP {
   public:
-  virtual ~CollectionVisualizer() = default;
+  virtual ~C llectionVisualizer() = default;
   virtual bool CanVisualize(std::string_view type) const = 0;
   virtual void Visualize(
   const podio::Frame & frame,

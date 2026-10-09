@@ -6,8 +6,9 @@
  * Nothing here depends on a rendering backend.
  */
 
-#include "BaseSessionObject.h"
 #include <optional>
+#include <string>
+#include <utility>
 #include <vector>
 #include "Mergeable.h"
 
@@ -41,23 +42,14 @@ struct CameraOptions : merge::Mergeable<CameraOptions> {
  * Camera stores the geometric parameters required to describe a
  * scene's viewpoint.
  *
- * The object inherits its identifying name from
- * @ref fccvis::scene::BaseSessionObject and can therefore be
- * referenced as a named session object.
- *
  * @see fccvis::scene::Scene
- * @see fccvis::scene::BaseSessionObject
  */
-class Camera : public fccvis::scene::BaseSessionObject {
+class Camera {
 public:
-  /**
-   * @brief Inherit constructors from BaseSessionObject.
-   *
-   * Camera construction is delegated to the base class. In
-   * particular, the inherited constructor can be used to assign
-   * the camera's session-level name.
-   */
-  using BaseSessionObject::BaseSessionObject;
+  Camera() = default;
+  explicit Camera(std::string cameraName)
+    : name(std::move(cameraName)) {}
+
 
   /**
    * @brief Position of the camera.
@@ -118,6 +110,8 @@ public:
   void ResetMagnification() {
     magnification = 1.0;
   }
+
+  std::string name;
 };
 
 

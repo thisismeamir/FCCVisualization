@@ -1,31 +1,37 @@
 add_executable(fccvis
     main.cpp
-    CliOptions.cc
-    RunApplication.cc
-    InteractiveShell.cc
+    # CliOptions.cc
+    # RunApplication.cc
+    # InteractiveShell.cc
 )
 
 target_include_directories(fccvis PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${FCCVIS_UNIFIED_INCLUDE_DIR}
 )
 
 target_link_libraries(fccvis PRIVATE
     ${FCCVIS_LINK_LIB}
     FCCVisualization::CompilerWarnings
     fccvis_session
+    #    fccvis_shell
 )
 
 if(FCCVIS_ENABLE_GUI)
-    target_include_directories(fccvis PRIVATE ${CMAKE_SOURCE_DIR}/src/gui/include)
+    target_include_directories(fccvis PRIVATE
+        ${CMAKE_SOURCE_DIR}/src/gui/include
+    )
 endif()
 
-
 set_target_properties(fccvis PROPERTIES
-    CXX_STANDARD 17
+    CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
 )
 
-target_include_directories(fccvis PRIVATE ${FCCVIS_UNIFIED_INCLUDE_DIR})
-
 include(GNUInstallDirs)
-install(TARGETS fccvis RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime)
+
+install(
+    TARGETS fccvis
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    COMPONENT Runtime
+)

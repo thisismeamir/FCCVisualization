@@ -50,3 +50,53 @@ target_link_libraries(
 )
 
 catch_discover_tests(fccvis_geometry_tests)
+
+
+# ---------------------------------------------------------------------------
+# Backend
+# ---------------------------------------------------------------------------
+
+# Base backend sources
+set(BACKEND_TEST_SOURCES
+    backend/fccvis_recordingbackend_tests.cc
+)
+
+# Base backend link libraries
+set(BACKEND_TEST_LIBS
+    fccvis_filter
+    fccvis_data
+    fccvis_scene
+    fccvis_changes
+    fccvis_session
+    fccvis_backend
+    Catch2::Catch2WithMain
+)
+
+# Conditionally append FV backend source and target library if enabled
+if(BUILD_BACKEND_FV)
+  list(APPEND BACKEND_TEST_LIBS fccvis_backend_fv)
+  list(APPEND BACKEND_TEST_SOURCES backend/fccvis_fv_tests.cc)
+endif()
+
+add_executable(fccvis_backend_tests
+    ${BACKEND_TEST_SOURCES}
+)
+
+add_dependencies(
+    fccvis_backend_tests
+    copy_test_resources
+)
+
+target_compile_definitions(
+    fccvis_backend_tests
+    PRIVATE
+        TEST_RESOURCE_DIR="${TEST_RESOURCES_OUTPUT_DIR}"
+)
+
+target_link_libraries(
+    fccvis_backend_tests
+    PRIVATE
+        ${BACKEND_TEST_LIBS}
+)
+
+catch_discover_tests(fccvis_backend_tests)

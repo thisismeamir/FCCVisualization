@@ -14,7 +14,9 @@ target_link_libraries(fccvis_session PUBLIC
     fccvis_geometry
     fccvis_filter
     fccvis_data
+    fccvis_changes
     fccvis_scene
+    fccvis_backend
     podio::podio
     podio::podioRootIO
     EDM4HEP::edm4hep

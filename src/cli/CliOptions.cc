@@ -32,7 +32,7 @@ CliOptions ParseArgs(int argc, char** argv)
   for (const auto& p : positional)
   {
     const auto ext = p.extension();
-    if (ext == ".cpp")
+    if (ext == ".cpp" || ext == ".cc" || ext == "cxx")
       opts.optionsFile = p;
     else if (ext == ".root" || ext == ".pndr")
       opts.dataFile = p;
