@@ -1,0 +1,31 @@
+PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
+DocumentHandler  INFO  +++ Loading document URI: <src>/tests/data/detector/toy.xml [Resolved:'<src>/tests/data/detector/toy.xml']
+DocumentHandler  INFO  +++ Document <src>/tests/data/detector/toy.xml succesfully parsed with TinyXML .....
+DocumentHandler  INFO  +++ Loading document URI: <src>/tests/data/detector/toy_elements.xml [Resolved:'<src>/tests/data/detector/toy_elements.xml']
+DocumentHandler  INFO  +++ Document <src>/tests/data/detector/toy_elements.xml succesfully parsed with TinyXML .....
+DD4hep           WARN  ++ STD conditions NOT defined by client. NTP defaults taken.
+Detector         INFO  *********** Created World volume with size:  400  400  400
+Compact          INFO  ++ Converted subdetector:BeamPipe of type DD4hep_TubeSegment 
+Compact          INFO  ++ Converted subdetector:Tracker of type DD4hep_MultiLayerTracker [tracker]
+Compact          INFO  ++ Converted subdetector:Shield of type DD4hep_BoxSegment 
+Detector         INFO  +++ Patching names of anonymous shapes....
+source detector:<src>/tests/data/detector/toy.xml: 3 series, 0 skipped
+  + geometry/BeamPipe (surface, 1 entry) [material, path, solid, subdetector, system_id, volume]
+  + geometry/Shield (surface, 1 entry) [material, path, solid, subdetector, system_id, volume]
+  + geometry/Tracker (surface, 1 entry) [barrel, layer, material, path, slice, solid, subdetector, system_id, volume]
+geometry/BeamPipe  surface  1 entry  detector:<src>/tests/data/detector/toy.xml
+geometry/Shield  surface  1 entry  detector:<src>/tests/data/detector/toy.xml
+geometry/Tracker  surface  1 entry  detector:<src>/tests/data/detector/toy.xml
+--- stderr
+Info in <TGeoManager::TGeoManager>: Geometry fccvis:<src>/tests/data/detector/toy.xml#1, Detector Geometry created
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+Info in <TGeoManager::SetTopVolume>: Top volume is world_volume. Master volume is world_volume
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 3, max placements = 3
+Info in <TGeoManager::CloseGeometry>: 13 nodes/ 14 volume UID's in Detector Geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+--- exit status 0

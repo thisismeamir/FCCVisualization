@@ -1,0 +1,23 @@
+# Documentation example: ROOT TEve viewer (docs/source/backends/root.md).
+# Run under X (or xvfb-run); CTest runs it as docs::root_session.
+# [root]
+load detector ../../tests/data/detector/toy.xml depth=3
+load csv data/hits.csv entry=event
+load csv data/tracks.csv kind=line group=track order=step entry=event
+scene new front side
+layer add front geometry/Tracker as tracker
+layer add front hits
+layer add front tracks
+style front/tracker preset detector-outline
+style front/hits preset hits-by-energy 0 3
+style front/tracks preset tracks-by-charge
+layer add side geometry/Tracker as tracker
+layer add side hits
+style side/tracker color=#8d8d8d opacity=0.3
+camera side dir 1 0 0
+layout split(front as "Front (xy)", side as "Side (zy)")
+backend init root eve picture_dir=root-out width=480 height=360
+open eve front
+open eve side
+backend flush
+# [root]

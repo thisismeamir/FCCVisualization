@@ -1,0 +1,23 @@
+source phoenix:<src>/tests/data/phoenix/events.json: 5 series, 2 skipped
+  + Hits/shared (point, 2 entries)
+  + Tracks/shared (line, 2 entries)
+  + pixels (point, 2 entries) [energy, good, id, type]
+  + primary (point, 2 entries) [ntracks]
+  + tracks (line, 2 entries) [chi2, color, d0, phi, qOverP, theta, z0]
+  - Jets/jets: no positions (Phoenix draws these from eta/phi or parameters)
+  - metadata: not an event (no collection types or event number)
+tracks (line)
+  source: phoenix:<src>/tests/data/phoenix/events.json
+  entries: 2
+  description: Tracks collection 'tracks' from events.json
+  entry 0: 2 elements
+    chi2  number  (1 of 2)
+    color  text  (1 of 2)
+    d0  number  (2 of 2)
+    phi  number  (2 of 2)
+    qOverP  number  (2 of 2)
+    theta  number  (2 of 2)
+    z0  number  (2 of 2)
+event/pixels: entry 1 of 2
+--- stderr
+--- exit status 0

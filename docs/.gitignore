@@ -1,0 +1,4 @@
+source/reference/generated/
+source/api/generated/
+build/
+doxygen/

@@ -1,0 +1,7 @@
+# x y z energy (mm, GeV); a blank line ends an event
+0 0 0 1.0
+100 0 0 2.5
+0 100 50 0.4
+
+10 10 10 3.0
+-100 20 0 0.7

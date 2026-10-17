@@ -1,0 +1,4 @@
+source csv:<src>/docs/examples/data/hits.csv: 1 series, 0 skipped
+  + hits (point, 3 entries) [cell, energy, layer, subdetector, unit:energy]
+--- stderr
+--- exit status 0

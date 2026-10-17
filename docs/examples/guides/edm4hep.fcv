@@ -1,0 +1,30 @@
+# Guide: reading EDM4hep (docs/source/guides/edm4hep.md).
+# [load]
+load edm4hep ../../../tests/data/edm4hep/events.edm4hep.root collections=VertexBarrelHits,ECalBarrelHits,MCParticles,Tracks
+describe ECalBarrelHits
+# [load]
+# [select]
+scene new event
+layer add event MCParticles as mc
+layer add event VertexBarrelHits as vtx
+layer add event ECalBarrelHits as calo
+layer add event Tracks as tracks
+where event/mc generatorStatus == 1 and charge != 0
+where event/calo energy > 1.5
+style event/calo preset color-by energy 0 5
+# [select]
+# [relations]
+where event/vtx particle == 0
+# [relations]
+# [events]
+entry event/calo next
+entry event/vtx next
+entry event/mc last
+entry event/tracks last
+scene show event
+# [events]
+# [histogram]
+backend init histogram h output_dir=edm4hep-guide histograms=calo:energy:5:0:5;mc:PDG
+open h event
+backend flush
+# [histogram]

@@ -1,0 +1,17 @@
+# Guide: multi-backend sessions in the shell (docs/source/guides/multi-backend.md).
+load csv ../data/hits.csv entry=event
+scene new front side
+layer add front hits
+layer add side hits
+camera side dir 1 0 0
+layout split(front, side)
+# [shell]
+backend init raster png output_dir=multi/png
+backend init svg vector output_dir=multi/svg
+backend init histogram stats output_dir=multi/hist histograms=hits:energy:10:0:5
+open png front side
+open vector front
+open stats front side
+backend flush
+backend ls
+# [shell]

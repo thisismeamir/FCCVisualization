@@ -1,0 +1,39 @@
+source csv:<src>/docs/examples/data/hits.csv: 1 series, 0 skipped
+  + hits (point, 3 entries) [cell, energy, layer, subdetector, unit:energy]
+hits (point)
+  source: csv:<src>/docs/examples/data/hits.csv
+  entries: 3
+  description: points (one per row) from hits.csv, coordinates (x, y, z), entries by 'event'
+  entry 0: 194 elements
+    cell  integer  (194 of 194)
+    energy  number  (194 of 194)
+    layer  integer  (194 of 194)
+    subdetector  text  (194 of 194)
+    unit:energy  text  (194 of 194)
+source csv:<src>/docs/examples/data/recipes/cells.tsv: 1 series, 0 skipped
+  + cells (point, 2 entries) [E, system, unit:E]
+cells (point)
+  source: csv:<src>/docs/examples/data/recipes/cells.tsv
+  entries: 2
+  description: points (one per row) from cells.tsv, coordinates (posX, posY, posZ) converted from cm to mm, entries by 'evt'
+  entry 0: 3 elements
+    E  number  (3 of 3)
+    system  text  (3 of 3)
+    unit:E  text  (3 of 3)
+source csv:<src>/docs/examples/data/recipes/steps.csv: 1 series, 1 skipped
+  + steps (line, 1 entry) [note, particle, pdg]
+  - line 9: column 'y' is not a number: 'x'
+steps (line)
+  source: csv:<src>/docs/examples/data/recipes/steps.csv
+  entries: 1
+  description: polylines (rows grouped by 'particle') from steps.csv, coordinates (x, y, z)
+  entry 0: 3 elements
+    note  text  (3 of 3)
+    particle  integer  (3 of 3)
+    pdg  integer  (3 of 3)
+source csv:<src>/docs/examples/data/recipes/steps.csv: 0 series, 2 skipped
+  - line 9: column 'y' is not a number: 'x'
+  - steps.csv: strict: 1 malformed row(s); nothing registered
+--- stderr
+error: line 15: nothing registered from '../data/recipes/steps.csv'
+--- exit status 1

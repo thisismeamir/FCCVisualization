@@ -1,0 +1,13 @@
+# Documentation example: reading Phoenix event-data JSON (docs/source/adapters/phoenix.md).
+# [phoenix-json]
+load phoenix ../../../tests/data/phoenix/events.json
+describe tracks
+scene new event
+layer add event pixels
+layer add event tracks
+where event/pixels energy > 0.1
+backend init svg vec output_dir=phoenix-json width=320 height=240
+open vec event
+backend flush
+entry event/pixels next
+# [phoenix-json]

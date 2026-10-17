@@ -1,0 +1,11 @@
+# Documentation example: the CED backend (docs/source/backends/ced.md).
+# CTest runs it as docs::ced_session; without a glced listening, the backend warns and goes on.
+# [ced]
+load csv data/hits.csv entry=event
+scene new event
+layer add event hits
+style event/hits preset hits-by-energy 0 3
+backend init ced c host=localhost port=7286
+open c event
+backend flush
+# [ced]

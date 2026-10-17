@@ -1,0 +1,27 @@
+# Documentation example: a shell session (docs/source/shell/index.md).
+# Run: fccvis-shell -f shell_session.fcv
+# [session]
+load csv ../../tests/data/csv/hits.csv entry=event
+load csv ../../tests/data/csv/tracks.csv delimiter=; kind=line group=track order=step entry=event
+series
+describe hits
+
+scene new front side
+layer add front hits
+layer add front tracks
+layer add side hits
+where side/hits energy > 1 and detector == "ECalBarrel"
+style front/hits preset hits-by-energy 0 4
+style front/tracks preset tracks-by-charge
+style side/hits when layer >= 3 then marker=square size=6
+camera side dir 1 0 0
+env side axes=true
+layout split(front as "Transverse" *2, side as "Side")
+
+backend init raster png output_dir=shell-out width=600 height=300
+open png front side
+entry front/hits next
+backend flush png
+scene show side
+save shell-out/session.json
+# [session]

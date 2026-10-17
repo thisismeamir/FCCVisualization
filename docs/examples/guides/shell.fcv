@@ -1,0 +1,19 @@
+# Guide: the shell (docs/source/guides/shell.md).
+# [script]
+echo loading
+load csv ../data/hits.csv entry=event
+scene new event
+layer add event hits
+where event/hits energy > 1 \
+             and subdetector == "ECalBarrel"
+# [script]
+# [save]
+save shell-guide.json
+scene show event
+# [save]
+# [log]
+backend init raster png output_dir=shell-guide width=200 height=200
+open png event
+backend flush
+log 3
+# [log]

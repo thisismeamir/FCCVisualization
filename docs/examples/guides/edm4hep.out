@@ -1,0 +1,34 @@
+source edm4hep:<src>/tests/data/edm4hep/events.edm4hep.root: 4 series, 0 skipped
+  + ECalBarrelHits (point, 3 entries) [cellID, energy, index, index_collection, time, type, unit:energy, unit:time]
+  + MCParticles (line, 3 entries) [PDG, charge, daughters, endpoint_set, energy, generatorStatus, index, index_collection, mass, p, parents, pt, simulatorStatus, unit:energy, unit:mass, unit:p, unit:pt]
+  + Tracks (line, 3 entries) [chi2, hits, index, index_collection, ndf, states, type]
+  + VertexBarrelHits (point, 3 entries) [EDep, cellID, index, index_collection, p, particle, particle_collection, pathLength, quality, time, unit:EDep, unit:p, unit:pathLength, unit:time]
+ECalBarrelHits (point)
+  source: edm4hep:<src>/tests/data/edm4hep/events.edm4hep.root
+  entries: 3
+  description: calorimeter hits at their position (edm4hep::CalorimeterHit) from events.edm4hep.root
+  entry 0: 5 elements
+    cellID  integer  (5 of 5)
+    energy  number  (5 of 5)
+    index  integer  (5 of 5)
+    index_collection  integer  (5 of 5)
+    time  number  (5 of 5)
+    type  integer  (5 of 5)
+    unit:energy  text  (5 of 5)
+    unit:time  text  (5 of 5)
+event/calo: entry 1 of 3
+event/vtx: entry 1 of 3
+event/mc: entry 2 of 3
+event/tracks: entry 2 of 3
+scene event
+  camera: dir 0 0 1, pos 0 0 0, zoom 1, mode free
+  layer calo (point): series ECalBarrelHits, entry 1
+    where energy > 1.5
+    style preset color-by energy 0 5
+  layer mc (line): series MCParticles, entry 2
+    where generatorStatus == 1 and charge != 0
+  layer tracks (line): series Tracks, entry 2
+  layer vtx (point): series VertexBarrelHits, entry 1
+    where particle == 0
+--- stderr
+--- exit status 0

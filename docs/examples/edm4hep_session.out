@@ -1,0 +1,16 @@
+source edm4hep:<src>/tests/data/edm4hep/events.edm4hep.root: 8 series, 3 skipped
+  + Clusters (point, 3 entries) [clusters, energy, hits, index, index_collection, type, unit:energy]
+  + ECalBarrelHits (point, 3 entries) [cellID, energy, index, index_collection, time, type, unit:energy, unit:time]
+  + ECalBarrelSimHits (point, 3 entries) [cellID, contributions, energy, index, index_collection, unit:energy]
+  + MCParticles (line, 3 entries) [PDG, charge, daughters, endpoint_set, energy, generatorStatus, index, index_collection, mass, p, parents, pt, simulatorStatus, unit:energy, unit:mass, unit:p, unit:pt]
+  + PandoraPFOs (line, 3 entries) [PDG, charge, clusters, energy, goodnessOfPID, index, index_collection, mass, p, particles, pt, tracks, unit:energy, unit:mass, unit:p, unit:pt]
+  + TrackerHits (point, 3 entries) [EDep, cellID, index, index_collection, quality, time, type, unit:EDep, unit:time]
+  + Tracks (line, 3 entries) [chi2, hits, index, index_collection, ndf, states, type]
+  + VertexBarrelHits (point, 3 entries) [EDep, cellID, index, index_collection, p, particle, particle_collection, pathLength, quality, time, unit:EDep, unit:p, unit:pathLength, unit:time]
+  - ECalRawHits: raw calorimeter hits have no position
+  - EventHeader: event header: no positions
+  - Weights: type float is not mapped
+event/calo: entry 2 of 3
+event/vtx: entry 2 of 3
+--- stderr
+--- exit status 0

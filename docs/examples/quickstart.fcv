@@ -1,0 +1,15 @@
+# Quickstart (docs/source/getting-started/index.md); run by CTest as docs::quickstart_shell.
+# [quickstart]
+load csv data/hits.csv entry=event
+load csv data/tracks.csv kind=line group=track order=step entry=event
+scene new event
+layer add event hits
+layer add event tracks
+style event/hits preset hits-by-energy 0 3
+style event/tracks preset tracks-by-charge
+backend init raster png output_dir=quickstart-out width=480 height=480
+backend init svg vector output_dir=quickstart-out width=480 height=480
+open png event
+open vector event
+backend flush
+# [quickstart]

@@ -1,0 +1,16 @@
+# Guide: CSV recipes (docs/source/guides/csv.md).
+# [points]
+load csv ../data/hits.csv entry=event
+describe hits
+# [points]
+# [columns]
+load csv ../data/recipes/cells.tsv delimiter=tab x=posX y=posY z=posZ entry=evt name=cells
+describe cells
+# [columns]
+# [lines]
+load csv ../data/recipes/steps.csv kind=line group=particle order=step name=steps
+describe steps
+# [lines]
+# [strict]
+load csv ../data/recipes/steps.csv kind=line group=particle order=step name=strict-steps strict=true
+# [strict]

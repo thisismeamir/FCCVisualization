@@ -1,0 +1,24 @@
+# Guide: loading DD4hep geometry (docs/source/guides/detector.md).
+# [load]
+load detector ../../../tests/data/detector/toy.xml depth=2 exclude=Shield
+series geometry/*
+describe geometry/Tracker
+# [load]
+# [layers]
+scene new side
+layer add side geometry/Tracker as tracker
+layer add side geometry/BeamPipe as pipe
+where side/tracker layer <= 2 and material == "Silicon"
+style side/tracker preset detector-outline
+style side/tracker when layer == 2 then color=accent
+style side/pipe color=gray opacity=0.4
+camera side dir 1 0 0
+# [layers]
+# [draw]
+backend init raster png output_dir=detector-guide width=480 height=360
+open png side
+backend flush
+# [draw]
+# [reopen]
+load detector ../../../tests/data/detector/toy.xml
+# [reopen]

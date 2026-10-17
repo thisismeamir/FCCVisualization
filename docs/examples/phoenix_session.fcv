@@ -1,0 +1,14 @@
+# Documentation example: export to Phoenix (docs/source/backends/phoenix.md).
+# [phoenix]
+load csv data/hits.csv entry=event
+load csv data/tracks.csv kind=line group=track order=step entry=event
+scene new event
+layer add event hits
+layer add event tracks
+where event/hits energy > 0.05
+style event/hits preset hits-by-energy 0 3
+backend init phoenix web output_dir=phoenix-out
+open web event
+backend flush
+# phoenix-out/events.json is ready; add port=8000 to serve it over HTTP
+# [phoenix]

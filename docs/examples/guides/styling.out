@@ -1,0 +1,15 @@
+source csv:<src>/docs/examples/data/hits.csv: 1 series, 0 skipped
+  + hits (point, 3 entries) [cell, energy, layer, subdetector, unit:energy]
+source csv:<src>/docs/examples/data/tracks.csv: 1 series, 0 skipped
+  + tracks (line, 3 entries) [charge, pt, track, unit:pt]
+scene event
+  camera: dir 0 0 1, pos 0 0 0, zoom 1, mode free
+  layer hits (point): series hits, entry 0
+    style color=gray size=2
+    style when energy > 2 then color=accent size=6
+    style when subdetector == "HCalBarrel" then marker=square
+  layer tracks (line): series tracks, entry 0
+    style preset tracks-by-charge
+    style when pt > 10 then width=3
+--- stderr
+--- exit status 0

@@ -1,0 +1,26 @@
+# Guide: layouts (docs/source/guides/layouts.md).
+load csv ../data/hits.csv entry=event
+scene new xy rz side
+layer add xy hits
+layer add rz hits
+layer add side hits
+camera rz dir 0 1 0
+camera side dir 1 0 0
+# [split]
+layout split(xy as "Front" *2, vsplit(rz as "Top", side as "Side"))
+layout show
+# [split]
+# [tabs]
+layout split(xy, tabs(rz as "Top", side as "Side"))
+layout show
+# [tabs]
+# [backend]
+backend init raster png output_dir=layouts-guide width=600 height=300
+open png xy rz
+backend flush
+backend ls
+# [backend]
+# [prune]
+scene rm side
+layout show
+# [prune]

@@ -1,0 +1,7 @@
+source csv:<src>/docs/examples/data/hits.csv: 1 series, 0 skipped
+  + hits (point, 3 entries) [cell, energy, layer, subdetector, unit:energy]
+png: front, side
+stats: front, side
+vector: front
+--- stderr
+--- exit status 0

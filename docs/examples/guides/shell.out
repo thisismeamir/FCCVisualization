@@ -1,0 +1,13 @@
+loading
+source csv:<src>/docs/examples/data/hits.csv: 1 series, 0 skipped
+  + hits (point, 3 entries) [cell, energy, layer, subdetector, unit:energy]
+saved 7 commands to shell-guide.json
+scene event
+  camera: dir 0 0 1, pos 0 0 0, zoom 1, mode free
+  layer hits (point): series hits, entry 0
+    where energy > 1 and subdetector == "ECalBarrel"
+info: SetLayerFilter(event, hits)
+info: png: raster canvas 200x200, writing to 'shell-guide'
+info: backend 'png' attached (raster)
+--- stderr
+--- exit status 0

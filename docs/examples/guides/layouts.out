@@ -1,0 +1,8 @@
+source csv:<src>/docs/examples/data/hits.csv: 1 series, 0 skipped
+  + hits (point, 3 entries) [cell, energy, layer, subdetector, unit:energy]
+split(xy as "Front" *2, vsplit(rz as "Top", side as "Side"))
+split(xy, tabs(rz as "Top", side as "Side"))
+png: rz, xy
+split(xy, rz)
+--- stderr
+--- exit status 0

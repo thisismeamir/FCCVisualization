@@ -1,0 +1,20 @@
+# Documentation example: EDM4hep event data (docs/source/adapters/edm4hep.md).
+# [edm4hep]
+load edm4hep ../../tests/data/edm4hep/events.edm4hep.root
+scene new event
+layer add event ECalBarrelHits as calo
+layer add event VertexBarrelHits as vtx
+layer add event Tracks as tracks
+layer add event MCParticles as mc
+where event/mc generatorStatus == 1 and charge != 0
+style event/calo preset hits-by-energy 0 4
+style event/mc color=#8d8d8d dash=dashed
+style event/tracks color=accent width=2
+camera event dir 0 0 -1
+backend init raster png output_dir=edm4hep-out width=480 height=360
+open png event
+backend flush
+entry event/calo 2
+entry event/vtx 2
+backend flush
+# [edm4hep]

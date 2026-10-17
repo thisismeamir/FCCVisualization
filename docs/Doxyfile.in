@@ -1,0 +1,31 @@
+# Doxygen configuration for the API reference (configured by docs/CMakeLists.txt).
+# Input: the public headers of the library modules. Undocumented public
+# symbols are warnings, and warnings fail the build (API coverage).
+PROJECT_NAME           = "fccvis"
+PROJECT_NUMBER         = "@PROJECT_VERSION@"
+PROJECT_BRIEF          = "FCC visualization toolkit"
+OUTPUT_DIRECTORY       = @FCCVIS_DOXYGEN_OUT@
+INPUT                  = @FCCVIS_DOXYGEN_INPUT@
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h
+STRIP_FROM_PATH        = @FCCVIS_DOXYGEN_STRIP@
+STRIP_FROM_INC_PATH    = @FCCVIS_DOXYGEN_STRIP@
+FULL_PATH_NAMES        = YES
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+HIDE_UNDOC_CLASSES     = NO
+EXCLUDE_SYMBOLS        = detail detail::* *::detail::* *::detail
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+WARN_AS_ERROR          = @FCCVIS_DOXYGEN_WARN_AS_ERROR@
+WARN_LOGFILE           = @FCCVIS_DOXYGEN_OUT@/warnings.txt
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
+XML_PROGRAMLISTING     = NO
+QUIET                  = YES
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+PREDEFINED             = __cplusplus=202002L

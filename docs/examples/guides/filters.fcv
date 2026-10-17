@@ -1,0 +1,29 @@
+# Guide: filters by shape, energy and sub-detector (docs/source/guides/filters.md).
+# The histogram backend counts what each layer selects (column "entries").
+load csv ../data/hits.csv entry=event
+scene new cuts
+# [energy]
+layer add cuts hits as energetic
+where cuts/energetic energy > 2
+layer add cuts hits as band
+where cuts/band between(energy, 0.5, 1.0)
+# [energy]
+# [subdetector]
+layer add cuts hits as ecal
+where cuts/ecal subdetector == "ECalBarrel" and layer in [1, 2]
+layer add cuts hits as hcal
+where cuts/hcal subdetector ~ "HCal.*"
+# [subdetector]
+# [shape]
+layer add cuts hits as barrel
+where cuts/barrel inside(cylinder(1500, 1800, 2200))
+layer add cuts hits as forward
+where cuts/forward outside(cylinder(0, 2500, 1000)) and energy > 0.2
+layer add cuts hits as box
+where cuts/box inside(translate(box(600, 400, 2000), 0, 1750, 0))
+# [shape]
+# [count]
+backend init histogram count output_dir=filters-guide formats=csv
+open count cuts
+backend flush
+# [count]

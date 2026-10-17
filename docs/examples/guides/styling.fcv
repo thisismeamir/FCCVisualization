@@ -1,0 +1,25 @@
+# Guide: styling recipes (docs/source/guides/styling.md).
+load csv ../data/hits.csv entry=event
+load csv ../data/tracks.csv kind=line group=track order=step entry=event
+scene new event
+layer add event hits
+layer add event tracks
+# [rules]
+style event/hits color=gray size=2
+style event/hits when energy > 2 then color=accent size=6
+style event/hits when subdetector == "HCalBarrel" then marker=square
+# [rules]
+# [presets]
+style event/tracks preset tracks-by-charge
+style event/tracks when pt > 10 then width=3
+# [presets]
+# [environment]
+env event preset publication
+env event axes=true background=#f4f4f4
+# [environment]
+# [show]
+scene show event
+# [show]
+backend init svg vec output_dir=styling-guide width=480 height=480
+open vec event
+backend flush

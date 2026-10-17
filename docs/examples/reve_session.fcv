@@ -1,0 +1,14 @@
+# Documentation example: the REve web viewer (docs/source/backends/reve.md).
+# CTest runs it as docs::reve_session (without a browser).
+# [reve]
+load csv data/hits.csv entry=event
+load csv data/tracks.csv kind=line group=track order=step entry=event
+scene new event
+layer add event hits
+layer add event tracks
+style event/hits preset hits-by-energy 0 3
+backend init reve web
+open web event
+backend flush
+log 1
+# [reve]

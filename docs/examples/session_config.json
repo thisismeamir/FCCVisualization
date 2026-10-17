@@ -1,0 +1,15 @@
+{
+  "format": "fccvis-config",
+  "version": 1,
+  "commands": [
+    "load csv ../../tests/data/csv/hits.csv entry=event",
+    "scene new front",
+    "layer add front hits",
+    "where front/hits energy > 1",
+    "style front/hits preset hits-by-energy 0 4",
+    "layout front",
+    "camera front dir 0 0 1",
+    "camera front pos 0 0 0",
+    "camera front zoom 1"
+  ]
+}
