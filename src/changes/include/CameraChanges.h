@@ -10,6 +10,10 @@
  *
  * The camera object may be shared by several scenes; every scene holding it
  * is marked as changed (see Session::Commit).
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <cmath>
@@ -27,6 +31,20 @@ namespace detail {
 inline scene::camera::Camera &RequireCamera(scene::Scene &s, const std::string &sceneName) {
   if (!s.camera) throw ChangeError("scene '" + sceneName + "' has no camera");
   return *s.camera;
+}
+
+// CameraMode::Fixed: a backend (interaction) may not move the camera of a fixed
+// scene, nor a camera shared with one. User, API and script changes may.
+inline void RequireMovable(const Workspace &ws, const scene::Scene &s,
+                           const std::string &sceneName) {
+  if (ws.origin.empty()) return;
+  for (const auto &[name, other] : ws.scenes) {
+    if (!other) continue;
+    const bool same = other.get() == &s || (s.camera && other->camera == s.camera);
+    if (same && other->cameraOptions.mode == scene::camera::CameraMode::Fixed)
+      throw ChangeError("camera of scene '" + name + "' is fixed; '" + ws.origin +
+                        "' may not move it" + (name == sceneName ? "" : " (shared camera)"));
+  }
 }
 
 // A vector must keep the dimension of the one it replaces and be finite.
@@ -62,6 +80,7 @@ inline std::string Fmt(const std::vector<double> &v) {
  */
 class ChangeCamera final : public SceneChange {
  public:
+  /** @param scene Scene. @param position New position, if any. @param direction New direction, if any. @param magnification New magnification, if any. */
   ChangeCamera(std::string scene, std::optional<std::vector<double>> position,
                std::optional<std::vector<double>> direction,
                std::optional<double> magnification = std::nullopt)
@@ -81,8 +100,9 @@ class ChangeCamera final : public SceneChange {
   }
 
  protected:
-  void ApplyToScene(scene::Scene &s, Workspace &) const override {
+  void ApplyToScene(scene::Scene &s, Workspace &ws) const override {
     auto &cam = detail::RequireCamera(s, SceneName());
+    detail::RequireMovable(ws, s, SceneName());
     if (m_position) detail::CheckVector(*m_position, cam.positionVector.size(), "position", false);
     if (m_direction) detail::CheckVector(*m_direction, cam.directionVector.size(), "direction", true);
     if (m_magnification) detail::CheckScale(*m_magnification);
@@ -101,6 +121,7 @@ class ChangeCamera final : public SceneChange {
 /** @brief Changes the camera position. */
 class ChangeCameraPosition final : public SceneChange {
  public:
+  /** @param scene Scene. @param position New camera position (same dimension, finite). */
   ChangeCameraPosition(std::string scene, std::vector<double> position)
       : SceneChange(std::move(scene)), m_position(std::move(position)) {}
   [[nodiscard]] std::string Name() const override { return "ChangeCameraPosition"; }
@@ -109,8 +130,9 @@ class ChangeCameraPosition final : public SceneChange {
   }
   [[nodiscard]] Footprint Touches() const override { return Footprint::Of(SceneName(), Part::Camera); }
  protected:
-  void ApplyToScene(scene::Scene &s, Workspace &) const override {
+  void ApplyToScene(scene::Scene &s, Workspace &ws) const override {
     auto &cam = detail::RequireCamera(s, SceneName());
+    detail::RequireMovable(ws, s, SceneName());
     detail::CheckVector(m_position, cam.positionVector.size(), "position", false);
     cam.ChangeCameraPosition(m_position);
   }
@@ -121,6 +143,7 @@ class ChangeCameraPosition final : public SceneChange {
 /** @brief Changes the camera viewing direction. */
 class ChangeCameraDirection final : public SceneChange {
  public:
+  /** @param scene Scene. @param direction New viewing direction (same dimension, finite, not zero). */
   ChangeCameraDirection(std::string scene, std::vector<double> direction)
       : SceneChange(std::move(scene)), m_direction(std::move(direction)) {}
   [[nodiscard]] std::string Name() const override { return "ChangeCameraDirection"; }
@@ -129,8 +152,9 @@ class ChangeCameraDirection final : public SceneChange {
   }
   [[nodiscard]] Footprint Touches() const override { return Footprint::Of(SceneName(), Part::Camera); }
  protected:
-  void ApplyToScene(scene::Scene &s, Workspace &) const override {
+  void ApplyToScene(scene::Scene &s, Workspace &ws) const override {
     auto &cam = detail::RequireCamera(s, SceneName());
+    detail::RequireMovable(ws, s, SceneName());
     detail::CheckVector(m_direction, cam.directionVector.size(), "direction", true);
     cam.ChangeCameraDirection(m_direction);
   }
@@ -141,6 +165,7 @@ class ChangeCameraDirection final : public SceneChange {
 /** @brief Sets the magnification factor. */
 class ChangeCameraMagnification final : public SceneChange {
  public:
+  /** @param scene Scene. @param scale New magnification (positive, finite). */
   ChangeCameraMagnification(std::string scene, double scale)
       : SceneChange(std::move(scene)), m_scale(scale) {}
   [[nodiscard]] std::string Name() const override { return "ChangeCameraMagnification"; }
@@ -149,8 +174,9 @@ class ChangeCameraMagnification final : public SceneChange {
   }
   [[nodiscard]] Footprint Touches() const override { return Footprint::Of(SceneName(), Part::Camera); }
  protected:
-  void ApplyToScene(scene::Scene &s, Workspace &) const override {
+  void ApplyToScene(scene::Scene &s, Workspace &ws) const override {
     auto &cam = detail::RequireCamera(s, SceneName());
+    detail::RequireMovable(ws, s, SceneName());
     detail::CheckScale(m_scale);
     cam.Magnification(m_scale);
   }
@@ -161,6 +187,7 @@ class ChangeCameraMagnification final : public SceneChange {
 /** @brief Resets the magnification factor to its default. */
 class ResetCameraMagnification final : public SceneChange {
  public:
+  /** @param scene Scene. */
   explicit ResetCameraMagnification(std::string scene) : SceneChange(std::move(scene)) {}
   [[nodiscard]] std::string Name() const override { return "ResetCameraMagnification"; }
   [[nodiscard]] std::string Describe() const override {
@@ -168,8 +195,10 @@ class ResetCameraMagnification final : public SceneChange {
   }
   [[nodiscard]] Footprint Touches() const override { return Footprint::Of(SceneName(), Part::Camera); }
  protected:
-  void ApplyToScene(scene::Scene &s, Workspace &) const override {
-    detail::RequireCamera(s, SceneName()).ResetMagnification();
+  void ApplyToScene(scene::Scene &s, Workspace &ws) const override {
+    auto &cam = detail::RequireCamera(s, SceneName());
+    detail::RequireMovable(ws, s, SceneName());
+    cam.ResetMagnification();
   }
 };
 

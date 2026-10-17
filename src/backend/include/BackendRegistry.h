@@ -7,6 +7,10 @@
  * `static backend::Registrar reg("root", [] { return std::make_unique<RootBackend>(); });`.
  * The backend libraries must be OBJECT libraries or linked whole-archive, or
  * the linker drops the registrar.
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <functional>
@@ -23,6 +27,7 @@ namespace fccvis::backend {
 /** @brief Name-to-factory table of the backends compiled into the build. */
 class Registry {
  public:
+  /** @brief Creates a new backend instance. */
   using Factory = std::function<std::unique_ptr<Backend>()>;
 
   /** @brief The process-wide registry. */
@@ -34,6 +39,20 @@ class Registry {
   /** @brief Registers a factory. @return False if the name is taken. */
   bool Register(std::string name, Factory factory) {
     return m_factories.emplace(std::move(name), std::move(factory)).second;
+  }
+
+  /** @brief Registers @p alias as another name of backend @p target (for former names). */
+  bool RegisterAlias(std::string alias, std::string target) {
+    auto it = m_factories.find(target);
+    if (it == m_factories.end() || m_factories.count(alias)) return false;
+    m_aliases[alias] = target;
+    return m_factories.emplace(std::move(alias), it->second).second;
+  }
+
+  /** @brief The name @p name is an alias of, or an empty string. */
+  [[nodiscard]] std::string AliasOf(const std::string& name) const {
+    auto it = m_aliases.find(name);
+    return it == m_aliases.end() ? std::string() : it->second;
   }
 
   /** @brief New instance of backend @p name, or nullptr if unknown. */
@@ -57,10 +76,12 @@ class Registry {
 
  private:
   std::map<std::string, Factory> m_factories;
+  std::map<std::string, std::string> m_aliases;
 };
 
 /** @brief Registers a backend at static initialization. */
 struct Registrar {
+  /** @brief Registers @p factory under @p name in Registry::Global(). */
   Registrar(std::string name, Registry::Factory factory) {
     Registry::Global().Register(std::move(name), std::move(factory));
   }

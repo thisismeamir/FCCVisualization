@@ -8,6 +8,10 @@
  * receives changes and events through a Port, tagged with the backend id as
  * origin. A backend is scoped: it renders only the scenes opened in it, and
  * the layout is pruned to those scenes.
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <cstddef>
@@ -17,8 +21,11 @@
 #include <optional>
 #include <set>
 #include <string>
+#include <typeindex>
+#include <typeinfo>
 
 #include "Changes.h"
+#include "Elements.h"
 #include "Data.h"
 #include "Layout.h"
 #include "Revision.h"
@@ -26,18 +33,10 @@
 
 namespace fccvis::backend {
 
-/** @brief Geometry kinds a backend may draw. */
-enum class ElementKind { Point, Line, Surface };
-
-/** @brief Name of an element kind. */
-[[nodiscard]] inline const char* ToString(ElementKind k) {
-  switch (k) {
-    case ElementKind::Point: return "point";
-    case ElementKind::Line: return "line";
-    case ElementKind::Surface: return "surface";
-  }
-  return "?";
-}
+/** @brief Geometry kinds a backend may draw (defined in the data module). */
+using data::ElementKind;
+using data::KindOf;
+using data::ToString;
 
 /** @brief What a backend supports; also the source of its generated help text. */
 struct Capabilities {
@@ -46,6 +45,7 @@ struct Capabilities {
   std::set<std::string> styleProperties;   ///< Supported style properties ("opacity", "dash", ...).
   bool splits = true;                      ///< Supports split layouts.
   bool tabs = true;                        ///< Supports tabbed layouts.
+  std::map<std::string, std::string> options;  ///< Accepted options: name -> description (help, completion).
 
   /** @brief Human-readable summary, generated from the fields above. */
   [[nodiscard]] std::string Help(const std::string& type) const {
@@ -57,7 +57,35 @@ struct Capabilities {
     for (const auto& p : styleProperties) s += " " + p;
     s += std::string("\n  layout: splits ") + (splits ? "yes" : "no") +
          ", tabs " + (tabs ? "yes" : "no") + "\n";
+    if (!options.empty()) {
+      s += "  options:\n";
+      for (const auto& [name, what] : options) s += "    " + name + ": " + what + "\n";
+    }
     return s;
+  }
+};
+
+/**
+ * @brief How often a backend rebuilt each part, for revision-diffing tests.
+ *
+ * Keys of the per-scene maps are scene names; layer keys are "scene/layer".
+ */
+struct DrawStats {
+  std::uint64_t syncs = 0;                               ///< Sync calls that changed the target.
+  std::uint64_t layouts = 0;                             ///< Times the layout was (re)applied.
+  std::map<std::string, std::uint64_t> layers;           ///< "scene/layer" -> content rebuilds.
+  std::map<std::string, std::uint64_t> cameras;          ///< scene -> camera applications.
+  std::map<std::string, std::uint64_t> environments;     ///< scene -> environment applications.
+
+  /** @brief Rebuilds of one layer (0 if never drawn). */
+  [[nodiscard]] std::uint64_t Layer(const std::string& scene, const std::string& layer) const {
+    auto it = layers.find(scene + "/" + layer);
+    return it == layers.end() ? 0 : it->second;
+  }
+  /** @brief Camera applications of one scene (0 if never). */
+  [[nodiscard]] std::uint64_t Camera(const std::string& scene) const {
+    auto it = cameras.find(scene);
+    return it == cameras.end() ? 0 : it->second;
   }
 };
 
@@ -97,10 +125,15 @@ class Port {
 class SessionView {
  public:
   virtual ~SessionView() = default;
+  /** @brief The session's series. */
   [[nodiscard]] virtual const data::SessionData& Data() const = 0;
+  /** @brief A scene, or nullptr if it does not exist. */
   [[nodiscard]] virtual std::shared_ptr<const scene::Scene> FindScene(const std::string& name) const = 0;
+  /** @brief Revision counters of a scene. */
   [[nodiscard]] virtual changes::SceneRevision Revision(const std::string& scene) const = 0;
+  /** @brief Revision of the layout (and of the set of open scenes). */
   [[nodiscard]] virtual std::uint64_t LayoutRevision() const = 0;
+  /** @brief Revision of the data (series registered or changed). */
   [[nodiscard]] virtual std::uint64_t DataRevision() const = 0;
 };
 
@@ -135,6 +168,8 @@ class Backend {
   /**
    * @brief Opens a scene (creates its view). Closing and reopening loses nothing,
    *        since view state lives in the scene.
+   * @param scene Scene to open.
+   * @param view  Session state, valid during the call only.
    * @param error Receives the reason on failure.
    * @return False if the scene cannot be opened, for example for an unsupported element kind.
    */
@@ -151,6 +186,21 @@ class Backend {
    * on screen; record the new revisions without redrawing it.
    */
   virtual void Sync(const SyncRequest& request) = 0;
+
+  /**
+   * @brief Blocks until all work queued on the backend's own thread is done.
+   *
+   * Backends that render asynchronously (Sync returns after taking a snapshot)
+   * override this; scripts and tests call it before reading outputs. The
+   * default does nothing.
+   */
+  virtual void Flush() {}
+
+  /**
+   * @brief Draw counters for tests (contract: redraw only what changed).
+   * @return Counters, or nullopt if the backend does not keep them.
+   */
+  [[nodiscard]] virtual std::optional<DrawStats> Stats() const { return std::nullopt; }
 };
 
 }  // namespace fccvis::backend

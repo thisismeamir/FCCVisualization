@@ -1,5 +1,5 @@
 /**
- * @Markers.h
+ * @file Markers.h
  * @brief Basic graphical primitives and color configuration.
  *
  * Defines the lightweight scene primitives used by FCCVisualization
@@ -189,7 +189,7 @@ public:
   /**
    * @brief Construct a marker with a name.
    *
-   * @param name Name identifying the marker.
+   * @param markerName Name identifying the marker.
    */
   Marker(std::string markerName) : name(std::move(markerName)) {}
 
@@ -235,7 +235,7 @@ public:
   /**
    * @brief Construct a line with a name.
    *
-   * @param name Name identifying the line.
+   * @param lineName Name identifying the line.
    */
   Line(std::string lineName) : name(std::move(lineName)) {}
 

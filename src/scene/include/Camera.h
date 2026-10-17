@@ -4,6 +4,10 @@
  * @brief Backend-independent description of a Camera for a Scene
  *
  * Nothing here depends on a rendering backend.
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <optional>
@@ -16,7 +20,9 @@ namespace fccvis::scene::camera {
 /** @brief How the camera behaves in a scene. */
 enum class CameraMode {
   Free,      ///< The user may move the camera freely.
-  Fixed,     ///< The camera is locked.
+  Fixed,     ///< Locked against interaction: changes submitted by a backend
+             ///< (origin set) that move this camera, or a camera shared with
+             ///< this scene, are rejected. User, API and script changes still apply.
   Animated   ///< The camera follows a scripted motion.
 };
 
@@ -47,6 +53,7 @@ struct CameraOptions : merge::Mergeable<CameraOptions> {
 class Camera {
 public:
   Camera() = default;
+  /** @param cameraName Camera name (for display and logs). */
   explicit Camera(std::string cameraName)
     : name(std::move(cameraName)) {}
 
@@ -111,6 +118,7 @@ public:
     magnification = 1.0;
   }
 
+  /** @brief Camera name (for display and logs). */
   std::string name;
 };
 

@@ -1,3 +1,4 @@
+// Copyright 2026 FCC Project at CERN. SPDX-License-Identifier: Apache-2.0
 #include <catch2/catch_test_macros.hpp>
 
 #include "Geometry.h"

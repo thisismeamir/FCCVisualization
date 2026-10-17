@@ -8,7 +8,7 @@
  * format and holds no cursor: which entry is drawn is decided by the drawing
  * request (see fccvis::scene::meta::Layer).
  *
- * Adapters register series backed by a @ref Series provider. Providers are
+ * Adapters register series backed by a fccvis::data::Series provider. Providers are
  * lazy: an entry is converted once on first access and then served from a
  * bounded per-series cache, so changing a filter never re-reads the source.
  *
@@ -51,7 +51,7 @@ struct SeriesRef {
 };
 
 /**
- * @brief Result of resolving a @ref SeriesRef.
+ * @brief Result of resolving a fccvis::data::SeriesRef.
  */
 enum class Lookup {
   Found,      ///< Exactly one series matches.
@@ -67,7 +67,7 @@ struct SeriesInfo {
   std::string name;         ///< Series name.
   std::string source;       ///< Source label.
   std::string description;  ///< Free-text description provided by the adapter.
-  std::size_t entries;      ///< Current number of entries.
+  std::size_t entries = 0;  ///< Current number of entries.
 };
 
 /**
@@ -97,6 +97,34 @@ class Series {
    * @return The elements of the entry.
    */
   [[nodiscard]] virtual std::vector<X> Load(std::size_t entry) const = 0;
+};
+
+/**
+ * @brief Series held in memory: a fixed list of entries.
+ *
+ * For programs that compute their elements themselves and for examples and
+ * tests. Example:
+ * @code
+ * session.Data().Add<data::PointElement>("hits", "mine",
+ *     std::make_unique<data::InMemorySeries<data::PointElement>>(entries));
+ * @endcode
+ *
+ * @tparam X Element type.
+ */
+template <typename X>
+class InMemorySeries final : public Series<X> {
+ public:
+  /** @brief Takes the entries (one vector of elements per entry). */
+  explicit InMemorySeries(std::vector<std::vector<X>> entries) : m_entries(std::move(entries)) {}
+
+  /** @brief Number of entries. */
+  [[nodiscard]] std::size_t Size() const override { return m_entries.size(); }
+
+  /** @brief Copy of one entry; throws std::out_of_range for a bad index. */
+  [[nodiscard]] std::vector<X> Load(std::size_t entry) const override { return m_entries.at(entry); }
+
+ private:
+  std::vector<std::vector<X>> m_entries;
 };
 
 namespace detail {
@@ -183,7 +211,9 @@ class TypedSlot final : public SeriesSlot {
 class SessionData {
  public:
   SessionData() = default;
+  /** @brief Moves the registered series. */
   SessionData(SessionData&&) noexcept = default;
+  /** @brief Moves the registered series. */
   SessionData& operator=(SessionData&&) noexcept = default;
 
   /**
@@ -303,4 +333,4 @@ class SessionData {
       m_slots;
 };
 
-}  // namespace fccvis::session
+}  // namespace fccvis::data

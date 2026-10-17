@@ -2,7 +2,7 @@
  * @file Elements.h
  * @brief Element model: geometry kinds plus metadata.
  *
- * An @ref Element is a geometry (Point, Line, Surface, ...) together with the
+ * An fccvis::data::Element is a geometry (Point, Line, Surface, ...) together with the
  * metadata the source provides for it (energy, charge, ids, ...). Domain
  * meaning (hit, track, cluster) is carried by the series name and
  * description, not by the type, so backends only need to draw the geometry
@@ -23,6 +23,8 @@
 #include <string>
 #include <string_view>
 #include <type_traits>
+#include <typeindex>
+#include <typeinfo>
 #include <utility>
 #include <variant>
 #include <vector>
@@ -32,7 +34,7 @@ namespace fccvis::data {
 
 /** @brief Point geometry. */
 struct Point {
-  geometry::Transform::Vector position;  ///< Location of the point.
+  geometry::Transform::Vector position{};  ///< Location of the point.
 
 };
 
@@ -52,7 +54,7 @@ struct Line {
  * Replace or extend when volumes and shapes need a richer representation.
  */
 struct Surface {
-  geometry::Shape shape;
+  geometry::Shape shape;  ///< Shape with its placement.
 };
 
 /**
@@ -142,5 +144,36 @@ struct Element {
 using PointElement = Element<Point>;      ///< Point element.
 using LineElement = Element<Line>;        ///< Polyline element.
 using SurfaceElement = Element<Surface>;  ///< Surface element.
+
+/** @brief Built-in element kinds (what adapters produce and backends draw). */
+enum class ElementKind { Point, Line, Surface };
+
+/** @brief Name of an element kind: "point", "line" or "surface". */
+[[nodiscard]] inline const char* ToString(ElementKind k) {
+  switch (k) {
+    case ElementKind::Point: return "point";
+    case ElementKind::Line: return "line";
+    case ElementKind::Surface: return "surface";
+  }
+  return "?";
+}
+
+/**
+ * @brief Element kind of a series element type, if it is a built-in kind.
+ * @param type `typeid` of the element type, for example `typeid(data::PointElement)`.
+ * @return The kind, or nullopt for other element types.
+ */
+[[nodiscard]] inline std::optional<ElementKind> KindOf(std::type_index type) {
+  if (type == std::type_index(typeid(PointElement))) return ElementKind::Point;
+  if (type == std::type_index(typeid(LineElement))) return ElementKind::Line;
+  if (type == std::type_index(typeid(SurfaceElement))) return ElementKind::Surface;
+  return std::nullopt;
+}
+
+/** @brief Element kind of element type @p X, if it is a built-in kind. */
+template <typename X>
+[[nodiscard]] std::optional<ElementKind> KindOf() {
+  return KindOf(std::type_index(typeid(X)));
+}
 
 }  // namespace fccvis::data

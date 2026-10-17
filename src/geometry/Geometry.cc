@@ -1,72 +1,9 @@
+// Copyright 2026 FCC Project at CERN. SPDX-License-Identifier: Apache-2.0
 #include "Geometry.h"
-#include "Adapters.h"
-#include <TBuffer3D.h>
+
+#include <utility>
+
 namespace fccvis::geometry {
-
-std::vector<uint32_t> PolygonLoop(const TBuffer3D &b, const Int_t *pol) {
-  const int nSegs = pol[1];
-  const Int_t *segIds = pol + 2;
-
-  auto seg = [&](int i) { return b.fSegs + 3 * segIds[i]; };
-
-  std::vector<uint32_t> loop;
-  loop.reserve(nSegs);
-
-  uint32_t a = seg(0)[1], c = seg(0)[2];
-  loop.push_back(a);
-  uint32_t next = c;
-
-  for (int i = 1; i < nSegs; ++i) {
-    loop.push_back(next);
-    const Int_t *s = seg(i);
-    // Segment i shares `next` with the previous one; advance to its other end.
-    next = (static_cast<uint32_t>(s[1]) == next) ? s[2] : s[1];
-  }
-  return loop;
-}
-int SegmentsFromTolerance(double relTolerance) {
-  // sagitta/R = 1 - cos(pi/n)  =>  n = pi / acos(1 - relTolerance)
-  const double t = std::clamp(relTolerance, 1e-4, 0.2);
-  return std::clamp(static_cast<int>(std::ceil(M_PI / std::acos(1.0 - t))), 8,
-                    360);
-}
-Mesh TGeoShapeAdapter::Tessellate(double tolerance) const {
-  // TODO: The ShapeAssembly are ditched for now, later on we should add this as
-  // a feaature as well.
-  if (dynamic_cast<const TGeoShapeAssembly *>(m_shape.get()) ||
-      dynamic_cast<const TGeoCompositeShape *>(m_shape.get()))
-    return Mesh{}; // no direct surface tessellation for these yet
-
-  const int nSeg = SegmentsFromTolerance(tolerance);
-  const int oldSeg = gGeoManager ? gGeoManager->GetNsegments() : 20;
-  if (gGeoManager)
-    gGeoManager->SetNsegments(nSeg);
-
-  const TBuffer3D &b = m_shape->GetBuffer3D(
-      TBuffer3D::kCore | TBuffer3D::kBoundingBox | TBuffer3D::kShapeSpecific |
-          TBuffer3D::kRawSizes | TBuffer3D::kRaw,
-      /*localFrame=*/kTRUE);
-
-  Mesh mesh;
-  if (b.SectionsValid(TBuffer3D::kRaw) && b.NbPnts() > 0 && b.NbPols() > 0) {
-    mesh.vertices.reserve(b.NbPnts());
-    for (UInt_t i = 0; i < b.NbPnts(); ++i)
-      mesh.vertices.push_back({static_cast<float>(b.fPnts[3 * i] * 10.0),
-                               static_cast<float>(b.fPnts[3 * i + 1] * 10.0),
-                               static_cast<float>(b.fPnts[3 * i + 2] * 10.0)});
-    const Int_t *pol = b.fPols;
-    for (UInt_t p = 0; p < b.NbPols(); ++p) {
-      const auto loop = PolygonLoop(b, pol);
-      for (size_t k = 1; k + 1 < loop.size(); ++k)
-        mesh.triangles.push_back({loop[0], loop[k], loop[k + 1]});
-      pol += 2 + pol[1];
-    }
-  }
-
-  if (gGeoManager)
-    gGeoManager->SetNsegments(oldSeg);
-  return mesh;
-}
 
 Transform::Vector Transform::Apply(const Transform::Vector &point) const {
   const auto &R = m_rotation;
@@ -136,10 +73,7 @@ Transform Transform::operator*(const Transform &other) const {
 }
 
 bool Shape::Contains(const Transform::Vector &point) const {
-  Transform::Vector x = {
-    point[0] / 10.0, point[1] / 10.0, point[2] / 10.0
-  };
-  return m_geometry->Criterion(m_transform.Inverse(x)) <= 0.0;
+  return m_geometry->Criterion(m_transform.Inverse(point)) <= 0.0;
 }
 
 Transform::Transform(Vector translation, Matrix rotation)
@@ -157,6 +91,7 @@ const AbstractShape &Shape::Geometry() const { return *m_geometry; }
 const Transform &Shape::GetTransform() const { return m_transform; }
 Transform &Shape::GetTransform() { return m_transform; }
 
+const Transform &Placement::GetTransform() const { return m_transform; }
 Transform &Placement::GetTransform() { return m_transform; }
 
 Transform::Vector &Transform::Translation() { return m_translation; }

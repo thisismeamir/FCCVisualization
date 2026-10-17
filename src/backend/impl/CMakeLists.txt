@@ -1,9 +1,19 @@
-set(LOCAL_ENABLED_BACKENDS "")
-
-if(BUILD_BACKEND_FV)
-    add_subdirectory(fv)
-    list(APPEND LOCAL_ENABLED_BACKENDS fccvis_backend_fv)
+# Backend implementations, each behind FCCVIS_ENABLE_<NAME>.
+if(FCCVIS_ENABLE_RASTER)
+  add_subdirectory(raster)
 endif()
-
-# Propagate the collected targets list up to backend/CMakeLists.txt
-set(ENABLED_BACKEND_TARGETS ${LOCAL_ENABLED_BACKENDS} PARENT_SCOPE)
+if(FCCVIS_ENABLE_SVG)
+  add_subdirectory(svg)
+endif()
+if(FCCVIS_ENABLE_HISTOGRAM)
+  add_subdirectory(histogram)
+endif()
+if(FCCVIS_ENABLE_PHOENIX)
+  add_subdirectory(phoenix)
+endif()
+if(FCCVIS_ENABLE_ROOT)
+  add_subdirectory(root)
+endif()
+if(FCCVIS_ENABLE_CED)
+  add_subdirectory(ced)
+endif()

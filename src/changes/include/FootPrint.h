@@ -1,7 +1,11 @@
 #pragma once
 /**
- * @file Footprint.h
+ * @file FootPrint.h
  * @brief Which parts of the session a change touches.
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <cstdint>

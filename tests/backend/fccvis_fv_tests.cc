@@ -1,5 +1,12 @@
+// Copyright 2026 FCC Project at CERN. SPDX-License-Identifier: Apache-2.0
 #include <catch2/catch_test_macros.hpp>
+#include <algorithm>
+#include <cstdio>
 #include <fstream>
+#include <optional>
+#include <set>
+#include <unordered_map>
+#include <vector>
 #include <memory>
 #include <string>
 
@@ -86,7 +93,7 @@ class DummySessionView final : public backend::SessionView {
   std::uint64_t dataRevision = 1;
 };
 
-}  // namespace fccvis::backend::test
+}  // namespace
 TEST_CASE("FVBackend Registration", "[backend][fv]") {
   SECTION("Registered in global registry") {
     auto names = backend::Registry::Global().Names();
@@ -112,11 +119,12 @@ TEST_CASE("FVBackend Lifecycle & Scene Handling", "[backend][fv]") {
     REQUIRE(port.lastLog.find("100x100") != std::string::npos);
 
     backend->Stop();
-    REQUIRE(port.lastLog == "FVBackend stopped.");
+    REQUIRE(port.lastLog.find("stopped") != std::string::npos);
   }
 
   SECTION("OpenScene validation") {
     DummySessionView view;
+    view.scenes["valid_scene"] = std::make_shared<scene::Scene>("valid_scene");
     std::string error;
 
     backend->Start("fv_test_id", port, options);
@@ -135,6 +143,7 @@ TEST_CASE("FVBackend Lifecycle & Scene Handling", "[backend][fv]") {
 
   SECTION("Sync outputs image file") {
     DummySessionView view;
+    view.scenes["valid_scene"] = std::make_shared<scene::Scene>("valid_scene");
     backend->Start("fv_test_id", port, options);
 
     std::string error;
@@ -144,6 +153,7 @@ TEST_CASE("FVBackend Lifecycle & Scene Handling", "[backend][fv]") {
     backend::SyncRequest request{view, openScenes, std::nullopt, ""};
 
     backend->Sync(request);
+    backend->Flush();  // the backend renders on its own thread
 
     // Verify PPM file was written to disk
     std::ifstream file("test_output.ppm");

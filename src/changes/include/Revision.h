@@ -5,6 +5,10 @@
  *
  * A backend remembers the revisions it last drew and compares them with the
  * current ones to learn what changed, with no observers or callbacks.
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <cstdint>
@@ -17,9 +21,9 @@ namespace fccvis::changes {
 
 /** @brief Revision counters of one scene. Larger means newer. */
 struct SceneRevision {
-  std::uint64_t camera = 0;
-  std::uint64_t cameraOptions = 0;
-  std::uint64_t environment = 0;
+  std::uint64_t camera = 0;          ///< Camera handle or camera state changed.
+  std::uint64_t cameraOptions = 0;   ///< Camera options changed.
+  std::uint64_t environment = 0;     ///< Environment style changed.
   std::uint64_t layerSet = 0;                   ///< Layers added or removed.
   std::map<std::string, std::uint64_t> layer;   ///< Content revision per layer.
 

@@ -72,6 +72,14 @@ struct Layer : merge::Mergeable<Layer<X>> {
     return !filter || filter->DoesPass(x);
   }
 
+  /**
+   * @brief True if @p x, at position @p index of the drawn entry, passes the
+   *        layer's filter (positional filters need the index).
+   */
+  [[nodiscard]] bool Passes(const X& x, std::size_t index) const {
+    return !filter || filter->DoesPass(x, index);
+  }
+
   /** @brief Members taking part in merging. */
   static constexpr auto Members() {
     return std::tuple{&Layer::series, &Layer::entry, &Layer::filter,
@@ -113,7 +121,9 @@ class LayerSet {
     }
     return *this;
   }
+  /** @brief Moves the layers. */
   LayerSet(LayerSet&&) noexcept = default;
+  /** @brief Moves the layers. */
   LayerSet& operator=(LayerSet&&) noexcept = default;
 
   /**
@@ -160,6 +170,26 @@ class LayerSet {
         f(name, static_cast<const Holder<X>&>(*slot).layer);
   }
 
+  /**
+   * @brief Element type of every layer, keyed and ordered by layer name.
+   *
+   * Lets code that cannot name the element types statically (the session's
+   * capability check, help output) see what a scene contains.
+   */
+  [[nodiscard]] std::map<std::string, std::type_index> Types() const {
+    std::map<std::string, std::type_index> out;
+    for (const auto& [name, slot] : m_layers) out.emplace(name, slot->Type());
+    return out;
+  }
+
+  /** @brief Series reference of every layer that has one, keyed by layer name. */
+  [[nodiscard]] std::map<std::string, data::SeriesRef> SeriesRefs() const {
+    std::map<std::string, data::SeriesRef> out;
+    for (const auto& [name, slot] : m_layers)
+      if (auto ref = slot->Series()) out.emplace(name, *ref);
+    return out;
+  }
+
   /** @brief Names of all layers, in order. */
   [[nodiscard]] std::vector<std::string> Names() const {
     std::vector<std::string> out;
@@ -204,6 +234,16 @@ class LayerSet {
   /** @brief Removes layer @p name. @return False if it does not exist. */
   bool Remove(const std::string& name) { return m_layers.erase(name) > 0; }
 
+  /**
+   * @brief Makes layer @p name a copy of the layer of that name in @p from,
+   *        or removes it when @p from has none (used to restore layers).
+   */
+  void CopyLayer(const LayerSet& from, const std::string& name) {
+    auto it = from.m_layers.find(name);
+    if (it == from.m_layers.end()) m_layers.erase(name);
+    else m_layers[name] = it->second->Clone();
+  }
+
  private:
   struct Slot {
     virtual ~Slot() = default;
@@ -214,6 +254,7 @@ class LayerSet {
     virtual void Validate(const data::SessionData& data,
                           const std::string& name,
                           std::vector<std::string>& errors) const = 0;
+    virtual std::optional<data::SeriesRef> Series() const = 0;
   };
 
   template <typename X>
@@ -230,6 +271,7 @@ class LayerSet {
     void CompleteFrom(const Slot& o) override {
       layer = layer.CompleteBy(static_cast<const Holder&>(o).layer);
     }
+    std::optional<data::SeriesRef> Series() const override { return layer.series; }
     void Validate(const data::SessionData& data, const std::string& name,
                   std::vector<std::string>& errors) const override {
       if (!layer.series) {
@@ -302,7 +344,7 @@ class Scene: public merge::Mergeable<Scene> {
    * @brief Adds a layer showing a series, or re-targets an existing one.
    *
    * @tparam X Element type of the series.
-   * @param name   Layer name, unique within the scene.
+   * @param layerName Layer name, unique within the scene.
    * @param series Series to show.
    * @param entry  Entry to draw.
    * @return The layer, or nullptr if @p name is taken by a layer of another type.
@@ -372,9 +414,10 @@ class Scene: public merge::Mergeable<Scene> {
     if (!layer || !layer->series) return out;
     auto entry = data.Entry<X>(*layer->series, layer->entry.value_or(0));
     if (!entry) return out;
-    for (const X& x : *entry) {
-      if (!layer->Passes(x)) continue;
-      out.push_back({x, layer->styles.Resolve(x).CompleteBy(defaults)});
+    for (std::size_t i = 0; i < entry->size(); ++i) {
+      const X& x = (*entry)[i];
+      if (!layer->Passes(x, i)) continue;
+      out.push_back({x, layer->styles.Resolve(x, i).CompleteBy(defaults)});
     }
     return out;
   }

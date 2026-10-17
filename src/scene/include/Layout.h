@@ -4,13 +4,17 @@
  * @file Layout.h
  * @brief Backend-independent description of how scenes are arranged in a session.
  *
- * A layout is a value-owned tree of @ref fccvis::layout::LayoutNode. It only
+ * A layout is a value-owned tree of fccvis::scene::layout::LayoutNode. It only
  * *references* scenes by name; scenes exist independently of layouts and may be
  * placed in any number of panes. View state (camera, filters) belongs to the
  * scene, so every pane showing the same scene shows the same view.
  *
  * Nothing here depends on a rendering backend. Backends consume a layout by
  * visiting its three alternatives: Pane, Split and Tabs.
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <functional>
@@ -25,7 +29,7 @@ namespace fccvis::scene::layout {
 struct LayoutNode;
 
 /**
- * @brief Direction along which a @ref Split arranges its children.
+ * @brief Direction along which a fccvis::scene::layout::Split arranges its children.
  */
 enum class Orientation {
   /** @brief Children are placed side by side. */
@@ -35,7 +39,7 @@ enum class Orientation {
 };
 
 /**
- * @brief Entry of a @ref Split: a child node with its share of space.
+ * @brief Entry of a fccvis::scene::layout::Split: a child node with its share of space.
  *
  * Templated on the node type only to break the circular dependency with
  * @ref LayoutNode, which is incomplete where the slot is declared.
@@ -64,7 +68,7 @@ struct SplitSlot {
 };
 
 /**
- * @brief Entry of a @ref Tabs: a child node presented as one tab.
+ * @brief Entry of a fccvis::scene::layout::Tabs: a child node presented as one tab.
  *
  * @tparam N Node type; always @ref LayoutNode in practice.
  */

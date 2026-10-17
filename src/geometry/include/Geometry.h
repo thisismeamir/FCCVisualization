@@ -1,4 +1,12 @@
 #pragma once
+/**
+ * @file Geometry.h
+ * @brief Shapes, rigid transforms and placements (lengths in millimetres).
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
+ */
 
 #include <array>
 #include <cstdint>
@@ -8,16 +16,23 @@
 
 namespace fccvis::geometry {
 
+/** @brief Triangle mesh of a shape's surface, in the shape's local frame. */
 struct Mesh {
-  std::vector<std::array<float, 3>> vertices;   // local frame
-  std::vector<std::array<uint32_t, 3>> triangles; // indices into vertices
+  std::vector<std::array<float, 3>> vertices;      ///< Vertex positions (mm, local frame).
+  std::vector<std::array<uint32_t, 3>> triangles;  ///< Vertex indices of each triangle.
 };
 
+/**
+ * @brief Intrinsic shape: an inside/outside criterion and a tessellation,
+ *        both in the shape's local frame (millimetres).
+ */
 class AbstractShape {
 public:
+  /** @brief Point or vector in the local frame. */
   using Vector = std::array<double, 3>;
 
   virtual ~AbstractShape() = default;
+  /** @brief Copy of the shape. */
   virtual std::shared_ptr<AbstractShape> Clone() const = 0;
 
   /// <= 0 inside, > 0 outside (local frame).
@@ -34,8 +49,10 @@ public:
  */
 class Transform {
 public:
+  /** @brief Point or translation (mm). */
   using Vector = std::array<double, 3>;
-  using Matrix = std::array<double, 9>; // row-major 3 x 3 matrix
+  /** @brief Rotation, row-major 3 x 3 matrix. */
+  using Matrix = std::array<double, 9>;
 
   Transform() = default;
 
@@ -119,6 +136,10 @@ private:
  */
 class Shape {
 public:
+  /**
+   * @param geometry  Intrinsic shape (shared, not copied).
+   * @param transform Placement of the shape's local frame in the parent frame.
+   */
   Shape(std::shared_ptr<AbstractShape> geometry,
         Transform transform = {});
 
@@ -134,6 +155,11 @@ public:
    * @brief Returns the intrinsic shape representation.
    */
   const AbstractShape& Geometry() const;
+
+  /**
+   * @brief Shared handle to the intrinsic shape (for caches keyed by shape identity).
+   */
+  std::shared_ptr<const AbstractShape> GeometryPtr() const { return m_geometry; }
 
   /**
    * @brief Returns the transformation of this shape.
@@ -162,6 +188,7 @@ class Placement {
 public:
   Placement() = default;
 
+  /** @param transform Transformation relative to the parent frame. */
   explicit Placement(Transform transform)
   : m_transform(std::move(transform)) {}
 

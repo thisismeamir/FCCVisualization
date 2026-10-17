@@ -7,6 +7,10 @@
  * library, and as a CI backend. Every call is logged; every Sync records which
  * parts and layers were dirty, computed from revisions exactly as a real
  * backend would.
+ *
+ * @author Amir H. Ebrahimnezhad <amir.ebh@cern.ch>
+ * @copyright Copyright 2026 FCC Project at CERN. Licensed under the Apache
+ *            License, Version 2.0; https://www.apache.org/licenses/LICENSE-2.0
  */
 
 #include <cstdint>
@@ -22,6 +26,7 @@
 
 #include "Backend.h"
 #include "BackendRegistry.h"
+#include "RevisionTracker.h"
 
 namespace fccvis::backend {
 
@@ -33,26 +38,44 @@ struct Recording {
     std::optional<scene::layout::LayoutNode> layout;    ///< Pruned layout received.
     std::string origin;                                 ///< Origin of the triggering change.
     std::map<std::string, changes::Footprint> dirty;    ///< Per open scene: what changed since its last Sync.
-    std::uint64_t layoutRevision = 0;
-    std::uint64_t dataRevision = 0;
+    std::uint64_t layoutRevision = 0;                   ///< Layout revision seen.
+    std::uint64_t dataRevision = 0;                     ///< Data revision seen.
   };
+
+  /** @brief Capabilities of a recording backend that draws everything. */
+  static Capabilities FullCapabilities() {
+    Capabilities c;
+    c.description = "Records calls; renders nothing.";
+    c.kinds = {ElementKind::Point, ElementKind::Line, ElementKind::Surface};
+    c.styleProperties = {"color", "opacity", "visible", "size", "marker", "width",
+                         "dash", "edgeColor", "edgeWidth", "wireframe",
+                         "background", "axes", "grid"};
+    return c;
+  }
+
+  /** @brief Capabilities reported by backends of this recording; full set by default. */
+  Capabilities caps = FullCapabilities();
 
   Port *port = nullptr;                 ///< Set at Start; lets tests inject events.
   std::set<std::string> rejectScenes;   ///< OpenScene fails for these scenes.
   bool throwOnSync = false;             ///< Sync throws, to test failure isolation.
 
+  /** @brief Records a call (thread-safe). */
   void Add(std::string call) {
     std::lock_guard<std::mutex> lock(mutex);
     calls.push_back(std::move(call));
   }
+  /** @brief Records a Sync (thread-safe). */
   void AddSync(SyncRecord r) {
     std::lock_guard<std::mutex> lock(mutex);
     syncs.push_back(std::move(r));
   }
+  /** @brief Calls recorded so far, in order. */
   [[nodiscard]] std::vector<std::string> Calls() const {
     std::lock_guard<std::mutex> lock(mutex);
     return calls;
   }
+  /** @brief Number of Sync calls recorded. */
   [[nodiscard]] std::size_t SyncCount() const {
     std::lock_guard<std::mutex> lock(mutex);
     return syncs.size();
@@ -72,17 +95,10 @@ struct Recording {
 /** @brief Backend that records its calls into a shared @ref Recording. */
 class RecordingBackend final : public Backend {
  public:
+  /** @param rec Shared record the backend writes to. */
   explicit RecordingBackend(std::shared_ptr<Recording> rec) : m_rec(std::move(rec)) {}
 
-  [[nodiscard]] Capabilities GetCapabilities() const override {
-    Capabilities c;
-    c.description = "Records calls; renders nothing.";
-    c.kinds = {ElementKind::Point, ElementKind::Line, ElementKind::Surface};
-    c.styleProperties = {"color", "opacity", "visible", "size", "marker", "width",
-                         "dash", "edgeColor", "edgeWidth", "wireframe",
-                         "background", "axes", "grid"};
-    return c;
-  }
+  [[nodiscard]] Capabilities GetCapabilities() const override { return m_rec->caps; }
 
   void Start(const std::string &id, Port &port, const Options &options) override {
     m_id = id;
@@ -106,6 +122,7 @@ class RecordingBackend final : public Backend {
   void CloseScene(const std::string &scene) override {
     m_rec->Add("CloseScene(" + scene + ")");
     m_seen.erase(scene);
+    m_tracker.Forget(scene);
   }
 
   void Sync(const SyncRequest &request) override {
@@ -123,12 +140,17 @@ class RecordingBackend final : public Backend {
     }
     m_rec->AddSync(std::move(rec));
     m_rec->Add("Sync");
+    Count(m_stats, m_tracker.Update(request, m_id));
   }
+
+  [[nodiscard]] std::optional<DrawStats> Stats() const override { return m_stats; }
 
  private:
   std::shared_ptr<Recording> m_rec;
   std::string m_id;
   std::map<std::string, changes::SceneRevision> m_seen;
+  RevisionTracker m_tracker;
+  DrawStats m_stats;
 };
 
 /**
