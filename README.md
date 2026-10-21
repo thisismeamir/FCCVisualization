@@ -82,7 +82,7 @@ fccvis, design notes and known limitations.
 
 FCCVisualization is distributed under the **Apache License, Version 2.0**.
 
-Copyright © 2026 Independent Society of Knowledge (ISK) / FCCVisualization contributors.
+Copyright © 2026 FCC CERN / FCCVisualization contributors.
 
 See [`LICENSE`](LICENSE) for the complete license text.
 
