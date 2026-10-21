@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120" viewBox="0 0 300 120">
+<rect x="0" y="0" width="300" height="120" fill="#e0e0e0"/>
+<g id="pane0" data-scene="front" clip-path="url(#pane0-clip)">
+<clipPath id="pane0-clip"><rect x="1" y="1" width="198" height="118"/></clipPath>
+<title>Front &lt;xy&gt;</title>
+<rect x="1" y="1" width="198" height="118" fill="#ffffff"/>
+<polygon points="188.5,113.1 117.7,113.1 117.7,42.3" fill="#c6c6c6" fill-opacity="0.3" data-layer="detector" data-index="0"/>
+<polygon points="188.5,113.1 117.7,42.3 188.5,42.3" fill="#c6c6c6" fill-opacity="0.3" data-layer="detector" data-index="0"/>
+<polyline points="188.5,113.1 117.7,113.1" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="188.5,113.1 188.5,42.3" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="117.7,113.1 117.7,42.3" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="117.7,42.3 188.5,42.3" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="153.1,77.7 153.1,42.3 153.1,6.9" fill="none" stroke="#393939" stroke-width="2" stroke-dasharray="12 8" stroke-linecap="round" stroke-linejoin="round" data-layer="tracks" data-index="0"/>
+<polyline points="82.3,77.7 82.3,42.3 82.3,6.9" fill="none" stroke="#393939" stroke-width="2" stroke-dasharray="12 8" stroke-linecap="round" stroke-linejoin="round" data-layer="tracks" data-index="1"/>
+<rect x="150.1" y="74.7" width="6" height="6" fill="#ff0000" data-layer="hits" data-index="0"/>
+<rect x="79.3" y="74.7" width="6" height="6" fill="#ff0000" data-layer="hits" data-index="1"/>
+<rect x="8.5" y="74.7" width="6" height="6" fill="#ff0000" data-layer="hits" data-index="2"/>
+<text x="7" y="17" font-family="sans-serif" font-size="12" fill="#161616">Front &lt;xy&gt;</text>
+</g>
+<g id="pane1" data-scene="side" clip-path="url(#pane1-clip)">
+<clipPath id="pane1-clip"><rect x="201" y="1" width="98" height="118"/></clipPath>
+<title>Side</title>
+<rect x="201" y="1" width="98" height="118" fill="#ffffff"/>
+<polyline points="213.93,114.1 213.93,114.1" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="213.93,114.1 213.93,41.97" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="213.93,114.1 213.93,41.97" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="213.93,41.97 213.93,41.97" fill="none" stroke="#6f6f6f" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="detector" data-index="0"/>
+<polyline points="213.93,78.03 250,41.97 286.07,5.9" fill="none" stroke="#393939" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="tracks" data-index="1"/>
+<polyline points="213.93,78.03 250,41.97 286.07,5.9" fill="none" stroke="#393939" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-layer="tracks" data-index="0"/>
+<circle cx="213.93" cy="78.03" r="1.5" fill="#7017ff" data-layer="hits" data-index="2"/>
+<circle cx="213.93" cy="78.03" r="1.5" fill="#7017ff" data-layer="hits" data-index="1"/>
+<circle cx="213.93" cy="78.03" r="1.5" fill="#7017ff" data-layer="hits" data-index="0"/>
+<polyline points="213.93,78.03 213.93,78.03" fill="none" stroke="#da1e28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="213.93,78.03 213.93,63.33" fill="none" stroke="#198038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="213.93,78.03 228.63,78.03" fill="none" stroke="#0f62fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="207" y="17" font-family="sans-serif" font-size="12" fill="#161616">Side</text>
+</g>
+</svg>

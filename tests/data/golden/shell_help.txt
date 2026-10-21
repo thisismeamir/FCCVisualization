@@ -1,0 +1,33 @@
+Commands:
+  load <adapter> <path> [key=value ...]             open a source with an adapter and register its series
+  series [pattern]                                  list registered series (pattern with * and ?)
+  describe <series>                                 show a series: kind, entries, metadata keys of entry 0
+  scene new <name> ...                              create scenes, each with its own camera
+  scene rm <name> ...                               remove scenes
+  scene ls                                          list scenes
+  scene show <name>                                 show a scene: layers, filters, styles, camera
+  layer add <scene> <series> [as <layer>] [entry <n>]  show a series in a scene (layer name defaults to the series)
+  layer rm <scene>/<layer>                          remove a layer
+  layer ls <scene>                                  list the layers of a scene
+  where <scene>/<layer> <filter-expression>         select the elements a layer shows (see help filters)
+  style <scene>/<layer> [when <filter> then] key=value ...  add a style rule (see help styles)
+  style <scene>/<layer> preset <name> [args]        add a stdlib style preset (see help styles)
+  env <scene> key=value ... | env <scene> preset <name>  set the scene environment: background, axes, grid
+  camera <scene> dir|pos <x> <y> <z> | zoom <m> | reset | mode free|fixed|animated | share <scene>  change a scene's camera
+  layout <expression> | layout show                 set the layout, e.g. split(xy as "Front", tabs(rz, xz)) (see help layouts)
+  entry <scene>/<layer> <n>|next|prev|first|last    move a layer to another entry (event)
+  backend init <type> [id] [key=value ...]          attach a backend instance
+  backend rm <id>                                   detach a backend
+  backend ls                                        list attached backends and their open scenes
+  backend flush [id]                                wait until backends finished their work
+  open <backend> <scene> ...                        show scenes in a backend
+  close <backend> <scene> ...                       stop showing scenes in a backend
+  log [n]                                           show the last n session messages (default 20)
+  save <file>                                       write the session configuration (JSON)
+  source <file>                                     run a script or load a saved configuration
+  echo <text>                                       print text
+  undo                                              undo the last command that changed scenes, layers, cameras or the layout
+  redo                                              redo the last undone command
+  help [command | adapter <name> | backend <type> | filters | styles | layouts]  show help
+  quit                                              leave the shell (also: exit)
+Topics: help filters | styles | layouts | adapters | backends | adapter <name> | backend <type>

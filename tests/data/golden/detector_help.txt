@@ -1,0 +1,16 @@
+detector adapter
+  detector geometry from DD4hep compact XML or a TGeo ROOT/GDML file: one surface series per sub-detector
+  element kinds: surface
+  file types: .gdml .root .xml
+  options:
+    depth (default 3): volume levels below each sub-detector; deeper volumes are merged into their ancestor at this level
+    exclude: comma-separated sub-detector name patterns to skip
+    include: comma-separated sub-detector name patterns (* and ?) to load (all if empty)
+    max_volumes (default 200000): stop after this many volumes (the rest is reported as skipped)
+  notes:
+    series geometry/<sub-detector>, one entry, one surface per volume in world coordinates (mm)
+    metadata: subdetector, volume, path, material, solid, system_id and the other DD4hep volume IDs
+    assemblies are walked through; leaf volumes above the depth limit are included
+  limitations:
+    boolean (composite) solids are not tessellated; they are reported as skipped
+    one geometry per process at a time for TGeo files (ROOT's global gGeoManager)

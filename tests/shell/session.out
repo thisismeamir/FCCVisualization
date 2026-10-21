@@ -1,0 +1,34 @@
+source csv:<src>/tests/data/csv/hits.csv: 1 series, 0 skipped
+  + hits (point, 3 entries) [detector, energy, layer, saturated, unit:energy]
+source csv:<src>/tests/data/csv/tracks.csv: 1 series, 0 skipped
+  + tracks (line, 2 entries) [charge, track]
+hits  point  3 entries  csv:<src>/tests/data/csv/hits.csv
+tracks  line  2 entries  csv:<src>/tests/data/csv/tracks.csv
+tracks (line)
+  source: csv:<src>/tests/data/csv/tracks.csv
+  entries: 2
+  description: polylines (rows grouped by 'track') from tracks.csv, coordinates (x, y, z), entries by 'event'
+  entry 0: 2 elements
+    charge  integer  (2 of 2)
+    track  integer  (2 of 2)
+front
+side
+hits  point
+trk  line
+split(front as "Transverse" *2, side as "Side")
+scene side
+  camera: dir 1 0 0, pos 0 0 0, zoom 1, mode free
+  layer hits (point): series hits, entry 0
+    where energy > 1 and detector == "ECalBarrel"
+    style when layer >= 2 then marker=square size=6 color=#da1e28
+png: front, side
+front/hits: entry 1 of 3
+front/trk: entry 1 of 2
+side/hits: entry 1 of 3
+saved 21 commands to shell-out/session.json
+done
+--- stderr
+error: line 35: expected a number, a "string" or true/false, found '>' at column 25
+  where side/hits energy >> 1
+                          ^
+--- exit status 1

@@ -1,0 +1,27 @@
+csv adapter
+  delimiter-separated text with a header row: one point per row, or polylines from grouped rows
+  element kinds: point line
+  file types: .csv .tsv .txt
+  options:
+    cache (default 4): number of loaded entries kept in memory
+    columns: comma-separated metadata columns (all other columns if empty)
+    comment (default #): lines starting with this prefix are ignored
+    delimiter (default ,): field separator: one character, 'tab' or 'space'
+    entry: column whose value names the entry of each row (single entry if empty)
+    group: kind=line: column whose value names the line of each row
+    kind (default point): point (one per row) or line (rows grouped by 'group')
+    name (default <file stem>): series name
+    order: kind=line: numeric column ordering the vertices of a line (file order if empty)
+    strict (default false): true: any malformed row rejects the whole file
+    x (default x): column of the x coordinate
+    y (default y): column of the y coordinate
+    z (default z): column of the z coordinate
+  notes:
+    metadata types are inferred per column over the whole file: integer, else number, else true/false, else text
+    empty cells give no metadata key; header 'name [unit]' adds metadata 'unit:name'
+    coordinates in um, mm, cm or m are converted to mm (stated in the series description)
+    kind=line: metadata of a line comes from its first row
+    integer entry values are ordered ascending; other entry values by first appearance
+  limitations:
+    quoted fields may not span several lines
+    the entry, order and coordinate columns are not copied into metadata

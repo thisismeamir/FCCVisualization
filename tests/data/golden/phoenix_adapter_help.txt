@@ -1,0 +1,16 @@
+phoenix adapter
+  Phoenix event-data JSON: one point or line series per collection, one entry per event
+  element kinds: point line
+  file types: .json
+  options:
+    cache (default 4): parsed events kept in memory per series
+    collections: comma-separated collection name patterns (* and ?) to register (all if empty)
+    exclude: comma-separated collection name patterns to skip
+  notes:
+    points: objects with pos [x, y, z], a plain [x, y, z] array, or x, y, z members (Hits, Vertices, ...)
+    lines: objects with pos [[x, y, z], ...] (Tracks): the given positions, not extrapolated
+    metadata: the other members; dparams becomes d0, z0, phi, theta, qOverP; positions in mm
+    a file with event-number or collection-type keys at the top is read as one event
+  limitations:
+    collections given by eta/phi only (jets, calorimeter clusters and cells, missing energy) are skipped
+    the whole file is read into memory; events are parsed when first needed

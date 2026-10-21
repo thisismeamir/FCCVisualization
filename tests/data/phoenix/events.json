@@ -1,0 +1,34 @@
+{
+  "first": {
+    "event number": 1,
+    "run number": 7,
+    "Hits": {
+      "pixels": [
+        {"pos": [1.5, 2.5, 3.5], "id": 6942916751126429696, "energy": 0.25, "type": "Point", "good": true},
+        [10, 20, 30],
+        {"id": 3}
+      ],
+      "shared": [{"pos": [0, 0, 1]}]
+    },
+    "Vertices": {
+      "primary": [{"x": 0.1, "y": -0.2, "z": 5, "ntracks": 12}]
+    },
+    "Tracks": {
+      "tracks": [
+        {"pos": [[0, 0, 0], [100, 10, 5], [200, 40, 10]], "dparams": [0.1, -2, 0.5, 1.2, 0.0003], "chi2": 3.5, "color": "#ff0000"},
+        {"pos": [[1, 1, 1]], "dparams": [0, 0, 0, 1.5707963, 0.001]}
+      ],
+      "shared": [{"pos": [[0, 0, 0], [1, 1, 1]]}]
+    },
+    "Jets": {
+      "jets": [{"eta": 0.5, "phi": 1.0, "energy": 50000}]
+    }
+  },
+  "second": {
+    "event number": 2,
+    "Hits": {
+      "pixels": [{"pos": [-1, -2, -3], "id": 4, "energy": 1e3}]
+    }
+  },
+  "metadata": {"generator": "hand-written fixture of the fccvis tests"}
+}

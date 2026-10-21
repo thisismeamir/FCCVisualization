@@ -1,0 +1,8 @@
+scene,layer,attribute,kind,bin,low,high,count
+a,hits,e,bin,0,0,2,0
+a,hits,e,bin,1,2,4,2
+a,hits,e,bin,2,4,6,2
+a,hits,e,bin,3,6,8,2
+a,hits,e,underflow,,,0,0
+a,hits,e,overflow,,8,,0
+a,hits,e,missing,,,,0

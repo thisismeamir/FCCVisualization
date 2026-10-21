@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Toy compact detector for the detector adapter tests (DD4hep drivers from
+     DDDetectors only): a beam pipe, a 3-layer barrel tracker with two slices
+     per layer, and a box. Elements come from toy_elements.xml; materials use atom counts (composite), since ROOT 6.38 rejects DD4hep mass-fraction mixtures with more than one element. Lengths in mm. -->
+<lccdd>
+  <info name="Toy" title="fccvis toy detector" author="fccvis tests" url="none" status="test" version="1">
+    <comment>Test fixture</comment>
+  </info>
+  <includes>
+    <gdmlFile ref="toy_elements.xml"/>
+  </includes>
+  <define>
+    <constant name="world_side" value="4000*mm"/>
+    <constant name="world_x" value="world_side"/>
+    <constant name="world_y" value="world_side"/>
+    <constant name="world_z" value="world_side"/>
+    <constant name="tracking_region_radius" value="1500*mm"/>
+    <constant name="tracking_region_zmax" value="2000*mm"/>
+  </define>
+  <materials>
+    <material name="Air">
+      <D type="density" value="0.0012" unit="g/cm3"/>
+      <composite n="156" ref="N"/>
+      <composite n="42" ref="O"/>
+      <composite n="1" ref="Ar"/>
+    </material>
+    <material name="Vacuum">
+      <D type="density" value="0.00000001" unit="g/cm3"/>
+      <composite n="1" ref="H"/>
+    </material>
+    <material name="Silicon">
+      <D type="density" value="2.33" unit="g/cm3"/>
+      <composite n="1" ref="Si"/>
+    </material>
+    <material name="Beryllium">
+      <D type="density" value="1.848" unit="g/cm3"/>
+      <composite n="1" ref="Be"/>
+    </material>
+    <material name="Iron">
+      <D type="density" value="7.874" unit="g/cm3"/>
+      <composite n="1" ref="Fe"/>
+    </material>
+  </materials>
+  <detectors>
+    <detector name="BeamPipe" type="DD4hep_TubeSegment" id="1">
+      <material name="Beryllium"/>
+      <tubs rmin="20*mm" rmax="21*mm" zhalf="500*mm"/>
+      <position x="0" y="0" z="0"/>
+      <rotation x="0" y="0" z="0"/>
+    </detector>
+    <detector name="Tracker" type="DD4hep_MultiLayerTracker" id="2" readout="TrackerHits">
+      <layer id="1" inner_r="100*mm" outer_z="400*mm">
+        <slice material="Silicon" thickness="0.3*mm" sensitive="yes"/>
+        <slice material="Air" thickness="5*mm"/>
+      </layer>
+      <layer id="2" inner_r="300*mm" outer_z="600*mm">
+        <slice material="Silicon" thickness="0.3*mm" sensitive="yes"/>
+        <slice material="Air" thickness="5*mm"/>
+      </layer>
+      <layer id="3" inner_r="600*mm" outer_z="800*mm">
+        <slice material="Silicon" thickness="0.3*mm" sensitive="yes"/>
+        <slice material="Air" thickness="5*mm"/>
+      </layer>
+    </detector>
+    <detector name="Shield" type="DD4hep_BoxSegment" id="3">
+      <material name="Iron"/>
+      <box x="100*mm" y="100*mm" z="50*mm"/>
+      <position x="0" y="0" z="1500*mm"/>
+      <rotation x="0" y="0" z="0"/>
+    </detector>
+  </detectors>
+  <readouts>
+    <readout name="TrackerHits">
+      <id>system:8,barrel:3,layer:4,slice:4</id>
+    </readout>
+  </readouts>
+</lccdd>

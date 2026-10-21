@@ -18,12 +18,11 @@ version = release
 
 extensions = [
     "myst_parser",
-    "breathe",
-    "sphinx.ext.graphviz",
-    "sphinxcontrib.mermaid",
+    "sphinx_rtd_theme",
+    "sphinx.ext.graphviz"
 ]
 
-html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 html_theme_options = {"fixed_sidebar": True, "page_width": "1100px", "sidebar_width": "250px"}
 html_sidebars = {"**": ["about.html", "navigation.html", "relations.html", "searchbox.html"]}
 graphviz_output_format = "svg"

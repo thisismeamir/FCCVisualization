@@ -1,0 +1,4 @@
+# Non-interactive mode stops at the first failing command (exit status 1).
+scene new a
+scene new a
+echo not reached

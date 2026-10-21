@@ -1,0 +1,36 @@
+# Scripted shell acceptance test (SPEC_INTERFACE): a full session with the CSV
+# adapter and the raster backend. Output is compared with session.out; the
+# picture with tests/data/golden/shell_layout.png.
+load csv ../data/csv/hits.csv entry=event
+load csv ../data/csv/tracks.csv delimiter=; kind=line group=track order=step entry=event
+series
+describe tracks
+
+scene new front side
+scene ls
+layer add front hits
+layer add front tracks as trk
+layer add side hits
+layer ls front
+where side/hits energy > 1 and detector == "ECalBarrel"
+style front/hits preset hits-by-energy 0 4
+style front/trk preset tracks-by-charge
+style side/hits when layer >= 2 then marker=square size=6 color=#da1e28
+camera side dir 1 0 0
+env side axes=true
+layout split(front as "Transverse" *2, side as "Side")
+layout show
+scene show side
+
+backend init raster png output_dir=shell-out width=360 height=180 async=false
+open png front side
+backend ls
+entry front/hits next
+entry front/trk last
+entry side/hits next
+backend flush
+save shell-out/session.json
+
+# errors do not stop the script when --keep-going is given
+where side/hits energy >> 1
+echo done

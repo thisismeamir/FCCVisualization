@@ -1,0 +1,20 @@
+edm4hep adapter
+  EDM4hep event data (podio files): one point or line series per collection, one entry per event
+  element kinds: point line
+  file types: .root
+  options:
+    cache (default 4): converted events kept in memory per series
+    collections: comma-separated collection name patterns (* and ?) to register (all if empty)
+    exclude: comma-separated collection name patterns to skip
+    mc_length (default 1000): segment length (mm) along the momentum for MC particles whose endpoint is not set
+    reco_length (default 1000): segment length (mm) along the momentum for reconstructed particles
+    track (default states): track polyline through the track states ('states') or the track's hits ('hits')
+  notes:
+    points: SimTrackerHit, TrackerHit3D, TrackerHitPlane, CalorimeterHit, SimCalorimeterHit, Cluster (stored position)
+    lines: Track (track-state positions ordered IP, first hit, last hit, calorimeter; or hits), MCParticle (vertex to endpoint), ReconstructedParticle (reference point along the momentum)
+    metadata: EDM4hep member names (cellID, EDep, energy, time, PDG, charge, generatorStatus, ...), p, pt, relation counts; index and index_collection identify the object (podio index and collection ID); units mm, GeV, ns
+  limitations:
+    collections are discovered in the first event; types other than the ones above are skipped with the reason
+    relations are not joined: a single relation is stored as the related object's index and collection ID (particle, particle_collection), multiple ones as counts
+    tracks are not extrapolated (no helix): the polyline joins the stored states
+    cellID is stored as a signed 64-bit integer

@@ -1,0 +1,11 @@
+# fixture: calorimeter-like hits, 3 events
+event,x,y,z,energy [GeV],layer,detector,saturated
+2,809.017,587.785,-50.0,2.50,1,ECalBarrel,false
+2,-809.017,-587.785,50.0,3.50,2,HCalBarrel,false
+0,1000.000,0.000,-50.0,0.50,1,ECalBarrel,false
+0,0.000,1000.000,50.0,1.50,2,HCalBarrel,false
+0,-1000.000,0.000,150.0,2.50,3,ECalBarrel,false
+0,-0.000,-1000.000,250.0,3.50,4,HCalBarrel,true
+1,978.148,207.912,-50.0,1.50,1,ECalBarrel,false
+1,-669.131,743.145,50.0,2.50,2,HCalBarrel,false
+1,-309.017,-951.057,150.0,,3,ECalBarrel,false

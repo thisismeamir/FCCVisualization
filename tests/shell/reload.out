@@ -1,0 +1,3 @@
+--- stderr
+error: line 3: CreateScene: scene 'a' already exists
+--- exit status 1
