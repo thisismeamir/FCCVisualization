@@ -1,0 +1,13 @@
+{
+  "name": "fccvis-phoenix-verify",
+  "private": true,
+  "description": "Loads the Phoenix backend's output into the Phoenix event display in headless Chromium (see README.md).",
+  "dependencies": {
+    "@angular/core": "20.3.3",
+    "esbuild": "0.25.10",
+    "jspdf": "3.0.3",
+    "phoenix-event-display": "4.2.3",
+    "playwright": "1.56.0",
+    "rxjs": "7.8.2"
+  }
+}
